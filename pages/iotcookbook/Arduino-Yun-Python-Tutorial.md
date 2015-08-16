@@ -1,5 +1,5 @@
 <div class="topimage_container">
-   <img class="topimage" src="../../static/img/iotcookbook/yun_tutorial_hardware.jpg" alt="">
+   <img class="topimage" src="/static/img/iotcookbook/yun_tutorial_hardware.jpg" alt="">
 </div>
 
 This tutorial shows you the basics of programming the Yun, as well as how to connect the Arduino Yun to Crossbar.io. Having finished the tutorial will enable you to access the Yun from any WAMP application component, and give you a start in programming your own components.
@@ -26,7 +26,7 @@ The tutorial consists of three parts. The code for the parts is on GitHub:
 
 Tutorial [Part One](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/yun/tutorial/tutorial1) only involves the Yun microcontroller running a simple firmware that reads a digital value from a button and an analog value from a potentiometer, and turns on the LED if either the button is pressed or the potentiometer is turned beyond a certain threshold. The system in this case looks like
 
-<img src="../../static/img/iotcookbook/yun_tutorial_part1.jpg" alt="" />
+<img src="/static/img/iotcookbook/yun_tutorial_part1.jpg" alt="" />
 
 To run the the code for the first part:
 
@@ -41,7 +41,7 @@ Tutorial [Part Two](https://github.com/crossbario/crossbarexamples/tree/master/i
 
 Here the code on for the MCU reads the digital value from the button and the analog value from the potentiomenter and writes these to the serial port. The Python code on the Linux system reads the serial port, decides what the LED state should be based on the received values, and then writes the button state on the serial port. The code uses Twisted, a Pyhton framework for asynchronous programming, which is used by AutobahnPython and Crossbar.io. In this case the system looks like:
 
-<img src="../../static/img/iotcookbook/yun_tutorial_part2.jpg" alt="" />
+<img src="/static/img/iotcookbook/yun_tutorial_part2.jpg" alt="" />
 
 Tun run the code for the second part:
 
@@ -57,7 +57,7 @@ scp controller.py root@192.168.1.141:~/
 
 Tutorial [Part Three](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/yun/tutorial/tutorial3) now combines the knowledge from the previous parts and extends the Python program to act as a bridge between the serial connection (talking to the microcontroller) and a WAMP session (talking to Crossbar.io). The system here looks like this
 
-<img src="../../static/img/iotcookbook/yun_tutorial_part3.jpg" alt="" />
+<img src="/static/img/iotcookbook/yun_tutorial_part3.jpg" alt="" />
 
 You can run Crossbar.io with a working configuration from the tutorial base directory by doing
 

@@ -1,7 +1,7 @@
 The Arduino Yun Potentiometer component publishes events when the state of a Tinkerit potentiometer changes.
 
 <div class="topimage_container">
-   <img class="topimage" src="../../static/img/iotcookbook/yun_potentiometer.jpg" alt="">   
+   <img class="topimage" src="/static/img/iotcookbook/yun_potentiometer.jpg" alt="">   
 </div>
 
 ## Trying it out

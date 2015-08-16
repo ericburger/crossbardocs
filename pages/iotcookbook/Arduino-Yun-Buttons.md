@@ -1,7 +1,7 @@
 The Arduino Yun Button component publishes events for presses on up to 6 Tinkerkit button modules via WAMP.
 
 <div class="topimage_container">
-   <img class="topimage" src="../../static/img/iotcookbook/buttons_arduino_yun.jpg" alt="">   
+   <img class="topimage" src="/static/img/iotcookbook/buttons_arduino_yun.jpg" alt="">   
 </div>
 
 ## Trying it out

@@ -1,5 +1,5 @@
 <div class="topimage_container">
-    <img id="cookbook_home_topimage" src="../../static/img/iotcookbook/edison/edison.jpg" alt="" class="header_img" />
+    <img id="cookbook_home_topimage" src="/static/img/iotcookbook/edison/edison.jpg" alt="" class="header_img" />
 </div>
 
 This is the **Crossbar.io IoT Cookbook's Edison homepage**.
@@ -23,7 +23,7 @@ We also provide ready-to-go recipes for complete IoT components and apps based o
 
 ## Tutorials
 
-<img src="../../static/img/iotcookbook/edison/edison_with_tinkerkit.jpg" alt="">
+<img src="/static/img/iotcookbook/edison/edison_with_tinkerkit.jpg" alt="">
 
 * [Tutorial 1](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/edison/tutorial/tutorial1)
 * [Tutorial 2](https://github.com/crossbario/crossbarexamples/tree/master/iotcookbook/device/edison/tutorial/tutorial2)

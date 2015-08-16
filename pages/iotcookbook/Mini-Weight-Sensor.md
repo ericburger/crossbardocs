@@ -1,7 +1,7 @@
 These are instructions for creating small, extremely simple pressure sensors which use pressure-sensitive plastic foil.  For the remarks on the principle of this, see [the 'Weighing Pad' page](Weighing Pad). For an alternative recipe, see [Pressure Pads](Pressure Pad). Feel free to experiment and adapt this for your particular use case.
 
 <div class="topimage_container">
-   <img class="topimage" src="../../static/img/iotcookbook/weighingpad/washer_06.jpg" alt="">   
+   <img class="topimage" src="/static/img/iotcookbook/weighingpad/washer_06.jpg" alt="">   
 </div>
 
 ## The parts list

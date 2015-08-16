@@ -1,7 +1,7 @@
 The Tessel Accelerometer component publishes the raw accelerometer data from an accelerometer module via WAMP.
 
 <div class="topimage_container">
-   <img class="topimage" src="../../static/img/iotcookbook/alarmapp/accelerometer_tessel.jpg" alt="">   
+   <img class="topimage" src="/static/img/iotcookbook/alarmapp/accelerometer_tessel.jpg" alt="">   
 </div>
 
 ## Trying it out

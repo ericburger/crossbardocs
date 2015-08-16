@@ -1,7 +1,7 @@
 Trigger samples stored on your Pi via WAMP messages, add samples via URL.
 
 <div class="topimage_container">
-   <img class="topimage" src="../../static/img/iotcookbook/speech_raspberry_pi.jpg" alt="">   
+   <img class="topimage" src="/static/img/iotcookbook/speech_raspberry_pi.jpg" alt="">   
 </div>
 
 The example uses the [pygame library mixer](https://www.pygame.org/docs/ref/mixer.html) to play samples stored on the Pi in WAV or OGG format.

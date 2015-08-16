@@ -2,11 +2,11 @@
 
 ## Description
 
-![Launchpad](../../static/img/iotcookbook/launchpad1.jpg)
+![Launchpad](/static/img/iotcookbook/launchpad1.jpg)
 
-![Launchpad](../../static/img/iotcookbook/launchpad2.jpg)
+![Launchpad](/static/img/iotcookbook/launchpad2.jpg)
 
-![Launchpad Project](../../static/img/iotcookbook/iot_novation_launchpad.jpg)
+![Launchpad Project](/static/img/iotcookbook/iot_novation_launchpad.jpg)
 
 ## Resources
 

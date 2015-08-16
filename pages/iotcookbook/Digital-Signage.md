@@ -1,5 +1,5 @@
 <div class="topimage_container">
-   <img class="topimage" src="../../static/img/iotcookbook/digital_signage.jpg" alt="">   
+   <img class="topimage" src="/static/img/iotcookbook/digital_signage.jpg" alt="">   
 </div>
 
 

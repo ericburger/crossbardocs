@@ -1,7 +1,7 @@
 The Raspberry Pi Temperature Monitor component allows the remote monitoring of your Raspberry Pi's on-board temperature sensor. 
 
 <div class="topimage_container">
-   <img class="topimage" src="../../static/img/iotcookbook/raspberry_pi.jpg" alt="">   
+   <img class="topimage" src="/static/img/iotcookbook/raspberry_pi.jpg" alt="">   
 </div>
 
 ## Trying it out

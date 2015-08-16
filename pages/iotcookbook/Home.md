@@ -27,25 +27,25 @@ All recipes and documentation in the IoT Cookbook can be accessed starting from 
    <a href="Arduino-Yun">
       <div class="device">
          Arduino Yun (MIPS)<br>
-         <img class="cookbook_home_device" src="../static/img/iotcookbook/arduino_yun.jpg" alt="">
+         <img class="cookbook_home_device" src="/static/img/iotcookbook/arduino_yun.jpg" alt="">
       </div>
    </a>
    <a href="Intel-Edison">
       <div class="device">
             Intel Edison (x86)<br>
-            <img class="cookbook_home_device" src="../static/img/iotcookbook/edison/edison.jpg" alt="" >
+            <img class="cookbook_home_device" src="/static/img/iotcookbook/edison/edison.jpg" alt="" >
       </div>
    </a>
    <a href="Raspberry-Pi">
       <div class="device">
             Raspberry Pi (ARM)<br>
-            <img class="cookbook_home_device" src="../static/img/iotcookbook/raspberry_pi.jpg" alt="">
+            <img class="cookbook_home_device" src="/static/img/iotcookbook/raspberry_pi.jpg" alt="">
       </div>
    </a>
    <a href="Tessel">
       <div class="device">
             Tessel (MIPS)<br>
-            <img class="cookbook_home_device" src="../static/img/iotcookbook/tessel.jpg" alt="" >
+            <img class="cookbook_home_device" src="/static/img/iotcookbook/tessel.jpg" alt="" >
       </div>
    </a>
 </div>
@@ -108,7 +108,7 @@ Here are your options:
 
 <!--
 <a href="http://azure.microsoft.com/en-us/marketplace/partners/tavendo/crossbar-on-azure-ubuntu1404/">
-   <img src="../static/img/iotcookbook/crossbar_sample_533x324.png" alt="" style="box-shadow: none; border: none;" />
+   <img src="/static/img/iotcookbook/crossbar_sample_533x324.png" alt="" style="box-shadow: none; border: none;" />
 </a>
 -->
 

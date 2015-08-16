@@ -3,7 +3,7 @@ This page describes how to install the necessary software on a Yun to enable rem
 * [Arduino Yun Links](Arduino Yun)
 
 <div class="topimage_container">
-   <img class="topimage" src="../../static/img/iotcookbook/remote_gpio_arduino_yun.jpg" alt="">   
+   <img class="topimage" src="/static/img/iotcookbook/remote_gpio_arduino_yun.jpg" alt="">   
 </div>
 
 

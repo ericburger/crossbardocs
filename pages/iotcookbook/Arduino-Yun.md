@@ -1,5 +1,5 @@
 <div class="topimage_container">
-<img id="cookbook_home_topimage" src="../../static/img/iotcookbook/arduino_yun.jpg" alt="" class="header_img" />
+<img id="cookbook_home_topimage" src="/static/img/iotcookbook/arduino_yun.jpg" alt="" class="header_img" />
 </div>
 
 **The IoT Cookbook: Arduino Yun**
@@ -10,7 +10,7 @@
 1. [Apps](#apps)
 1. [Recipes](#recipes)
 
-The material here introduces the [Arduino Yun](http://www.arduino.cc/en/Main/ArduinoBoardYun?from=Main.ArduinoYUN), how to connect the Yun to Crossbar.io and how to talk to the Yun from any other WAMP component, such as a browser or a backend (more: <a href="../../static/img/docs/design/crossbar_iot_integration/crossbar_iot_integration.pdf">Crossbar.io/Yun integration in 3 slides</a>).
+The material here introduces the [Arduino Yun](http://www.arduino.cc/en/Main/ArduinoBoardYun?from=Main.ArduinoYUN), how to connect the Yun to Crossbar.io and how to talk to the Yun from any other WAMP component, such as a browser or a backend (more: <a href="/static/img/docs/design/crossbar_iot_integration/crossbar_iot_integration.pdf">Crossbar.io/Yun integration in 3 slides</a>).
 
 We also provide ready-to-go recipes for complete IoT components and apps based on the Yun and Crossbar.io.
 
