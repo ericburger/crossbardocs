@@ -4,6 +4,7 @@
 
 import re
 import os
+import shutil
 
 PAT_MD_FILE = re.compile(r'.*\.md')
 
@@ -30,7 +31,19 @@ for root, dirs, files in os.walk('pages'):
                             found[img_path].add(fp)
 
 for img_fp in sorted(found.keys()):
-    print("{}".format(img_fp))
+    #print("{}".format(img_fp))
+    img_path = img_fp[1:]
+    if not os.path.exists(img_path):
+        print("{} not found (used in: {})".format(img_path, list(found[img_fp])))
+        if False:
+            try:
+                shutil.move("../crossbarwww/website/crossbario_old/{}".format(img_path), img_path)
+            except Exception as e:
+                print(e)
     if False:
         for md_fp in sorted(found[img_fp]):
             print("          {}".format(md_fp))
+
+
+# ./website/crossbario_old/static/img/iotcookbook/yun_tutorial_hardware.jpg
+# /static/img/iotcookbook/yun_tutorial_part1.jpg

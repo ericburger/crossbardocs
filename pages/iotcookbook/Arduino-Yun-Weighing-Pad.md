@@ -6,10 +6,6 @@ The Arduino Yun Weighing Pad component publishes data from a weighing pad compon
 
 The [weighing pad sensor](Weighing Pad) uses a type of plastic foil which changes resistance in reaction to pressure. It is a simple DIY project, consists of low-cost components, and can be made reasonably robust very easily.
 
-<div class="topimage_container">
-   <img class="topimage" src="/static/img/iotcookbook/weighingpad_arduino_yun.png" alt="">   
-</div>
-
 ## Trying it out
 
 ### Hardware
