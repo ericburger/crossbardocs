@@ -64,8 +64,12 @@ def page_cookbook(path = None):
 
 if __name__ == "__main__":
 
+   print("Processing Markdown pages from pages/docs")
    app.pages_docs = DocPages('pages/docs')
+
+   print("Processsing Markdown pages from pages/iotcoookbook")
    app.pages_iotcookbook = DocPages('pages/iotcookbook')
+
    app.latest_doc_commit = get_git_latest_commit('./.git')
 
    app.run(host="0.0.0.0", port=8080, debug=True)

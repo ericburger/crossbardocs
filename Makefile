@@ -1,7 +1,7 @@
 all:
 	@echo "Targets: test, deps, check_images, find_nonimage_work"
 
-test:
+test: img
 	python util/server.py
 
 img:
