@@ -1,1 +1,9 @@
+static/img/docs/gen/
+static/img/iotcookbook/gen/
 *.pyc
+*.sublime-workspace
+.sconsign.dblite
+build
+.DS_Store
+*~
+Thumbs.db
