@@ -176,4 +176,4 @@ oberstet@ubuntu1404:~/mynode1$ crossbar start
 
 Now open your browser at [http://127.0.0.1:8080](http://127.0.0.1:8080) and watch the JavaScript console output.
 
-![](http://crossbar.io.s3.amazonaws.com/static/img/docs/getting_started_with_java_01.png)
+![](/static/img/docs/getting_started_with_java_01.png)
