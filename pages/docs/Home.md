@@ -1,4 +1,4 @@
-Welcome to the [**Crossbar**.io](http://crossbar.io) documentation. Take a look at [the project homepage](http://crossbar.io/) if you haven't.
+Welcome to the Crossbar.io documentation. Take a look at the [project homepage](http://crossbar.io/) if you haven't.
 
 ## How it works
 
@@ -130,14 +130,10 @@ Testing your instance & browser support.
 Guides for using Crossbar.io in specific scenarios, or for using specific features of WAMP & Crossbar.io in your applications.
 
 * [WAMP Features](WAMP Features)
-
   - Session
-
     + [Session Metaevents and Procedures](Session Metaevents and Procedures)
     + [Using Schemas](Using Schemas)
-
   - Publish & Subscribe (PubSub)
-
     + [How Subscriptions Work](How Subscriptions Work)
     + [Basic Subscriptions](Basic Subscriptions)
     + [Subscriber Black- and Whitelisting](Subscriber Black and Whitelisting)
@@ -145,9 +141,7 @@ Guides for using Crossbar.io in specific scenarios, or for using specific featur
     + [Publisher Identification](Publisher Identification)
     + [Pattern-Based Subscriptions](Pattern Based Subscriptions)
     + [Subscription Meta-Events and Procedures](Subscription Meta Events and Procedures)
-
   - Remote Procedure Calls (RPC)
-
     + [How Registrations Work](How Registrations Work)
     + [Basic Registrations](Basic Registrations)
     + [Caller Identification](Caller Identification)
@@ -155,12 +149,9 @@ Guides for using Crossbar.io in specific scenarios, or for using specific featur
     + [Pattern-Based Registrations](Pattern Based Registrations)
     + [Shared Registrations](Shared Registrations)
     + [Registration Meta-Events and Procedures](Registration Meta Events and Procedures)
-
   - [Error Handling](Error Handling)
   - [URI Format](URI Format)
-
 * Frameworks & Specific Scenarios
-
   - [Adding Real-Time to Django Applications](Adding Real Time to Django Applications)
   - [[AngularJS Application Components]]
   - [Database Programming with PostgreSQL](Database Programming with PostgreSQL)

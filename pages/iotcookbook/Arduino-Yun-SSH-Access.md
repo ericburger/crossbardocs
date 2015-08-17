@@ -1,8 +1,12 @@
-Once that you have [networking running for your Yun](Arduino Yun Network Access) (either ethernet, Wifi or both), the next thing is to SSH into your Yun. This will allow you to do further software setup and advanced system configuration from a root shell.
+Once that you have [networking running for your Yun](Arduino-Yun-Network-Connectivity) (either ethernet, Wifi or both), the next thing is to SSH into your Yun. This will allow you to do further software setup and advanced system configuration from a root shell.
 
-> Note: -nix systems should come with ssh preinstalled. On Windows, git installs an ssh client which you can use from the git shell - or you can use [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). 
+> Note: Unix systems should come with SSH preinstalled. On Windows, [Git for Windows](https://msysgit.github.io/) installs an SSH client which you can use from the Git bash shell or you can use [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
-The default password for `root` is `arduino`. (Don't be surprised if there's no cursor movement on entering the password - -nix systems have this as a safety feature.)
+## First login
+
+The default password for `root` is `arduino`.
+
+> Don't be surprised if there's no cursor movement on entering the password - Unix systems have this as a safety feature.
 
 Here is how that looks like on a first connect:
 
@@ -42,7 +46,7 @@ root@Arduino:~#
 To change the password for `root`, type `passwd`.
 
 
-#### Public Key Authentication
+## Public Key Authentication
 
 Now, retyping your password each time you log in gets old fast. Public key based authentication for SSH allows you to do password-less, but nevertheless secure logins.
 
@@ -60,7 +64,7 @@ chmod 0600 /etc/dropbear/authorized_keys
 A complete tutorial for setting up public key based authentication on OpenWRT can be found [here](http://wiki.openwrt.org/oldwiki/dropbearpublickeyauthenticationhowto).
 
 
-#### SSHFS
+## SSHFS
 
 Another thing you probably want to do: mount the Yun's filesystem on your desktop via SSH.
 

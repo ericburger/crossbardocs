@@ -1,8 +1,9 @@
+# Yun Ambient Light Sensor component
+
 The Arduino Yun Ambient Light Sensor component allows querying the current state of a Tinkerkit ambient light (LDR) sensor and publishes events when this state changes.
 
-<div class="topimage_container">
-   <img class="topimage" src="/static/img/iotcookbook/yun_ambient_light.jpg" alt="">   
-</div>
+![Arduino Yun with ambient light sensor](/static/img/iotcookbook/yun_ambient_light.jpg)
+
 
 ## Trying it out
 
@@ -10,68 +11,62 @@ The code for this can be found in the [crossbarexamples GitHub repository](https
 
 You need to have one Tinkerkit ambient light (LDR) sensor connected to 'I0' on the Tinkerkit shield (pin 0).
 
-Open a shell for the component directory. 
+Open a shell for the component directory.
 
 Start up Crossbar.io:
 
-```shell
-crossbar start
-```
+    crossbar start
 
-This also serves a frontend where you can view the ambient light sensor data logged at
-
-```
-http://localhost:8080
-```
+This also serves a frontend where you can view the ambient light sensor data logged at `http://localhost:8080`.
 
 In `ambientlight_yun.js`, add the URL of the machine on which Crossbar.io runs:
 
 ```javascript
 var connection = new autobahn.Connection({
-   url: "ws://<URL OF YOUR CROSSBAR INSTANCE>/ws", // replace with the url of your crossbar instance
-   realm: "iot_cookbook"
+    // replace with the url of your crossbar instance
+    url: "ws://<URL OF YOUR CROSSBAR INSTANCE>/ws",
+    realm: "iot_cookbook"
 });
 ```
 
 You need to set up the Yun for [using AutobahnJS](Arduino Yun AutobahnJS Setup).
 
-Transfer `ambientlight_yun.js` on the Yun, e.g. by doing 
+Transfer `ambientlight_yun.js` on the Yun, e.g. by doing
 
-```console
-scp ambientlight_yun.js root@<IP of your Yun>:~/
-```
+    scp ambientlight_yun.js root@<IP of your Yun>:~/
 
 The script is run using Node.js, so you need to have this installed ('opkg install node').
 
-Then run `ambientlight_yun.js` 
+Then run `ambientlight_yun.js`
 
-```shell
-node ambientlight_yun.js
-```
+    node ambientlight_yun.js
 
 This should log
 
-```
+```console
 Arduino Yun Ambientlight Sensor starting ...
 Arduino connected (over /dev/ttyATH0, board version 2.3)
 Connecting to router ...
 Router connected. Session ID: 1595783623
+...
 ```
 
-Once this is running, open the browser console for the frontend page and reload the page. You shoud see 
+Once this is running, open the browser console for the frontend page and reload the page. You shoud see
 
-```
+```console
 connected
 light level currently is:  73
+...
 ```
 
 and when you change the lighting conditions
 
-```
+```console
 Light level changed to:  58
 Light level changed to:  56
 Light level changed to:  58
 Light level changed to:  60
+...
 ```
 
 ## The API

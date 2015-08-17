@@ -5,11 +5,12 @@
 import re
 import os
 import shutil
+from pprint import pprint
 
 PAT_MD_FILE = re.compile(r'.*\.md')
 
 # ![](/static/img/iotcookbook/weighingpad/assembly_final.jpg)
-PAT_IMG_LINK1 = re.compile(r'!\[.*\]\((.*\.(jpg|png|svg))\)')
+PAT_IMG_LINK1 = re.compile(r'!\[(.*)\]\((.*\.(jpg|png|svg))\)')
 
 # src="../../static/img/iotcookbook/weighingpad/assembly_final.jpg"
 PAT_IMG_LINK2 = re.compile(r'src="(.*\.(jpg|png|svg))"')
@@ -24,7 +25,13 @@ for root, dirs, files in os.walk('pages'):
                 content = fd.read()
                 for pat in [PAT_IMG_LINK1, PAT_IMG_LINK2]:
                     for match in re.finditer(pat, content):
-                        img_path = match.groups()[0]
+                        if pat == PAT_IMG_LINK1:
+                            img_alt = match.groups()[0]
+                            img_path = match.groups()[1]
+                            if img_alt.strip() == "":
+                                print fp
+                        else:
+                            img_path = match.groups()[0]
                         if img_path not in found:
                             found[img_path] = set()
                         if fp not in found[img_path]:
@@ -49,3 +56,5 @@ if missing:
     print("\nWARNING: {} image files referenced in markdown pages are missing!".format(missing))
 else:
     print("\nOk, fine: all image files referenced in markdown pages found.")
+
+#pprint(found)

@@ -1,11 +1,11 @@
 It is a good idea to ensure that your Yun runs the most recent version of its operating system and other software.
 
-Be aware that the system update also resets the Wifi settings, so you'll have to go through these again if you've set up the Yun to connect to your WiFi!
-
 There are two ways to update the Yun's System:
 
 * via the Web interface
 * via SSH
+
+> Be aware that the system update also resets the Wifi settings, so you'll have to go through these again if you've set up the Yun to connect to your WiFi!
 
 ## Updating via the Web interface
 
@@ -47,7 +47,7 @@ We need to download the update to RAM, since there isn't enough disk space, so w
 cd /tmp
 ```
 
-You need to get the current link to the upgrade from the [Arduino downloads page](http://www.arduino.cc/en/Main/Software). Scroll down a bit untill you get to 'Other Software' and click on the 'OpenWRT - Yun 1.x.x Upgrade Image'. Be aware that the link you get from this page only leads to a donation page - this then contains the actual link. We then download this, e.g. 
+You need to get the current link to the upgrade from the [Arduino downloads page](http://www.arduino.cc/en/Main/Software). Scroll down a bit untill you get to 'Other Software' and click on the 'OpenWRT - Yun 1.x.x Upgrade Image'. Be aware that the link you get from this page only leads to a donation page - this then contains the actual link. We then download this, e.g.
 
 ```console
 wget http://downloads.arduino.cc/openwrtyun/1/YunSysupgradeImage_v1.5.3.zip
@@ -91,7 +91,3 @@ Linux Arduino 3.3.8 #1 Fri Nov 14 08:57:34 CET 2014 mips GNU/Linux
 root@Arduino:~# dmesg | awk 'NR==1'
 [    0.000000] Linux version 3.3.8 (jenkins@jenkins) (gcc version 4.6.3 20120201 (prerelease) (Linaro GCC 4.6-2012.02) ) #1 Fri Nov 14 08:57:34 CET 2014
 ```
-
-## Next
-
-If you haven't [set up the Wifi](Arduin Yun Network Connectivity) yet, now is the time to do so. If you previously did - do it again (we told you that it would be better to use ethernet - though it's a small hassle, really).

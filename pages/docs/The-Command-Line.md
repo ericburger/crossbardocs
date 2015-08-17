@@ -10,7 +10,7 @@
 
 ## The command line
 
-**Crossbar**.io comes as a command line tool `crossbar` which works identical across all supported platforms.
+Crossbar.io comes as a command line tool `crossbar` which works identical across all supported platforms.
 
 To get help, type `crossbar --help`:
 
@@ -59,7 +59,7 @@ optional arguments:
 
 ## Initializing a Node
 
-**Crossbar**.io runs from a node directory. The node directory, usually `.crossbar`, contains a node configuration file `.crossbar/config.json` and other data such as log files. It is for internal use, and you should not add or modify files other than the `config.json`.
+Crossbar.io runs from a node directory. The node directory, usually `.crossbar`, contains a node configuration file `.crossbar/config.json` and other data such as log files. It is for internal use, and you should not add or modify files other than the `config.json`.
 
 You can initialize a new node by doing:
 
@@ -76,7 +76,7 @@ Application template initialized
 To start your node, run 'crossbar start --cbdir /home/oberstet/mynode/.crossbar'
 
 ```
-In this example, `/home/oberstet/mynode/.crossbar` is the **Crossbar**.io *node directory*.
+In this example, `/home/oberstet/mynode/.crossbar` is the Crossbar.io **node directory**.
 
 The initialization above was done using the default template. Node templates are a quick and easy way of creating a new node. There are additional templates besides the basic default one. Some of these create working sample application for a specific language.
 
@@ -101,13 +101,13 @@ Available Crossbar.io node templates:
 
 ## Starting a Node
 
-To start your **Crossbar**.io node:
+To start your Crossbar.io node:
 
 ```console
 oberstet@ubuntu1404:~/mynode$ crossbar start
 2015-01-11 21:41:13+0100 [Controller   4374] Log opened.
 2015-01-11 21:41:13+0100 [Controller   4374] ==================== Crossbar.io ====================
-	
+
 2015-01-11 21:41:13+0100 [Controller   4374] Crossbar.io 0.9.12-2 starting
 2015-01-11 21:41:13+0100 [Controller   4374] Running on CPython using EPollReactor reactor
 2015-01-11 21:41:13+0100 [Controller   4374] Starting from node directory /home/oberstet/mynode/.crossbar
@@ -128,10 +128,10 @@ oberstet@ubuntu1404:~/mynode$ crossbar start
 ...
 ```
 
-In this case, **Crossbar**.io has automatically detected the node directory by its canonical name `.crossbar` and used the configuration `.crossbar/config.json`.
+In this case, Crossbar.io has automatically detected the node directory by its canonical name `.crossbar` and used the configuration `.crossbar/config.json`.
 
 You can set a different node directory via the command line option `--cbdir` or via an environment variable `CROSSBAR_DIR`.
 
-Open **http://localhost:8080** in your browser. You should see a 404 page rendered by **Crossbar**.io. Which means: it works!
+Open **http://localhost:8080** in your browser. You should see a 404 page rendered by Crossbar.io. Which means: it works!
 
 ![Crossbar.io 404 page](/static/img/docs/shots/crossbar_404.png)

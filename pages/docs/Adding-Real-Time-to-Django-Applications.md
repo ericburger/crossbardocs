@@ -1,6 +1,6 @@
 WAMP has a [lot of potential](http://tavendo.com/blog/post/is-crossbar-the-future-of-python-web-apps/), but it's asynchronous and most current Python Web stacks are synchronous.
 
-Still, you may want to benefit from WAMP realtime notifications right now in your synchronous applications. 
+Still, you may want to benefit from WAMP realtime notifications right now in your synchronous applications.
 
 Crossbar.io enables you to trigger realtime notifications from your synchronous Python Web stack since it comes with a HTTP Pusher service: just configure a few lines of JSON in the Crossbar.io config file, and Crossbar.io provides a HTTP REST endpoint so that you can publish to a WAMP topic with a simple POST request.
 
@@ -52,25 +52,25 @@ First steps
 
 Our goal is to have a little WAMP monitoring client that we run on each machine we wish to monitor. It will retrieve CPU, RAM and disk usage every X seconds and then publish this data using WAMP.
 
-![](/static/img/docs/django/architecture.png)
+![Django/Crossbar.io Application Architecture](/static/img/docs/django/architecture.png)
 
 The client will talk to a server with a Django Website containing a model for each monitored machine, with values to say whether we are interested in the CPU, the RAM or the disk usage, and the currently set publishing interval for the data.
 
 A web page displays all readings for all machines in real time. When we change a model in the Django admin, the page reflects the change immediately.
 
-![](/static/img/docs/django/dashboard.gif)
+![Django Real-time Dashboard](/static/img/docs/django/dashboard.gif)
 
-So, we will need Django 
+So, we will need Django
 
 ```sh
 pip install django
-``` 
+```
 
-requests 
+requests
 
 ```sh
 pip install requests
-``` 
+```
 
 and [psutil](pythonhosted.org/psutil/)
 
@@ -92,13 +92,13 @@ In Mac, Python headers should be included, but you'll need GCC. If you have xcod
 
 Windows installer is a wheel, so you don't need to do anything in particular.
 
-Then you can 
+Then you can
 
 ```sh
 pip install psutil
 ```
 
-At last, we will need to [install Crossbar.io](http://crossbar.io/docs/Local-Installation/). The basic install can be done by doing 
+At last, we will need to [install Crossbar.io](http://crossbar.io/docs/Local-Installation/). The basic install can be done by doing
 
 ```sh
 pip install crossbar
@@ -126,7 +126,7 @@ The monitoring front end is just a single page. Since this article is framework 
         The JS lib allowing to speak WAMP.
 
         Here I'm assuming we are using a browser with Websocket support.
-        It's possible to fall back to flash or long poll, but that 
+        It's possible to fall back to flash or long poll, but that
         would require additional dependencies.
     -->
     <script src="https://autobahn.s3.amazonaws.com/autobahnjs/latest/autobahn.min.jgz"
@@ -461,7 +461,7 @@ app._params = {'name': socket.gethostname(), 'ip': s.getsockname()[0]}
 s.close()
 ```
 
-As you can see I hard coded the IP of the Crossbar.io and Django server out of pure laziness. But in production this should, obviously, be a parameter or an environment variable. 
+As you can see I hard coded the IP of the Crossbar.io and Django server out of pure laziness. But in production this should, obviously, be a parameter or an environment variable.
 
 Remember you can get this IP on Linux and Mac doing (from the server machine):
 
@@ -567,7 +567,7 @@ def update_configuration(args):
     app._params.update(args)
 ```
 
-So it will receive the message, the content of `args`: `[model_to_dict(instance)]`, meaning the new configuration which has just changed in the data base. This way it can update itself immediately. 
+So it will receive the message, the content of `args`: `[model_to_dict(instance)]`, meaning the new configuration which has just changed in the data base. This way it can update itself immediately.
 
 To illustrate this, we add the model in our Django admin:
 
@@ -744,7 +744,7 @@ The first part is more or less Crossbar.io's equivalent of chmod 777:
 
 Then we add transports for each desired technology. We are going to group them all under the "8080" port as Twisted can listen to HTTP and Websocket on a single port at the same time.
 
-```javascript 
+```javascript
 "transports": [
 {
    "type": "web",
@@ -853,7 +853,7 @@ As you can see, we used very little WAMP code: a few lines for the JS part, and 
 
 This solution is not limited to Django, and works well for all synchronous technologies unable to run WAMP clients directly. For now, the HTTP-WAMP bridge only allows publishes, not subscriptions or RPC. But having real time notifications available everywhere is already a nice touch, and the other actions will be implemented by the Crossbar.io team in the near future.
 
-At moment you can already see that we can mix HTTP, WAMP, Python, clients, servers and build our own architecture to fit our needs. Crossbar.io can also serve the WSGI app, and actually could manage any WAMP client life cycle on the same machine, or if needed, any command line process (such as NodeJS). 
+At moment you can already see that we can mix HTTP, WAMP, Python, clients, servers and build our own architecture to fit our needs. Crossbar.io can also serve the WSGI app, and actually could manage any WAMP client life cycle on the same machine, or if needed, any command line process (such as NodeJS).
 
 We could have written the client in Python 3 since it's on other machines. In fact, if we run Django by itself (not using Crossbar.io), then Django can be coded using Pyton 3 too. Crossbar.io is the only bit still needing Python 2.7 (because Twisted doesn't run on Python 3 yet). Still, this is just a component which we configure and then forget about.
 

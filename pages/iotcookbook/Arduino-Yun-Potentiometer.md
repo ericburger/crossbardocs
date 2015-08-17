@@ -1,8 +1,8 @@
+# Yun Potentiometer component
+
 The Arduino Yun Potentiometer component publishes events when the state of a Tinkerit potentiometer changes.
 
-<div class="topimage_container">
-   <img class="topimage" src="/static/img/iotcookbook/yun_potentiometer.jpg" alt="">   
-</div>
+![Arduino Yun Potentiometer component hardware](/static/img/iotcookbook/yun_potentiometer.jpg)
 
 ## Trying it out
 
@@ -10,88 +10,65 @@ The code for this can be found in the [crossbarexamples GitHub repository](https
 
 You need to have at least one Tinkerkit potentiomete, which as a default should be connected to 'I0' on the Tinkerkit shield (pin 0).
 
-Open a shell for the component directory. 
+Open a shell for the component directory and start up Crossbar.io:
 
-Start up Crossbar.io:
+    crossbar start
 
-```shell
-crossbar start
-```
-
-This also serves a frontend where you can view the potentiometer data logged at
-
-```
-http://localhost:8080
-```
+This also serves a frontend where you can view the potentiometer data logged at `http://localhost:8080`.
 
 In `potentiometer_yun.js`, add the URL of the machine on which Crossbar.io runs:
 
 ```javascript
 var connection = new autobahn.Connection({
-   url: "ws://<URL OF YOUR CROSSBAR INSTANCE>/ws", // replace with the url of your crossbar instance
-   realm: "iot_cookbook"
+    // replace with the url of your crossbar instance
+    url: "ws://<URL OF YOUR CROSSBAR INSTANCE>/ws",
+    realm: "iot_cookbook"
 });
 ```
 
 You need to set up the Yun for [using AutobahnJS](Arduino Yun AutobahnJS Setup), including setting up Firmata on the MCU part of the Yun.
 
-Transfer `potentiometer_yun.js` on the Yun, e.g. by doing 
+Transfer `potentiometer_yun.js` on the Yun, e.g. by doing
 
-```console
-scp potentiometer_yun.js root@<IP of your Yun>:~/
-```
+    scp potentiometer_yun.js root@<IP of your Yun>:~/
 
 Then run `potentiometer_yun.js` using Node.js
 
-```shell
-node potentiometer_yun.js
-```
+    node potentiometer_yun.js
 
 This should log something like
 
-```
+```console
 Arduino Yun Potentiometer starting ...
 Arduino connected (over /dev/ttyATH0, board version 2.3)
 Connecting to router ...
 Router connected. Session ID: 1431639925
 io.crossbar.examples.yun.potentiometer.get_potentiometer_value registered
+...
 ```
 
-Once this is running, open the browser console for the frontend page and reload the page. You shoud see something like 
+Once this is running, open the browser console for the frontend page and reload the page. You shoud see something like
 
-```
+```console
 connected
 potentiometer value currently is: 0 20
+...
 ```
 
 and when you turn the potentiometer something like
 
-```
+```console
 potentiometer value change: [0, 24]
 potentiometer value change: [0, 26]
 potentiometer value change: [0, 28]
 potentiometer value change: [0, 31]
 potentiometer value change: [0, 33]
+...
 ```
 
 ## The API
 
-The component provides one procedure
-
-```
-io.crossbar.examples.yun.potentiometer.get_potentiometer_value
-```
-
-which takes the pin the potentiometer is connected to as an argument and returns the current potentiometer value (0 - 100),
-
-and publishes to one topic
-
-```
-io.crossbar.examples.yun.potentiometer.on_value_change
-```
-
-which provides the pin of the potentiometer where the value change occured adn the current potentiometer value (0 - 100).
-
+The component provides one procedure `io.crossbar.examples.yun.potentiometer.get_potentiometer_value` which takes the pin the potentiometer is connected to as an argument and returns the current potentiometer value (0 - 100), and publishes to one topic `io.crossbar.examples.yun.potentiometer.on_value_change` which provides the pin of the potentiometer where the value change occured adn the current potentiometer value (0 - 100).
 
 ## Using it
 

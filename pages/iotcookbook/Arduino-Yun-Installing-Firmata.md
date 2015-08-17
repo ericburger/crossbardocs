@@ -1,3 +1,5 @@
+# Setting up Firmata on the Yun
+
 For some uses cases we need the code implementing the Firmata protocol on the MCU.
 
 The [Firmata](https://github.com/firmata/protocol) code for the MCU part of the Yun provides generic access to the GPIO pins on the Yun. It comes with the Arduino IDE, and libraries to connect to this exist for a large number of languages.
@@ -22,15 +24,15 @@ Paste this into the IDE, save it somewhere, verify it (which requires the previo
 
 Once you've checked the connection (or are confident it's working without checking) you can continue with
 
-## Installing firmata
+## Installing Firmata
 
-The Arduino IDE already contains the Firmata code we need. You load this into a new IDE window by selecting "File" - "Examples" - "Firmata" - "StandardFirmataYun"
+The Arduino IDE already contains the Firmata code we need. You load this into a new IDE window by selecting **"File" - "Examples" - "Firmata" - "StandardFirmataYun"**.
 
 You need to verify & upload the code.
 
-## Checking that the Arduino and Linux side are communicating
+## Testing Firmata
 
-To verify that the Arduino - Linux firmata-over-serial connection works, it's easiest to run a blinky version in Node.js (so you need to have this as well as the dependencies [installed](Arduino Yun AutobahnJS Setup)). 
+To verify that the Arduino microcontroller and CPU (Linux) can communication via the firmata-over-serial, it's easiest to run a blinky version in Node.js (so you need to have this as well as the dependencies [installed](Arduino Yun AutobahnJS Setup)).
 
 Save the following in a file, as e.g. `node-blinky.js` on the Yun:
 
@@ -58,8 +60,6 @@ arduino.on('connect', function () {
 
 and then run it
 
-```shell
-node node-blinky.js
-```
+    node node-blinky.js
 
 You should now get same LED blinking as before - just controlled from the Linux side of the Yun.

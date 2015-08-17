@@ -1,18 +1,15 @@
-<div class="topimage_container">
-<img id="cookbook_home_topimage" src="/static/img/iotcookbook/arduino_yun.jpg" alt="" class="header_img" />
-</div>
-
-**The IoT Cookbook: Arduino Yun**
-
 1. [Getting Started](#getting-started)
 1. [Basic Tutorial](#basic-tutorial)
 1. [Components](#components)
 1. [Apps](#apps)
 1. [Recipes](#recipes)
 
-The material here introduces the [Arduino Yun](http://www.arduino.cc/en/Main/ArduinoBoardYun?from=Main.ArduinoYUN), how to connect the Yun to Crossbar.io and how to talk to the Yun from any other WAMP component, such as a browser or a backend (more: <a href="/static/img/docs/design/crossbar_iot_integration/crossbar_iot_integration.pdf">Crossbar.io/Yun integration in 3 slides</a>).
+The material here introduces the [Arduino Yun](http://www.arduino.cc/en/Main/ArduinoBoardYun?from=Main.ArduinoYUN), how to connect the Yun to Crossbar.io and how to talk to the Yun from any other WAMP component, such as a browser or a backend (read more: [Crossbar.io/Yun integration in 3 slides](/static/img/docs/design/crossbar_iot_integration/crossbar_iot_integration.pdf)).
+
+![The Arduino Yun](/static/img/iotcookbook/arduino_yun.jpg)
 
 We also provide ready-to-go recipes for complete IoT components and apps based on the Yun and Crossbar.io.
+
 
 <!--
 We suggest you read the [Overview](Arduino-Yun-Overview) first.
@@ -26,19 +23,17 @@ If you want to do custom stuff, then take a look at the Specific Tutorials, or l
 
 We recommend reading into the following to get some background info, get things installed and configured and actually get you feet wet and talk to your Yun from a browser:
 
-* [Overview](Arduino-Yun-Overview): an overview of the Yun, its features and the integration into IoT applications
-* [Quick Setup](Arduino-Yun-Quick-Setup): a quick setup recipe using the Autobahn-Yun image we provide
-* [Generic Serial-to-WAMP bridge](Arduino Yun Serial to WAMP Bridge): access the Yun's GPIO pins via WAMP
+* [Overview](Arduino-Yun-Overview) - an overview of the Yun, its features and the integration into IoT applications
+* [Quick Setup](Arduino-Yun-Quick-Setup) - a quick setup recipe using the Autobahn-Yun image we provide
+* [Generic Serial-to-WAMP bridge](Arduino Yun Serial to WAMP Bridge) - access the Yun's GPIO pins via WAMP
 
 
 ## Basic Tutorial
 
-A basic, three part tutorial that shows how to hook up the Yun to Crossbar.io and communicate from any other WAMP component.
+A basic, three part tutorial that shows how to hook up the Yun to Crossbar.io and communicate from any other WAMP component:
 
-Available for
-
-* [Python / Twisted](Arduino Yun Python Tutorial)
-* [JavaScript / NodeJS](Arduino Yun JavaScript Tutorial)
+* [Python](Arduino Yun Python Tutorial) - basic tutorial for Python/Twisted
+* [JavaScript](Arduino Yun JavaScript Tutorial) - basic tutorial for JavaScript/NodesJS
 
 You'll learn how to write code running on the microcontroller talking to code running on the Yun's main CPU talking to Crossbar.io and any other WAMP component running somewhere.
 
@@ -73,12 +68,12 @@ Apps combine one or more components into a IoT solution. They usually have code 
 
 The recipes here each cover specific tasks related to handling the Yun.
 
-* [System Recovery](Arduino Yun System Recovery): restoring the Yun's firmware and resetting Wifi settings
-* [System Update](Arduino Yun System Update): getting the most up-to-date version of the Yun's Linux operating system
-* [Establishing Network Connectivity](Arduino Yun Network Connectivity): Connecting your Yun to ethernet & WiFi
-* [Connecting via SSH](Arduino Yun SSH Access): connecting via SSH to administrate the Yun
-* [Expanding disk space](Arduino-Yun-Expanding-Disk-Space): using a microSD card to expand the storage on the Yun
-* [Disabling the serial bridge](Arduino-Yun-Disable-Bridge): disabling the default serial bridge so we can use serial for our own
-* [Setting up Autobahn|Python](Arduino-Yun-AutobahnPython-Setup): setting up Autobahn|Python and Twisted for Python programming on the Yun
-* [Setting up Autobahn|JS](Arduino-Yun-AutobahnJS-Setup): setting up Autobahn|JS and Node for JavaScript programming on the Yun
-* [Preparing an image](Arduino-Yun-Prepare-Image): how to create an extroot overlay SD card image for distribution
+* [System Recovery](Arduino Yun System Recovery) - restoring the Yun's firmware and resetting Wifi settings
+* [System Update](Arduino Yun System Update) - getting the most up-to-date version of the Yun's Linux operating system
+* [Establishing Network Connectivity](Arduino Yun Network Connectivity) - Connecting your Yun to ethernet & WiFi
+* [Connecting via SSH](Arduino Yun SSH Access) - connecting via SSH to administrate the Yun
+* [Expanding disk space](Arduino-Yun-Expanding-Disk-Space) - using a microSD card to expand the storage on the Yun
+* [Disabling the serial bridge](Arduino-Yun-Disable-Bridge) - disabling the default serial bridge so we can use serial for our own
+* [Setting up Autobahn|Python](Arduino-Yun-AutobahnPython-Setup) - setting up Autobahn|Python and Twisted for Python programming on the Yun
+* [Setting up Autobahn|JS](Arduino-Yun-AutobahnJS-Setup) - setting up Autobahn|JS and Node for JavaScript programming on the Yun
+* [Creating an overlay image](Arduino-Yun-Create-Image) - how to create an extroot overlay SD card image for distribution
