@@ -1,6 +1,9 @@
+# Yun SSH Access
+
 Once that you have [networking running for your Yun](Arduino-Yun-Network-Connectivity) (either ethernet, Wifi or both), the next thing is to SSH into your Yun. This will allow you to do further software setup and advanced system configuration from a root shell.
 
 > Note: Unix systems should come with SSH preinstalled. On Windows, [Git for Windows](https://msysgit.github.io/) installs an SSH client which you can use from the Git bash shell or you can use [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
+
 
 ## First login
 
@@ -56,10 +59,8 @@ The Linino/OpenWRT Linux on the Yun does use Dropbear for SSH support (both clie
 
 One difference is that to enable public key based authentication for root, the authorized public keys need to be added to the following file (and not the usual `/root/.ssh/authorized_keys`):
 
-```text
-vi /etc/dropbear/authorized_keys
-chmod 0600 /etc/dropbear/authorized_keys
-```
+    vi /etc/dropbear/authorized_keys
+    chmod 0600 /etc/dropbear/authorized_keys
 
 A complete tutorial for setting up public key based authentication on OpenWRT can be found [here](http://wiki.openwrt.org/oldwiki/dropbearpublickeyauthenticationhowto).
 
@@ -72,10 +73,8 @@ Why is that? Mounting over SSH allows you to edit files on the Yun using your fa
 
 This magic works via SFTP (secure FTP), which is a FTP-like protocol that runs over SSH. On the Yun side, you'll need to have the SFTP package installed, login via SSH as root and do:
 
-```console
-opkg update
-opkg install openssh-sftp-server
-```
+    opkg update
+    opkg install openssh-sftp-server
 
 Now, on **Windows**, [Win-SSHFS](http://code.google.com/p/win-sshfs/) which you can download from [here](http://code.google.com/p/win-sshfs/downloads/detail?name=win-sshfs-0.0.1.5-setup.exe) is open-source and installs without hassles up to Windows 7 (and with a few workarounds on Windows 8 as well). It may, however, loose connection after longer periods of inactivity. A commercial alternative (with a free version perfectly sufficient for our purposes) is [SFTP Net Drive](https://www.eldos.com/sftp-net-drive/), which works stable (but does bad things if you disconnect you device without unmounting it first).
 

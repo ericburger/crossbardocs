@@ -1,3 +1,5 @@
+# Yun system update
+
 It is a good idea to ensure that your Yun runs the most recent version of its operating system and other software.
 
 There are two ways to update the Yun's System:
@@ -9,11 +11,11 @@ There are two ways to update the Yun's System:
 
 ## Updating via the Web interface
 
-If the Yun serves as a WiFi access point (i.e. you haven't yet configured it to connect to a WiFi network) the Web interface is served at ```http://192.168.240.1```. If you've connected via WiFi, or are connected via Ethernet, you get to it via the IP that the Yun has been assigned in your network (check in your router, or use a tool like Fing, which is available for multiple systems including mobiles).
+If the Yun serves as a WiFi access point (i.e. you haven't yet configured it to connect to a WiFi network) the Web interface is served at ```http://192.168.240.1```. If you've connected via WiFi, or are connected via Ethernet, you get to it via the IP that the Yun has been assigned in your network (check in your router, or use a tool like [Fing](http://www.overlooksoft.com/), which is available for multiple systems including mobiles).
 
 You need to get the download  to the upgrade from the [Arduino downloads page](http://www.arduino.cc/en/Main/Software) and store it locally.
 
-Then log into the Web interface (the default password is 'arduino') and select the **advanced configuration panel** at the top of the page. Then select the **System tab**, and on this **Backup / Flash Firmware**. You can then upload the firmware image from your computer to the Yun and flash this.
+Then log into the Web interface (the default password is `arduino`) and select the **advanced configuration panel** at the top of the page. Then select the **System tab**, and on this **Backup / Flash Firmware**. You can then upload the firmware image from your computer to the Yun and flash this.
 
 ## Updating via SSH
 
@@ -21,49 +23,35 @@ There's a description for how to do [SSH access to the Yun](Arduino Yun SSH Acce
 
 You can use the script we provide, and just do
 
-```console
-cd /tmp
-curl http://bit.ly/1IXKbTU -Lko step1.sh
-sh step1.sh
-```
+    cd /tmp
+    curl http://bit.ly/1IXKbTU -Lko step1.sh
+    sh step1.sh
 
 or do things yourself if you want to get into the gritty details of what's happening:
 
 First update the yun package management:
 
-```console
-opkg update
-```
+    opkg update
 
 Then we need to install `unzip`:
 
-```console
-opkg install unzip
-```
+    opkg install unzip
 
 We need to download the update to RAM, since there isn't enough disk space, so we switch to `tmp`, which is in RAM:
 
-```console
-cd /tmp
-```
+    cd /tmp
 
 You need to get the current link to the upgrade from the [Arduino downloads page](http://www.arduino.cc/en/Main/Software). Scroll down a bit untill you get to 'Other Software' and click on the 'OpenWRT - Yun 1.x.x Upgrade Image'. Be aware that the link you get from this page only leads to a donation page - this then contains the actual link. We then download this, e.g.
 
-```console
-wget http://downloads.arduino.cc/openwrtyun/1/YunSysupgradeImage_v1.5.3.zip
-```
+    wget http://downloads.arduino.cc/openwrtyun/1/YunSysupgradeImage_v1.5.3.zip
 
 unzip it
 
-```console
-unzip YunSysupgradeImage_v1.5.3.zip
-```
+    unzip YunSysupgradeImage_v1.5.3.zip
 
 and install it
 
-```console
-sysupgrade -v -n openwrt-ar71xx-generic-yun-16M-squashfs-sysupgrade.bin
-```
+    sysupgrade -v -n openwrt-ar71xx-generic-yun-16M-squashfs-sysupgrade.bin
 
 Please be patient. This takes a couple of minutes, and will finally reboot the Yun when done:
 
