@@ -1,8 +1,8 @@
+# Pi Xbox Controller
+
 Receive controller events from a Xbox controller connected to a Raspberry Pi. Events are transmitted using WAMP.
 
-<div class="topimage_container">
-   <img class="topimage" src="/static/img/iotcookbook/xbox_controller_won.jpg" alt="">   
-</div>
+![Xbox controller](/static/img/iotcookbook/xbox_controller_won.jpg)
 
 This example uses [xboxdrv](https://github.com/xboxdrv/xboxdrv), a usersprace driver for Xbox game controllers.
 
@@ -20,15 +20,11 @@ To pair the controller with the receiver, press the button on the receiver (ther
 
 Install [xboxdrv](https://github.com/xboxdrv/xboxdrv) (a userspace drive for Xbox gamepad controllers):
 
-```console
-sudo apt-get install -y xboxdrv
-```
+    sudo apt-get install -y xboxdrv
 
 With your Xbox controller connected to the Pi, test the driver:
 
-```console
-pi@raspberrypi ~/scm/crossbarexamples/device/pi/xboxcontroller $ sudo xboxdrv --quiet --detach-kernel-driver
-```
+    sudo xboxdrv --quiet --detach-kernel-driver
 
 which should give you output like this:
 
@@ -50,11 +46,9 @@ X1:  1126 Y1:  4564  X2:  -131 Y2:  5788  du:0 dd:0 dl:0 dr:0  back:0 guide:0 st
 ...
 ```
 
-Install Autobahn|Python
+Install AutobahnPython
 
-```console
-sudo pip install autobahn
-```
+    sudo pip install autobahn[twisted]
 
 ## Running the example
 
@@ -64,49 +58,24 @@ You need a Crossbar.io instance for the Xbox Controller adapter on the Pi and th
 
 The simplest way is to navigate to `iotcookbook/device/pi/xboxcontroller` in your local `crossbarexamples` repo, and do
 
-```console
-crossbar start
-```
+    crossbar start
 
-This will also serve the browser frontend under
-
-```
-http://localhost:8080
-```
+This will also serve the browser frontend under `http://localhost:8080`.
 
 Get `xboxcontroller_adapter.py` onto the Pi, e.g. by doing
 
-```
-scp xboxcontroller_adapter.py pi@<IP of your Pi>:~/
-```
+    scp xboxcontroller_adapter.py pi@<IP of your Pi>:~/
 
 and then start it, passing the URL of Crossbar.io, e.g.
 
-```console
-sudo xboxdrv --quiet --detach-kernel-driver | python xboxcontroller_adapter.py --router ws://192.168.1.134:8080/ws
-```
+    sudo xboxdrv --quiet --detach-kernel-driver \
+        | python xboxcontroller_adapter.py --router ws://192.168.1.134:8080/ws
 
 Open the developer console of the browser frontend and interact with the controller to see a log of the event stream.
 
 
 ## The API
 
-`xboxcontroller_adapter` exposes one procedure
-
-```
-io.crossbar.examples.iot.devices.pi.<DEVICE_ID>.xboxcontroller.get_data
-``` 
-
-which returns the present state of the controller,
-
-and publishes events to one topic
-
-```
-io.crossbar.examples.iot.devices.pi.<DEVICE_ID>.xboxcontroller.on_data
-```
-
-which yields a continuous stream of controller data.
+`xboxcontroller_adapter` exposes one procedure `io.crossbar.examples.iot.devices.pi.<DEVICE_ID>.xboxcontroller.get_data` which returns the present state of the controller, and publishes events to one topic `io.crossbar.examples.iot.devices.pi.<DEVICE_ID>.xboxcontroller.on_data` which yields a continuous stream of controller data.
 
 The controller data itself is sent as JSON, and you can extract relevant events from this.
-
-

@@ -1,8 +1,8 @@
-The Raspberry Pi Camera component allows the remote triggering of a photo via a WAMP procedure call. The photo is returned as the call result. 
+# Raspberry Pi Camera component
 
-<div class="topimage_container">
-   <img class="topimage" src="/static/img/iotcookbook/camera_raspberry_pi.jpg" alt="">   
-</div>
+The Raspberry Pi Camera component allows the remote triggering of a photo via a WAMP procedure call. The photo is returned as the call result.
+
+![Raspberry Pi with camera](/static/img/iotcookbook/camera_raspberry_pi.jpg)
 
 ## Trying it out
 
@@ -10,88 +10,68 @@ The code for this can be found in the [crossbarexamples GitHub repository](https
 
 The Pi should support most standard WebCams once you've done
 
-```shell
-sudo apt-get install fswebcam
-```
+    sudo apt-get install fswebcam
 
 To try it whether this works, do
 
-```shell
-fswebcam image.jpg
-```
+    fswebcam image.jpg
 
 and then open the image.
 
-Then open a shell for the component directory on your computer. 
+Then open a shell for the component directory on your computer.
 
 Start up Crossbar.io:
 
-```shell
-crossbar start
-```
+    crossbar start
 
-This also serves a frontend which allows you to trigger the taking of an image and displays the progress feedback as well as the image:
-
-```
-http://localhost:8080
-```
+This also serves a frontend which allows you to trigger the taking of an image and displays the progress feedback as well as the image `http://localhost:8080`.
 
 In `camera_pi.js`, add the URL of the machine on which Crossbar.io runs:
 
 ```javascript
 var connection = new autobahn.Connection({
-   url: "ws://<URL OF YOUR CROSSBAR INSTANCE>/ws", // replace with the url of your crossbar instance
-   realm: "iot_cookbook"
+    // replace with the url of your crossbar instance
+    url: "ws://<URL OF YOUR CROSSBAR INSTANCE>/ws",
+    realm: "iot_cookbook"
 });
 ```
 
 Then get `camera_pi.js` onto the Raspberry Pi, e.g. by doing
 
-```console
-scp camera_pi.js pi@<IP of your Pi>:~/
-```
+    scp camera_pi.js pi@<IP of your Pi>:~/
 
 `camera_pi.js` is run using Node.js, so you need this installed, and additionally npm, Node.js's package managenment, and Autobahn|JS. Once you've got Node.js and npm, in the directory where `camera_pi.js`is, do
 
-```shell
-npm install autobahn
-```
+    npm install autobahn
 
-(In case you get a certificate error, doing 
-```shell
-npm config set registry http://registry.npmjs.org/
-```
+(In case you get a certificate error, doing
+
+    npm config set registry http://registry.npmjs.org/
+
 is one way to solve this, though you now no longer use https!)
 
 We also need `uuencode`, which we install by doing
 
-```shell
-sudo apt-get install sharutils
-```
+    sudo apt-get install sharutils
 
 Now run our camera component using Node.js
 
-```shell
-nodejs camera_pi.js
-```
+    nodejs camera_pi.js
 
 This should log
 
-```shell
+```console
 Raspberry Pi Camera starting
 connected
 Procedure 'io.crossbar.examples.pi.camera.take_photo' registered: 1902454329
+...
 ```
 
 Once this is running, in the browser frontend click on `take photo`. The default image of a burglar should be replaced with an image of whatever is in front of your webcam.
 
 ## The API
 
-The component exposes a single procedure
-
-```
-io.crossbar.examples.pi.camera.take_photo
-```
+The component exposes a single procedure `io.crossbar.examples.pi.camera.take_photo`.
 
 The result is a base64 encoded image. As a default this is JPG, but can be changed (in 'camera_pi.js', see the [fswebcam documentation](http://manpages.ubuntu.com/manpages/lucid/man1/fswebcam.1.html)). Due to the encoding using 'uuencode' on the Pi, header & footer need to be removed before this can be used in a data URI.
 
@@ -99,6 +79,4 @@ The result is a base64 encoded image. As a default this is JPG, but can be chang
 
 In your own project:
 
-
-* Adapt the procedure URL for taking a photo to your own needs. 
-
+* Adapt the procedure URL for taking a photo to your own needs.

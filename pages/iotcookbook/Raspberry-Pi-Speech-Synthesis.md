@@ -1,13 +1,10 @@
+# Pi Speech Synthesis
+
 Output (English) sentences from your Pi which are sent as text via WAMP.
 
-<div class="topimage_container">
-   <img class="topimage" src="/static/img/iotcookbook/speech_raspberry_pi.jpg" alt="">   
-</div>
+![Pi with speaker](/static/img/iotcookbook/speech_raspberry_pi.jpg)
 
 The example uses the [flite](http://www.festvox.org/flite/) text-to-speech engine to convert english sentences to voice which is then output via the Pi's audio output.
-
-
-
 
 ## Try it out
 
@@ -19,35 +16,25 @@ Included is a frontend running in the browser. The frontend is written in JavaSc
 
 [Enable audio](https://www.raspberrypi.org/documentation/configuration/audio-config.md) output on the 3.5mm plug:
 
-```console
-sudo amixer cset numid=3 1
-```
+    sudo amixer cset numid=3 1
 
 Install the [flite](http://www.festvox.org/flite/) text-to-speech processor:
 
-```console
-sudo apt-get install -y flite
-```
+    sudo apt-get install -y flite
 
 Test the text-to-speech engine:
 
-```console
-flite -voice slt "Hi, my name is Susan. How can I help you?"
-```
+    flite -voice slt "Hi, my name is Susan. How can I help you?"
 
 The volume may be a bit low. To increase that to (near) the maximum, do
 
-```shell
-sudo amixer set PCM -- -100
-```
+    sudo amixer set PCM -- -100
 
 to set this to near maximun (and try larger values instead of `-100` to decrease the volume a bit again).
 
-Install Autobahn|Python
+Install AutobahnPython
 
-```console
-sudo pip install autobahn
-```
+    sudo pip install autobahn[twisted]
 
 ### Running the Speech Synthesis
 
@@ -57,45 +44,34 @@ You need a Crossbar.io instance for the Speech Synthesis adapter on the Pi and t
 
 The simplest way is to navigate to `iotcookbook/device/pi/speechsynt` in your local `crossbarexamples` repo, and do
 
-```console
-crossbar start
-```
+    crossbar start
 
-This will also serve the browser frontend under
-
-```
-http://localhost:8080/speechsynth_frontend.html
-```
+This will also serve the browser frontend under `http://localhost:8080/speechsynth_frontend.html`.
 
 Get `speechsynth_adapter.py` onto the Pi, e.g. via scp
 
-```console
-scp speechsynth_adapter.py pi@<IP of your Pi>:~/
-```
+    scp speechsynth_adapter.py pi@<IP of your Pi>:~/
 
 and then start it, passing the URL of Crossbar.io and the realm to connect to, e.g.
 
-```console
-python speechsynth_adapter.py --router 'ws://192.168.1.134:8080/ws' --realm 'iot_cookbook'
-```
+    python speechsynth_adapter.py \
+        --router 'ws://192.168.1.134:8080/ws' \
+        --realm 'iot_cookbook'
 
 Then use the browser frontend to send a text of your choice. (Be aware that the full text you send is rendered to audio before playback starts. Long texts can take a while to start - so better to chunk them into smaller bits.)
-
 
 ## The API
 
 The adapter exposes these procedures
 
 * `io.crossbar.examples.iot.devices.pi.<DEVICE ID>.speechsynth.say` - takes a string as argument ([string]). Returns once the text has been processed and spoken. Fails if text is currently being spoken (so check first using the procedure below).
-
-* `io.crossbar.examples.iot.devices.pi.<DEVICE ID>.speechsynth.is_busy` - returns true if a text is presently being spoken or processed. 
+* `io.crossbar.examples.iot.devices.pi.<DEVICE ID>.speechsynth.is_busy` - returns true if a text is presently being spoken or processed.
 
 and publishes event to these topics
 
 * `io.crossbar.examples.iot.devices.pi.<DEVICE ID>.speechsynth.on_ready` - sent once the component is initialized
 * `io.crossbar.examples.iot.devices.pi.<DEVICE ID>.speechsynth.on_speech_start` - sent when the processing of received text has started
 * `io.crossbar.examples.iot.devices.pi.<DEVICE ID>.speechsynth.on_speech_end` - sent when the processing and output of speech has finished.
-
 
 ## Using it
 

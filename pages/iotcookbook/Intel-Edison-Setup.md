@@ -1,3 +1,5 @@
+# Intel Edison Setup
+
 ## Firmware Update
 
 In general, the Edison is a very handsome device. However, firmware update, as with other devices, can be tricky.
@@ -11,11 +13,11 @@ Then, goto [Intel Edison downloads](https://software.intel.com/en-us/iot/hardwar
 Make sure the little switch on the Edison expansion board points towards the two micro USB connectors. But do NOT yet connect the Edison to your computer! The order (and timing) of the following steps is essential.
 
 1. Start Intel Flash Tool Lite
-2. Connect the micro USB J3 on the Edison expansion board to your computer (but NOT the other USB!)
-3. Select downloaded image (click the "Browse" button)
-4. Select "Configuration: RNDIS" (Windows) or "Configuration: CDC" (Linux)
-5. Click "Start to flash"
-6. Now (yes, only now!), quickly (!) first plug in the 2nd micro USB (J16)
+1. Connect the micro USB J3 on the Edison expansion board to your computer (but NOT the other USB!)
+1. Select downloaded image (click the "Browse" button)
+1. Select "Configuration: RNDIS" (Windows) or "Configuration: CDC" (Linux)
+1. Click "Start to flash"
+1. Now (yes, only now!), quickly (!) first plug in the 2nd micro USB (J16)
 connecting to your computer, and secondly plug in external power supply
 
 The tool should now detect the device and start to flash. If everything
@@ -34,19 +36,15 @@ On Windows, follow [this](https://software.intel.com/en-us/setting-up-serial-ter
 
 On Linux, do:
 
-```console
-sudo apt-get install screen
-sudo screen /dev/ttyUSB0 115200
-```
+    sudo apt-get install screen
+    sudo screen /dev/ttyUSB0 115200
 
 Then hit RETURN twice and login as `root`. You don't need as password when logging in via serial. Then, configure the Edison's name, Wifi and root password (required for SSH) by doing:
 
-```console
-configure_edison --name
-configure_edison --wifi
-configure_edison --password
-reboot
-```
+    configure_edison --name
+    configure_edison --wifi
+    configure_edison --password
+    reboot
 
 When the Edison has rebooted, you should be able to log into the Edison via SSH from your local network the Edison has connected to.
 
@@ -65,10 +63,8 @@ Intel has published [MRAA](https://github.com/intel-iot-devkit/mraa), an open-so
 
 We'll be using this library. To install, login to the Edison and:
 
-```console
-opkg update
-opkg install libmraa0
-```
+    opkg update
+    opkg install libmraa0
 
 You can find the docs here:
 
@@ -80,7 +76,7 @@ You can find the docs here:
 
 To install AutobahnPython, first configure additional pacakge repositories on the Edison. Login to the Edison and edit `/etc/opkg/base-feeds.conf` for:
 
-```
+```plain
 src/gz all http://repo.opkg.net/edison/repo/all
 src/gz edison http://repo.opkg.net/edison/repo/edison
 src/gz core2-32 http://repo.opkg.net/edison/repo/core2-32
@@ -88,11 +84,9 @@ src/gz core2-32 http://repo.opkg.net/edison/repo/core2-32
 
 Then do
 
-```console
-opkg update
-opkg install python-pip
-pip install autobahn[twisted,accelerate,serialization]
-```
+    opkg update
+    opkg install python-pip
+    pip install autobahn[twisted,accelerate,serialization]
 
 This will take some minutes. You can check the installation:
 
@@ -128,7 +122,7 @@ while True:
 
 To install AutobahnPython, first configure additional pacakge repositories on the Edison. Login to the Edison and edit `/etc/opkg/base-feeds.conf` for:
 
-```
+```plain
 src/gz all http://repo.opkg.net/edison/repo/all
 src/gz edison http://repo.opkg.net/edison/repo/edison
 src/gz core2-32 http://repo.opkg.net/edison/repo/core2-32
@@ -136,11 +130,9 @@ src/gz core2-32 http://repo.opkg.net/edison/repo/core2-32
 
 Then do
 
-```console
-opkg update
-opkg install nodejs
-npm install -g autobahn
-```
+    opkg update
+    opkg install nodejs
+    npm install -g autobahn
 
 This will take some minutes. You can check the installation:
 

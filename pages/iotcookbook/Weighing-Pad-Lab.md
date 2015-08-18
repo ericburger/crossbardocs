@@ -1,3 +1,5 @@
+# Weighing Pad Lab
+
 --- under construction ---
 
 `wpadlab` is an application which
@@ -10,25 +12,19 @@
 
 ## Setup
 
-`wpadlab` consist of a Web frontend and a (Python) backend component which stores training data for further use. 
+`wpadlab` consist of a Web frontend and a (Python) backend component which stores training data for further use.
 
 You need [Crossbar.io installed](../docs/Local-Installation).
 
 The code for wpadlab can be found in the [crossbarexamples GitHub repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. You need to clone this (or [download it as a ZIP file](https://github.com/crossbario/crossbarexamples/archive/master.zip)).
 
-Once you've done so, start Crossbar.io in the app directory (`iotcookbook/app/weight/wpadlab`) by doing 
+Once you've done so, start Crossbar.io in the app directory (`iotcookbook/app/weight/wpadlab`) by doing
 
-```shell
-crossbar start
-```
+    crossbar start
 
 In addition to starting the WAMP router through which components connect, this automatically runs the Python backend component and serves the Web frontend.
 
-Go to the Web frontend at 
-
-```
-http://localhost:8080
-```
+Go to the Web frontend at `http://localhost:8080`.
 
 To generate a model and to derive the parameters for the model [IPython](http://ipython.org/). IPython provides browser-based notebooks with support for code, rich text, mathematical expressions, inline plots and other rich media.
 
@@ -77,9 +73,7 @@ To help with this we provide an IPython notebook. This can load training sets an
 
 Once you have installed IPython ("pip install 'ipython[notebook]'" should do the trick), go to the `notebook` subdirectory in the app directory and start the IPython notebook server by doing
 
-```shell
-ipython notebook
-```
+    ipython notebook
 
 This should automatically open a page with the directory of available notbooks in your default browser. (Otherwise you can access this at `localhost:8888/tree`). Select the notebook `estimate_model.ipynb`.
 
@@ -89,7 +83,7 @@ The documentation for what to do in this notebook is part of the notebook itself
 
 Once you've used the IPython notebook to derive the correct parameters for your use case you can load this model into wpadlab and test its output. Just as with the saving of training sets, the loading of parameters is done via a WAMP call to the Python backend component. You need to enter the name of the parameter set you wish to use, as it was displayed in the IPython notebook when storing it.
 
-Once you've loaded the model, you'll receive numeric output for the predicted value. 
+Once you've loaded the model, you'll receive numeric output for the predicted value.
 
 ### Using and adapting the model code
 

@@ -1,3 +1,5 @@
+# Remote control Reveal.js presentations via WAMP
+
 Control a Reveal.js presentation remotely via WAMP.
 
 ## What is Reveal.js?
@@ -9,15 +11,9 @@ Control a Reveal.js presentation remotely via WAMP.
 The code for this can be found in the [crossbarexamples GitHub repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. You need to clone this (or [download it as a ZIP file](https://github.com/crossbario/crossbarexamples/archive/master.zip)).
 Then navigate to 'iotcookbook/device/browser/revealremote' and do
 
-```
-crossbar start
-```
+    crossbar start
 
-This will serve a demo page with some sample controls at
-
-```
-localhost:8080
-```
+This will serve a demo page with some sample controls at `http://localhost:8080`.
 
 Then open the provided sample presentation using the link in the first line of the control page.
 
@@ -29,7 +25,7 @@ The API consists of two topics:
 
 For navigation there is
 
-```
+```javascript
 session.publish('io.crossbar.revealremote.navigate', [action]);
 ```
 
@@ -46,7 +42,7 @@ where `action` is one of
 
 For setting auto play options there's
 
-```
+```javascript
 sesion.publish('io.crossbar.revealremote.update_autoplay', [delay, loop]);
 ```
 
@@ -76,4 +72,4 @@ As is, both `revealremote.js` and the provided control page assume that they are
 ## Links
 
 * [Reveal.js](https://github.com/hakimel/reveal.js/)
-* [remote control webpage content via WAMP](Browser Remote Control) - combine this with the reveal control to e.g. do playlists of presentations, or presentations with other web content 
+* [remote control webpage content via WAMP](Browser-Remote-Control) - combine this with the reveal control to e.g. do playlists of presentations, or presentations with other web content

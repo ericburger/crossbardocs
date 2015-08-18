@@ -1,3 +1,5 @@
+# Weighing Pads
+
 A simple, robust and cheap weight sensor is something which lends itself to many uses, from checking current storage levels of printer paper (packs in the printer room, not sheets in the printer) to dance games or interactive twister.
 
 Here we show how to construct such a weight sensor in two different variants. For connecting it to receive the current data see e.g. the [Arduino Yun Weighing Pad component](Arduino Yun Weighing Pad).
@@ -14,7 +16,7 @@ A guiding principle in constructing the sensor is to keep elastic layers to a mi
 
 There are many ways of making sensors. (Experimenting with some approaches has given us a deeper appreciationg of what hardware engineers do.) Here we present two recipes that worked for us. These are just suggestions - you can build them as we show it, or you can use them as a starting point for your own experiments. Should you come up with your own version which works well for your use case, then please send us a description which we can add here!
 
-* [The Pad](Pressure Pad) - Felt pads, used in the [Euro Pallet Load App](Euro Pallet Load) 
+* [The Pad](Pressure Pad) - Felt pads, used in the [Euro Pallet Load App](Euro Pallet Load)
 * [The Mini](Mini Weight Sensor) - About the simplest possible sensor
 
 > Note: The range over which the sensors measure precisely depends in large part on the precise type of foil used. With any of these sensors, you need to perform calibration yourself. We provide calibration tool which collects data for particular loads you want to distinguish - [wpadlab](wpadlab).
@@ -22,7 +24,7 @@ There are many ways of making sensors. (Experimenting with some approaches has g
 
 ## Sourcing the plastic foil
 
-Sourcing the plastic foil may be the hardest part about the recipes, since it is not commonly available. 
+Sourcing the plastic foil may be the hardest part about the recipes, since it is not commonly available.
 
 We got some from an IoT kit ([plug & wear](http://www.plugandwear.com), PW074, Shaped Analog Sensor Kit).
 

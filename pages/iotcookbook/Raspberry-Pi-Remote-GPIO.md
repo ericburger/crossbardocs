@@ -1,7 +1,8 @@
+# Remoting the Pi GPIOs
+
 **-- under construction --**
 
 The example shows how to expose two LEDs and a button wired to the Pi's [GPIOs](https://www.raspberrypi.org/documentation/usage/gpio/) via WAMP so you can turn on/off the LEDs and sense the button from **any other** WAMP component.
-
 
 ## Try it out
 
@@ -11,7 +12,7 @@ Comes with a frontend running in browsers. The frontend is written in JavaScript
 
 ### The hardware side
 
-
+Write me.
 
 ### The software side
 
@@ -19,26 +20,19 @@ The code for this can be found in the [crossbarexamples GitHub repository](https
 
 If you don't have aleady, login to your Pi and install Autobahn:
 
-```console
-sudo pip install autobahn
-```
+    sudo pip install autobahn[twisted]
 
 > If you run a recent Raspbian, you are all set. If not, you might need to install [RPi.GPIO](https://pypi.python.org/pypi/RPi.GPIO) `sudo apt-get install python-dev python-rpi.gpio`
 
-
 Copy the backend component from your computer to the Pi:
 
-```console
-scp gpio_backend.py pi@<IP of your Pi>:~/
-```
+    scp gpio_backend.py pi@<IP of your Pi>:~/
 
 and login to start the component
 
-```
-sudo python gpio_adapter.py --router <WebSocket URL of your Crossbar.io Router>
-```
+    sudo python gpio_adapter.py --router <WebSocket URL of your Crossbar.io Router>
 
-> The backend has to run as root because it needs to access the GPIOs, which is a restricted operation. 
+> The backend has to run as root because it needs to access the GPIOs, which is a restricted operation.
 
 ## The API
 
@@ -57,16 +51,10 @@ and publishes event on these topics
 
 ## Using it
 
+Write me.
 
-
-
-
-## Links
+## Resources
 
 * http://pi.gadgetoid.com/pinout
 * http://makezine.com/projects/tutorial-raspberry-pi-gpio-pins-and-python/
 * https://learn.adafruit.com/playing-sounds-and-using-buttons-with-raspberry-pi/install-python-module-rpi-dot-gpio
-
-
-
-

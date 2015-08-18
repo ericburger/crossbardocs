@@ -1,3 +1,5 @@
+# Setting up the Pi for Digital Signage
+
 The easiest way to use the Raspberry Pi for Digital Signage is displaying content in a browser.
 
 The following tutorial describes how to set up a Pi so that it boots directly into Chromium and displays a preset Web page.
@@ -10,11 +12,9 @@ You need a Raspberry Pi with Raspian installed. We suggest using a second-genera
 
 ## Fixing the overscan problem
 
-You will most likely connect the Pi to a display using the HDMI port. With a standard configuration, overscan is still enabled, leaving a black border at the sides of the display (since you might connect the Pi to a CRT). In order to fix this, you need to edit `boot/config.txt`. This is easiest done by doing 
+You will most likely connect the Pi to a display using the HDMI port. With a standard configuration, overscan is still enabled, leaving a black border at the sides of the display (since you might connect the Pi to a CRT). In order to fix this, you need to edit `boot/config.txt`. This is easiest done by doing
 
-```
-sudo nano /boot/config.txt
-```
+   sudo nano /boot/config.txt
 
 which starts the nano editor with the file.
 
@@ -28,12 +28,10 @@ The following steps are based on an [excellent blog post](http://blogs.wcode.org
 
 You need to install some additional software. Do
 
-```bash
-sudo apt-get update
-sudo apt-get dist-upgrade
-sudo apt-get install matchbox chromium x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3 libnss3
-sudo reboot
-```
+   sudo apt-get update
+   sudo apt-get dist-upgrade
+   sudo apt-get install matchbox chromium x11-xserver-utils ttf-mscorefonts-installer xwit sqlite3 libnss3
+   sudo reboot
 
 ### Automatic resolution detection
 
@@ -43,7 +41,7 @@ This solution starts off by setting the internal framebuffer to its maximum (190
 
 Add the following to `/boot/config.txt`
 
-```
+```plain
 # 1900x1200 at 32bit depth, DMT mode
 disable_overscan=1
 framebuffer_width=1900
@@ -56,7 +54,7 @@ hdmi_group=2
 
 Then add the following to `/etc/rc.local`
 
-```
+```bash
 # Wait for the TV-screen to be turned on...
 while ! $( tvservice --dumpedid /tmp/edid | fgrep -qv 'Nothing written!' ); do
    bHadToWaitForScreen=true;
@@ -77,14 +75,13 @@ fbset --all --geometry $_XRES $_YRES $_XRES $_YRES $_DEPTH -left 0 -right 0 -upp
 sleep 1;
 ```
 
-
 ### Launching Chromium
 
 We want to launch Chromimum on startup, with any changes users might have made in the interim reverted. We also want to display a start page we configure.
 
 Add this to `/etc/rc.local`:
 
-```
+```bash
 if [ -f /boot/xinitrc ]; then
    ln -fs /boot/xinitrc /home/pi/.xinitrc;
    su - pi -c 'startx' &
@@ -93,7 +90,7 @@ fi
 
 You then need to create `/boot/xinitrc` with the following contents:
 
-```
+```bash
 #!/bin/sh
 while true; do
 
@@ -132,15 +129,13 @@ while true; do
 done;
 ```
 
-
 Be aware that even on a second-generation Pi, the full boot process takes a while - so be patient before deciding that you made a mistake somewhere along the way.
 
 The boot process erases any user changes since the last boot, so this should be OK for public usage. Of course, if you only need this as digital signage, just don't attach a mouse or keyboard!
-
 
 ## Components to load
 
 If you want to control what the browser displays, we currently offer two components which both utilize WAMP connections:
 
-* [browserremote](Browser Remote Control) which allows you to control the contents of another tab (i.e. you can display arbitrary web pages), as well as reloading the current tab or navigating away from it. (There is a problem with Chromium opening a new tab in a separate Window, so if you want to use this feature a bit of manual setup is required after startup.)
-* [revealremote](Reveal.js Remote Control) which allows you to remote control a [Reveal.js](http://lab.hakim.se/reveal-js/#/) presentation. These are authored in HTML, and offer you the full power of the browser in your presentations.
+* [Browser Remote Control](Browser-Remote-Control) which allows you to control the contents of another tab (i.e. you can display arbitrary web pages), as well as reloading the current tab or navigating away from it. (There is a problem with Chromium opening a new tab in a separate Window, so if you want to use this feature a bit of manual setup is required after startup.)
+* [Reveal Remote Control](Reveal-Remote-Control) which allows you to remote control a [Reveal.js](http://lab.hakim.se/reveal-js/#/) presentation. These are authored in HTML, and offer you the full power of the browser in your presentations.

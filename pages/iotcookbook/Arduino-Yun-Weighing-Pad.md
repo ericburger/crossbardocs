@@ -1,6 +1,8 @@
+# Building Weighing Pads using the Yun
+
 --- under construction ---
 
-The Arduino Yun Weighing Pad component publishes data from a weighing pad component (see [instructions for making these](Weighing Pad)). It can publish both raw data and events when certain configurable thresholds are passed. 
+The Arduino Yun Weighing Pad component publishes data from a weighing pad component (see [instructions for making these](Weighing Pad)). It can publish both raw data and events when certain configurable thresholds are passed.
 
 ## The sensor
 
@@ -12,10 +14,8 @@ The [weighing pad sensor](Weighing Pad) uses a type of plastic foil which change
 
 Using an Arduino XXX shield, here are step-by-step instructions:
 
-
 --- add instructions for connecting the sensors ---
 --- ask Tobias ---
-
 
 ### Software
 
@@ -25,15 +25,9 @@ Open a shell in the component directory (crossbarexamples/iotcookbook/device/yun
 
 Start up Crossbar.io:
 
-```shell
-crossbar start
-```
+    crossbar start
 
-This also serves a frontend where you can view the weighing pad data logged at
-
-```
-http://localhost:8080
-```
+This also serves a frontend where you can view the weighing pad data logged at `http://localhost:8080`.
 
 #### Configuration
 
@@ -41,8 +35,9 @@ In `weighingpad_yun.js`, add the URL of the machine on which Crossbar.io runs:
 
 ```javascript
 var connection = new autobahn.Connection({
-   url: "ws://<URL OF YOUR CROSSBAR INSTANCE>/ws", // replace with the url of your crossbar instance
-   realm: "iot_cookbook"
+    // replace with the url of your crossbar instance
+    url: "ws://<URL OF YOUR CROSSBAR INSTANCE>/ws",
+    realm: "iot_cookbook"
 });
 ```
 
@@ -50,10 +45,10 @@ You need to set up the Yun for [using AutobahnJS](Arduino Yun AutobahnJS Setup),
 
 The general configuration for the component is:
 
-   * the pins to which weighing pads are connected
-   * an id for the Yun which is used for the publication topic or sent as part of the data
-   * the sampling frequency (how many milliseconds pass between polling for values)
-   * whether data is sent continuously or only if there has been a value change
+* the pins to which weighing pads are connected
+* an id for the Yun which is used for the publication topic or sent as part of the data
+* the sampling frequency (how many milliseconds pass between polling for values)
+* whether data is sent continuously or only if there has been a value change
 
 The configuration is in the `config` variable, and as a default raw data is published every 200 milliseconds.
 
@@ -68,24 +63,19 @@ With **changes in user-defined units**, only a single unit value is transmitted 
 
 For creating the sets of sensor readings, you can use the [wpadlab](Wpadlab).
 
-Once you've got things configured, transfer `weighingpad_yun.js` to the Yun, e.g. by doing 
+Once you've got things configured, transfer `weighingpad_yun.js` to the Yun, e.g. by doing
 
-
-```shell
-scp weighingpad_yun.js root@<IP of your Yun>:~/
-```
+    scp weighingpad_yun.js root@<IP of your Yun>:~/
 
 in the component directory.
 
 Then run the file on the Yun.
 
-```shell
-node weighingpad_yun.js
-```
+    node weighingpad_yun.js
 
 which should log something like
 
-```shell
+```console
 Arduino Yun Weighing Pads starting ...
 Arduino connected (over /dev/ttyATH0, board version 2.3)
 Connecting to router ...
@@ -95,22 +85,16 @@ Router connected. Session ID: 1311074825864401
 setting mode for pin 1
 setting mode for pin 2
 publishing:  { '1': 992, '2': 1001 }
+...
 ```
 
 In the above example, two weighing pads are connected (pins 1 & 2).
 
 ### The API
 
-The components publishes the current weighing pad data as an event
+The components publishes the current weighing pad data as an event `io.crossbar.examples.yun.weighingpad.on_sample`. The payload is an object, e.g.
 
-```
-io.crossbar.examples.yun.weighingpad.on_sample
-```
-
-The payload is an object, e.g. 
-
-
-```javascript
+```json
 {
    id: "yun1",
    samples: {
@@ -122,21 +106,9 @@ The payload is an object, e.g.
 
 and the frequency of publication depends on the configuration.
 
-To allow retrieval of the configuration, the component subscribes to
+To allow retrieval of the configuration, the component subscribes to `io.crossbar.examples.yun.weighingpad.who_is_out_there` and responds with a publication to `io.crossbar.examples.yun.weighingpad.i_am_here` which contains its configuration as the payload, e.g.
 
-```
-io.crossbar.examples.yun.weighingpad.who_is_out_there
-```
-
-and responds with a publication to 
-
-```
-io.crossbar.examples.yun.weighingpad.i_am_here
-```
-
-which contains its configuration as the payload, e.g.
-
-```javascript
+```json
 {
    id: "yun1",
    pins: [1, 2],
@@ -145,15 +117,9 @@ which contains its configuration as the payload, e.g.
 }
 ```
 
-To change the configuration, the component registers a procedure, e.g.
+To change the configuration, the component registers a procedure, e.g. `io.crossbar.examples.yun.weighingpad.yun1.configure` which can be called with any subset of confguration values, e.g.
 
-```
-io.crossbar.examples.yun.weighingpad.yun1.configure
-```
-
-which can be called with any subset of confguration values, e.g.
-
-```
+```json
 {
    id: "parkingSpace_01"
 }
@@ -161,7 +127,7 @@ which can be called with any subset of confguration values, e.g.
 
 to change the ID contained in the values event to, and to which the yun responds to "parkingSpace_01". (This results in a de-registration and re-registration of the configuration procedure, which would now be reachable under `io.crossbar.examples.yun.weighingpad.parkingSpace_01.configure`.), or
 
-```
+```json
 {
    frequency: 10,
    publishOnDifference: true,
@@ -170,8 +136,6 @@ to change the ID contained in the values event to, and to which the yun responds
 ```
 
 which would switch the sending of events from a constant stream (at the sampling frequency) to events only sent when there are value changes which exceed the difference threshold (set here to `100`), as well as setting a new sampling frequency.
-
-
 
 --------------- Advanced version - work in progress ----------------
 
@@ -223,92 +187,84 @@ var config = {
 ];
 ```
 
-In the above configuration, the yun sending the data is identified by the instance name. Three weighing pads are connected. 
+In the above configuration, the yun sending the data is identified by the instance name. Three weighing pads are connected.
 
-The first weighing pad connected to pin  1 sends its current value every second (1000 ms), which is useful if you only need to check for more permanent pressure changes, e.g. whether a car is parked or not. 
+The first weighing pad connected to pin  1 sends its current value every second (1000 ms), which is useful if you only need to check for more permanent pressure changes, e.g. whether a car is parked or not.
 
-With the second pad, connected to pin 2 the sampling frequency is 50 ms, allowing more fine-grained detection of pressure changes. 
+With the second pad, connected to pin 2 the sampling frequency is 50 ms, allowing more fine-grained detection of pressure changes.
 
 For the third pad, connected to pin 3, events are produced if: the pressure is a value between 0 and 5% of the configured range and this persists for at least 1 second ("empty"), if the pressure is between 23% and 100% and this persists for at least 1 s ("permanent"), and if the pressure is above 60% for even a single sample ("impulse"). The sampling frequency for events is set to 1 ms.
 
 --- do we need to configure a range per pad? test this! ---
 
-If all you set is the pin, then the component defaults to continuous transmission with a sampling frequency of 100ms. 
+If all you set is the pin, then the component defaults to continuous transmission with a sampling frequency of 100ms.
 
-If you have a pad connected but do not wish to receive data or events for it, then set the type to `none`. 
+If you have a pad connected but do not wish to receive data or events for it, then set the type to `none`.
 
 The configuration can be changed via WAMP calls during operation (see below).
 
-Transfer `weighingpad_yun.js` on the Yun, e.g. by doing 
+Transfer `weighingpad_yun.js` on the Yun, e.g. by doing
 
-```console
-scp weighinpad_yun.js root@<IP of your Yun>:~/
-```
+    scp weighinpad_yun.js root@<IP of your Yun>:~/
 
-Then run `weighingpad_yun.js` 
+Then run `weighingpad_yun.js`
 
-```shell
-node weighingpad.js
-```
+    node weighingpad.js
 
 This should log something like
 
-```shell
+```console
 Arduino Yun Weighingpad starting ...
 Arduino connected (over /dev/ttyATH0, board version 2.3)
 Connecting to router ...
 Router connected. Session ID: 1595783623
+...
 ```
 
 Once this is running, open the browser console for the frontend page. You'll see data and evnets logged as they are received, e.g. for a single weighing pad at the default continuos transmission.
 
-```javascript
+```console
 received weighingpad sample data: yun1, pin 1, value 2
 received weighingpad sample data: yun1, pin 1, value 1
 received weighingpad sample data: yun1, pin 1, value 2
+...
 ```
 
 ### The API
 
-The component publishes two types of events: continuous sampling events and treshold events:
+The component publishes two types of events: continuous sampling events and threshold events:
 
-```
-io.crossbar.examples.yun.weighingpad.on_sample
-io.crossbar.examples.yun.weighingpad.on_event
-```
+* `io.crossbar.examples.yun.weighingpad.on_sample`
+* `io.crossbar.examples.yun.weighingpad.on_event`
 
 Sample events have the structure:
 
-{ 
+```json
+{
    instance: "yun1"
    pin: 1,
    value: 34
 }
+```
 
 Threshold events have the structure:
 
+```json
 {
    instance: "yun1"
    pin: 4,
    name: "impulse"
 }
+```
 
 It also registers two procedures:
 
-```
-io.crossbar.examples.yun.weighingpad.<instance_name>.get_config
-```
-
-which returns the current configuration and
-
-```
-io.crossbar.examples.yun.weighingpad.<instance_name>.update_config
-```
-
-which can be called to update the current configuration. 
+* `io.crossbar.examples.yun.weighingpad.<instance_name>.get_config` - returns the current configuration and
+* `io.crossbar.examples.yun.weighingpad.<instance_name>.update_config` - can be called to update the current configuration.
 
 The call takes a dictionary of the same format as the config. As an example, assume the following dictionary were sent to an instance currently configured as "yun1" with the configuration listed earlier in this documentation:
 
+```javascript
 var config = {
    instance: "my_yun_3",
    pads: [
@@ -338,15 +294,14 @@ var config = {
          frequency: 1
       }
    ]
-];
+};
+```
 
 This accomplished the following changes:
 
 * The pad connected to pin 1 no longer transmits any data.
 * The pad connected to pin 3 no longer transmits an "empty" event, the duration of pressure needed to trigger the "permanent" threshold event is lowered to 500ms, and a new threshold event "transient" is added.
 * The pad connected to pin 5 now transmits continuos sampling data at a sampling frequency of 1 ms.
-
-   
 
 --------------------
 
@@ -402,5 +357,3 @@ The 6 weighing pads are connected to the base station over 6 cables using Mini-D
 * 5V
 * Digital Out 1 (for LED)
 * Analog IN 1 - 4 (for pressure sensors)
-
-

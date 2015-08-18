@@ -1,8 +1,8 @@
+# Pi Sample Player
+
 Trigger samples stored on your Pi via WAMP messages, add samples via URL.
 
-<div class="topimage_container">
-   <img class="topimage" src="/static/img/iotcookbook/speech_raspberry_pi.jpg" alt="">   
-</div>
+![Pi with speaker](/static/img/iotcookbook/speech_raspberry_pi.jpg)
 
 The example uses the [pygame library mixer](https://www.pygame.org/docs/ref/mixer.html) to play samples stored on the Pi in WAV or OGG format.
 
@@ -16,36 +16,25 @@ Included is a frontend running in the browser. The frontend is written in JavaSc
 
 [Enable audio](https://www.raspberrypi.org/documentation/configuration/audio-config.md) output on the 3.5mm plug:
 
-```console
-sudo amixer cset numid=3 1
-```
+    sudo amixer cset numid=3 1
 
 The volume may be a bit low. To increase that to (near) the maximum, do
 
-```shell
-sudo amixer set PCM -- -100
-```
+    sudo amixer set PCM -- -100
 
 to set this to near maximun (and try larger values instead of `-100` to decrease the volume a bit again).
 
 Install or update `pygame`:
 
-```shell
-pip install -U pygame
-```
+    pip install -U pygame
 
-Install Autobahn|Python
+Install AutobahnPython
 
-```console
-sudo pip install autobahn
-```
+    sudo pip install autobahn[twisted]
 
 Install `treq`
 
-```shell
-pip install treq
-```
-
+    pip install treq
 
 ### Running the Sample Player
 
@@ -55,32 +44,22 @@ You need a Crossbar.io instance for the Sample Player adapter on the Pi and the 
 
 The simplest way is to navigate to `iotcookbook/device/pi/sampleplayer` in your local `crossbarexamples` repo, and do
 
-```console
-crossbar start
-```
+    crossbar start
 
-This will also serve the browser frontend under
-
-```
-http://localhost:8080
-```
+This will also serve the browser frontend under `http://localhost:8080`.
 
 Get the player and some sample files onto the Pi, e.g. via scp
 
-```console
-scp sampleplayer_pi.py pi@<IP of your Pi>:~/
-scp -r samples pi@192.168.1.136:~/
-```
+    scp sampleplayer_pi.py pi@<IP of your Pi>:~/
+    scp -r samples pi@192.168.1.136:~/
 
 and then start it
 
-```console
-python sampleplayer_pi.py
-```
+    python sampleplayer_pi.py
 
 Then use the browser frontend to trigger one of the preset samples, or upload a sample. Samples can be in WAV or OGG format. (If you have another format, then you need to convert to one of these formats.)
 
-When uploading, the sample is stored in the `samples` folder on the Pi. It can be triggered using the provided sample name. It is automatically added to the sample set on next startup. 
+When uploading, the sample is stored in the `samples` folder on the Pi. It can be triggered using the provided sample name. It is automatically added to the sample set on next startup.
 
 
 ## The API

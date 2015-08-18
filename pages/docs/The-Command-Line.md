@@ -1,12 +1,18 @@
 ## Quick Reference
 
-* `crossbar version` Print Crossbar.io version
-* `crossbar init` Initializes a new Crossbar.io node from an application template
-* `crossbar start` Starts a Crossbar.io node
-* `crossbar stop` Stops a Crossbar.io node
-* `crossbar restart` Restarts a Crossbar.io node
-* `crossbar status` Check if a Crossbar.io node is running
-* `crossbar convert` Converts a Crossbar.io node configuration file from JSON to YAML and vice-versa
+Here is a quick reference of all commands available in the Crossbar.io CLI:
+
+Command | Description
+--- | ---
+`crossbar --help` | Get help
+`crossbar <command> --help` | Get help on `command` (see below)
+`crossbar version` | Print Crossbar.io version
+`crossbar init` | Initializes a new Crossbar.io node from an application template
+`crossbar start` | Starts a Crossbar.io node
+`crossbar stop` | Stops a Crossbar.io node
+`crossbar restart` | Restarts a Crossbar.io node
+`crossbar status` | Check if a Crossbar.io node is running
+`crossbar convert` | Converts a Crossbar.io node configuration file from JSON to YAML and vice-versa
 
 ## The command line
 

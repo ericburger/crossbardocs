@@ -1,3 +1,5 @@
+# Browser Remote Control
+
 Control your browser remotely via WAMP.
 
 Features
@@ -19,19 +21,11 @@ These features are just a basic set, and can be easily extended to other control
 The code for this can be found in the [crossbarexamples GitHub repository](https://github.com/crossbario/crossbarexamples) under `iotcookbook`. You need to clone this (or [download it as a ZIP file](https://github.com/crossbario/crossbarexamples/archive/master.zip)).
 
 
-Then navigate to 'iotcookbook/device/browser/browserremote' and do
+Then navigate to 'iotcookbook/device/browser/browserremote' and start Crossbar.io from there
 
-```
-crossbar start
-```
+    crossbar start
 
-This will serve a demo page with the sample controls at
-
-```
-localhost:8080
-```
-
-Then launch the page to control using the provided link.
+This will serve a demo page with the sample controls at `http://localhost:8080`. Then launch the page to control using the provided link.
 
 ## The API
 
@@ -43,7 +37,7 @@ session.publish("io.crossbar.examples.remotecontrol.on_reload");
 
 **Navigate**
 
-```
+```javascript
 session.publish("io.crossbar.examples.remotecontrol.on_navigate", [newUrl]);
 ```
 
@@ -63,7 +57,6 @@ session.publish("io.crossbar.examples.remotecontrol.on_close_external");
 
 > Note: Since only a single external tab is ever opened, this does not require any arguments to identify the tab to close.
 
-
 > General Note: The above actions may more naturally be expressed through RPCs. However, with PubSub simultaneous control of multiple displays is possible. I just felt that this beat other considerations. (Alex)
 
 ## Using it
@@ -81,4 +74,4 @@ As is, both `remote.js` and the provided control page assume that they are being
 
 ## Where next
 
-* [Remote control Reveal.js presentations via WAMP](Reveal.js Remote Control)
+* [Remote control Reveal.js presentations via WAMP](Reveal-Remote-Control)
