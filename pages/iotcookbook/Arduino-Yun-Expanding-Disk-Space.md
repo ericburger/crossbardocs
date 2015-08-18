@@ -1,4 +1,4 @@
-# Expanding the Yun's disk
+# Expanding the Yun disk
 
 This page contains instructions for how to exand the disk space available on the Yun using a microSD card.  For an overview of all materials we have concerning the Yun, please see [here](Arduino Yun).
 

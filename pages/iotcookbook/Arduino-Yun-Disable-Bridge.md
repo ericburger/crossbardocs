@@ -1,4 +1,4 @@
-# Disabling the Yun's Serial bridge
+# Disabling the Yun Serial bridge
 
 We are using the serial connection between the MCU and the CPU. By default, there is a console attached on the Linux side to the serial, and we need to disable that.
 
