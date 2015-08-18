@@ -76,7 +76,7 @@ You can find the docs here:
 
 To install AutobahnPython, first configure additional pacakge repositories on the Edison. Login to the Edison and edit `/etc/opkg/base-feeds.conf` for:
 
-```plain
+```text
 src/gz all http://repo.opkg.net/edison/repo/all
 src/gz edison http://repo.opkg.net/edison/repo/edison
 src/gz core2-32 http://repo.opkg.net/edison/repo/core2-32
@@ -122,7 +122,7 @@ while True:
 
 To install AutobahnPython, first configure additional pacakge repositories on the Edison. Login to the Edison and edit `/etc/opkg/base-feeds.conf` for:
 
-```plain
+```text
 src/gz all http://repo.opkg.net/edison/repo/all
 src/gz edison http://repo.opkg.net/edison/repo/edison
 src/gz core2-32 http://repo.opkg.net/edison/repo/core2-32

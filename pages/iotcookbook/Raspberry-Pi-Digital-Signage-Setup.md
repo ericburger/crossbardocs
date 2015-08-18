@@ -41,7 +41,7 @@ This solution starts off by setting the internal framebuffer to its maximum (190
 
 Add the following to `/boot/config.txt`
 
-```plain
+```text
 # 1900x1200 at 32bit depth, DMT mode
 disable_overscan=1
 framebuffer_width=1900
@@ -54,7 +54,7 @@ hdmi_group=2
 
 Then add the following to `/etc/rc.local`
 
-```bash
+```shell
 # Wait for the TV-screen to be turned on...
 while ! $( tvservice --dumpedid /tmp/edid | fgrep -qv 'Nothing written!' ); do
    bHadToWaitForScreen=true;
@@ -81,7 +81,7 @@ We want to launch Chromimum on startup, with any changes users might have made i
 
 Add this to `/etc/rc.local`:
 
-```bash
+```shell
 if [ -f /boot/xinitrc ]; then
    ln -fs /boot/xinitrc /home/pi/.xinitrc;
    su - pi -c 'startx' &
@@ -90,7 +90,7 @@ fi
 
 You then need to create `/boot/xinitrc` with the following contents:
 
-```bash
+```shell
 #!/bin/sh
 while true; do
 

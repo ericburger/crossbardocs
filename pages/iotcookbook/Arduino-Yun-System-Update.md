@@ -11,7 +11,7 @@ There are two ways to update the Yun's System:
 
 ## Updating via the Web interface
 
-If the Yun serves as a WiFi access point (i.e. you haven't yet configured it to connect to a WiFi network) the Web interface is served at ```http://192.168.240.1```. If you've connected via WiFi, or are connected via Ethernet, you get to it via the IP that the Yun has been assigned in your network (check in your router, or use a tool like [Fing](http://www.overlooksoft.com/), which is available for multiple systems including mobiles).
+If the Yun serves as a WiFi access point (i.e. you haven't yet configured it to connect to a WiFi network) the Web interface is served at `http://192.168.240.1`. If you've connected via WiFi, or are connected via Ethernet, you get to it via the IP that the Yun has been assigned in your network (check in your router, or use a tool like [Fing](http://www.overlooksoft.com/), which is available for multiple systems including mobiles).
 
 You need to get the download  to the upgrade from the [Arduino downloads page](http://www.arduino.cc/en/Main/Software) and store it locally.
 
