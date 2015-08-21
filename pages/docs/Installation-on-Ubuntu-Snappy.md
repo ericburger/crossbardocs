@@ -1,5 +1,8 @@
+# Installation on Ubuntu Snappy
+
 [Ubuntu Snappy](http://www.ubuntu.com/cloud/tools/snappy) is a new kind of server operating system that uses a transactional updating scheme for applications.
-Crossbar.io publishes an official binary distribution for Ubuntu Snappy.
+
+**Crossbar.io publishes an official binary package for Ubuntu Snappy.**
 
 > Note: Ubuntu Snappy is a specialised version of regular Ubuntu. If you are using regular Ubuntu, please read [Installing on Ubuntu](Installing on Ubuntu) for installation instructions.
 
@@ -8,13 +11,11 @@ Crossbar.io publishes an official binary distribution for Ubuntu Snappy.
 
 On your Ubuntu Snappy server, run:
 
-```console
-sudo snappy install crossbar.crossbar
-```
+    sudo snappy install crossbar.crossbar
 
-> The crossbar.crossbar name is because it is the Crossbar package published by Crossbar.
+> The crossbar.crossbar name is because it is the Crossbar.io package published by the Crossbar.io project.
 
-This will download and install Crossbar.
+This will download and install Crossbar.io.
 
 You can check the version installed by running:
 
@@ -47,7 +48,6 @@ OS                           : Linux-3.19.0-15-generic-x86_64-with-glibc2.2.5
 Machine                      : x86_64
 ```
 
-
 ## Running
 
 Because of Ubuntu Snappy's tightened security, Snappy apps can only write to certain parts of the filesystem.
@@ -75,7 +75,6 @@ To start your node, run 'crossbar start --cbdir /home/ubuntu/apps/crossbar.cross
 2015-05-07 03:46:56+0000 [Controller   1740] Starting from node directory /home/ubuntu/apps/crossbar.crossbar/0.10.4/.crossbar
 2015-05-07 03:46:57+0000 [Controller   1740] Starting from local configuration '/home/ubuntu/apps/crossbar.crossbar/0.10.4/.crossbar/config.json'
 ```
-
 
 ## Next
 

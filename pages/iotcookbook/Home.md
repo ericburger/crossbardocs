@@ -1,18 +1,20 @@
 # The IoT Cookbook
 
+**Quick access by device:** [[Raspberry Pi]] | [[Arduino Yun]] | [[Tessel]] | [[Intel Edison]]
+
 The **IoT Cookbook** provides a collection of ready-to-build recipes for connected IoT components to create your next IoT application.
 
 Building on tested and documented components, makers and developers get a head start and can focus on creating their actual application functionality.
 
-<iframe allowtransparency="true" frameborder="0" scrolling="no" src="https://platform.twitter.com/widgets/tweet_button.html?url=http://crossbar.io/iotcookbook/&via=crossbario&count=none&hashtags=iot,wamp,crossbar&text=IoT Cookbook: ready-to-build, open-source recipes for connected IoT components" style="width:70px; height:20px;"></iframe>
-
 ---
-
-**Quick access by device type:** [[Raspberry Pi]] | [[Arduino Yun]] | [[Tessel]] | [[Intel Edison]]
 
 > NEWS, 2015/08/08: We've streamlined the Getting Started pages for all devices, in particular the Yun is now much simpler to setup. And we've released first pages for the Intel Edison.
 
 **CONTRIBUTING: This is work in progress. If you find errors, bugs or other issues in above, or if you have new contributions (awesome!!), we would be happy to receive your [feedback or PRs on GitHub](https://github.com/crossbario/crossbarwww)!**
+
+<!--
+<iframe allowtransparency="true" frameborder="0" scrolling="no" src="https://platform.twitter.com/widgets/tweet_button.html?url=http://crossbar.io/iotcookbook/&via=crossbario&count=none&hashtags=iot,wamp,crossbar&text=IoT Cookbook: ready-to-build, open-source recipes for connected IoT components" style="width:70px; height:20px;"></iframe>
+-->
 
 ## Overview
 

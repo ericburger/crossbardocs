@@ -1,41 +1,37 @@
-There are two methods of installing Crossbar -- from the official binary distribution, or from source.
+# Installation on Ubuntu
+
+There are two methods of installing Crossbar.io on Ubuntu -- from the official binary distribution (recommended), or from source.
 
 ## Installing the Official Distribution
 
-Crossbar hosts official binary packages for Ubuntu 14.04 LTS.
-If this is not the version of Ubuntu you are using, please install from source as mentioned below.
+Crossbar.io hosts official binary packages for **Ubuntu 14.04 LTS**.
+
+> If this is not the version of Ubuntu you are using, please install from source as mentioned below.
 
 First, install the repo's GPG key:
 
-```console
-sudo apt-key adv --keyserver hkps.pool.sks-keyservers.net --recv D58C6920
-```
+    sudo apt-key adv --keyserver hkps.pool.sks-keyservers.net --recv D58C6920
 
 Then add the repo to your server's apt sources:
 
-```console
-sudo sh -c "echo 'deb http://package.crossbar.io/ubuntu trusty main' > /etc/apt/sources.list.d/crossbar.list"
-```
+    sudo sh -c "echo 'deb http://package.crossbar.io/ubuntu trusty main' \
+        > /etc/apt/sources.list.d/crossbar.list"
 
 Update your package sources:
 
-```console
-sudo apt-get update
-```
+    sudo apt-get update
 
 Install Crossbar.io:
 
-```console
-sudo apt-get install crossbar
-```
+    sudo apt-get install crossbar
 
 You can then test the installation by printing out the versions of the Crossbar components.
 
-```console
-/opt/crossbar/bin/crossbar version
-```
+    /opt/crossbar/bin/crossbar version
 
-You're done! See _Next_.
+**You're done!**
+
+Ready for more? Then [choose your language or device of choice](Choose your Weapon).
 
 
 ## Installing from Source
@@ -52,88 +48,66 @@ This guide will install Crossbar.io in a virtualenv.
 
 Update your system, to make sure you have the latest packages:
 
-```console
-sudo apt-get update
-sudo apt-get dist-upgrade
-```
+    sudo apt-get update
+    sudo apt-get dist-upgrade
 
-Continue with _Setup for CPython_ or _Setup for PyPy_.
+Continue with [Setup for CPython](#setup-for-cpython) or [Setup for PyPy](setup-for-pypy).
 
 
 ### Setup for CPython
 
 First, install the requirements:
 
-```console
-sudo apt-get install build-essential libssl-dev libffi-dev python-dev python-pip
-```
+    sudo apt-get install build-essential libssl-dev libffi-dev python-dev python-pip
 
 Then create a new virtualenv:
 
-```console
-virtualenv ~/python-venv
-```
+    virtualenv ~/python-venv
 
 Finally, start working in the virtual environment:
 
-```console
-cd ~/python-venv/
-. bin/activate
-```
+    cd ~/python-venv/
+    . bin/activate
 
-Continue with the step _Installing **Crossbar.io**_.
+Continue with the step [Installing Crossbar.io](installing-crossbar.io).
 
 
 ### Setup for PyPy
 
 Add the PyPy PPA:
 
-```console
-sudo apt-add-repository ppa:pypy/ubuntu/ppa
-sudo apt-get update
-```
+    sudo apt-add-repository ppa:pypy/ubuntu/ppa
+    sudo apt-get update
 
 Install [PyPy](http://pypy.org/), pip, and build requirements:
 
-```console
-sudo apt-get install build-essential libssl-dev python-pip pypy pypy-dev
-```
+    sudo apt-get install build-essential libssl-dev python-pip pypy pypy-dev
 
 Then install virtualenv through pip:
 
-```console
-sudo pip install virtualenv
-```
+    sudo pip install virtualenv
 
 Create a PyPy virtualenv in the directory `pypy-venv`:
 
-```console
-virtualenv --python=pypy ~/pypy-venv
-```
+    virtualenv --python=pypy ~/pypy-venv
 
 Finally, start working in the virtual environment:
 
-```console
-cd ~/pypy-venv/
-. bin/activate
-```
+    cd ~/pypy-venv/
+    . bin/activate
 
-Continue with the step _Installing **Crossbar.io**_.
+Continue with the step [Installing Crossbar.io](installing-crossbar.io).
 
 
 ### Installing Crossbar.io
 
-To install **Crossbar**.io with minimal (required) dependencies:
+To install Crossbar.io with minimal (required) dependencies:
 
-```console
-pip install crossbar
-```
+    pip install crossbar
 
-To install **Crossbar**.io with all additional (optional) dependencies:
+To install Crossbar.io with all additional (optional) dependencies:
 
-```console
-pip install crossbar[all]
-```
+    pip install crossbar[all]
 
 To check the installation:
 
@@ -156,13 +130,11 @@ OS                           : Linux-3.16.0-30-generic-x86_64-with-Ubuntu-14.10-
 Machine                      : x86_64
 ```
 
-To update an existing **Crossbar**.io installation:
+To update an existing Crossbar.io installation:
 
-```console
-pip install -U crossbar
-```
+    pip install -U crossbar
 
-You can then invoke Crossbar without activating the virtualenv by running ``~/pypy-venv/bin/crossbar`` or ``~/python-venv/bin/crossbar``, depending on which Python interpreter you are using.
+You can then invoke Crossbar without activating the virtualenv by running `~/pypy-venv/bin/crossbar` or `~/python-venv/bin/crossbar`, depending on which Python interpreter you are using.
 
 
 ## Next

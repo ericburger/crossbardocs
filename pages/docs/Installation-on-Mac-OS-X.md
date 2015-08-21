@@ -1,3 +1,5 @@
+# Installation on MacOS X
+
 When installing on OS X, you have the choice of installing on CPython (the standard interpreter) or PyPy (a high performance interpreter).
 Both are good choices, but PyPy is generally faster (at the cost of a little extra RAM).
 
@@ -5,31 +7,23 @@ Both are good choices, but PyPy is generally faster (at the cost of a little ext
 
 Install pip:
 
-```console
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-sudo python get-pip.py
-```
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    sudo python get-pip.py
 
 Install virtualenv:
 
-```console
-sudo pip install -U virtualenv
-```
+    sudo pip install -U virtualenv
 
 Then create a new virtualenv:
 
-```console
-virtualenv ~/python-venv
-```
+    virtualenv ~/python-venv
 
 Finally, start working in the virtual environment:
 
-```console
-cd ~/python-venv/
-. bin/activate
-```
+    cd ~/python-venv/
+    . bin/activate
 
-Continue with the step _Installing **Crossbar.io**_.
+Continue with the step [Installing Crossbar.io](installing-crossbar.io).
 
 
 ## Setting up PyPy
@@ -40,45 +34,33 @@ Install Homebrew using the instructions on the [Homebrew site](http://brew.sh/).
 
 Then install PyPy:
 
-```console
-brew install pypy
-```
+    brew install pypy
 
 Install virtualenv:
 
-```console
-pypy -m pip install virtualenv
-```
+    pypy -m pip install virtualenv
 
 Create a PyPy virtualenv in the directory `pypy-venv`:
 
-```console
-pypy -m virtualenv ~/pypy-venv
-```
+    pypy -m virtualenv ~/pypy-venv
 
 Finally, start working in the virtual environment:
 
-```console
-cd ~/pypy-venv/
-. bin/activate
-```
+    cd ~/pypy-venv/
+    . bin/activate
 
-Continue with the step _Installing **Crossbar.io**_.
+Continue with the step [Installing Crossbar.io](installing-crossbar.io).
 
 
 ## Installing Crossbar.io
 
-To install **Crossbar**.io with minimal (required) dependencies:
+To install Crossbar.io with minimal (required) dependencies:
 
-```console
-pip install crossbar
-```
+    pip install crossbar
 
-To install **Crossbar**.io with all additional (optional) dependencies:
+To install Crossbar.io with all additional (optional) dependencies:
 
-```console
-pip install crossbar[all]
-```
+    pip install crossbar[all]
 
 To check the installation:
 
@@ -101,12 +83,9 @@ OS                           : Darwin-14.1.0-x86_64-i386-64bit
 Machine                      : x86_64
 ```
 
-To update an existing **Crossbar**.io installation:
+To update an existing Crossbar.io installation:
 
-```console
-pip install -U crossbar
-```
-
+    pip install -U crossbar
 
 ## Next
 

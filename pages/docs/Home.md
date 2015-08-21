@@ -1,4 +1,6 @@
-Welcome to the Crossbar.io documentation. Take a look at the [project homepage](http://crossbar.io/) if you haven't.
+# Crossbar.io Documentation
+
+Welcome to the Crossbar.io reference documentation.
 
 ## How it works
 
@@ -23,22 +25,28 @@ How to install Crossbar.io, and start using it with your language or device of c
 
 ### Installation
 
-Installing locally or in the cloud.
+Installing Crossbar.io locally (on your own metal):
 
 * [Local Installation](Local Installation)
-  * [Installation on Ubuntu](Installation on Ubuntu)
-  * [Installation on CentOS](Installation on CentOS)
-  * [Installation on Linux](Installation on Linux)
-  * [Installation on FreeBSD](Installation on FreeBSD)
+  * **[Installation on Ubuntu](Installation on Ubuntu)**
+  * **[Installation on CentOS](Installation on CentOS)**
+  * **[Installation on FreeBSD](Installation on FreeBSD)**
+  * [Installation on (generic) Linux](Installation on Linux)
   * [Installation on Mac OS X](Installation on Mac OS X)
   * [Installation on Windows](Installation on Windows)
   * [Installation on Docker](Installation on Docker)
-  * [Installation on the RaspberryPi](Installation on the RaspberryPi)
+  * [Installation on RaspberryPi](Installation on RaspberryPi)
   * [Installation on Ubuntu Snappy](Installation on Ubuntu Snappy)
+
+Setting up Crossbar.io on cloud platforms:
+
 * [Setup in the Cloud](Setup in the Cloud)
   * [Setup on Microsoft Azure](Setup on Microsoft Azure)
   * [Setup on Amazon EC2](Setup on Amazon EC2)
   * [Setup on Heroku](Setup on Heroku)
+
+Tracking the bleeding edge (for developers, and for the brave):
+
 * [Installation from Source](Installation from Source)
 * [Updating from the Repository](Updating from the Repository)
 

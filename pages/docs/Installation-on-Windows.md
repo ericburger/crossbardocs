@@ -1,9 +1,12 @@
-Crossbar.io is a Python application, with a few additional dependencies. Since Windows does not have any kind of dependency package management for applications, running Crossbar.io requires installing some of these dependencies manually.
+# Installation on Windows
+
+Crossbar.io is a Python application, with a few additional dependencies. Since Windows does not have a builtin package management for applications, installing Crossbar.io requires installing some of these dependencies manually.
 
 There are two possibilities to install Crossbar.io:
 
-* **Basic installation** - which is quick and simple, but leads to a Crossbar installation which lacks some features, e.g. SSL for connections. This is recommended for first trying out Crossbar. Demos and application templates work with basic installations.
-* **Full installation** - which requires installing more dependencies, but allows you to use all features of Crossbar.io.
+* [Basic installation](#basic-installation) - which is quick and simple, but leads to a Crossbar installation which lacks some features, e.g. SSL for connections. This is recommended for first trying out Crossbar. Demos and application templates work with basic installations.
+* [Full installation](#full-installation) - which requires installing more dependencies, but allows you to use all features of Crossbar.io.
+* [Installation from Source](#installation-from-source) - building everything (but Python) from sources
 
 ## Basic Installation
 
@@ -16,28 +19,24 @@ Crossbar.io is a Python application. In addition to Python, setup requires the P
 3. Download and install [PyWin32](http://sourceforge.net/projects/pywin32/files/pywin32/) - 32-bit version for Python 2.7 - 'win32'
 4. If you're on any Python version previous to 2.7.9, you need to install `pip`. Download the [`get-pip` script](https://bootstrap.pypa.io/get-pip.py) and run this (works from Windows Explorer or the download dialog of your browser).
 
-You now have all the dependencies for a basic Crossbar.io installation. 
+You now have all the dependencies for a basic Crossbar.io installation.
 
 ### Installing Crossbar.io
 
 Now you can install Crossbar.io by opening a command shell and doing
 
-```sh
-pip install crossbar
-```
+    pip install crossbar
 
 This installs Crossbar.io from the [Python Package Index](https://pypi.python.org/pypi).
 
 Ignore any possible warnings about C extensions not being installed. To verify that the installation was successful, in the shell do
 
-```sh
-crossbar version
-```
+    crossbar version
 
 which should output something like:
 
-```sh
-C:\Python27\lib\site-packages\twisted\internet\iocpreactor\reactor.py:30: UserWarning: pyOpenSSL 0.10 or newer is required for SSL support in iocpreactor. It is missing, so the reactor will not support SSL APIs. 
+```console
+C:\Python27\lib\site-packages\twisted\internet\iocpreactor\reactor.py:30: UserWarning: pyOpenSSL 0.10 or newer is required for SSL support in iocpreactor. It is missing, so the reactor will not support SSL APIs.
 "pyOpenSSL 0.10 or newer is required for SSL support in iocpreactor. "
 
 Crossbar.io software versions:
@@ -52,28 +51,10 @@ XOR Masker      : autobahn
 
 The initial warning is about the missing SSL support - which does not affect your initial trying out of Crossbar.
 
-### Where to go now
-
-To start exploring what Crossbar.io can do, and to get a basis for hacking your own applications, we suggest using the [application templates](Application Templates) which come with Crossbar.io. Using these, you can initialize a Crossbar.io instance which automatically starts a fully functioning (small) demo application. 
-
-For example, in a diretory where the template should be initialized, do
-
-```sh
-crossbar init --template hello:python
-```
-
-and then
-
-```sh
-crossbar start
-```
-
-which will start up a Crossbar.io instance which serves the files for a small demo application at `http://localhost:8080`. "F12" opens the development tools in most browsers on Windows. Then go to "console" so that you can see a log of WAMP events.
-
 
 ## Full Installation
 
-The full installation requires you to install more dependencies. 
+The full installation requires you to install more dependencies.
 
 The functionality is enabled by installing
 
@@ -101,9 +82,9 @@ Once you have installed all the dependencies, open a Windows command shell and t
 
     pip install crossbar
 
-This should install **Crossbar**.io from the Python Package Index, and automatically add all non-binary dependencies.
+This should install Crossbar.io from the Python Package Index, and automatically add all non-binary dependencies.
 
-To upgrade **Crossbar**.io to a new version:
+To upgrade Crossbar.io to a new version:
 
     pip install --upgrade crossbar
 
@@ -113,7 +94,7 @@ To test the installation, open a Windows command shell and type
 
 This should print **Crossbar**.io software versions:
 
-```
+```console
 Crossbar.io software versions:
 
 Crossbar.io     : 0.9.9
@@ -132,3 +113,6 @@ Recently, Microsoft has published a compiler package specifically for building P
 2. Open "Visual C++ 2008 32-bit Command Prompt" from the "Microsoft Visual C++ Compiler Package for Python 2.7" program folder
 3. Change to the `crossbar/crossbar` directory and type `pip install -e .[all]`
 
+## Next
+
+Ready to go? Then [choose your language or device of choice](Choose your Weapon).

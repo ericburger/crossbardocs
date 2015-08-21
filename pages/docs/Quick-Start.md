@@ -11,7 +11,7 @@ To install Crossbar.io with *all optional* parts as well, do
 pip install crossbar[tls,msgpack,manhole,system]
 ```
 
-If you run into issues with installation you might check out [these guides for specific operating systems](Installation guides overview).
+If you run into issues with installation you might check out [these guides for specific operating systems](Local-Installation).
 
 ## Test the Installation
 
