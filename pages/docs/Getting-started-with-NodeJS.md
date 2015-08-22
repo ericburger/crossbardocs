@@ -1,8 +1,10 @@
+[Documentation](.) > [Choose your Weapon](Choose your Weapon) > Getting started with JavaScript in NodeJS
+
 # Getting started with JavaScript in NodeJS
 
 In this recipe we will use Crossbar.io to generate an application template for a [WAMP](http://wamp.ws/) application with a JavaScript frontend and backend.
 
-Both components use the open source library [AutobahnJS](https://github.com/tavendo/AutobahnJS) to provide WAMP functionality. 
+Both components use the open source library [AutobahnJS](https://github.com/tavendo/AutobahnJS) to provide WAMP functionality.
 
 The backend runs under [NodeJS](http://nodejs.org/), the frontend in the browser
 
@@ -33,7 +35,7 @@ As an example, on Linux/BSD systems, do
 >     sudo apt-get update
 >     sudo apt-get install python-software-properties nodejs
 
-For other systems, follow the installation instructions at the [NodeJS website](http://nodejs.org/). 
+For other systems, follow the installation instructions at the [NodeJS website](http://nodejs.org/).
 
 ## Create an app
 
@@ -85,7 +87,7 @@ oberstet@vbox-ubuntu1310:~$ cd hello
 oberstet@vbox-ubuntu1310:~/hello$ crossbar start
 2014-06-25 22:48:31+0200 [Controller   5849] Log opened.
 2014-06-25 22:48:31+0200 [Controller   5849] ============================== Crossbar.io ==============================
-	
+
 2014-06-25 22:48:31+0200 [Controller   5849] Crossbar.io 0.9.6 starting
 2014-06-25 22:48:32+0200 [Controller   5849] Running on CPython using EPollReactor reactor
 2014-06-25 22:48:32+0200 [Controller   5849] Starting from node directory /home/oberstet/hello/.crossbar

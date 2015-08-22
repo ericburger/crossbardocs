@@ -1,3 +1,5 @@
+[Documentation](.) > [Choose your Weapon](Choose your Weapon) > Getting started with PHP
+
 # Getting started with PHP
 
 In this recipe we will use Crossbar.io to generate an application template for a [WAMP](http://wamp.ws/) application written in [PHP](http://php.net/) using [Thruway](https://github.com/voryx/Thruway), an open-source WAMP implementation for PHP. The generated application includes a JavaScript frontend to run in a browser.

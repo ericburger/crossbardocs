@@ -1,3 +1,5 @@
+[Documentation](.) > [Local Installation](Local Installation) > Installation on Ubuntu
+
 # Installation on Ubuntu
 
 There are two methods of installing Crossbar.io on Ubuntu -- from the official binary distribution (recommended), or from source.

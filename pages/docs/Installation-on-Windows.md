@@ -1,3 +1,5 @@
+[Documentation](.) > [Local Installation](Local Installation) > Installation on Windows
+
 # Installation on Windows
 
 Crossbar.io is a Python application, with a few additional dependencies. Since Windows does not have a builtin package management for applications, installing Crossbar.io requires installing some of these dependencies manually.

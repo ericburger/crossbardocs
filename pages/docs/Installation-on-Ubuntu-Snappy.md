@@ -1,3 +1,5 @@
+[Documentation](.) > [Local Installation](Local Installation) > Installation on Ubuntu Snappy
+
 # Installation on Ubuntu Snappy
 
 [Ubuntu Snappy](http://www.ubuntu.com/cloud/tools/snappy) is a new kind of server operating system that uses a transactional updating scheme for applications.

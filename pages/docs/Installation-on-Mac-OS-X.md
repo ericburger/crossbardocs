@@ -1,3 +1,5 @@
+[Documentation](.) > [Local Installation](Local Installation) > Installation on MacOS X
+
 # Installation on MacOS X
 
 When installing on OS X, you have the choice of installing on CPython (the standard interpreter) or PyPy (a high performance interpreter).

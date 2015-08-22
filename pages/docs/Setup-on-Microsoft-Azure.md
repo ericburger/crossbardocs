@@ -1,3 +1,5 @@
+[Documentation](.) > [Setup in the Cloud](Setup in the Cloud) > Setup on Microsoft Azure
+
 # Setup on Microsoft Azure
 
 We provide a [**Crossbar on Azure Virtual Machine Image**](http://azure.microsoft.com/en-us/marketplace/partners/tavendo/crossbar-on-azure-ubuntu1404-free/) in the  [Azure Marketplace](http://azure.microsoft.com/en-us/marketplace/) to make setup on [Microsoft Azure](http://azure.microsoft.com/) as simple as possible. The image has Crossbar.io running on [Ubuntu Server 14.04 LTS](https://insights.ubuntu.com/2014/04/17/whats-new-in-ubuntu-server-14-04-lts/).

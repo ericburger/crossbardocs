@@ -1,3 +1,5 @@
+[Documentation](.) > Setup in the Cloud
+
 # Setup in the Cloud
 
 If you want to run your own Crossbar.io instance in the cloud, probably the easiest way is to use an Infrastructure-as-a-Service provider like [Microsoft Azure](azure.microsoft.com/) or [Amazon EC2](http://aws.amazon.com/ec2/).
@@ -9,6 +11,6 @@ We've created VM images with preinstalled Crossbar.io running on Linux and step-
 * [Setup on Microsoft Azure](Setup on Microsoft Azure)
 * [Setup on Amazon EC2](Setup on Amazon EC2)
 
-Additionally, Crossbar.io can be run on [Heroku](https://www.heroku.com/).
+Additionally, Crossbar.io can be run on [Heroku](https://www.heroku.com/):
 
 * [[Setup on Heroku]]

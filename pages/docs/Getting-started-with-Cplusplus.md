@@ -1,3 +1,5 @@
+[Documentation](.) > [Choose your Weapon](Choose your Weapon) > Getting started with C++
+
 # Getting started with C++
 
 In this recipe we will use Crossbar.io to generate an application template for a [WAMP](http://wamp.ws/) application written in JavaScript using [AutobahnCpp](https://github.com/tavendo/AutobahnCpp), an open-source C++ 11 WAMP implementation. The generated application includes a JavaScript frontend to run in a browser.

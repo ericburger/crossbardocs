@@ -1,3 +1,5 @@
+[Documentation](.) > [Local Installation](Local Installation) > Installation on Linux
+
 # Installation on Linux
 
 The following provides installation instructions that should work on most Linux distributions.

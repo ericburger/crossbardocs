@@ -1,8 +1,13 @@
+[Documentation](.) > [Setup in the Cloud](Setup in the Cloud) > Setup on Heroku
+
+# Setup on Heroku
+
 [Heroku](https://www.heroku.com/) is a Platform-as-a-Service cloud vendor that allows to run applications in so-called *Dynos*, which are like glorified [OS containers](http://en.wikipedia.org/wiki/Operating_system%E2%80%93level_virtualization).
 
 ## Application Setup
+
 Crossbar.io can be run on Heroku. Here we describe what you need to do.
-This walkthrough assumes that you have created an account on Heroku and have installed the Heroku tool belt. 
+This walkthrough assumes that you have created an account on Heroku and have installed the Heroku tool belt.
 
 To sign up for a free Heroku account go [here](https://signup.heroku.com/).
 
@@ -37,9 +42,7 @@ Installing a Crossbar.io project on Heroku is pretty straightforward once you're
 
 Crossbar.io can create a complete node configuration and "Hello, world". Here is how you would create a Python based "Hello, world" application:
 
-```
-crossbar init --template hello:python
-```
+    crossbar init --template hello:python
 
 The configuration generated will make Crossbar.io listen on the *fixed* port 8080 for incoming Web and WebSocket connections.
 
@@ -55,84 +58,84 @@ Because of this, we need to modify the Crossbar.io node configuration:
 Here is a complete, working configuration:
 
 ```json
-{ 
-    "controller": { 
-    }, 
-    "workers": [ 
-       { 
-          "type": "router", 
-          "options": { 
-             "pythonpath": [".."] 
-          }, 
-          "realms": [ 
-             { 
-                "name": "realm1", 
-                "roles": [ 
-                   { 
-                      "name": "anonymous", 
-                      "permissions": [ 
-                         { 
-                            "uri": "*", 
-                            "publish": true, 
-                            "subscribe": true, 
-                            "call": true, 
-                            "register": true 
-                         } 
-                      ] 
-                   } 
-                ] 
-             } 
-          ], 
-          "transports": [ 
-             { 
-                "type": "websocket", 
-                "endpoint": { 
-                   "type": "tcp", 
-                   "port": 9000 
-                } 
-             }, 
-             { 
-                "type": "web", 
-                "endpoint": { 
-                   "type": "tcp", 
-                   "port": "$PORT" 
-                }, 
-                "paths": { 
-                   "/": { 
-                      "type": "static", 
-                      "directory": "../hello/web" 
-                   }, 
-                   "ws": { 
-                      "type": "websocket" 
-                   } 
-                } 
-             } 
-          ] 
-       }, 
-       { 
-          "type": "container", 
-          "options": { 
-             "pythonpath": [".."] 
-          }, 
-           "components": [ 
-             { 
-                "type": "class", 
-                "classname": "hello.hello.AppSession", 
-                "realm": "realm1", 
-                "transport": { 
-                   "type": "websocket", 
-                   "url": "ws://127.0.0.1:9000", 
-                   "endpoint": { 
-                      "type": "tcp", 
-                      "host": "127.0.0.1", 
-                      "port": 9000 
-                  } 
-                } 
-             } 
-          ] 
-       } 
-    ] 
-} 
+{
+    "controller": {
+    },
+    "workers": [
+       {
+          "type": "router",
+          "options": {
+             "pythonpath": [".."]
+          },
+          "realms": [
+             {
+                "name": "realm1",
+                "roles": [
+                   {
+                      "name": "anonymous",
+                      "permissions": [
+                         {
+                            "uri": "*",
+                            "publish": true,
+                            "subscribe": true,
+                            "call": true,
+                            "register": true
+                         }
+                      ]
+                   }
+                ]
+             }
+          ],
+          "transports": [
+             {
+                "type": "websocket",
+                "endpoint": {
+                   "type": "tcp",
+                   "port": 9000
+                }
+             },
+             {
+                "type": "web",
+                "endpoint": {
+                   "type": "tcp",
+                   "port": "$PORT"
+                },
+                "paths": {
+                   "/": {
+                      "type": "static",
+                      "directory": "../hello/web"
+                   },
+                   "ws": {
+                      "type": "websocket"
+                   }
+                }
+             }
+          ]
+       },
+       {
+          "type": "container",
+          "options": {
+             "pythonpath": [".."]
+          },
+           "components": [
+             {
+                "type": "class",
+                "classname": "hello.hello.AppSession",
+                "realm": "realm1",
+                "transport": {
+                   "type": "websocket",
+                   "url": "ws://127.0.0.1:9000",
+                   "endpoint": {
+                      "type": "tcp",
+                      "host": "127.0.0.1",
+                      "port": 9000
+                  }
+                }
+             }
+          ]
+       }
+    ]
+}
 ```
 
 ## What you get

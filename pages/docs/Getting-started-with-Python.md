@@ -1,3 +1,5 @@
+[Documentation](.) > [Choose your Weapon](Choose your Weapon) > Getting started with Python
+
 # Getting started with Python
 
 In this recipe we will use Crossbar.io to generate an application template for a [WAMP](http://wamp.ws/) application written in Python using [AutobahnPython](https://github.com/tavendo/AutobahnPython), an open-source WAMP implementation. The generated application includes a JavaScript frontend to run in a browser.
@@ -9,7 +11,7 @@ The frontend and backend components will talk with each other using all four mai
 3. publish an event to a topic
 4. subscribe to a topic to receive events
 
-We will run the whole application with Crossbar.io serving as a WAMP router, static Web server and Python/Autobahn application component host. 
+We will run the whole application with Crossbar.io serving as a WAMP router, static Web server and Python/Autobahn application component host.
 
 > Note: Python application components *can* be run by Crossbar.io, but they can equally run [completely separately](http://autobahn.ws/python/wamp/programming.html).
 

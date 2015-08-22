@@ -1,17 +1,24 @@
+[Documentation](.) > Quick Start
+
+# Quick Start
+
+This quick start described how to install Crossbar.io, test the installation and create and run a sample application.
+
+
 ## Install Crossbar.io
 
-Get [Python 2](http://python.org) (or [PyPy](http://pypy.org/)) and install Crossbar.io with *required* dependencies using [pip](https://pip.pypa.io/)
+> Alternative routes for this generic installation are described in [these guides for specific operating systems](Local-Installation).
 
-```sh
-pip install crossbar
-```
-To install Crossbar.io with *all optional* parts as well, do
+You will need [Python](http://python.org) (or [PyPy](http://pypy.org/)) and [pip](https://pip.pypa.io/).
 
-```sh
-pip install crossbar[tls,msgpack,manhole,system]
-```
+To install Crossbar.io with **required** dependencies:
 
-If you run into issues with installation you might check out [these guides for specific operating systems](Local-Installation).
+    pip install crossbar
+
+To install Crossbar.io with **all optional** parts as well:
+
+    pip install crossbar[all]
+
 
 ## Test the Installation
 
@@ -32,33 +39,28 @@ XOR Masker      : autobahn
 
 which lists the software versions of some Crossbar.io components.
 
+
 ## Create an Application
 
 The Crossbar.io command line tool `crossbar` can generate complete, ready-to-run application templates to get you started quickly.
 
 To create a *Hello world!* application with a HTML5/JavaScript frontend and *Python backend*:
 
-```sh
-crossbar init --template hello:python --appdir hello
-```
+    crossbar init --template hello:python --appdir hello
 
 or to create the application with a *NodeJS backend*:
 
-```sh
-crossbar init --template hello:nodejs --appdir hello
-```
+    crossbar init --template hello:nodejs --appdir hello
 
 > You will need to install AutobahnJS for Node by doing `npm install -g autobahn` and have `NODE_PATH` set so Node finds it.
 
 To get a list of available templates:
 
-```sh
-crossbar templates
-```
+    crossbar templates
 
 When initializing an application template, a directory will be created with a couple of files prefilled. E.g. the Python variant of the application template will create the following files:
 
-```sh
+```text
 ./.crossbar/config.json
 ./hello/hello.py
 ./hello/web/autobahn.min.js
@@ -73,19 +75,13 @@ Here, `./.crossbar/config.json` is a configuration file for a Crossbar.io node w
 
 For further information about getting started with specific languages, see this [overview](Choose your Weapon).
 
+
 ## Run the Application
 
 To start the Crossbar.io node switch to the application directory
 
-```sh
-cd hello
-```
-
-and do
-
-```sh
-crossbar start
-```
+    cd hello
+    crossbar start
 
 Then open [`http://localhost:8080/`](http://localhost:8080/) in your browser. Make sure to open the JavaScript console as well to see logging output.
 
@@ -93,12 +89,7 @@ What you should see logged is a message such as "Hello from Python" or "Hello fr
 
 You can find the backend code in `./hello/hello.py` (for the Python variant) and the frontend code in `./hello/web/index.html`.
 
+
 ## What now?
 
-Go to [The Command Line](The Command Line) to learn about the Crossbar.io command line tool or jump into one of the language specific getting starteds:
-
-  * [Getting started with Python](Getting started with Python)
-  * [Getting started with NodeJS](Getting started with NodeJS)
-  * [Getting started with C++](Getting started with Cplusplus)
-  * [Getting started with Erlang](Getting started with Erlang)
-  * [Getting started with PHP](Getting started with PHP)
+Go to [The Command Line](The Command Line) to learn about the Crossbar.io command line tool or jump into [Choose your Weapon](Choose your Weapon) to learn how to get started with your language of choice.

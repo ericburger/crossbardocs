@@ -1,3 +1,5 @@
+[Documentation](.) > [Choose your Weapon](Choose your Weapon) > Getting started with Erlang
+
 # Getting started with Erlang
 
 In this recipe we will use Crossbar.io to generate an application template for a [WAMP](http://wamp.ws/) application written in Erlang using [Erwa](https://github.com/bwegh/erwa), an open-source Erlang WAMP implementation (both client and router). The generated application includes a JavaScript frontend to run in a browser.
@@ -75,7 +77,7 @@ You should see the node starting:
 oberstet@vbox-ubuntu1310:~/hello$ crossbar start
 2014-06-25 23:32:54+0200 [Controller   7097] Log opened.
 2014-06-25 23:32:54+0200 [Controller   7097] ============================== Crossbar.io ==============================
-	
+
 2014-06-25 23:32:54+0200 [Controller   7097] Crossbar.io 0.9.6 starting
 2014-06-25 23:32:55+0200 [Controller   7097] Running on CPython using EPollReactor reactor
 2014-06-25 23:32:55+0200 [Controller   7097] Starting from node directory /home/oberstet/hello/.crossbar

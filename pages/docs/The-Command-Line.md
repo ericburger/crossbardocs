@@ -1,3 +1,10 @@
+[Documentation](.) > The Command Line
+
+# The Command Line
+
+Crossbar.io comes as a command line tool `crossbar` which works identical across all supported platforms.
+
+
 ## Quick Reference
 
 Here is a quick reference of all commands available in the Crossbar.io CLI:
@@ -14,9 +21,8 @@ Command | Description
 `crossbar status` | Check if a Crossbar.io node is running
 `crossbar convert` | Converts a Crossbar.io node configuration file from JSON to YAML and vice-versa
 
-## The command line
 
-Crossbar.io comes as a command line tool `crossbar` which works identical across all supported platforms.
+## Getting Help
 
 To get help, type `crossbar --help`:
 

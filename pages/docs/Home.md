@@ -2,6 +2,7 @@
 
 Welcome to the Crossbar.io reference documentation.
 
+<!--
 ## How it works
 
 Learn the underlying concepts of Crossbar.io and what you can do with it.
@@ -14,6 +15,7 @@ Learn the underlying concepts of Crossbar.io and what you can do with it.
 * [Roadmap](Roadmap)
 * [FAQ](FAQ)
 * [Examples](Examples)
+-->
 
 ## Getting Started
 

@@ -1,3 +1,5 @@
+[Documentation](.) > [Local Installation](Local Installation) > Installation on FreeBSD
+
 # Installation on FreeBSD
 
 There are two methods of installing Crossbar.io on FreeBSD -- from the official binary distribution (recommended), or from source.

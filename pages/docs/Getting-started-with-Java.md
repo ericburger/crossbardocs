@@ -1,3 +1,5 @@
+[Documentation](.) > [Choose your Weapon](Choose your Weapon) > Getting started with Java
+
 # Getting started with Java
 
 In this recipe we will use Crossbar.io to generate a [WAMP](http://wamp.ws/) application written in Java and using [jawampa](https://github.com/Matthias247/jawampa), an open-source WAMP implementation.
@@ -64,7 +66,7 @@ Application template initialized
 
 Please follow the README.md to build the Java component first, then start Crossbar using 'crossbar start' and open http://localhost:8080 in your browser.
 
-oberstet@ubuntu1404:~/mynode1$ 
+oberstet@ubuntu1404:~/mynode1$
 ```
 
 ## Build the jawampa application component
@@ -77,11 +79,11 @@ You should see log output like the following:
 ```console
 oberstet@ubuntu1404:~/mynode1$ mvn dependency:copy-dependencies
 [INFO] Scanning for projects...
-[INFO]                                                                         
+[INFO]
 [INFO] ------------------------------------------------------------------------
 [INFO] Building crossbar_template 0.0.1-SNAPSHOT
 [INFO] ------------------------------------------------------------------------
-[INFO] 
+[INFO]
 [INFO] --- maven-dependency-plugin:2.1:copy-dependencies (default-cli) @ crossbar_template ---
 [INFO] Copying jackson-annotations-2.4.0.jar to /home/oberstet/mynode1/target/dependency/jackson-annotations-2.4.0.jar
 [INFO] Copying jackson-core-2.4.2.jar to /home/oberstet/mynode1/target/dependency/jackson-core-2.4.2.jar
@@ -103,15 +105,15 @@ oberstet@ubuntu1404:~/mynode1$ mvn dependency:copy-dependencies
 [INFO] ------------------------------------------------------------------------
 oberstet@ubuntu1404:~/mynode1$ mvn compile
 [INFO] Scanning for projects...
-[INFO]                                                                         
+[INFO]
 [INFO] ------------------------------------------------------------------------
 [INFO] Building crossbar_template 0.0.1-SNAPSHOT
 [INFO] ------------------------------------------------------------------------
-[INFO] 
+[INFO]
 [INFO] --- maven-resources-plugin:2.3:resources (default-resources) @ crossbar_template ---
 [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 [INFO] skip non existing resourceDirectory /home/oberstet/mynode1/src/main/resources
-[INFO] 
+[INFO]
 [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ crossbar_template ---
 [INFO] Changes detected - recompiling the module!
 [WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
@@ -123,7 +125,7 @@ oberstet@ubuntu1404:~/mynode1$ mvn compile
 [INFO] Finished at: Thu Oct 30 22:29:20 CET 2014
 [INFO] Final Memory: 15M/92M
 [INFO] ------------------------------------------------------------------------
-oberstet@ubuntu1404:~/mynode1$ 
+oberstet@ubuntu1404:~/mynode1$
 ```
 
 ## Start the Crossbar.io node
@@ -138,7 +140,7 @@ You should see the node and the jawampa WAMP application component starting:
 oberstet@ubuntu1404:~/mynode1$ crossbar start
 2014-10-30 22:30:10+0100 [Controller  26720] Log opened.
 2014-10-30 22:30:10+0100 [Controller  26720] ============================== Crossbar.io ==============================
-	
+
 2014-10-30 22:30:10+0100 [Controller  26720] Crossbar.io 0.9.9 starting
 2014-10-30 22:30:11+0100 [Controller  26720] Running on CPython using EPollReactor reactor
 2014-10-30 22:30:11+0100 [Controller  26720] Starting from node directory /home/oberstet/mynode1/.crossbar

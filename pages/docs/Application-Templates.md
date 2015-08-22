@@ -1,14 +1,14 @@
-## Intro
+[Documentation](.) > Application Templates
 
-Crossbar offers the possibility to initialize a Crossbar instance using an **application template**. Using these, on startup Crossbar runs a small demo application which allows you to check that everything is working properly and gives you a basis for hacking your own applications. 
+# Application Templates
+
+Crossbar.io offers the possibility to initialize a Crossbar.io instance using an **application template**. Using these, on startup Crossbar runs a small demo application which allows you to check that everything is working properly and gives you a basis for hacking your own applications.
 
 ## Available Templates
 
 Once you've installed Crossbar, you can get a list of the available application templates by doing
 
-```sh
-crossbar templates
-```
+    crossbar templates
 
 The 'default' template sets up Crossbar.io with a WebSocket transport and a static Web server. Just doing `crossbar init` without any further arguments uses the default template.
 
@@ -29,25 +29,19 @@ The backend is available for the following languages & runtimes:
 
 To initialize a Crossbar instance with an application template, do
 
-```sh
-crossbar init --template [template-name]
-```
+    crossbar init --template [template-name]
 
-This creates the Crossbar configuration and copies the necessary files into the present directory. 
+This creates the Crossbar configuration and copies the necessary files into the present directory.
 
 You can additionally use the option to create a subdirectory and to do the initialization in this
 
-```sh
-crossbar init --template [template-name] --appdir [name-of-subdirectory]
-```
+    crossbar init --template [template-name] --appdir [name-of-subdirectory]
 
 Once you've initialized the Crossbar instance, depending on the template, you may have to do some additional, language-dependent setup for the backend component. You'll find instructions for this in the console output of the above init command.
 
 After you've finished with setup, you can start Crossbar.io it from within the directory by
 
-```sh
-crossbar start
-```
+    crossbar start
 
 Once Crossbar has started you can access the HTML5 client under `http://localhost:8080`.
 
@@ -61,10 +55,8 @@ All application templates are licensed either under the BSD 2-clause license or 
 
 In addition to the simple 'Hello' templates, there are a lot of [examples](https://github.com/crossbario/crossbarexamples).
 
-Thsi ranges from simple examples which provide working code illustrating various aspects and features of using Crossbar.io to [demos](https://github.com/crossbario/crossbarexamples/demos) mini-applications. To use the examples or demos, just clone the repo, and do `crossbar start` in the respective folder in the repo. For the demos, there's also a launcher (do `crossbar start` in the `_demo_launcher` directory).
+This ranges from simple examples which provide working code illustrating various aspects and features of using Crossbar.io to [demos](https://github.com/crossbario/crossbarexamples/demos) mini-applications.
+
+To use the examples or demos, just clone the repo, and do `crossbar start` in the respective folder in the repo. For the demos, there's also a launcher (do `crossbar start` in the `_demo_launcher` directory).
 
 More information can be found on the [examples page](Examples).
-
-
-
-

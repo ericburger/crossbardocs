@@ -1,3 +1,5 @@
+[Documentation](.) > [Local Installation](Local Installation) > Installation on CentOS
+
 # Installation on CentOS
 
 There are two methods of installing Crossbar.io on CentOS -- from the official binary distribution (recommended), or from source.

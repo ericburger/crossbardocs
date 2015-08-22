@@ -1,3 +1,5 @@
+[Documentation](.) > [Choose your Weapon](Choose your Weapon) > Getting started with C Sharp
+
 # Getting started with C Sharp
 
 In this recipe we will use Crossbar.io to generate an application template for a [WAMP](http://wamp.ws/) application written in C# using [WampSharp](https://github.com/Code-Sharp/WampSharp), an open-source WAMP implementation. The generated application includes a JavaScript frontend to run in a browser.
@@ -141,7 +143,7 @@ namespace Hello
                   realm = args[1];
                }
             }
-            
+
             Task runTask = Run(wsuri, realm);
 
             Console.ReadLine();
@@ -157,7 +159,7 @@ namespace Hello
                 factory.CreateJsonChannel(wsuri, realm);
 
             IWampClientConnectionMonitor monitor = channel.RealmProxy.Monitor;
-            
+
             monitor.ConnectionBroken += OnClose;
             monitor.ConnectionError += OnError;
 
@@ -166,7 +168,7 @@ namespace Hello
             IWampRealmServiceProvider services = channel.RealmProxy.Services;
 
             // SUBSCRIBE to a topic and receive events
-            ISubject<string> helloSubject = 
+            ISubject<string> helloSubject =
                 services.GetSubject<string>("com.example.onhello");
 
             IDisposable subscription =
@@ -181,7 +183,7 @@ namespace Hello
 
             await services.RegisterCallee(callee)
                 .ConfigureAwait(false);
-            
+
             Console.WriteLine("procedure add2() registered");
 
 
@@ -248,7 +250,7 @@ namespace Hello
         public interface IMul2Service
         {
             [WampProcedure("com.example.mul2")]
-            Task<int> Multiply(int x, int y);             
+            Task<int> Multiply(int x, int y);
         }
 
         #endregion

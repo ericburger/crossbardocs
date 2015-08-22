@@ -1,3 +1,5 @@
+[Documentation](.) > [Local Installation](Local Installation) > Installation on RaspberryPi
+
 # Installation on the RaspberryPi
 
 This recipe will guide you through installing Crossbar.io on the Pi. After this, you will be able to
