@@ -92,7 +92,7 @@ To test the installation, open a Windows command shell and type
 
     crossbar version
 
-This should print **Crossbar**.io software versions:
+This should print Crossbar.io software versions:
 
 ```console
 Crossbar.io software versions:

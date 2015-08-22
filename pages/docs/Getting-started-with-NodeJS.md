@@ -1,4 +1,4 @@
-In this recipe we will use **Crossbar**.io to generate an application template for a [WAMP](http://wamp.ws/) application with a JavaScript frontend and backend.
+In this recipe we will use Crossbar.io to generate an application template for a [WAMP](http://wamp.ws/) application with a JavaScript frontend and backend.
 
 Both components use the open source library [AutobahnJS](https://github.com/tavendo/AutobahnJS) to provide WAMP functionality. 
 
@@ -11,7 +11,7 @@ The frontend and backend components will talk with each other using all four mai
  3. publish an event to a topic
  4. subscribe to a topic to receive events
 
-We will run the whole application with **Crossbar**.io serving as a WAMP router, static Web server for the frontend files and JavaScript/NodeJS application component host for the backend code.
+We will run the whole application with Crossbar.io serving as a WAMP router, static Web server for the frontend files and JavaScript/NodeJS application component host for the backend code.
 
 > Note: Node.js application components *can* be run by Crossbar.io, but they can equally run completely separately!
 
@@ -36,7 +36,7 @@ For other systems, follow the installation instructions at the [NodeJS website](
 
 # Create an app
 
-To create a new **Crossbar**.io node and generate a [JavaScript](http://en.wikipedia.org/wiki/JavaScript) / [AutobahnJS](https://github.com/tavendo/AutobahnJS) based "Hello world!" example application:
+To create a new Crossbar.io node and generate a [JavaScript](http://en.wikipedia.org/wiki/JavaScript) / [AutobahnJS](https://github.com/tavendo/AutobahnJS) based "Hello world!" example application:
 
 ```sh
 crossbar init --template hello:nodejs --appdir $HOME/hello
@@ -79,7 +79,7 @@ When starting a guest worker, like Node.js, Crossbar.io tries to determine the p
 
 # Start the node
 
-Start your new **Crossbar**.io node using:
+Start your new Crossbar.io node using:
 
 ```console
 oberstet@vbox-ubuntu1310:~$ cd hello
@@ -120,7 +120,7 @@ Open [`http://localhost:8080/`](http://localhost:8080/) in your browser. When yo
 
 **Hooray! That means: it works;)**
 
-You have just watched the JavaScript (NodeJS) backend component talking to the JavaScript frontend component and vice-versa. The calls and events were exchanged over [WAMP](http://wamp.ws/) and routed by **Crossbar**.io between the application components.
+You have just watched the JavaScript (NodeJS) backend component talking to the JavaScript frontend component and vice-versa. The calls and events were exchanged over [WAMP](http://wamp.ws/) and routed by Crossbar.io between the application components.
 
 # Hacking the code
 

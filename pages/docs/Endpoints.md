@@ -12,11 +12,11 @@ An *Endpoint* describes the network connection over which data is transmitted. *
 
 defines a *WebSocket Transport*, that will listen on TCP port 8080 for incoming WAMP connections.
 
-*Endpoints* are used in different places for **Crossbar**.io configuration. E.g. a *Router* *Transport* will (usually) specify at least one listening *Endpoint* for clients to connect. A component *Container* must specify the *Router* to connect to, and hence will provide configuration for a connecting *Endpoint*.
+*Endpoints* are used in different places for Crossbar.io configuration. E.g. a *Router* *Transport* will (usually) specify at least one listening *Endpoint* for clients to connect. A component *Container* must specify the *Router* to connect to, and hence will provide configuration for a connecting *Endpoint*.
 
 ## Endpoint Types
 
-**Crossbar**.io currently implements two types of *Endpoints*:
+Crossbar.io currently implements two types of *Endpoints*:
 
 * TCP (and TLS)
 * Unix Domain Socket

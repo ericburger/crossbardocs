@@ -1,4 +1,4 @@
-In this recipe we will use **Crossbar**.io to generate an application template for a [WAMP](http://wamp.ws/) application written in Python using [AutobahnPython](https://github.com/tavendo/AutobahnPython), an open-source WAMP implementation. The generated application includes a JavaScript frontend to run in a browser.
+In this recipe we will use Crossbar.io to generate an application template for a [WAMP](http://wamp.ws/) application written in Python using [AutobahnPython](https://github.com/tavendo/AutobahnPython), an open-source WAMP implementation. The generated application includes a JavaScript frontend to run in a browser.
 
 The frontend and backend components will talk with each other using all four main interactions available in WAMP:
 
@@ -7,17 +7,17 @@ The frontend and backend components will talk with each other using all four mai
  3. publish an event to a topic
  4. subscribe to a topic to receive events
 
-We will run the whole application with **Crossbar**.io serving as a WAMP router, static Web server and Python/Autobahn application component host. 
+We will run the whole application with Crossbar.io serving as a WAMP router, static Web server and Python/Autobahn application component host. 
 
 > Note: Python application components *can* be run by Crossbar.io, but they can equally run [completely separately](http://autobahn.ws/python/wamp/programming.html).
 
 # Prerequisites
 
-[CPython](https://www.python.org/) or [PyPy](http://pypy.org/) and [AutobahnPython](https://github.com/tavendo/AutobahnPython) - but those will have been installed with **Crossbar**.io already.
+[CPython](https://www.python.org/) or [PyPy](http://pypy.org/) and [AutobahnPython](https://github.com/tavendo/AutobahnPython) - but those will have been installed with Crossbar.io already.
 
 # Create an app
 
-To create a new **Crossbar**.io node and generate a [Python](https://www.python.org/) / [AutobahnPython](https://github.com/tavendo/AutobahnPython) based "Hello world!" example application:
+To create a new Crossbar.io node and generate a [Python](https://www.python.org/) / [AutobahnPython](https://github.com/tavendo/AutobahnPython) based "Hello world!" example application:
 
 ```console
 oberstet@vbox-ubuntu1310:~$ crossbar init --template hello:python --appdir $HOME/hello
@@ -45,7 +45,7 @@ This will initialize a new node and application under `$HOME/hello` using the ap
 
 # Start the node
 
-Start your new **Crossbar**.io node:
+Start your new Crossbar.io node:
 
 ```console
 oberstet@vbox-ubuntu1310:~$ cd hello
@@ -93,7 +93,7 @@ Open [`http://localhost:8080/`](http://localhost:8080/) in your browser. When yo
 
 **Hooray! That means: it works;)**
 
-You have just watched the Python backend component talking to the JavaScript frontend component and vice-versa. The calls and events were exchanged over [WAMP](http://wamp.ws/) and routed by **Crossbar**.io between the application components.
+You have just watched the Python backend component talking to the JavaScript frontend component and vice-versa. The calls and events were exchanged over [WAMP](http://wamp.ws/) and routed by Crossbar.io between the application components.
 
 # Hacking the code
 

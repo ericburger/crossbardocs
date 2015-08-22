@@ -154,14 +154,14 @@ wget .../angular.js (TBD)
 
 **6. Start the demo**
 
-Start **Crossbar**.io
+Start Crossbar.io
 
 ```console
 cd $HOME/test1
 crossbar start
 ```
 
-**Crossbar**.io will log to console while starting:
+Crossbar.io will log to console while starting:
 
 ```console
 oberstet@COREI7 ~/test1

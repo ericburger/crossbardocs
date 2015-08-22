@@ -55,7 +55,7 @@ Tracking the bleeding edge (for developers, and for the brave):
 How to get started using your language of choice:
 
 * [Overview](Choose your Weapon)
-* [Getting started with JavaScript in the Browser](Getting started with JavaScript in the Browser)
+* [Getting started with JavaScript in the Browser](Getting started with Browser)
 * [Getting started with JavaScript and NodeJS](Getting started with NodeJS)
 * [Getting started with Python](Getting started with Python)
 * [Getting started with PHP](Getting started with PHP)
@@ -190,7 +190,7 @@ whereas you can find more WAMP client libraries [here](http://wamp.ws/implementa
 
 ## Developers
 
-Notes for developers working on the **Crossbar**.io code base (*not* application developers).
+Notes for developers working on the Crossbar.io code base (*not* application developers).
 
 * [Contributing to the project](Contributing to the project)
 * [Manhole](Manhole)

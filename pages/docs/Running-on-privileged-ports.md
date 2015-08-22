@@ -1,7 +1,7 @@
 For production, you might want to:
 
-* make **Crossbar**.io listen on ports 80/443, which are the standard ports for both HTTP(S) and (secure) WebSocket
-* run **Crossbar**.io under a dedicated non-root service user
+* make Crossbar.io listen on ports 80/443, which are the standard ports for both HTTP(S) and (secure) WebSocket
+* run Crossbar.io under a dedicated non-root service user
 
 However, Unix-like operating system by default do not allow programs that run non-root to listen on TCP/IP ports <1024.
 
@@ -15,7 +15,7 @@ Install `libcap2`:
 sudo apt-get install libcap2-bin
 ```
 
-Now allow the **Crossbar**.io and PyPy executables to bind privileged ports:
+Now allow the Crossbar.io and PyPy executables to bind privileged ports:
 
 ```
 sudo setcap cap_net_bind_service=+ep `which crossbar`

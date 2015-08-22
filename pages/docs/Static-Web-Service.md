@@ -82,7 +82,7 @@ Here, the **Web Transport** has it's base path `/` configured to be `static` and
 
 ## Serving from Python Packages
 
-Python packages can contain "resources" (non-Python file assets) and the **Static Web Service** can serve assets directly from any Python package installed (in the Python installation that **Crossbar**.io runs from).
+Python packages can contain "resources" (non-Python file assets) and the **Static Web Service** can serve assets directly from any Python package installed (in the Python installation that Crossbar.io runs from).
 
 Say you are creating a **`foobar`** package that contains static Web resources:
 
@@ -155,7 +155,7 @@ After installing the package locally (`python setup.py install`), you can config
 }
 ```
 
-When you start **Crossbar**.io, you should see log lines similar to:
+When you start Crossbar.io, you should see log lines similar to:
 
 ```
 ...

@@ -20,19 +20,27 @@ To find out the IP you can log into the router of your network, or use a network
 
 ## Wifi
 
-When the Arduino Yun is first powered on, the Wifi will be starting in **AP-Mode** ("Access Point Mode") and the Yun creates a new wireless network. You can configure the Yun to use your wifi by
-   * connecting to the Yun's WiFi network,
-   * calling up a configuration page it serves, and
-   * entering your wifi credentials on this. (The configuration can easily be done on a smartphone or tablet if your dev machine does not have wifi.)
-
-When you scan for Wifi networks, you should see a new network with a SSID as `Arduino Yun-XXXXXXXXXXXX`,
-where `XXXXXXXXXXXX` is the MAC address of the Yun's *Wifi* interface:
-
-![Arduino Yun Wifi](/static/img/iotcookbook/yun/network1.png)
+When the Arduino Yun is first powered on, the Wifi will be starting in **AP-Mode** ("Access Point Mode") and the Yun creates a new wireless network.
 
 This is the factory default, and when you reset the Wifi configuration, it will be the recovered again.
 
-> Note: The ethernet interface has a *different* MAC address - see below.
+You can configure the Yun to use your Wifi by
+   * connecting to the Yun's WiFi network,
+   * opening a configuration Web page served by the Yun, and
+   * entering your wifi credentials on this. (The configuration can easily be done on a smartphone or tablet if your dev machine does not have wifi.)
+
+When you scan for Wifi networks, you should see a new network with a SSID as `Arduino Yun-XXXXXXXXXXXX`,
+where `XXXXXXXXXXXX` is the MAC address of the Yun's *Wifi* interface.
+
+Here is how that looks under **Windows**
+
+![Arduino Yun Wifi](/static/img/iotcookbook/yun/network1.png)
+
+and here is **Ubuntu**
+
+![Arduino Yun Wifi](/static/img/iotcookbook/yun/arduino_yun_ap_wifi_mac.png)
+
+> Note: The Ethernet interface has a *different* MAC address - see below.
 >
 
 You can access the Web configuration interface of your Yun by connecting e.g. your notebook to the above Wifi network and then open `http://192.168.240.1` in your browser.

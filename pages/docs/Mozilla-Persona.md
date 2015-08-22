@@ -5,7 +5,7 @@
 To quote Mozilla:
 > [Persona](http://www.mozilla.org/en-US/persona/) allows you to sign in to sites using any of your existing email addresses; and if you use Yahoo! or Gmail for email, you will be able to sign in without having to create a new password.
 
-**Crossbar**.io can authenticate WAMP/WebSocket connections in a fully WebSocket based authentication procedure using Cookies and [Mozilla Persona](http://www.mozilla.org/en-US/persona/).
+Crossbar.io can authenticate WAMP/WebSocket connections in a fully WebSocket based authentication procedure using Cookies and [Mozilla Persona](http://www.mozilla.org/en-US/persona/).
 
 This can be done on web pages hosted fully statically. No dynamic Web endpoint is involved. On the client side there is just the storage of an authentication cookie.
 

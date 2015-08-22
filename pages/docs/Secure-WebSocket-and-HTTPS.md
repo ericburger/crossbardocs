@@ -7,7 +7,7 @@ This is for mainly two reasons:
 
 > The latter is especially important on locked down enterprise environments and on mobile operator networks. By using secure WebSocket ("wss"), WebSocket will work in almost all circumstances (exceptions potentially being TLS interception / MITM proxies).
 
-**Crossbar**.io has full support for running secure WebSocket and HTTPS. This guide describes the 3 main options:
+Crossbar.io has full support for running secure WebSocket and HTTPS. This guide describes the 3 main options:
 
 * Using self-signed certificates
 * Using certificates from commercial CAs
@@ -104,7 +104,7 @@ Using elliptic curve based ciphers ("ECDH/ECDHE") is generally considered desira
 
 #### Prerequisites for EC Support
 
-EC crypto is fully supported by **Crossbar**.io, if the underlying OpenSSL library supports EC **and** you have pyOpenSSL >= 0.15 running.
+EC crypto is fully supported by Crossbar.io, if the underlying OpenSSL library supports EC **and** you have pyOpenSSL >= 0.15 running.
 
 You can check like this:
 
@@ -121,7 +121,7 @@ cd pyopenssl
 python setup.py install
 ```
 
-**Crossbar**.io uses the `prime256v1` curve by default.
+Crossbar.io uses the `prime256v1` curve by default.
 
 `prime256v1`(X9.62/SECG) is an elliptic curve over a 256 bit prime field. This is elliptic curve "NIST P-256" from [here](http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf).
 
@@ -129,7 +129,7 @@ This seems to be the most [widely used curve](http://crypto.stackexchange.com/qu
 
 ### Ciphers
 
-**Crossbar**.io will by default run a very strong and conservative set of ciphers:
+Crossbar.io will by default run a very strong and conservative set of ciphers:
 
 ```
 ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:DHE-RSA-AES128-SHA
@@ -147,7 +147,7 @@ The `ciphers` parameter must be in the format as used by OpenSSL, and the OpenSS
 
 For production use, the use of self-signed certificates is *not recommended*. However, for testing, development, Intranet or controlled deployments, you can of course.
 
-The following provides a recipe for creating a new server key and self-signed certificate for use with **Crossbar**.io.
+The following provides a recipe for creating a new server key and self-signed certificate for use with Crossbar.io.
 
 First, check your OpenSSL version:
 
@@ -224,7 +224,7 @@ chmod 644 server_cert.pem
 
 > This step is extremely important, especially since we removed the passphrase from the private key! The certificate file is non-critical.
 
-Move the files to your **Crossbar**.io node directory:
+Move the files to your Crossbar.io node directory:
 
 ```
 mv server_key.pem server_cert.pem .crossbar

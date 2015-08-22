@@ -1,4 +1,4 @@
-**Crossbar**.io was designed to flexibly support different application scenarios. Here are some examples
+Crossbar.io was designed to flexibly support different application scenarios. Here are some examples
 
 1. [Polyglot backends](#polyglot-backends)
 1. [Polyglot frontends](#polyglot-frontends)

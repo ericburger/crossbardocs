@@ -1,8 +1,8 @@
 
 
-**Containers** are worker processes spawned by **Crossbar**.io which *directly* host application classes written in Python deriving from `autobahn.twisted.wamp.ApplicationSession`.
+**Containers** are worker processes spawned by Crossbar.io which *directly* host application classes written in Python deriving from `autobahn.twisted.wamp.ApplicationSession`.
 
-This relieves the application programmer from any boilerplate code for hooking up application components into **Crossbar**.io via WAMP.
+This relieves the application programmer from any boilerplate code for hooking up application components into Crossbar.io via WAMP.
 
 For example, here is a **Python Component** configuration that will load the application class `timeservice.TimeService` in a worker process, connecting to the specified router (router config part omitted):
 

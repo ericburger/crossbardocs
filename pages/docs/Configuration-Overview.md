@@ -1,12 +1,12 @@
-When a **Crossbar**.io node starts, the node controller reads a local configuration from a file and starts services as specified in the configuration.
+When a Crossbar.io node starts, the node controller reads a local configuration from a file and starts services as specified in the configuration.
 
 Later, while the node runs, services can be dynamically stopped, reconfigured and started via the WAMP based [[Management API]] exposed by the node controller.
 
 ## Configuration File Location
 
-The local configuration of a **Crossbar**.io node is defined in a **[JSON](http://www.json.org/) file `.crossbar/config.json`** within the node directory.
+The local configuration of a Crossbar.io node is defined in a **[JSON](http://www.json.org/) file `.crossbar/config.json`** within the node directory.
 
-> The default path of the configuration file can be overridden using the `--cbdir` and `--config` options of the **Crossbar**.io command line interface (CLI). See `crossbar start --help`.
+> The default path of the configuration file can be overridden using the `--cbdir` and `--config` options of the Crossbar.io command line interface (CLI). See `crossbar start --help`.
 
 While the local configuration is the only required file in the node directory, the directory will usually contain other files. For example, here are the contents of a typical Crossbar.io node directory:
 

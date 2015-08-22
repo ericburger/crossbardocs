@@ -1,18 +1,18 @@
 WebSocket already has hugely lower overhead than HTTP, Comet or REST based solutions.
 
-On the other hand, [WAMP](http://wamp.ws/), the application protocol used by **Crossbar**.io uses JSON or MsgPack for serialization, and that still has significant potential for compression (in particular JSON).
+On the other hand, [WAMP](http://wamp.ws/), the application protocol used by Crossbar.io uses JSON or MsgPack for serialization, and that still has significant potential for compression (in particular JSON).
 
 The WebSocket protocol allows for extensions, and with [permessage-deflate](https://tools.ietf.org/html/draft-ietf-hybi-permessage-compression), there is an upcoming compression extension for WebSocket. 
 
 WebSocket compression compresses the payload of WebSocket messages which can lead to a further reduction of wire level payload by a factor of 2-15x. Here is a good [overview article](http://www.igvita.com/2013/11/27/configuring-and-optimizing-websocket-compression/).
 
-WebSocket compression (**permessage-deflate**) is fully supported by **Crossbar**.io.
+WebSocket compression (**permessage-deflate**) is fully supported by Crossbar.io.
 
 Browser support is coming: Chrome has it since version 32, Firefox [will](https://bugzilla.mozilla.org/show_bug.cgi?id=792831) get it.
 
 ## Activating Compression
 
-Here is how you enable WebSocket compression in **Crossbar**.io on a WebSocket transport:
+Here is how you enable WebSocket compression in Crossbar.io on a WebSocket transport:
 
 ```javascript
 {
@@ -33,7 +33,7 @@ Here is how you enable WebSocket compression in **Crossbar**.io on a WebSocket t
 
 That's it.
 
-**Crossbar**.io will now negotiate the **permessage-deflate** extension with any client connecting during the WebSocket opening handshake.
+Crossbar.io will now negotiate the **permessage-deflate** extension with any client connecting during the WebSocket opening handshake.
 
 Here is how the WebSocket opening handshake will look like (Chrome as client) with further parameters set (see below):
 

@@ -1,4 +1,4 @@
-In this recipe we will use **Crossbar**.io to generate an application template for a [WAMP](http://wamp.ws/) application written in JavaScript using [AutobahnCpp](https://github.com/tavendo/AutobahnCpp), an open-source C++ 11 WAMP implementation. The generated application includes a JavaScript frontend to run in a browser.
+In this recipe we will use Crossbar.io to generate an application template for a [WAMP](http://wamp.ws/) application written in JavaScript using [AutobahnCpp](https://github.com/tavendo/AutobahnCpp), an open-source C++ 11 WAMP implementation. The generated application includes a JavaScript frontend to run in a browser.
 
 The frontend and backend components will talk with each other using all four main interactions available in WAMP:
 
@@ -7,7 +7,7 @@ The frontend and backend components will talk with each other using all four mai
  3. publish an event to a topic
  4. subscribe to a topic to receive events
 
-We will run the whole application with **Crossbar**.io serving as a WAMP router, static Web server and C++/Autobahn application component host.
+We will run the whole application with Crossbar.io serving as a WAMP router, static Web server and C++/Autobahn application component host.
 
 # Prerequisites
 
@@ -15,7 +15,7 @@ This example requires a (decent) C++ 11 compiler, Boost, MsgPack and AutobahnCpp
 
 # Create an example application
 
-To create a new **Crossbar**.io node and generate a [C++ 11](http://www.php.net/) / [AutobahnCpp](https://github.com/voryx/Thruway)-based "Hello world!" example application:
+To create a new Crossbar.io node and generate a [C++ 11](http://www.php.net/) / [AutobahnCpp](https://github.com/voryx/Thruway)-based "Hello world!" example application:
 
 ```console
 crossbar init --template hello:cpp --appdir $HOME/hello
@@ -58,7 +58,7 @@ scons
 
 # Start the node
 
-Start your new **Crossbar**.io node using:
+Start your new Crossbar.io node using:
 
 ```console
 cd $HOME/hello
@@ -111,7 +111,7 @@ Open [`http://localhost:8080/`](http://localhost:8080/) (or wherever Crossbar ru
 
 Hooray! That means: it works;)
 
-You have just called a C++ procedure from JavaScript running in the browser. The call was transferred via WAMP, and routed by **Crossbar**.io between the application front- and backend components.
+You have just called a C++ procedure from JavaScript running in the browser. The call was transferred via WAMP, and routed by Crossbar.io between the application front- and backend components.
 
 # Hacking the code
 

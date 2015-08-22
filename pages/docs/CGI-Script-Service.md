@@ -1,4 +1,4 @@
-**Crossbar**.io's Web server allows you to serve plain old CGI scripts. This can be useful if you have some legacy or other scripts that you want to run as part of a **Crossbar**.io node.
+Crossbar.io's Web server allows you to serve plain old CGI scripts. This can be useful if you have some legacy or other scripts that you want to run as part of a Crossbar.io node.
 
 Here is an example configuration for a **Web Transport** that includes a CGI processor on a *subpath*:
 
@@ -30,12 +30,12 @@ Here is an example configuration for a **Web Transport** that includes a CGI pro
 CGI is configured as a path component on a Web transport:
 
  * `type` must be `"cgi"`
- * `directory` is the CGI base directory containing your scripts. The path can be absolute or relative to the **Crossbar**.io node directory
+ * `directory` is the CGI base directory containing your scripts. The path can be absolute or relative to the Crossbar.io node directory
  * `processor` is the CGI script processor to use. This MUST be a fully qualified path to an executable.
 
 Here is a complete example:
 
-1) Create a new **Crossbar**.io node
+1) Create a new Crossbar.io node
 
 ```
 cd ~
@@ -74,7 +74,7 @@ print """<!doctype html>
 """.format(sys.executable, __file__)
 ```
 
-Then start **Crossbar**.io
+Then start Crossbar.io
 
 ```
 crossbar start

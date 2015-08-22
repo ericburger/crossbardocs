@@ -1,4 +1,4 @@
-In this recipe we will use **Crossbar**.io to generate an application template for a [WAMP](http://wamp.ws/) application written in C# using [WampSharp](https://github.com/Code-Sharp/WampSharp), an open-source WAMP implementation. The generated application includes a JavaScript frontend to run in a browser.
+In this recipe we will use Crossbar.io to generate an application template for a [WAMP](http://wamp.ws/) application written in C# using [WampSharp](https://github.com/Code-Sharp/WampSharp), an open-source WAMP implementation. The generated application includes a JavaScript frontend to run in a browser.
 
 The frontend and backend components will talk with each other using all four main interactions available in WAMP:
 
@@ -7,7 +7,7 @@ The frontend and backend components will talk with each other using all four mai
  3. publish an event to a topic
  4. subscribe to a topic to receive events
 
-We will run the whole application with **Crossbar**.io serving as a WAMP router, static Web server and WampSharp application component host.
+We will run the whole application with Crossbar.io serving as a WAMP router, static Web server and WampSharp application component host.
 
 # Prerequisites
 

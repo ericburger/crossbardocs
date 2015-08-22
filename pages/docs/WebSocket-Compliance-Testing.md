@@ -1,6 +1,6 @@
-**Crossbar**.io has best-in-class compliance to the WebSocket protocol (RFC6455).
+Crossbar.io has best-in-class compliance to the WebSocket protocol (RFC6455).
 
-> Compliance is testified via the [**Autobahn**Testsuite](http://autobahn.ws/testsuite/), the [industry standard](http://autobahn.ws/testsuite/#users) WebSocket compliance testsuite which includes more than 500 automated test cases. **Crossbar**.io passed *all* tests - 100% strict. No matter what WebSocket server you use, we encourage you to run the testsuite against it and compare.
+> Compliance is testified via the [**Autobahn**Testsuite](http://autobahn.ws/testsuite/), the [industry standard](http://autobahn.ws/testsuite/#users) WebSocket compliance testsuite which includes more than 500 automated test cases. Crossbar.io passed *all* tests - 100% strict. No matter what WebSocket server you use, we encourage you to run the testsuite against it and compare.
 
 Protocol compliance is very important for two reasons:
 * interoperability
@@ -18,7 +18,7 @@ Install the testsuite:
 pip install -U autobahntestsuite
 ```
 
-Create a **Crossbar**.io node with a node configuration starting a WebSocket testee transport:
+Create a Crossbar.io node with a node configuration starting a WebSocket testee transport:
 
 ```json
 {
@@ -64,7 +64,7 @@ Now create a file `fuzzingclient.json`:
 
 This test specification defines which test cases to run against what servers.
 
-Then, start **Crossbar**.io in a first terminal
+Then, start Crossbar.io in a first terminal
 
 ```
 crossbar start

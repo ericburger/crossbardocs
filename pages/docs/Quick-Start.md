@@ -75,7 +75,7 @@ For further information about getting started with specific languages, see this 
 
 ## Run the Application
 
-To start the **Crossbar**.io node switch to the application directory
+To start the Crossbar.io node switch to the application directory
 
 ```sh
 cd hello

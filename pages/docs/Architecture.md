@@ -25,16 +25,16 @@ Crossbar.io has a **multi-process architecture**. A single, default node *contro
 
 ![Crossbar.io Node](/static/img/docs/gen/crossbar_deployment_00c.png)
 
-There are two types of processes running within a **Crossbar**.io node:
+There are two types of processes running within a Crossbar.io node:
 
  1. *Controller*
  2. *Workers*
 
-The *Controller* manages, controls and monitors the **Crossbar**.io node.
+The *Controller* manages, controls and monitors the Crossbar.io node.
 
 >At any point, there is exactly one node *Controller* process running for a given node. The *Controller* is started when the node starts, and stops when the node stops. When a *Controller* exits, any *Worker* (see below) that had not been shut down earlier will also exit.
 
-*Workers* are processes dynamically spawned by **Crossbar**.io to isolate functionality and scale up performance on multi-core systems. *Workers* come in the following flavors:
+*Workers* are processes dynamically spawned by Crossbar.io to isolate functionality and scale up performance on multi-core systems. *Workers* come in the following flavors:
 
  * *Native Workers*
      * *Routers*
@@ -43,10 +43,10 @@ The *Controller* manages, controls and monitors the **Crossbar**.io node.
 
 *Native Workers* are WAMP *Routers* and WAMP *Containers*. 
 
-* *Routers* provide WAMP call and event routing services for applications and provide the core of **Crossbar**.io functionality. 
+* *Routers* provide WAMP call and event routing services for applications and provide the core of Crossbar.io functionality. 
 * *Containers* can host application components written in Python (using [**Autobahn**](Python](https://github.com/tavendo/AutobahnPython) on [Twisted](http://twistedmatrix.com/)), i.e. what Crossbar.io is implemented on).
 
-*Guest Workers* are arbitrary programs spawned and monitored by **Crossbar**.io, usually to run user defined application components written in languages other than Python (or running on asyncio, not Twisted). E.g. a *Guest* might be a program written in C++ using [**Autobahn**|Cpp](https://github.com/tavendo/AutobahnCpp) or JavaScript using [**Autobahn**|JS](https://github.com/tavendo/AutobahnJS), connecting back to a WAMP router running inside a *Native Worker*.
+*Guest Workers* are arbitrary programs spawned and monitored by Crossbar.io, usually to run user defined application components written in languages other than Python (or running on asyncio, not Twisted). E.g. a *Guest* might be a program written in C++ using [**Autobahn**|Cpp](https://github.com/tavendo/AutobahnCpp) or JavaScript using [**Autobahn**|JS](https://github.com/tavendo/AutobahnJS), connecting back to a WAMP router running inside a *Native Worker*.
 
 
 ## Controller

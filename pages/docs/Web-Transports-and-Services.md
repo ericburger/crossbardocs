@@ -15,9 +15,9 @@
 
 ## Introduction
 
-**Crossbar**.io includes a full-featured WAMP router to wire up your application components. But if you serve HTML5 Web clients from **Crossbar**.io, the **static Web assets** for your frontends like HTML, JavaScript and image files need to be hosted somewhere as well.
+Crossbar.io includes a full-featured WAMP router to wire up your application components. But if you serve HTML5 Web clients from Crossbar.io, the **static Web assets** for your frontends like HTML, JavaScript and image files need to be hosted somewhere as well.
 
-You can host static content on your existing Web server or a static hosting service like Amazon S3. It does not matter if your **Crossbar**.io nodes reside on different domain names from the static content. However, you can  let **Crossbar**.io also host the static assets. This is possible by using a **Web Transport** with your router.
+You can host static content on your existing Web server or a static hosting service like Amazon S3. It does not matter if your Crossbar.io nodes reside on different domain names from the static content. However, you can  let Crossbar.io also host the static assets. This is possible by using a **Web Transport** with your router.
 
 Besides hosting static content, the **Web Transport** also adds a whole number of other features like serving WSGI, redirection, file upload or CGI.
 
@@ -105,7 +105,7 @@ If present, the URL in the WebSocket part of the configuration MUST include the 
 
 ## Path Services
 
-**Crossbar**.io implements multiple subpath services for use with Web transports:
+Crossbar.io implements multiple subpath services for use with Web transports:
 
  1. [Static Web Service](Static Web Service)
  1. [Web Redirection Service](Web Redirection Service)

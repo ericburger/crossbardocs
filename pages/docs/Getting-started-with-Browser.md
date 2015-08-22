@@ -1,4 +1,6 @@
-In this recipe we will use **Crossbar**.io to generate an application template for a [WAMP](http://wamp.ws/) application with a JavaScript frontend and backend - both running in the browser.
+# Getting started with JavaScript in the Browser
+
+In this recipe we will use Crossbar.io to generate an application template for a [WAMP](http://wamp.ws/) application with a JavaScript frontend and backend - both running in the browser.
 
 The open source library [AutobahnJS](https://github.com/tavendo/AutobahnJS) is used to provide WAMP functionality. 
 
@@ -10,7 +12,7 @@ The frontend and backend components will talk with each other using all four mai
  3. publish an event to a topic
  4. subscribe to a topic to receive events
 
-We will run the whole application with **Crossbar**.io serving as a WAMP router and static Web server for the frontend files.
+We will run the whole application with Crossbar.io serving as a WAMP router and static Web server for the frontend files.
 
 # Prerequisites
 
@@ -18,7 +20,7 @@ A modern browser with WebSockets, e.g. Chrome, Firefox, IE10+, Safari, Opera.
 
 # Create an app
 
-To create a new **Crossbar**.io node and generate a [JavaScript](http://en.wikipedia.org/wiki/JavaScript) / [AutobahnJS](https://github.com/tavendo/AutobahnJS) based "Hello world!" example application:
+To create a new Crossbar.io node and generate a [JavaScript](http://en.wikipedia.org/wiki/JavaScript) / [AutobahnJS](https://github.com/tavendo/AutobahnJS) based "Hello world!" example application:
 
 ```sh
 crossbar init --template hello:browser --appdir $HOME/hello
@@ -48,7 +50,7 @@ Start Crossbar using 'crossbar start' and open http://localhost:8080 in your bro
 
 # Start the Crossbar.io node
 
-Start your new **Crossbar**.io node using:
+Start your new Crossbar.io node using:
 
 ```console
 $ crossbar start
@@ -92,7 +94,7 @@ while in the backend you should see log output like
 
 **Hooray! That means: it works;)**
 
-The calls and events were exchanged over [WAMP](http://wamp.ws/) and routed by **Crossbar**.io between the application components.
+The calls and events were exchanged over [WAMP](http://wamp.ws/) and routed by Crossbar.io between the application components.
 
 # Hacking the code
 

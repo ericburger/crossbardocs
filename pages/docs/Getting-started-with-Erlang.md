@@ -1,4 +1,4 @@
-In this recipe we will use **Crossbar**.io to generate an application template for a [WAMP](http://wamp.ws/) application written in Erlang using [Erwa](https://github.com/bwegh/erwa), an open-source Erlang WAMP implementation (both client and router). The generated application includes a JavaScript frontend to run in a browser.
+In this recipe we will use Crossbar.io to generate an application template for a [WAMP](http://wamp.ws/) application written in Erlang using [Erwa](https://github.com/bwegh/erwa), an open-source Erlang WAMP implementation (both client and router). The generated application includes a JavaScript frontend to run in a browser.
 
 The frontend and backend components will talk with each other using all four main interactions available in WAMP:
 
@@ -7,7 +7,7 @@ The frontend and backend components will talk with each other using all four mai
  3. publish an event to a topic
  4. subscribe to a topic to receive events
 
-We will run the whole application with **Crossbar**.io serving as a WAMP router, static Web server and Erlang/Erwa application component host.
+We will run the whole application with Crossbar.io serving as a WAMP router, static Web server and Erlang/Erwa application component host.
 
 # Prerequisites
 
@@ -19,7 +19,7 @@ sudo apt-get install erlang
 
 # Create an example application
 
-To create a new **Crossbar**.io node and generate a [Erlang](http://www.erlang.org/) / [Erwa](https://github.com/bwegh/erwa) based "Hello world!" example application:
+To create a new Crossbar.io node and generate a [Erlang](http://www.erlang.org/) / [Erwa](https://github.com/bwegh/erwa) based "Hello world!" example application:
 
 ```console
 crossbar init --template hello:erlang --appdir $HOME/hello
@@ -68,7 +68,7 @@ make
 
 # Start the node
 
-Start your new **Crossbar**.io node using:
+Start your new Crossbar.io node using:
 
 ```console
 cd $HOME/hello
@@ -130,7 +130,7 @@ Open [`http://localhost:8080/`](http://localhost:8080/) (or wherever Crossbar ru
 
 Hooray! That means: it works;)
 
-You have just watched the Erlang backend component talking to the JavaScript frontend component and vice-versa. The calls and events were exchanged over [WAMP](http://wamp.ws/) and routed by **Crossbar**.io between the application components.
+You have just watched the Erlang backend component talking to the JavaScript frontend component and vice-versa. The calls and events were exchanged over [WAMP](http://wamp.ws/) and routed by Crossbar.io between the application components.
 
 # Hacking the code
 

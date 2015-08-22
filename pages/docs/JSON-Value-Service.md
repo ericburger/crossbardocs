@@ -51,6 +51,6 @@ When you open `http://localhost:8080/config` in your browser, you should get
 }
 ```
 
-**Crossbar**.io will serve the JSON value with the correct MIME type (`application/json`), but prettify the output for convenience when access by a human.
+Crossbar.io will serve the JSON value with the correct MIME type (`application/json`), but prettify the output for convenience when access by a human.
 
 You can now retrieve above JSON e.g. by issueing an [XMLHttpRequest](http://www.w3.org/TR/XMLHttpRequest/) from JavaScript and use the custom parameter values to control some aspect in your application frontend.
