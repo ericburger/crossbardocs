@@ -1,7 +1,7 @@
 **The final RFC spec**
 
 
-WebSockets, as an [IETF standard](http://tools.ietf.org/html/rfc6455), and with a W3C browser API, is fully supported by all modern browsers:
+WebSocket, as an [IETF standard](http://tools.ietf.org/html/rfc6455), and with a W3C browser API, is fully supported by all modern browsers:
 
 * Chrome 16 + (incl. Chrome for Android)
 * Firefox 11 + (incl. Firefox for Android)
@@ -14,7 +14,7 @@ WebSockets, as an [IETF standard](http://tools.ietf.org/html/rfc6455), and with 
 **Older protocol versions**
 
 
-Some older browsers support non-final versions of WebSockets. To enable support for these versions in Crossbar.io, 'Allow Hixie-76' and/or 'Allow Hybi-10+' need to be enabled under WebSocket options.
+Some older browsers support non-final versions of WebSocket. To enable support for these versions in Crossbar.io, 'Allow Hixie-76' and/or 'Allow Hybi-10+' need to be enabled under WebSocket options.
 
 **Adding WebSocket support**
 
@@ -47,7 +47,7 @@ Opera Mobile works, and is currently the only option on devices that do not have
 
 Opera Mini is NOT supported, since it has only very limited support for JavaScript.
 
-The Android WebView supports WebSockets only starting at Android 4.4, since at this point it was switched to the Chromium engine from the Android browser.
+The Android WebView supports WebSocket only starting at Android 4.4, since at this point it was switched to the Chromium engine from the Android browser.
 
 
 ***Opera***
@@ -57,7 +57,7 @@ Opera 12.1+ (both desktop and mobile) has full WebSocket support, and of course 
 Versions 11.0 - 12.0 have support for an older version (Hixie76), and this
 is deactivated by default.
 
-To activate, [follow this link](opera:config#Enable%20WebSockets) (or enter "opera:config" into the browser address bar and search for "websocket"), check the enable flag and restart the browser.
+To activate, [follow this link](opera:config#Enable%20WebSocket) (or enter "opera:config" into the browser address bar and search for "websocket"), check the enable flag and restart the browser.
 
 ***Safari***
 

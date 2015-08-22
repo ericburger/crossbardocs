@@ -2,7 +2,7 @@
 
 # Quick Start
 
-This quick start described how to install Crossbar.io, test the installation and create and run a sample application.
+This quick start describes how to install Crossbar.io, test the installation and create and run a sample application.
 
 
 ## Install Crossbar.io
@@ -22,23 +22,36 @@ To install Crossbar.io with **all optional** parts as well:
 
 ## Test the Installation
 
-When successful, the installation will have created a `crossbar` command line tool. You can verify the install by doing:
+When successful, the installation will have created a `crossbar` command line tool:
 
 ```console
-oberstet@ubuntu1404:~$ crossbar version
-
-Crossbar.io software versions:
-
-Crossbar.io     : 0.9.6
-Autobahn        : 0.8.10
-Twisted         : 14.0.0-EPollReactor
-Python          : 2.7.7
-UTF8 Validator  : autobahn
-XOR Masker      : autobahn
+(python279_1)oberstet@thinkpad-t430s:~$ which crossbar
+/home/oberstet/python279_1/bin/crossbar
+(python279_1)oberstet@thinkpad-t430s:~$ ls -la `which crossbar`
+-rwxrwxr-x 1 oberstet oberstet 331 Aug 17 21:09 /home/oberstet/python279_1/bin/crossbar
 ```
 
-which lists the software versions of some Crossbar.io components.
+> The path to the `crossbar` exectuable will depend on your environment.
 
+You can then verify the install by running `crossbar version`, which lists the software versions of important Crossbar.io components:
+
+```console
+(python279_1)oberstet@thinkpad-t430s:~$ crossbar version
+     __  __  __  __  __  __      __     __
+    /  `|__)/  \/__`/__`|__) /\ |__)  |/  \
+    \__,|  \\__/.__/.__/|__)/~~\|  \. |\__/
+
+Crossbar.io        : 0.11.0
+  Autobahn         : 0.10.5.post2
+    UTF8 Validator : wsaccel-0.6.2
+    XOR Masker     : wsaccel-0.6.2
+    JSON Codec     : ujson-1.33
+    MsgPack Codec  : msgpack-python-0.4.6
+  Twisted          : 15.3.0-EPollReactor
+  Python           : 2.7.9/CPython
+OS                 : Linux-3.13.0-61-generic-x86_64-with-debian-jessie-sid
+Machine            : x86_64
+```
 
 ## Create an Application
 

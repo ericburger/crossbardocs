@@ -1,21 +1,28 @@
-For production use, it is strongly recommended to run WebSocket *always* over TLS ("secure WebSocket"). 
+[Documentation](.) > [[Going to Production]] -> Secure WebSocket and HTTPS
 
-This is for mainly two reasons:
+# Secure WebSocket and HTTPS
 
-* keeping your and your user's data confidential
+For production use, it is **strongly recommended** to always run WebSocket over [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) ("secure WebSocket"). This is mainly for two reasons:
+
+* keeping your and your user's data confidential and untampered
 * avoiding issues with WebSocket on networks that employ so-called intermediaries (proxies, caches, firewalls)
 
 > The latter is especially important on locked down enterprise environments and on mobile operator networks. By using secure WebSocket ("wss"), WebSocket will work in almost all circumstances (exceptions potentially being TLS interception / MITM proxies).
 
-Crossbar.io has full support for running secure WebSocket and HTTPS. This guide describes the 3 main options:
+Crossbar.io has full support for running secure WebSocket and HTTPS. We discuss configuration:
 
-* Using self-signed certificates
-* Using certificates from commercial CAs
-* Creating and using your own CA
+* [WebSocket Transport Configuration](#websocket-transport-configuration)
+* [Endpoint TLS Configuration](#endpoint-tls-configuration)
 
-We also strongly recommend to test your server using the [SSL Server Test](https://www.ssllabs.com/ssltest/) provided by Qualys SSL Labs. This will point out any weaknesses of your configuration or issues with your certificate.
+To actually use TLS, you will need a **certificate** for your server. This guide describes the three main options:
 
-## Configuration
+1. [Using self-signed certificates](#using-self-signed-certificates)
+2. [Using certificates from commercial CAs](#using-commercial-certificates)
+3. [Creating and using your own CA](#creating-your-own-certificate-authority)
+
+We also **strongly recommend** to test your server using the [SSL Server Test](https://www.ssllabs.com/ssltest/) provided by Qualys SSL Labs. This will point out weaknesses in your configuration or issues with your certificate.
+
+## WebSocket Transport Configuration
 
 To configure a WebSocket transport for TLS, include a `tls` dictionary with (mandatory) attributes `key` and `certificate` in your transport configuration. Here is an example:
 
@@ -62,7 +69,9 @@ To configure a Web transport for TLS, here is an example:
 }
 ```
 
-## Options
+---
+
+## Endpoint TLS Configuration
 
 The TLS configuration has a couple of options:
 
@@ -92,9 +101,7 @@ where
 
 To use [Diffie-Hellman](http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) based key exchange, you need to generate a parameter file:
 
-```
-openssl dhparam -2 1024 -out .crossbar/dhparam.pem
-```
+    openssl dhparam -2 1024 -out .crossbar/dhparam.pem
 
 The use of Diffie-Hellman key exchange is desirable, since this provides [Perfect Forward Secrecy (PFS)](http://en.wikipedia.org/wiki/Forward_secrecy). Without a DH parameter file, no Diffie-Hellman based ciphers will be used, even if configured to do so.
 
@@ -108,18 +115,14 @@ EC crypto is fully supported by Crossbar.io, if the underlying OpenSSL library s
 
 You can check like this:
 
-```console
-openssl ecparam -list_curves
-```
+    openssl ecparam -list_curves
 
 To install pyOpenSSL trunk (since 0.15 isn't released yet - 2014/07/09):
 
-```console
-cd ~
-git clone git@github.com:pyca/pyopenssl.git
-cd pyopenssl
-python setup.py install
-```
+    cd ~
+    git clone git@github.com:pyca/pyopenssl.git
+    cd pyopenssl
+    python setup.py install
 
 Crossbar.io uses the `prime256v1` curve by default.
 
@@ -131,7 +134,7 @@ This seems to be the most [widely used curve](http://crypto.stackexchange.com/qu
 
 Crossbar.io will by default run a very strong and conservative set of ciphers:
 
-```
+```text
 ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:DHE-RSA-AES128-SHA
 ```
 
@@ -143,6 +146,9 @@ In general, you should only change the `ciphers` if you know what you are doing.
 
 The `ciphers` parameter must be in the format as used by OpenSSL, and the OpenSSL library version installed on the system must support the ciphers configured to make same actually available. If your OpenSSL version installed does not support a configured cipher (e.g. ECDH elliptic curve based), the ciphers not available will simply be skipped.
 
+---
+
+
 ## Using Self-signed Certificates
 
 For production use, the use of self-signed certificates is *not recommended*. However, for testing, development, Intranet or controlled deployments, you can of course.
@@ -151,7 +157,7 @@ The following provides a recipe for creating a new server key and self-signed ce
 
 First, check your OpenSSL version:
 
-```
+```console
 C:\Users\oberstet>openssl version
 OpenSSL 1.0.1f 6 Jan 2014
 ```
@@ -160,18 +166,14 @@ OpenSSL 1.0.1f 6 Jan 2014
 
 Then, create a new server key (RSA with 2048 bits in this case):
 
-```
-openssl genrsa -out .crossbar/server_key.pem 2048
-chmod 600 .crossbar/server_key.pem
-```
+    openssl genrsa -out .crossbar/server_key.pem 2048
+    chmod 600 .crossbar/server_key.pem
 
 > A server key must not be protected with a passphrase, since it needs to be loaded unattended. However, you should make sure that file permissions are set so that only the user under which the server starts is able to read the key.
 
 Next, create a new certificate signing request ("CSR") for the key generated formerly:
 
-```
-openssl req -new -key .crossbar/server_key.pem -out .crossbar/server_csr.pem
-```
+    openssl req -new -key .crossbar/server_key.pem -out .crossbar/server_csr.pem
 
 You must set the "Common Name" (CN) to the fully qualified domain name (or IP address) of the server, e.g. `server23.tavendo.com` (or `62.146.25.40`). Do NOT include a port number - a certificate is always for a server, not a service running on a specific port.
 
@@ -179,11 +181,12 @@ You must set the "Common Name" (CN) to the fully qualified domain name (or IP ad
 
 Finally, create a new self-signed certificate (valid for 1 year) from the CSR created formerly:
 
-```
-openssl x509 -req -days 365 -in .crossbar/server_csr.pem -signkey .crossbar/server_key.pem -out .crossbar/server_cert.pem
-```
+    openssl x509 -req -days 365 -in .crossbar/server_csr.pem \
+        -signkey .crossbar/server_key.pem -out .crossbar/server_cert.pem
+
 > Note: to view the contents of a certificate: `openssl x509 -text -noout -in .crossbar/server_cert.pem`
 
+---
 
 ## Using commercial certificates
 
@@ -193,42 +196,34 @@ For production use, you will usually deploy certificates issues by commercial CA
 
 Remove the passphrase protection from the private key with the OpenSSL (should there be any):
 
-```
-openssl rsa -in server_key_with_passphrase.pem -out server_key.pem
-```
+    openssl rsa -in server_key_with_passphrase.pem -out server_key.pem
 
 > Note: This is needed since we want the server to start automatically without administrator interaction.
 
 Append any intermediate CA certificates to the server certificate:
 
-```
-cat ../sub.class1.server.sha2.ca.pem >> server_cert.pem
-```
+    cat ../sub.class1.server.sha2.ca.pem >> server_cert.pem
 
 > The certificates must be in PEM format and must be sorted starting with the subject's certificate (actual client or server certificate), followed by *intermediate* CA certificates if applicable, but *excluding* the
 > highest level (root) CA.
 
 Upload the key and certificate to your server host:
 
-```
-scp server_cert.pem server_key.pem serveruser@server.example.com:/home/serveruser
-```
+    scp server_cert.pem server_key.pem serveruser@server.example.com:/home/serveruser
 
 Login to the server and make sure you restrict the key's file permissions
 
-```
-cd /home/serveruser
-chmod 600 server_key.pem
-chmod 644 server_cert.pem
-```
+    cd /home/serveruser
+    chmod 600 server_key.pem
+    chmod 644 server_cert.pem
 
 > This step is extremely important, especially since we removed the passphrase from the private key! The certificate file is non-critical.
 
 Move the files to your Crossbar.io node directory:
 
-```
-mv server_key.pem server_cert.pem .crossbar
-```
+    mv server_key.pem server_cert.pem .crossbar
+
+---
 
 ## Creating your own Certificate Authority
 
@@ -236,38 +231,28 @@ The following recipe is for creating your own root certificate authority ("CA"),
 
 First, create a new private key for your CA:
 
-```
-openssl genrsa -aes256 -out ca_key.pem 4096
-chmod 600 ca_key.pem
-```
+    openssl genrsa -aes256 -out ca_key.pem 4096
+    chmod 600 ca_key.pem
 
 > As "Common Name" (CN), you could choose something like "Tavendo Certificate Authority". This is different from servers, where CN should be the FQDN, and personal certificates, where the CN should be the Email of the person.
 
 Next, create a certificate for your CA valid for 10 years:
 
-```
-openssl req -new -x509 -days 3650 -extensions v3_ca -key ca_key.pem -out ca_cert.pem
-```
+    openssl req -new -x509 -days 3650 -extensions v3_ca -key ca_key.pem -out ca_cert.pem
 
 To check and view your CA certificate:
 
-```
-openssl x509 -in ca_cert.pem -noout -text
-```
+    openssl x509 -in ca_cert.pem -noout -text
 
 Create a server certificate signed by your CA:
 
-```
-openssl x509 -req -days 365 -CA ca_cert.pem -CAkey ca_key.pem -CAcreateserial \
-   -addreject emailProtection -addreject clientAuth -addtrust serverAuth \
-   -in .crossbar/server_csr.pem -out .crossbar/server_cert.pem
-```
+    openssl x509 -req -days 365 -CA ca_cert.pem -CAkey ca_key.pem -CAcreateserial \
+       -addreject emailProtection -addreject clientAuth -addtrust serverAuth \
+       -in .crossbar/server_csr.pem -out .crossbar/server_cert.pem
 
 View the server certificate:
 
-```
-openssl x509 -text -noout -in .crossbar/server_cert.pem
-```
+    openssl x509 -text -noout -in .crossbar/server_cert.pem
 
 ### CA Certificate Import
 
@@ -297,6 +282,7 @@ verify the CA certificate fingerprint:
 
 ![Windows certificate import - step 5](/static/img/docs/shots/windows_cert_import5.png)
 
+---
 
 ## Testing
 
@@ -316,7 +302,9 @@ Server Temp Key: ECDH, P-256, 256 bits
 ...
 ```
 
-## Useful Resources
+---
+
+## Resources
 
  * [OpenSSL man page](http://linux.die.net/man/1/dhparam)
  * [OpenSSL API documentation](http://linux.die.net/man/3/ssl_ctx_set_tmp_dh)
