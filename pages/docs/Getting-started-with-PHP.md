@@ -1,31 +1,29 @@
+# Getting started with PHP
+
 In this recipe we will use Crossbar.io to generate an application template for a [WAMP](http://wamp.ws/) application written in [PHP](http://php.net/) using [Thruway](https://github.com/voryx/Thruway), an open-source WAMP implementation for PHP. The generated application includes a JavaScript frontend to run in a browser.
 
 The frontend and backend components will talk with each other using all four main interactions available in WAMP:
 
- 1. call a remote procedure
- 2. register a procedure for remote calling
- 3. publish an event to a topic
- 4. subscribe to a topic to receive events
+1. call a remote procedure
+2. register a procedure for remote calling
+3. publish an event to a topic
+4. subscribe to a topic to receive events
 
 We will run the whole application with Crossbar.io serving as a WAMP router, static Web server and PHP/Thruway application component host.
 
-# Prerequisites
+## Prerequisites
 
 Install [PHP](http://www.php.net/) and [Composer](https://getcomposer.org/):
 
-```console
-sudo apt-get install -y php5-cli php5-json curl
-curl -s http://getcomposer.org/installer | php
-sudo mv composer.phar /usr/local/bin/composer
-```
+    sudo apt-get install -y php5-cli php5-json curl
+    curl -s http://getcomposer.org/installer | php
+    sudo mv composer.phar /usr/local/bin/composer
 
 # Create an example application
 
 To create a new Crossbar.io node and generate a [PHP](http://www.php.net/) / [Thruway](https://github.com/voryx/Thruway) based "Hello world!" example application:
 
-```console
-crossbar init --template hello:php --appdir $HOME/hello
-```
+    crossbar init --template hello:php --appdir $HOME/hello
 
 This will initialize a new node and application under `$HOME/hello` using the application template `hello:php`.
 
@@ -51,24 +49,19 @@ Application template initialized
 Now install dependencies for the PHP/Thruway client by entering 'make install', start Crossbar using 'crossbar start' and open http://localhost:8080 in your browser.
 ```
 
-# Install example dependencies
+## Install example dependencies
 
 The dependencies for the PHP example need to be *installed* (once):
 
-```console
-cd $HOME/hello
-make install
-```
+    cd $HOME/hello
+    make install
 
-
-# Start the node
+## Start the node
 
 Start your new Crossbar.io node using:
 
-```console
-cd $HOME/hello
-crossbar start
-```
+    cd $HOME/hello
+    crossbar start
 
 You should see the node starting:
 
@@ -110,16 +103,16 @@ oberstet@ubuntu1404:~/hello$ crossbar start
 The Crossbar example configuration has started a WAMP router and a guest worker running the PHP/Thruway based application component. It also runs a Web server for serving static Web content.
 
 
-# Open the frontend
+## Open the frontend
 
 Open [`http://localhost:8080/`](http://localhost:8080/) (or wherever Crossbar runs) in your browser. When you watch the browser's JavaScript console, you should see
 
-> ![](/static/img/docs/shots/hello_php.png)
+![Hello from PHP](/static/img/docs/shots/hello_php.png)
 
 Hooray! That means: it works;)
 
 You have just called a PHP procedure from JavaScript running in the browser. The call was transferred via WAMP, and routed by Crossbar.io between the application front- and backend components.
 
-# Hacking the code
+## Hacking the code
 
 All the PHP backend code is in the file `client.php`. All the JavaScript frontend code is in `web/index.html`.

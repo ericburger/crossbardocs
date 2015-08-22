@@ -5,7 +5,7 @@
 The *HTTP Publisher* is a service that allows clients to submit PubSub events via HTTP/POST requests.
 Crossbar will receive the event data via the request and forward the event via standard WAMP to any connected subscribers in real-time.
 
-![](/static/img/docs/crossbar_http_publish.png)
+![WAMP Publish via REST bridge](/static/img/docs/crossbar_http_publish.png)
 ## Try it
 
 Clone the [Crossbar.io examples repository](https://github.com/crossbario/crossbarexamples), and go to the `rest/publisher` subdirectory.

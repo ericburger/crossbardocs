@@ -7,24 +7,22 @@ The open source library [AutobahnJS](https://github.com/tavendo/AutobahnJS) is u
 
 The frontend and backend components will talk with each other using all four main interactions available in WAMP:
 
- 1. call a remote procedure
- 2. register a procedure for remote calling
- 3. publish an event to a topic
- 4. subscribe to a topic to receive events
+1. call a remote procedure
+2. register a procedure for remote calling
+3. publish an event to a topic
+4. subscribe to a topic to receive events
 
 We will run the whole application with Crossbar.io serving as a WAMP router and static Web server for the frontend files.
 
-# Prerequisites
+## Prerequisites
 
-A modern browser with WebSockets, e.g. Chrome, Firefox, IE10+, Safari, Opera.
+A modern browser with [WebSocket support](http://caniuse.com/#search=websocket), e.g. Chrome, Firefox, IE10+, Safari or Opera.
 
-# Create an app
+## Create an app
 
 To create a new Crossbar.io node and generate a [JavaScript](http://en.wikipedia.org/wiki/JavaScript) / [AutobahnJS](https://github.com/tavendo/AutobahnJS) based "Hello world!" example application:
 
-```sh
-crossbar init --template hello:browser --appdir $HOME/hello
-```
+    crossbar init --template hello:browser --appdir $HOME/hello
 
 This will initialize a new node and application under `$HOME/hello` using the application template `hello:browser`.
 
@@ -33,6 +31,7 @@ This will initialize a new node and application under `$HOME/hello` using the ap
 You should see the application template being initialized:
 
 ```console
+oberstet@vbox-ubuntu1310:~$ crossbar init --template hello:browser --appdir $HOME/hello
 Crossbar.io application directory 'hello' created
 Initializing application template 'hello:browser' in directory 'c:\Users\Alex\tmp\hello'
 Using template from 'c:/Python27/lib/site-packages/crossbar-0.10.0-py2.7.egg/crossbar/templates/hello/browser'
@@ -48,12 +47,12 @@ Application template initialized
 Start Crossbar using 'crossbar start' and open http://localhost:8080 in your browser.
 ```
 
-# Start the Crossbar.io node
+## Start the Crossbar.io node
 
 Start your new Crossbar.io node using:
 
 ```console
-$ crossbar start
+oberstet@vbox-ubuntu1310:~/hello$ crossbar start
 2015-01-15 17:26:45+0100 [Controller   6504] Log opened.
 2015-01-15 17:26:45+0100 [Controller   6504] ==================== Crossbar.io ====================
 
@@ -77,7 +76,7 @@ $ crossbar start
 2015-01-15 17:26:47+0100 [Controller   6504] Router 'worker1': transport 'transport1' started
 ```
 
-# Open the frontend
+## Open the frontend
 
 Open [`http://localhost:8080/`](http://localhost:8080/) in your browser. You should see
 
@@ -96,7 +95,8 @@ while in the backend you should see log output like
 
 The calls and events were exchanged over [WAMP](http://wamp.ws/) and routed by Crossbar.io between the application components.
 
-# Hacking the code
+
+## Hacking the code
 
 The JavaScript frontend code is in `web/frontend.html`, the backend code in `web/backend.html`.
 
@@ -290,9 +290,9 @@ connection.onopen = function (session, details) {
 ```
 
 
-# Further information
+## Further information
 
-For more information about programming using WAMP and Autobahn](JS, see the [Autobahn&#124;JS documentation](http://autobahn.ws/js/), especially the tutorials on
+For more information about programming using WAMP and Autobahn](JS, see the [AutobahnJS documentation](http://autobahn.ws/js/), especially the tutorials on
 
 * [Remote Procedure Calls](http://autobahn.ws/js/tutorial_rpc.html)
 * [Publish & Subscribe](http://autobahn.ws/js/tutorial_pubsub.html)

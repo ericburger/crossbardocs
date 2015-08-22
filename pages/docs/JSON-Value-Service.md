@@ -1,3 +1,5 @@
+# JSON Value Service
+
 The **JSON Value Service** is configured on a subpath of a **Web Transport** and allows you to expose a custom JSON value from your node configuration dynamically over HTTP(S).
 
 This can be useful to have custom parameters accessible from JavaScript running in browsers or other Web clients.

@@ -1,6 +1,8 @@
+# Router Transports
+
 Transports are necessary for allowing incoming connections to *Routers*. This applies to WAMP connections as well as for other services that *Routers* provide, such as a static Web server.
 
-## WAMP Transports
+## Background
 
 [WAMP](http://wamp.ws/) runs over any transport with the following characteristics (see the [spec](https://github.com/tavendo/WAMP/blob/master/spec/basic.md#transports)):
 
@@ -11,19 +13,20 @@ Transports are necessary for allowing incoming connections to *Routers*. This ap
 
 Over which WAMP transport an application component is connected to a router does not matter. It's completely transparent from the application component point of view.
 
-## Crossbar.io WAMP Transport Support
+The WAMP spec currently defines these transports:
+
+* [WAMP-over-WebSocket Transport](https://github.com/tavendo/WAMP/blob/master/spec/basic.md#websocket-transport)
+* [WAMP-over-RawSocket Transport](https://github.com/tavendo/WAMP/blob/master/spec/advanced.md#rawsocket-transport)
+* [WAMP-over-Longpoll Transport](https://github.com/tavendo/WAMP/blob/master/spec/advanced.md#long-poll-transport)
+
+
+## Supported Transport Types
 
 Crossbar.io currently supports **18** WAMP transports in total:
 
 ![Crossbar.io: supported WAMP Transports](/static/img/docs/gen/crossbar_transports_1.png)
 
-References:
-
- * [WAMP-WebSocket Transport](https://github.com/tavendo/WAMP/blob/master/spec/basic.md#websocket-transport)
- * [WAMP-HTTP/Longpoll Transport](https://github.com/tavendo/WAMP/blob/master/spec/advanced.md#long-poll-transport)
- * [WAMP-RawSocket Transport](https://github.com/tavendo/WAMP/issues/77)
-
-## Common WAMP Transports
+## Common Transports
 
 The most common transports are the following:
 
@@ -43,18 +46,15 @@ Crossbar.io also allows Web transports. A Web transport allows running one or mo
 
 ## Configuration
 
-For configuring *Transports* with *Routers*, 
+For configuring *Transports* with *Routers*, please see
 
-* for WAMP connections please see
+* [WebSocket Transports](WebSocket Transports)
+* [RawSocket Transports](RawSocket Transports)
 
-   * [WebSocket Transports](WebSocket Transports)
-   * [RawSocket Transports](RawSocket Transports)
+and for the Web, HTTP/Longpoll and other Web Transport features see
 
-* for the Web server, HTTP/Longpoll and other Web Transport features see
+* [Web Transports and Services](Web Transports and Services)
 
-   * [Web Transports and Services](Web Transports and Services)
+For setting up a Flash Policy transport necessary for a WebSocket Flash fallback for older browsers
 
-* for setting up a Flash Policy transport necessary for a WebSocket Flash fallback for older browsers
-
-   * [[Flash Policy Transports]]
-
+* [[Flash Policy Transport]]

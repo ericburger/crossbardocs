@@ -1,3 +1,5 @@
+# Configuration Overview
+
 When a Crossbar.io node starts, the node controller reads a local configuration from a file and starts services as specified in the configuration.
 
 Later, while the node runs, services can be dynamically stopped, reconfigured and started via the WAMP based [[Management API]] exposed by the node controller.

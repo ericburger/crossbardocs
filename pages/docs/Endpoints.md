@@ -1,6 +1,8 @@
+# Endpoints
+
 An *Endpoint* describes the network connection over which data is transmitted. *Endpoints* are used as part of *Transport* definitions, e.g.
 
-``` javascript
+```json
 {
    "type": "websocket",
    "endpoint": {
@@ -10,9 +12,10 @@ An *Endpoint* describes the network connection over which data is transmitted. *
 }
 ```
 
-defines a *WebSocket Transport*, that will listen on TCP port 8080 for incoming WAMP connections.
+defines a *WebSocket Transport*, that will listen on TCP port `8080` for incoming WAMP connections.
 
 *Endpoints* are used in different places for Crossbar.io configuration. E.g. a *Router* *Transport* will (usually) specify at least one listening *Endpoint* for clients to connect. A component *Container* must specify the *Router* to connect to, and hence will provide configuration for a connecting *Endpoint*.
+
 
 ## Endpoint Types
 
@@ -35,12 +38,14 @@ A listening TCP *Endpoint* accepts incoming connections over TCP (or TLS) from c
 
 #### TCP Listening Endpoints
 
-Here is an *Endpoint* that is listening on TCP port 8080 (on all network interfaces):
+Here is an *Endpoint* that is listening on TCP port `8080` (on all network interfaces):
 
-```javascript
-"endpoint": {
-   "type": "tcp",
-   "port": 8080
+```json
+{
+   "endpoint": {
+      "type": "tcp",
+      "port": 8080
+   }  
 }
 ```
 
@@ -58,27 +63,32 @@ Option | Description
 
 #### TCP Connecting Endpoints
 
-Here is an *Endpoint* that is connecting over TCP to `localhost` on port 8080:
+Here is an *Endpoint* that is connecting over TCP to `localhost` on port `8080`:
 
-```javascript
-"endpoint": {
-   "type": "tcp",
-   "host": "localhost",
-   "port": 8080
+```json
+{
+   "endpoint": {
+      "type": "tcp",
+      "host": "localhost",
+      "port": 8080
+   }   
 }
 ```
 
 Here is a listening *Endpoint* that uses TLS (note there's "interface" instead of "host"):
 
-```javascript
-"endpoint": {
-    "type": "tcp",
-    "interface": "127.0.0.1",
-    "port": 443,
-    "tls": {
-        "key": "server.key",
-        "certificate": "server.crt"
-    }
+```json
+{
+   "endpoint": {
+      "type": "tcp",
+      "interface": "127.0.0.1",
+      "port": 443,
+      "tls": {
+         "key": "server.key",
+         "certificate": "server.crt"
+      }   
+   }
+}
 ```
 TCP connecting *Endpoints* can be configured using the following parameters:
 
@@ -101,10 +111,12 @@ A listening Unix domain socket *Endpoint* accepts incoming connections over a Un
 
 Here is an *Endpoint* that is listening on Unix domain socket `/tmp/socket1`:
 
-```javascript
-"endpoint": {
-   "type": "unix",
-   "path": "/tmp/socket1"
+```json
+{
+   "endpoint": {
+      "type": "unix",
+      "path": "/tmp/socket1"
+   }   
 }
 ```
 
@@ -120,10 +132,12 @@ Option | Description
 
 Here is an *Endpoint* that is connecting over Unix domain socket `/tmp/socket1`:
 
-```javascript
-"endpoint": {
-   "type": "unix",
-   "path": "/tmp/socket1"
+```json
+{
+   "endpoint": {
+      "type": "unix",
+      "path": "/tmp/socket1"
+   }   
 }
 ```
 

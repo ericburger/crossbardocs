@@ -1,29 +1,27 @@
+# Getting started with Erlang
+
 In this recipe we will use Crossbar.io to generate an application template for a [WAMP](http://wamp.ws/) application written in Erlang using [Erwa](https://github.com/bwegh/erwa), an open-source Erlang WAMP implementation (both client and router). The generated application includes a JavaScript frontend to run in a browser.
 
 The frontend and backend components will talk with each other using all four main interactions available in WAMP:
 
- 1. call a remote procedure
- 2. register a procedure for remote calling
- 3. publish an event to a topic
- 4. subscribe to a topic to receive events
+1. call a remote procedure
+2. register a procedure for remote calling
+3. publish an event to a topic
+4. subscribe to a topic to receive events
 
 We will run the whole application with Crossbar.io serving as a WAMP router, static Web server and Erlang/Erwa application component host.
 
-# Prerequisites
+## Prerequisites
 
 Install [Erlang](http://www.erlang.org/):
 
-```console
-sudo apt-get install erlang
-```
+    sudo apt-get install erlang
 
-# Create an example application
+## Create an example application
 
 To create a new Crossbar.io node and generate a [Erlang](http://www.erlang.org/) / [Erwa](https://github.com/bwegh/erwa) based "Hello world!" example application:
 
-```console
-crossbar init --template hello:erlang --appdir $HOME/hello
-```
+    crossbar init --template hello:erlang --appdir $HOME/hello
 
 This will initialize a new node and application under `$HOME/hello` using the application template `hello:erlang`.
 
@@ -57,23 +55,19 @@ Application template initialized
 Now build the Erlang/Erwa client by entering 'make', start Crossbar using 'crossbar start' and open http://localhost:8080 in your browser.
 ```
 
-# Build the example
+## Build the example
 
 To build the example:
 
-```console
-cd $HOME/hello
-make
-```
+    cd $HOME/hello
+    make
 
-# Start the node
+## Start the node
 
 Start your new Crossbar.io node using:
 
-```console
-cd $HOME/hello
-crossbar start
-```
+    cd $HOME/hello
+    crossbar start
 
 You should see the node starting:
 
@@ -122,26 +116,26 @@ oberstet@vbox-ubuntu1310:~/hello$ crossbar start
 The Crossbar example configuration has started a WAMP router and a guest worker running the Erlang/Erwa based application component. It also runs a Web server for serving static Web content.
 
 
-# Open the frontend
+## Open the frontend
 
 Open [`http://localhost:8080/`](http://localhost:8080/) (or wherever Crossbar runs) in your browser. When you watch the browser's JavaScript console, you should see
 
-> ![](/static/img/docs/shots/hello_python.png)
+![WAMP client running in browser](/static/img/docs/shots/hello_python.png)
 
 Hooray! That means: it works;)
 
 You have just watched the Erlang backend component talking to the JavaScript frontend component and vice-versa. The calls and events were exchanged over [WAMP](http://wamp.ws/) and routed by Crossbar.io between the application components.
 
-# Hacking the code
+## Hacking the code
 
 All the Erlang backend code is in `src/crossbar_client.erl` while all the JavaScript frontend code is in `web/index.html`.
 
 The code in both the backend and the frontend each performs all four main interactions:
 
- 1. call a remote procedure
- 2. register a procedure for remote calling
- 3. publish an event to a topic
- 4. subscribe to a topic to receive events
+1. call a remote procedure
+2. register a procedure for remote calling
+3. publish an event to a topic
+4. subscribe to a topic to receive events
 
 Here is the Erlang backend component:
 

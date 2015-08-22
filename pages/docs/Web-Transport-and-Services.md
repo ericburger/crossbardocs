@@ -1,17 +1,19 @@
+# Web Transport and Services
+
 **Quick Links** - Crossbar.io Web Services:
 
- 1. [Static Web Service](Static Web Service)
- 1. [Web Redirection Service](Web Redirection Service)
- 1. [JSON Value Service](JSON Value Service)
- 1. [CGI Script Service](CGI Script Service)
- 1. [WSGI Host Service](WSGI Host Service)
- 1. [WAMP Long-Poll Service](WAMP Long-Poll Service)
- 1. [HTTP Bridge Services](HTTP Bridge Services)
-   - [HTTP Publisher](HTTP Bridge Services Publisher)
-   - [HTTP Caller](HTTP Bridge Services Caller)
-   - [HTTP Subscriber](HTTP Bridge Services Subscriber)
-   - [HTTP Callee](HTTP Bridge Services Callee)
- 1. [File Upload Service](File-Upload-Service.md)
+* [Static Web Service](Static Web Service)
+* [Web Redirection Service](Web Redirection Service)
+* [JSON Value Service](JSON Value Service)
+* [CGI Script Service](CGI Script Service)
+* [WSGI Host Service](WSGI Host Service)
+* [WAMP Long-Poll Service](WAMP Long-Poll Service)
+* [HTTP Bridge Services](HTTP Bridge Services)
+   * [HTTP Publisher](HTTP Bridge Services Publisher)
+   * [HTTP Caller](HTTP Bridge Services Caller)
+   * [HTTP Subscriber](HTTP Bridge Services Subscriber)
+   * [HTTP Callee](HTTP Bridge Services Callee)
+* [File Upload Service](File-Upload-Service.md)
 
 ## Introduction
 
@@ -58,11 +60,11 @@ Here is the basic outline of a **Web Transport** configuration
 
 The Web transport has a few parameters:
 
- 1. `id`- The (optional) transport ID - this must be unique within the router this transport runs in (default: **"transportN"** where N is numbered starting with 1)
- 2. `type` must be `"web"` (*required*)
- 3. `endpoint` is the endpoint to listen on (*required*)
- 4. `paths` is a dictionary for configuring services on subpaths (*required* - see below). 
- 5. `options` is an optional dictionary for additional transport wide configuration:
+ 1. `id` - The (optional) transport ID - this must be unique within the router this transport runs in (default: **"transportN"** - where N is numbered starting with 1)
+ 2. `type` - must be `"web"` (*required*)
+ 3. `endpoint` - is the endpoint to listen on (*required*)
+ 4. `paths` - is a dictionary for configuring services on subpaths (*required* - see below). 
+ 5. `options` - is an optional dictionary for additional transport wide configuration:
 
 option | description
 ---|---
@@ -107,18 +109,18 @@ If present, the URL in the WebSocket part of the configuration MUST include the 
 
 Crossbar.io implements multiple subpath services for use with Web transports:
 
- 1. [Static Web Service](Static Web Service)
- 1. [Web Redirection Service](Web Redirection Service)
- 1. [JSON Value Service](JSON Value Service)
- 1. [CGI Script Service](CGI Script Service)
- 1. [WSGI Host Service](WSGI Host Service)
- 1. [WAMP Long-Poll Service](WAMP Long-Poll Service)
- 1. [HTTP Bridge Services](HTTP Bridge Services)
-   - [HTTP Publisher](HTTP Bridge Services Publisher)
-   - [HTTP Caller](HTTP Bridge Services Caller)
-   - [HTTP Subscriber](HTTP Bridge Services Subscriber)
-   - [HTTP Callee](HTTP Bridge Services Callee)
- 1. [File Upload Service](File Upload Service)
+* [Static Web Service](Static Web Service)
+* [Web Redirection Service](Web Redirection Service)
+* [JSON Value Service](JSON Value Service)
+* [CGI Script Service](CGI Script Service)
+* [WSGI Host Service](WSGI Host Service)
+* [WAMP Long-Poll Service](WAMP Long-Poll Service)
+* [HTTP Bridge Services](HTTP Bridge Services)
+   * [HTTP Publisher](HTTP Bridge Services Publisher)
+   * [HTTP Caller](HTTP Bridge Services Caller)
+   * [HTTP Subscriber](HTTP Bridge Services Subscriber)
+   * [HTTP Callee](HTTP Bridge Services Callee)
+* [File Upload Service](File Upload Service)
 
 The WebSocket subpath service runs a WebSocket transport as part of a Web transport on a URL subpath. This accepts the `options`, `debug`, `url` and `auth` arguments similarly to a regular WebSocket transport.
 

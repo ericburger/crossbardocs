@@ -1,33 +1,35 @@
+# Getting started with C Sharp
+
 In this recipe we will use Crossbar.io to generate an application template for a [WAMP](http://wamp.ws/) application written in C# using [WampSharp](https://github.com/Code-Sharp/WampSharp), an open-source WAMP implementation. The generated application includes a JavaScript frontend to run in a browser.
 
 The frontend and backend components will talk with each other using all four main interactions available in WAMP:
 
- 1. call a remote procedure
- 2. register a procedure for remote calling
- 3. publish an event to a topic
- 4. subscribe to a topic to receive events
+1. call a remote procedure
+2. register a procedure for remote calling
+3. publish an event to a topic
+4. subscribe to a topic to receive events
 
 We will run the whole application with Crossbar.io serving as a WAMP router, static Web server and WampSharp application component host.
 
-# Prerequisites
+
+## Prerequisites
 
 To build the generated C# WAMP application component, you will need a .NET toolchain. I am using **Microsoft Visual Studio Express 2012 for Windows Desktop**.
 
 > This version of Visual Studio also already includes [NuGet](https://www.nuget.org/) which we will use to automatically get project dependencies (including WampSharp).
 
-# Running the demo app
 
-## Initialize the application template
+## Running the demo app
+
+### Initialize the application template
 
 To instantiate the demo application template, run the following from an arbitrary directory (like `$HOME/mynode1`):
 
-```console
-$ crossbar init --template hello:csharp
-```
+    crossbar init --template hello:csharp
 
 You should see log output like the following:
 
-```
+```console
 $ crossbar init --template hello:csharp
 Initializing application template 'hello:csharp' in directory 'c:\Temp'
 Using templates from 'c:/Python27/lib/site-packages/crossbar-0.9.8_5-py2.7.egg/crossbar/templates/hello/csharp'
@@ -51,23 +53,21 @@ Application template initialized
 Now build by opening 'src/Hello/Hello.sln' in Visual Studio, start Crossbar using 'crossbar start' and open http://local
 host:8080 in your browser.
 ```
-## Building the application component
+
+### Building the application component
 
 Now open `src/Hello/Hello.sln` in Visual Studio by double clicking the file. Go to the menu entry `TOOLS -> Library Package Manager -> Package Manager Console` in Visual Studio and enter:
 
-```
-Install-Package WampSharp.Default -Pre
-```
+    Install-Package WampSharp.Default -Pre
 
 Then press F7 to build the solution.
 
-## Start the Crossbar.io node
+
+### Start the Crossbar.io node
 
 Now start the Crossbar.io node:
 
-```console
-$ crossbar start
-```
+    crossbar start
 
 You should see the node and the C# WAMP application component starting:
 
@@ -110,7 +110,7 @@ $ crossbar start
 
 Now open your browser at [http://127.0.0.1:8080](http://127.0.0.1:8080) and watch the JavaScript console output.
 
-# The code
+## The code
 
 The generated C# code looks like this:
 

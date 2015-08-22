@@ -76,30 +76,30 @@ The Configuration section covers configuring the basics of Crossbar.io, e.g. rea
 
 * [Configuration Overview](Configuration Overview)
   - [Endpoints](Endpoints)
-  - [Native Worker Shared Options](Native Worker Shared Options)
+  - [Native Worker Options](Native Worker Options)
   - [Process Enviroments](Process Environments)
 * [Controller Configuration](Controller Configuration)
 * [Router Configuration](Router Configuration)
   - [Router Realms](Router Realms)
   - [Router Transports](Router Transports)
-     - [WebSocket Transports](WebSocket Transports)
+     - [WebSocket Transport](WebSocket Transport)
         - [Cookie Tracking](Cookie-Tracking)
-     - [RawSocket Transports](RawSocket Transports)
-     - [Web Transports and Services](Web Transports and Services)
+     - [RawSocket Transport](RawSocket Transport)
+     - [Web Transport and Services](Web Transport and Services)
         - [Static Web Service](Static Web Service)
         - [Web Redirection Service](Web Redirection Service)
         - [JSON Value Service](JSON Value Service)
         - [CGI Script Service](CGI Script Service)
         - [WSGI Host Service](WSGI Host Service)
-        - [WAMP Long-Poll Service](WAMP Long-Poll Service)
+        - [Long-Poll Service](Long Poll Service)
+        - [File Upload Service](File-Upload-Service)
         - [HTTP Bridge Services](HTTP Bridge Services)
            - [HTTP Publisher](HTTP Bridge Services Publisher)
            - [HTTP Caller](HTTP Bridge Services Caller)
            - [HTTP Subscriber](HTTP Bridge Services Subscriber)
            - [HTTP Callee](HTTP Bridge Services Callee)
            - [HTTP Webhooks](HTTP Bridge Services Webhook)
-        - [File Upload Service](File-Upload-Service)
-     - [Flash Policy Transports](Flash-Policy-Transports)
+     - [Flash Policy Transport](Flash-Policy-Transport)
   - [Router Components](Router-Components)
   - [Authentication](Authentication)
      - [Anonymous Authentication](Anonymous Authentication)
@@ -111,6 +111,7 @@ The Configuration section covers configuring the basics of Crossbar.io, e.g. rea
 * [Guest Configuration](Guest Configuration)
 * [Database Integration](Database Integration)
   - [PostgreSQL-Integration](PostgreSQL-Integration)
+
 
 ### Going to Production
 
@@ -125,6 +126,7 @@ This section covers security issues and fine-tuning of advanced options. Tips fo
 * [Reverse Proxies](Reverse Proxies)
 * [SSL/TLS Interception Proxies](SSL-TLS-Interception-Proxies)
 * [General IoT Security](Security)
+
 
 ### Compliance and Performance
 

@@ -1,3 +1,5 @@
+# Router Realms
+
 Crossbar.io uses *Realms* as domains for separation of routing and administration.
 
 Every WAMP session between Crossbar.io and a *Client* is always attached to a specific *Realm*. Since the routing of calls and events is separate for each realm, sessions attached to different realms won't "see" each other.
@@ -53,10 +55,10 @@ Realms are created on a *Router* as part of the *Router* configuration`:
             }
          ],
          "transports": [
-            // WAMP transports run by this router
+            // transports run by this router
          ],
          "components": [
-            // WAMP app components running side-by-side with this router
+            // app components running side-by-side with this router
          ],
          "manhole": {
             // log live into running router via SSH (for debugging)
@@ -74,6 +76,3 @@ Authorization is configured on a per-realm basis. Authorization is role-based. A
 
 * [[Router Configuration]]
 * [[Authorization]]
-
-
-

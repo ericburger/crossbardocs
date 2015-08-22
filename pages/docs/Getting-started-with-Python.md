@@ -1,21 +1,23 @@
+# Getting started with Python
+
 In this recipe we will use Crossbar.io to generate an application template for a [WAMP](http://wamp.ws/) application written in Python using [AutobahnPython](https://github.com/tavendo/AutobahnPython), an open-source WAMP implementation. The generated application includes a JavaScript frontend to run in a browser.
 
 The frontend and backend components will talk with each other using all four main interactions available in WAMP:
 
- 1. call a remote procedure
- 2. register a procedure for remote calling
- 3. publish an event to a topic
- 4. subscribe to a topic to receive events
+1. call a remote procedure
+2. register a procedure for remote calling
+3. publish an event to a topic
+4. subscribe to a topic to receive events
 
 We will run the whole application with Crossbar.io serving as a WAMP router, static Web server and Python/Autobahn application component host. 
 
 > Note: Python application components *can* be run by Crossbar.io, but they can equally run [completely separately](http://autobahn.ws/python/wamp/programming.html).
 
-# Prerequisites
+## Prerequisites
 
 [CPython](https://www.python.org/) or [PyPy](http://pypy.org/) and [AutobahnPython](https://github.com/tavendo/AutobahnPython) - but those will have been installed with Crossbar.io already.
 
-# Create an app
+## Create an app
 
 To create a new Crossbar.io node and generate a [Python](https://www.python.org/) / [AutobahnPython](https://github.com/tavendo/AutobahnPython) based "Hello world!" example application:
 
@@ -43,7 +45,8 @@ This will initialize a new node and application under `$HOME/hello` using the ap
 
 > To get a list of available templates, use `crossbar templates`.
 
-# Start the node
+
+## Start the node
 
 Start your new Crossbar.io node:
 
@@ -85,7 +88,7 @@ oberstet@vbox-ubuntu1310:~/hello$ crossbar start
 ...
 ```
 
-# Open the frontend
+## Open the frontend
 
 Open [`http://localhost:8080/`](http://localhost:8080/) in your browser. When you watch the browser's JavaScript console, you should see
 
@@ -95,16 +98,16 @@ Open [`http://localhost:8080/`](http://localhost:8080/) in your browser. When yo
 
 You have just watched the Python backend component talking to the JavaScript frontend component and vice-versa. The calls and events were exchanged over [WAMP](http://wamp.ws/) and routed by Crossbar.io between the application components.
 
-# Hacking the code
+## Hacking the code
 
 All the Python backend code is in `hello/hello.py` while all the JavaScript frontend code is in `hello/web/index.html`.
 
 The code in both the backend and the frontend each performs all four main interactions:
 
- 1. call a remote procedure
- 2. register a procedure for remote calling
- 3. publish an event to a topic
- 4. subscribe to a topic to receive events
+1. call a remote procedure
+2. register a procedure for remote calling
+3. publish an event to a topic
+4. subscribe to a topic to receive events
 
 Here is the Python backend component:
 
@@ -270,6 +273,5 @@ connection.onclose = function (reason, details) {
 //
 connection.open();
 ```
-
 
 For more information on Python components, see the [Autobahn Python documentation](http://autobahn.ws/python/index.html).

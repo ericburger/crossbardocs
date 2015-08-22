@@ -1,10 +1,10 @@
-## Introduction
+# Cookie Tracking
 
 Cookie tracking identifies and tracks WAMP-over-WebSocket client connections using HTTP cookies.
 
-Cookie tracking can be enabled on [WebSocket-](WebSocket-Transport) and [Web-Transport](Web-Transports-and-Services). It is not available on other transport types such as [RawSocket](RawSocket-Transports).
+Cookie tracking can be enabled on [WebSocket-](WebSocket-Transport) and [Web-Transport](Web-Transport-and-Services). It is not available on other transport types such as [RawSocket](RawSocket-Transport).
 
-Also, while enabling cookie tracking is a prerequisite for cookie-based WAMP authentication., it can be used without authentication.
+> While enabling cookie tracking is a prerequisite for cookie-based WAMP authentication, it can be used without authentication.
 
 
 ## How it works
@@ -14,9 +14,9 @@ Cookie tracking is backed by a configurable cookie store. Currently we have two 
 * memory-backed
 * file-backed
 
-In the future, we'll have an LMDB backed cookie store as well.
+> In the future, we'll have an LMDB backed cookie store as well.
 
-The stored information for a cookie includes the cookie ID as well as authentication information (see Cookie-Authentication).
+The stored information for a cookie includes the cookie ID as well as authentication information (see [Cookie Authentication](Cookie-Authentication)).
 
 With a memory-backed cookie store, cookies are stored in in-memory objects, and, obviously, those cookies will be gone after stopping Crossbar.io
 
@@ -42,7 +42,7 @@ On the other hand, with 3), the authentication ID (`authid`) still comes from th
 
 ## Cookie Tracking with Authentication
 
-See [Cookie Authentication](Cookie-Authentication).
+Please see [Cookie Authentication](Cookie-Authentication).
 
 
 ## Configuration
@@ -50,6 +50,7 @@ See [Cookie Authentication](Cookie-Authentication).
 To configure a memory-backed cookie store:
 
 ```json
+{
          "transports": [
             {
                "type": "web",
@@ -75,7 +76,8 @@ To configure a memory-backed cookie store:
                   }
                }
             }
-         ],
+         ]
+}
 ```
 
 The following parameters are all optional and shared between different backing stores:
@@ -95,6 +97,7 @@ To configure a file-backed cookie store:
 
 
 ```json
+{
          "transports": [
             {
                "type": "web",
@@ -121,7 +124,8 @@ To configure a file-backed cookie store:
                   }
                }
             }
-         ],
+         ]
+}         
 ```
 
 The file-backed cookie store requires the following setting:

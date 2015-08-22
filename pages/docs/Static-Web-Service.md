@@ -1,3 +1,5 @@
+# Static Web Service
+
 When serving HTML5 Web clients from Crossbar.io, the **static web assets** for your frontends like HTML, JavaScript and image files need to be hosted somewhere as well.
 
 You can host static content on your existing (external) Web server or a static hosting service like Amazon S3. It does not matter if your Crossbar.io nodes reside on domain names different from the static content.
@@ -86,7 +88,7 @@ Python packages can contain "resources" (non-Python file assets) and the **Stati
 
 Say you are creating a **`foobar`** package that contains static Web resources:
 
-```
+```text
 setup.py
 MANIFEST.in
 foobar/__init__.py
@@ -111,7 +113,7 @@ setup(
 
 **`MANIFEST.in`**:
 
-```
+```text
 recursive-include foobar/web *
 ```
 
@@ -157,7 +159,7 @@ After installing the package locally (`python setup.py install`), you can config
 
 When you start Crossbar.io, you should see log lines similar to:
 
-```
+```console
 ...
 2014-03-20 10:37:28+0100 [Worker 3528] Loaded static Web resource 'web' from module 'foobar 0.0.1' (filesystem path c:\Python27\lib\site-packages\foobar-0.0.1-py2.7.egg\foobar\web)
 2014-03-20 10:37:28+0100 [Worker 3528] Site starting on 8080

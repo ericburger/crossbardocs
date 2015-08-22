@@ -1,6 +1,4 @@
-## Introduction
-
-> The *File Uploader* feature is available starting with Crossbar.io **0.11.0**.
+# File Upload Service
 
 The **File Upload Service** allows uploading of files to a directory on the Crossbar.io node via (chunked) HTTP/POSTs.
 
@@ -12,6 +10,8 @@ Modern browsers [support](http://caniuse.com/#feat=fileapi) the [HTML5 File API]
 * resuming uploads
 * progress indication via WAMP PubSub events
 
+> The *File Uploader* feature is available starting with Crossbar.io **0.11.0**.
+
 
 ## Try it
 
@@ -19,15 +19,11 @@ We have a [complete example](https://github.com/crossbario/crossbarexamples/tree
 
 Clone the repo, change to the example folder `fileupload` and start Crossbar.io:
 
-```console
-crossbar start
-```
+    crossbar start
 
 To start Crossbar.io with debug log messages:
 
-```console
-crossbar start --loglevel=debug
-```
+    crossbar start --loglevel=debug
 
 Open [http://localhost:8080](http://localhost:8080) in your browser. Open the JavaScript console to see file upload progress events when uploading files. Then either click **Select files to upload** or drop files to **Drop files here to upload**. The uploaded files will appear within the `uploaded` subdirectory in the example folder.
 
@@ -121,7 +117,7 @@ option | description
 In the example above the file name is passsed to the backend in a POST multipart formdata field with name="myFilename")
 
 ```html
-<input ... myFilename="test.csv" myprogress_uri="my.upload.progress.uri" ... />
+<input myFilename="test.csv" myprogress_uri="my.upload.progress.uri" />
 ```
 
 ## Resumable Uploads

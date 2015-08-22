@@ -279,23 +279,23 @@ On Microsoft Windows, both Internet Explorer and Google Chrome use the Windows O
 
 To import your CA certificate on Windows for browsers using the Windows certificate store, rename the CA certificate file to `*.crt` and double click it:
 
-![](/static/img/docs/shots/windows_cert_import1.png)
+![Windows certificate import - step 1](/static/img/docs/shots/windows_cert_import1.png)
 
 start the import wizard:
 
-![](/static/img/docs/shots/windows_cert_import2.png)
+![Windows certificate import - step 2](/static/img/docs/shots/windows_cert_import2.png)
 
 make sure you manually **select the "Trusted Root Certificate" store (!)**:
 
-![](/static/img/docs/shots/windows_cert_import3.png)
+![Windows certificate import - step 3](/static/img/docs/shots/windows_cert_import3.png)
 
 .. continue ..
 
-![](/static/img/docs/shots/windows_cert_import4.png)
+![Windows certificate import - step 4](/static/img/docs/shots/windows_cert_import4.png)
 
 verify the CA certificate fingerprint:
 
-![](/static/img/docs/shots/windows_cert_import5.png)
+![Windows certificate import - step 5](/static/img/docs/shots/windows_cert_import5.png)
 
 
 ## Testing

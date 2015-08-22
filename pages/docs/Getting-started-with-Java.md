@@ -1,17 +1,19 @@
+# Getting started with Java
+
 In this recipe we will use Crossbar.io to generate a [WAMP](http://wamp.ws/) application written in Java and using [jawampa](https://github.com/Matthias247/jawampa), an open-source WAMP implementation.
 
 The generated application consists of a [Java/jawampa backend](https://github.com/crossbario/crossbar/blob/master/crossbar/crossbar/templates/hello/java/src/main/java/ws/wamp/jawampa/CrossbarExample.java) and a [JavaScript/AutobahnJS frontend](https://github.com/crossbario/crossbar/blob/master/crossbar/crossbar/templates/hello/java/web/index.html) to run in a browser.
 
 The frontend and backend components will talk with each other using all four main interactions available in WAMP:
 
- 1. call a remote procedure
- 2. register a procedure for remote calling
- 3. publish an event to a topic
- 4. subscribe to a topic to receive events
+1. call a remote procedure
+2. register a procedure for remote calling
+3. publish an event to a topic
+4. subscribe to a topic to receive events
 
 We will run the whole application with Crossbar.io serving as a WAMP router, static Web server and jawampa application component host.
 
-# Prerequisites
+## Prerequisites
 
 You will need:
 
@@ -21,27 +23,21 @@ You will need:
 
 To install JDK and Maven on Ubuntu:
 
-```console
-sudo apt-get install -y default-jdk maven
-```
+    sudo apt-get install -y default-jdk maven
 
 To install jawampa:
 
-```console
-cd /tmp
-git clone https://github.com/Matthias247/jawampa.git
-cd jawampa
-git checkout 0.1
-mvn install
-```
+    cd /tmp
+    git clone https://github.com/Matthias247/jawampa.git
+    cd jawampa
+    git checkout 0.1
+    mvn install
 
 ## Initialize the application template
 
 To instantiate the demo application template, run the following from an arbitrary directory (like `$HOME/mynode1`):
 
-```console
-$ crossbar init --template hello:java
-```
+    crossbar init --template hello:java
 
 You should see log output like the following:
 
@@ -73,12 +69,8 @@ oberstet@ubuntu1404:~/mynode1$
 
 ## Build the jawampa application component
 
-To build the demo:
-
-```console
-mvn dependency:copy-dependencies
-mvn compile
-```
+    mvn dependency:copy-dependencies
+    mvn compile
 
 You should see log output like the following:
 
@@ -138,9 +130,7 @@ oberstet@ubuntu1404:~/mynode1$
 
 Now start the Crossbar.io node:
 
-```console
-$ crossbar start
-```
+    crossbar start
 
 You should see the node and the jawampa WAMP application component starting:
 
@@ -176,4 +166,4 @@ oberstet@ubuntu1404:~/mynode1$ crossbar start
 
 Now open your browser at [http://127.0.0.1:8080](http://127.0.0.1:8080) and watch the JavaScript console output.
 
-![](/static/img/docs/getting_started_with_java_01.png)
+![Hello from Java](/static/img/docs/getting_started_with_java_01.png)

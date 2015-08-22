@@ -1,3 +1,5 @@
+# CGI Script Service
+
 Crossbar.io's Web server allows you to serve plain old CGI scripts. This can be useful if you have some legacy or other scripts that you want to run as part of a Crossbar.io node.
 
 Here is an example configuration for a **Web Transport** that includes a CGI processor on a *subpath*:
@@ -37,12 +39,10 @@ Here is a complete example:
 
 1) Create a new Crossbar.io node
 
-```
-cd ~
-mkdir test1
-cd test1
-crossbar init
-```
+    cd ~
+    mkdir test1
+    cd test1
+    crossbar init
 
 2) Activate CGI
 
@@ -58,26 +58,24 @@ Add the following snippet to configuration file at **~/test1/.crossbar./config.j
 
 3) Test
 
-Create an example CGI directory **~/test1/cgi** and script **~/test1/cgi/foo**:
+Create an example CGI directory `~/test1/cgi` and script `~/test1/cgi/foo`:
 
 ```python
 import sys
 
-print "Content-Type: text/html\n\n"
+print("Content-Type: text/html\n\n")
 
-print """<!doctype html>
+print("""<!doctype html>
 <html>
    <body>
       <p>This is {} running {}</p>
    </body>
 </html>
-""".format(sys.executable, __file__)
+""".format(sys.executable, __file__))
 ```
 
 Then start Crossbar.io
 
-```
-crossbar start
-```
+    crossbar start
 
 and open the page **http://localhost:8080/script/foo** in your browser. You should see a hello from the Python CGI script.

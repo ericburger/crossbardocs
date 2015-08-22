@@ -1,9 +1,11 @@
-Crossbar.io **Worker** (*Routers*, *Containers* and *Guests*) process enviroments can be tuned via configuration.
+# Process Environment
+
+Crossbar.io **Workers** (*Routers*, *Containers* and *Guests*) process enviroments can be tuned via configuration.
 
 Here is an example Guest process:
 
 
-```javascript
+```json
 {
    "workers": [
       {
@@ -36,7 +38,7 @@ If `options.env.inherit` is a `bool`, the value determines whether the parent's 
 
 If `options.env.inherit` is a `list`, the values in the list specify the environment variables from the parent's environment that will be inherited:
 
-```javascript
+```json
 {
    "workers": [
       {

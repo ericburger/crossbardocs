@@ -1,10 +1,12 @@
-Native Workers, that is *Routers* and *Containers* can be further configured with `options`.
+# Native Worker Options
+
+**Native Workers**, that is *Routers* and *Containers* can be further configured with `options`.
 
 Both *Routers* and *Containers* share the following `options`:
 
 option | description
 ---|---
-**`title`** | The worker process title (default: **"crossbar-worker [router]"** or **"crossbar-worker [container]"**)
+**`title`** | The worker process title (default: `"crossbar-worker [router]"` or `"crossbar-worker [container]"`)
 **`python`** | The Python executable to run the Worker with, e.g. `/opt/python27/bin/python` - this **must** be an absolute path (default: **same as controller**)
 **`pythonpath`** | A list of paths to prepend to the Python seach path, e.g. `["..", "/home/joe/mystuff"]` (default: **[]**)
 **`cpu_affinity`** | The worker CPU affinity to set - a list of CPU IDs (integers), e.g. `[0, 1]` (default: **unset**) - currently only supported on Linux and Windows, [not on FreeBSD](https://github.com/giampaolo/psutil/issues/566)

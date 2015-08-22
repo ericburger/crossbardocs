@@ -1,8 +1,10 @@
+# WSGI Host Service
+
 Crossbar.io is able to *host* [WSGI](http://legacy.python.org/dev/peps/pep-0333/) based Python applications, such as [Flask](http://flask.pocoo.org/), [Pyramid](http://www.pylonsproject.org/projects/pyramid/about) or [Django](https://docs.djangoproject.com/).
 
 Here is a minimal example using Flask. The overall files involved are:
 
-```
+```text
 myapp.py
 templates/index.html
 .crossbar/config.json
