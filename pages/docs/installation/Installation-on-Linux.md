@@ -1,4 +1,4 @@
-[Documentation](.) > [Local Installation](Local Installation) > Installation on Linux
+[Documentation](.) > [Installation](Installation) > [Local Installation](Local Installation) > Installation on Linux
 
 # Installation on Linux
 

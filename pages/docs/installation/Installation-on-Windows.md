@@ -1,4 +1,4 @@
-[Documentation](.) > [Local Installation](Local Installation) > Installation on Windows
+[Documentation](.) > [Installation](Installation) > [Local Installation](Local Installation) > Installation on Windows
 
 # Installation on Windows
 

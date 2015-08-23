@@ -1,4 +1,4 @@
-[Documentation](.) > [Local Installation](Local Installation) > Installation on Docker
+[Documentation](.) > [Installation](Installation) > [Local Installation](Local Installation) > Installation on Docker
 
 # Installation on Docker
 

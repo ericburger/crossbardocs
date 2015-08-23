@@ -1,4 +1,4 @@
-[Documentation](.) > [Setup in the Cloud](Setup in the Cloud) > Setup on Heroku
+[Documentation](.) > [Installation](Installation) > [Setup in the Cloud](Setup in the Cloud) > Setup on Heroku
 
 # Setup on Heroku
 

@@ -1,4 +1,4 @@
-[Documentation](.) > [Setup in the Cloud](Setup in the Cloud) > Setup on Amazon EC2
+[Documentation](.) > [Installation](Installation) > [Setup in the Cloud](Setup in the Cloud) > Setup on Amazon EC2
 
 # Setup on Amazon EC2
 

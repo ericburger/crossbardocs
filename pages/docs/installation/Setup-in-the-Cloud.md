@@ -1,4 +1,4 @@
-[Documentation](.) > Setup in the Cloud
+[Documentation](.) > [Installation](Installation) > Setup in the Cloud
 
 # Setup in the Cloud
 

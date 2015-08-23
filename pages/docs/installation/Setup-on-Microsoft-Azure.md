@@ -1,4 +1,4 @@
-[Documentation](.) > [Setup in the Cloud](Setup in the Cloud) > Setup on Microsoft Azure
+[Documentation](.) > [Installation](Installation) > [Setup in the Cloud](Setup in the Cloud) > Setup on Microsoft Azure
 
 # Setup on Microsoft Azure
 

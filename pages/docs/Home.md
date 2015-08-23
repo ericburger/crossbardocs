@@ -25,171 +25,21 @@ How to install Crossbar.io, and start using it with your language or device of c
 * [The Command Line](The Command Line)
 * [Application Templates](Application Templates)
 
-### Installation
+Detailed installation instructions for various environments:
 
-Installing Crossbar.io locally (on your own metal):
-
-* [Local Installation](Local Installation)
-  * **[Installation on Ubuntu](Installation on Ubuntu)**
-  * **[Installation on CentOS](Installation on CentOS)**
-  * **[Installation on FreeBSD](Installation on FreeBSD)**
-  * [Installation on (generic) Linux](Installation on Linux)
-  * [Installation on Mac OS X](Installation on Mac OS X)
-  * [Installation on Windows](Installation on Windows)
-  * [Installation on Docker](Installation on Docker)
-  * [Installation on RaspberryPi](Installation on RaspberryPi)
-  * [Installation on Ubuntu Snappy](Installation on Ubuntu Snappy)
-
-Setting up Crossbar.io on cloud platforms:
-
-* [Setup in the Cloud](Setup in the Cloud)
-  * [Setup on Microsoft Azure](Setup on Microsoft Azure)
-  * [Setup on Amazon EC2](Setup on Amazon EC2)
-  * [Setup on Heroku](Setup on Heroku)
-
-Tracking the bleeding edge (for developers, and for the brave):
-
-* [Installation from Source](Installation from Source)
-* [Updating from the Repository](Updating from the Repository)
-
-### Choose your Weapon
+* [Installation](Installation)
 
 How to get started using your language of choice:
 
-* [Overview](Choose your Weapon)
-* [Getting started with JavaScript in the Browser](Getting started with Browser)
-* [Getting started with JavaScript and NodeJS](Getting started with NodeJS)
-* [Getting started with Python](Getting started with Python)
-* [Getting started with PHP](Getting started with PHP)
-* [Getting started with Java](Getting-started-with-Java)
-* [Getting started with C#](Getting-started-with-CSharp)
-* [Getting started with C++](Getting started with Cplusplus)
-* [Getting started with Erlang](Getting started with Erlang)
-
-**[The IoT Cookbook](/iotcookbook)** is your starting point if you want to **integrate devices like the RaspberryPi, Arduino Yun and others with Crossbar.io**.
-
-## Administration
+* [Choose your Weapon](Choose your Weapon)
 
 How to adapt Crossbar.io for your specific use case.
 
-### Configuration
+* [Administration](Administration)
 
-The Configuration section covers configuring the basics of Crossbar.io, e.g. realms, transports and workers.
+Guide for using Crossbar.io in specific scenarios, or for using specific features of WAMP & Crossbar.io in your applications.
 
-* [Configuration Overview](Configuration Overview)
-  - [Endpoints](Endpoints)
-  - [Native Worker Options](Native Worker Options)
-  - [Process Enviroments](Process Environments)
-* [Controller Configuration](Controller Configuration)
-* [Router Configuration](Router Configuration)
-  - [Router Realms](Router Realms)
-  - [Router Transports](Router Transports)
-     - [WebSocket Transport](WebSocket Transport)
-        - [Cookie Tracking](Cookie-Tracking)
-     - [RawSocket Transport](RawSocket Transport)
-     - [Web Transport and Services](Web Transport and Services)
-        - [Static Web Service](Static Web Service)
-        - [Web Redirection Service](Web Redirection Service)
-        - [JSON Value Service](JSON Value Service)
-        - [CGI Script Service](CGI Script Service)
-        - [WSGI Host Service](WSGI Host Service)
-        - [Long-Poll Service](Long Poll Service)
-        - [File Upload Service](File-Upload-Service)
-        - [HTTP Bridge Services](HTTP Bridge Services)
-           - [HTTP Publisher](HTTP Bridge Services Publisher)
-           - [HTTP Caller](HTTP Bridge Services Caller)
-           - [HTTP Subscriber](HTTP Bridge Services Subscriber)
-           - [HTTP Callee](HTTP Bridge Services Callee)
-           - [HTTP Webhooks](HTTP Bridge Services Webhook)
-     - [Flash Policy Transport](Flash-Policy-Transport)
-  - [Router Components](Router-Components)
-  - [Authentication](Authentication)
-     - [Anonymous Authentication](Anonymous Authentication)
-     - [WAMP Challenge-Response Authentication)](WAMP-CRA-Authentication)
-     - [Cookie-based Authentication](Cookie-Authentication)
-  - [Authorization](Authorization)
-     * [URI Format](URI Format)
-* [Container Configuration](Container Configuration)
-* [Guest Configuration](Guest Configuration)
-* [Database Integration](Database Integration)
-  - [PostgreSQL-Integration](PostgreSQL-Integration)
-
-
-### Going to Production
-
-This section covers security issues and fine-tuning of advanced options. Tips for a performant and secure production configuration.
-
-* [Running on privileged ports](Running on privileged ports)
-* [Secure WebSocket and HTTPS](Secure WebSocket and HTTPS)
-* [WebSocket Options](WebSocket Options)
-* [WebSocket Compression](WebSocket Compression)
-* [Automatic startup and restart](Automatic startup and restart)
-* [Network Tuning](Network Tuning)
-* [Reverse Proxies](Reverse Proxies)
-* [SSL/TLS Interception Proxies](SSL-TLS-Interception-Proxies)
-* [General IoT Security](Security)
-
-
-### Compliance and Performance
-
-Testing your instance & browser support.
-
-* [Browser Support](Browser Support)
-* [WebSocket Compliance Testing](WebSocket Compliance Testing)
-* [Stream Testee](Stream Testee)
-
-
-## Programming Guides
-
-Guides for using Crossbar.io in specific scenarios, or for using specific features of WAMP & Crossbar.io in your applications.
-
-* [WAMP Features](WAMP Features)
-  - Session
-    + [Session Metaevents and Procedures](Session Metaevents and Procedures)
-    + [Using Schemas](Using Schemas)
-  - Publish & Subscribe (PubSub)
-    + [How Subscriptions Work](How Subscriptions Work)
-    + [Basic Subscriptions](Basic Subscriptions)
-    + [Subscriber Black- and Whitelisting](Subscriber Black and Whitelisting)
-    + [Publisher Exclusion](Publisher Exclusion)
-    + [Publisher Identification](Publisher Identification)
-    + [Pattern-Based Subscriptions](Pattern Based Subscriptions)
-    + [Subscription Meta-Events and Procedures](Subscription Meta Events and Procedures)
-  - Remote Procedure Calls (RPC)
-    + [How Registrations Work](How Registrations Work)
-    + [Basic Registrations](Basic Registrations)
-    + [Caller Identification](Caller Identification)
-    + [Progressive Call Results](Progressive Call Results)
-    + [Pattern-Based Registrations](Pattern Based Registrations)
-    + [Shared Registrations](Shared Registrations)
-    + [Registration Meta-Events and Procedures](Registration Meta Events and Procedures)
-  - [Error Handling](Error Handling)
-  - [URI Format](URI Format)
-* Frameworks & Specific Scenarios
-  - [Adding Real-Time to Django Applications](Adding Real Time to Django Applications)
-  - [[AngularJS Application Components]]
-  - [Database Programming with PostgreSQL](Database Programming with PostgreSQL)
-
-* Crossbar.io features
-
-  - [Starting and Stopping Crossbar.io](Starting and Stopping Crossbar.io)
-  - [Logging in Crossbar.io](Logging in Crossbar.io)
-  - [Configuring Crossbar.io's Logging](Configuring Crossbar.io's Logging)
-
-* [Crossbar.io Demo Instance](Demo Instance)
-
-In addition to these general programming guides, we offer a wide range of materials for [IoT devices, components and applications](../iotcookbook).
-
-
-## Client Libraries
-
-Programming WAMP application components is tied to the particular client library you're using. The [Autobahn](http://autobahn.ws) family of WAMP client libraries is provided by us
-
-* [Autobahn|Python](http://autobahn.ws/python/)
-* [Autobahn|JS](http://autobahn.ws/js/)
-* [Autobahn|CPP](http://autobahn.ws/cpp/)
-
-whereas you can find more WAMP client libraries [here](http://wamp.ws/implementations/#libraries).
+* [Programming Guide](Programming Guide)
 
 
 ## Developers
@@ -199,14 +49,12 @@ Notes for developers working on the Crossbar.io code base (*not* application dev
 * [Contributing to the project](Contributing to the project)
 * [Manhole](Manhole)
 
-
 ## Legal
 
 Licenses for Crossbar.io code and documentation can be found here
 
 * [Crossbar License](Crossbar License)
 * [Documentation License](Documentation License)
-
 
 ## Support
 
