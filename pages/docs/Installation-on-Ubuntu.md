@@ -2,7 +2,10 @@
 
 # Installation on Ubuntu
 
-There are two methods of installing Crossbar.io on Ubuntu -- from the official binary distribution (recommended), or from source.
+There are two methods of installing Crossbar.io on Ubuntu
+
+* [from the official distribution](#installing-the-official-distribution) (recommended), or
+* [from source](#installing-from-source)
 
 ## Installing the Official Distribution
 
@@ -35,13 +38,14 @@ You can then test the installation by printing out the versions of the Crossbar 
 
 Ready for more? Then [choose your language or device of choice](Choose your Weapon).
 
+---
 
 ## Installing from Source
 
 When installing from source, you have the choice of installing on CPython (the standard interpreter) or PyPy (a high performance interpreter).
 Both are good choices, but PyPy is generally faster (at the cost of a little extra RAM).
 
-This guide will install Crossbar.io in a virtualenv.
+This guide will install Crossbar.io in a [virtualenv](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 
 > *Why virtualenv?* Virtualenv, as the name suggests, creates a "virtual environment" for your Python packages. This means that you can have newer versions of packages that might already be on your system, without worrying about breaking any applications that might require previous versions.
 
@@ -138,6 +142,7 @@ To update an existing Crossbar.io installation:
 
 You can then invoke Crossbar without activating the virtualenv by running `~/pypy-venv/bin/crossbar` or `~/python-venv/bin/crossbar`, depending on which Python interpreter you are using.
 
+---
 
 ## Next
 
