@@ -1,3 +1,5 @@
+[Documentation](.) > [Administration](Administration) > [Router Transports](Router Transports) > Web Transport and Services
+
 # Web Transport and Services
 
 **Quick Links** - Crossbar.io Web Services:
@@ -63,7 +65,7 @@ The Web transport has a few parameters:
  1. `id` - The (optional) transport ID - this must be unique within the router this transport runs in (default: **"transportN"** - where N is numbered starting with 1)
  2. `type` - must be `"web"` (*required*)
  3. `endpoint` - is the endpoint to listen on (*required*)
- 4. `paths` - is a dictionary for configuring services on subpaths (*required* - see below). 
+ 4. `paths` - is a dictionary for configuring services on subpaths (*required* - see below).
  5. `options` - is an optional dictionary for additional transport wide configuration:
 
 option | description

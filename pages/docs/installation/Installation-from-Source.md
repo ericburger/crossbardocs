@@ -171,6 +171,152 @@ To install Crossbar.io with all optional dependencies
 
 > On Windows, this will most likely  require installing the [Microsoft Visual C++ Compiler for Python 2.7](http://www.microsoft.com/en-us/download/details.aspx?id=44266).
 
+## Installation Logs
+
+Here is a complete installation log from Crossbar.io on **Python 3.**4
+
+```console
+(python342_1)oberstet@thinkpad-t430s:~/scm/crossbar/crossbar$ make install
+pip install --upgrade -e .[all]
+You are using pip version 6.0.6, however version 7.1.2 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Obtaining file:///home/oberstet/scm/crossbar/crossbar
+Requirement already up-to-date: click>=4.1 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: setuptools>=18.1 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: zope.interface>=3.6.0 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: twisted>=15.3.0 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: autobahn[twisted]>=0.10.5 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: netaddr>=0.7.15 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: pytrie>=0.2 in /home/oberstet/python342_1/lib/python3.4/site-packages/PyTrie-0.2-py3.4.egg (from crossbar==0.11.0)
+Requirement already up-to-date: jinja2>=2.8 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: mistune>=0.7 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: pygments>=2.0.2 in /home/oberstet/python342_1/lib/python3.4/site-packages/Pygments-2.0.2-py3.4.egg (from crossbar==0.11.0)
+Requirement already up-to-date: pyyaml>=3.11 in /home/oberstet/python342_1/lib/python3.4/site-packages/PyYAML-3.11-py3.4-linux-x86_64.egg (from crossbar==0.11.0)
+Requirement already up-to-date: shutilwhich>=1.1.0 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: treq>=15.0.0 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: psutil>=3.1.1 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: setproctitle>=1.1.9 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: pyinotify>=0.9.6 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: lmdb>=0.87 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: pyasn1>=0.1.8 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: pycrypto>=2.6.1 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: msgpack-python>=0.4.6 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: cryptography>=0.9.3 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: pyOpenSSL>=0.15.1 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: pyasn1-modules>=0.0.7 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: service-identity>=14.0.0 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: wsaccel>=0.6.2 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: ujson>=1.33 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: colorama>=0.3.3 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: mock>=1.3.0 in /home/oberstet/python342_1/lib/python3.4/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: six>=1.6.1 in /home/oberstet/python342_1/lib/python3.4/site-packages (from autobahn[twisted]>=0.10.5->crossbar==0.11.0)
+Requirement already up-to-date: txaio>=1.0.2 in /home/oberstet/python342_1/lib/python3.4/site-packages (from autobahn[twisted]>=0.10.5->crossbar==0.11.0)
+Requirement already up-to-date: MarkupSafe in /home/oberstet/python342_1/lib/python3.4/site-packages/MarkupSafe-0.23-py3.4-linux-x86_64.egg (from jinja2>=2.8->crossbar==0.11.0)
+Requirement already up-to-date: requests in /home/oberstet/python342_1/lib/python3.4/site-packages (from treq>=15.0.0->crossbar==0.11.0)
+Requirement already up-to-date: idna>=2.0 in /home/oberstet/python342_1/lib/python3.4/site-packages (from cryptography>=0.9.3->crossbar==0.11.0)
+Requirement already up-to-date: cffi>=1.1.0 in /home/oberstet/python342_1/lib/python3.4/site-packages (from cryptography>=0.9.3->crossbar==0.11.0)
+Requirement already up-to-date: characteristic>=14.0.0 in /home/oberstet/python342_1/lib/python3.4/site-packages (from service-identity>=14.0.0->crossbar==0.11.0)
+Requirement already up-to-date: pbr>=0.11 in /home/oberstet/python342_1/lib/python3.4/site-packages (from mock>=1.3.0->crossbar==0.11.0)
+Requirement already up-to-date: pycparser in /home/oberstet/python342_1/lib/python3.4/site-packages (from cffi>=1.1.0->cryptography>=0.9.3->crossbar==0.11.0)
+Installing collected packages: crossbar
+  Running setup.py develop for crossbar
+    Creating /home/oberstet/python342_1/lib/python3.4/site-packages/crossbar.egg-link (link to .)
+    crossbar 0.11.0 is already the active version in easy-install.pth
+    Installing crossbar script to /home/oberstet/python342_1/bin
+    Installed /home/oberstet/scm/crossbar/crossbar
+Successfully installed crossbar-0.11.0
+(python342_1)oberstet@thinkpad-t430s:~/scm/crossbar/crossbar$ which crossbar
+/home/oberstet/python342_1/bin/crossbar
+(python342_1)oberstet@thinkpad-t430s:~/scm/crossbar/crossbar$ crossbar version
+     __  __  __  __  __  __      __     __
+    /  `|__)/  \/__`/__`|__) /\ |__)  |/  \
+    \__,|  \\__/.__/.__/|__)/~~\|  \. |\__/
+
+Crossbar.io        : 0.11.0
+  Autobahn         : 0.10.5.post2
+    UTF8 Validator : wsaccel-0.6.2
+    XOR Masker     : wsaccel-0.6.2
+    JSON Codec     : ujson-1.33
+    MsgPack Codec  : msgpack-python-0.4.6
+  Twisted          : 15.3.0-EPollReactor
+  Python           : 3.4.2/CPython
+OS                 : Linux-3.13.0-62-generic-x86_64-with-debian-jessie-sid
+Machine            : x86_64
+
+(python342_1)oberstet@thinkpad-t430s:~/scm/crossbar/crossbar$
+```
+
+And here is an installation log for Crossbar.io on **Python 2.7**:
+
+```console
+(python279_1)oberstet@thinkpad-t430s:~/scm/crossbar/crossbar$ make install
+pip install --upgrade -e .[all]
+You are using pip version 7.1.0, however version 7.1.2 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Obtaining file:///home/oberstet/scm/crossbar/crossbar
+Requirement already up-to-date: click>=4.1 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: setuptools>=18.1 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: zope.interface>=3.6.0 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: twisted>=15.3.0 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: autobahn[twisted]>=0.10.5 in /home/oberstet/scm/autobahn/AutobahnPython (from crossbar==0.11.0)
+Requirement already up-to-date: netaddr>=0.7.15 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: pytrie>=0.2 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: jinja2>=2.8 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: mistune>=0.7 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: pygments>=2.0.2 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: pyyaml>=3.11 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: shutilwhich>=1.1.0 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: treq>=15.0.0 in /home/oberstet/python279_1/lib/python2.7/site-packages/treq-15.0.0-py2.7.egg (from crossbar==0.11.0)
+Requirement already up-to-date: psutil>=3.1.1 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: setproctitle>=1.1.9 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: pyinotify>=0.9.6 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: lmdb>=0.87 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: pyasn1>=0.1.8 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: pycrypto>=2.6.1 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: msgpack-python>=0.4.6 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: cryptography>=0.9.3 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: pyOpenSSL>=0.15.1 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: pyasn1-modules>=0.0.7 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: service-identity>=14.0.0 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: wsaccel>=0.6.2 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: ujson>=1.33 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: colorama>=0.3.3 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: mock>=1.3.0 in /home/oberstet/python279_1/lib/python2.7/site-packages (from crossbar==0.11.0)
+Requirement already up-to-date: six>=1.6.1 in /home/oberstet/python279_1/lib/python2.7/site-packages (from autobahn[twisted]>=0.10.5->crossbar==0.11.0)
+Requirement already up-to-date: txaio>=1.0.3 in /home/oberstet/python279_1/lib/python2.7/site-packages (from autobahn[twisted]>=0.10.5->crossbar==0.11.0)
+Requirement already up-to-date: MarkupSafe in /home/oberstet/python279_1/lib/python2.7/site-packages (from jinja2>=2.8->crossbar==0.11.0)
+Requirement already up-to-date: requests in /home/oberstet/python279_1/lib/python2.7/site-packages (from treq>=15.0.0->crossbar==0.11.0)
+Requirement already up-to-date: idna>=2.0 in /home/oberstet/python279_1/lib/python2.7/site-packages (from cryptography>=0.9.3->crossbar==0.11.0)
+Requirement already up-to-date: enum34 in /home/oberstet/python279_1/lib/python2.7/site-packages (from cryptography>=0.9.3->crossbar==0.11.0)
+Requirement already up-to-date: ipaddress in /home/oberstet/python279_1/lib/python2.7/site-packages (from cryptography>=0.9.3->crossbar==0.11.0)
+Requirement already up-to-date: cffi>=1.1.0 in /home/oberstet/python279_1/lib/python2.7/site-packages (from cryptography>=0.9.3->crossbar==0.11.0)
+Requirement already up-to-date: characteristic>=14.0.0 in /home/oberstet/python279_1/lib/python2.7/site-packages (from service-identity>=14.0.0->crossbar==0.11.0)
+Requirement already up-to-date: funcsigs in /home/oberstet/python279_1/lib/python2.7/site-packages (from mock>=1.3.0->crossbar==0.11.0)
+Requirement already up-to-date: pbr>=0.11 in /home/oberstet/python279_1/lib/python2.7/site-packages (from mock>=1.3.0->crossbar==0.11.0)
+Requirement already up-to-date: pycparser in /home/oberstet/python279_1/lib/python2.7/site-packages (from cffi>=1.1.0->cryptography>=0.9.3->crossbar==0.11.0)
+Installing collected packages: crossbar
+  Running setup.py develop for crossbar
+Successfully installed crossbar-0.11.0
+(python279_1)oberstet@thinkpad-t430s:~/scm/crossbar/crossbar$ which crossbar
+/home/oberstet/python279_1/bin/crossbar
+(python279_1)oberstet@thinkpad-t430s:~/scm/crossbar/crossbar$ crossbar version
+     __  __  __  __  __  __      __     __
+    /  `|__)/  \/__`/__`|__) /\ |__)  |/  \
+    \__,|  \\__/.__/.__/|__)/~~\|  \. |\__/
+
+Crossbar.io        : 0.11.0
+  Autobahn         : 0.10.5.post2
+    UTF8 Validator : wsaccel-0.6.2
+    XOR Masker     : wsaccel-0.6.2
+    JSON Codec     : ujson-1.33
+    MsgPack Codec  : msgpack-python-0.4.6
+  Twisted          : 15.3.0-EPollReactor
+  Python           : 2.7.9/CPython
+OS                 : Linux-3.13.0-62-generic-x86_64-with-debian-jessie-sid
+Machine            : x86_64
+
+(python279_1)oberstet@thinkpad-t430s:~/scm/crossbar/crossbar$
+```
 
 ## Next
 

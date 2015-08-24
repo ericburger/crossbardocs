@@ -1,3 +1,5 @@
+[Documentation](.) > [Administration](Administration) > [Router Transports](Router Transports) > WebSocket Transport
+
 # WebSocket Transport
 
 The *WebSocket Transport* is the default and most common way for running WAMP. In particular, WAMP-over-WebSocket is the protocol used to communicate with browsers that natively support WebSocket.
@@ -26,4 +28,4 @@ parameter | description
 **`debug`** | Enable transport level debug output. (default: **`false`**)
 **`auth`** | Authentication to be used for this *Endpoint* - see [[Authentication]]
 
-In addition to running a WAMP-over-WebSocket *Endpoint* on its own port, an *Endpoint* can share a port with a *Web Transport*. For more information on this, take a look at [[Web Transport and Services]]. 
+In addition to running a WAMP-over-WebSocket *Endpoint* on its own port, an *Endpoint* can share a port with a *Web Transport*. For more information on this, take a look at [[Web Transport and Services]].

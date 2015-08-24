@@ -1,7 +1,8 @@
+[Documentation](.) > [Administration](Administration) > [Router Transports](Router Transports) > RawSocket Transport
+
 # RawSocket Transport
 
 RawSocket *Transports* implement WAMP-over-RawSocket and support TCP/TLS as well as Unix domain socket, each combined with JSON and MsgPack for serialization.
-
 
 ## Why?
 
@@ -10,7 +11,6 @@ RawSocket *Transports* implement WAMP-over-RawSocket and support TCP/TLS as well
 It can run over TCP, TLS or Unix domain socket. When run over TLS on a (misused) standard Web port (443), it is also able to traverse most locked down networking environments (unless Man-in-the-Middle intercepting proxies are in use).
 
 However, it does not support compression or automatic negotiation of WAMP serialization (as WebSocket allows). Perhaps most importantly, RawSocket cannot be used with Web browser clients.
-
 
 ## Configuration
 
