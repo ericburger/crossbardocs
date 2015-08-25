@@ -2,13 +2,40 @@
 
 # Administration
 
-* [Router Transports](Router Transports)
-* [HTTP Bridge Services](HTTP Bridge Services)
-* [Web Services](Web Services)
-* []()
-* []()
-* []()
+General overview of Crossbar.io node configuration. Start here:
 
+* [Configuration Overview](Configuration Overview)
+
+Configuring the different worker types of a Crossbar.io node:
+
+* [Controller Configuration](Controller Configuration)
+* [Router Configuration](Router Configuration)
+* [Container Configuration](Container Configuration)
+* [Guest Configuration](Guest Configuration)
+
+Configuring core router listening transports:
+
+* [Router Transports](Router Transports)
+
+Auxiliary Web Services and HTTP-to-WAMP Bridge provided by Crossbar.io:
+
+* [Web Services](Web Services)
+* [HTTP Bridge](HTTP Bridge)
+
+Configuring authentication and authorization in Crossbar.io
+
+* [Authentication](Authentication)
+* [Authorization](Authorization)
+
+Crossbar.io database integration services:
+
+* [Database Integration](Database Integration)
+
+Performance, compliance, security and general aspects when taking Crossbar.io to production:
+
+* [Going to Production](Going-to-Production)
+
+<!--
 ## Configuration
 
 The Configuration section covers configuring the basics of Crossbar.io, e.g. realms, transports and workers.
@@ -50,25 +77,4 @@ The Configuration section covers configuring the basics of Crossbar.io, e.g. rea
 * [Guest Configuration](Guest Configuration)
 * [Database Integration](Database Integration)
   - [PostgreSQL-Integration](PostgreSQL-Integration)
-
-## Going to Production
-
-This section covers security issues and fine-tuning of advanced options. Tips for a performant and secure production configuration.
-
-* [Running on privileged ports](Running on privileged ports)
-* [Secure WebSocket and HTTPS](Secure WebSocket and HTTPS)
-* [WebSocket Options](WebSocket Options)
-* [WebSocket Compression](WebSocket Compression)
-* [Automatic startup and restart](Automatic startup and restart)
-* [Network Tuning](Network Tuning)
-* [Reverse Proxies](Reverse Proxies)
-* [SSL/TLS Interception Proxies](SSL-TLS-Interception-Proxies)
-* [General IoT Security](Security)
-
-## Compliance and Performance
-
-Testing your instance & browser support.
-
-* [Browser Support](Browser Support)
-* [WebSocket Compliance Testing](WebSocket Compliance Testing)
-* [Stream Testee](Stream Testee)
+-->

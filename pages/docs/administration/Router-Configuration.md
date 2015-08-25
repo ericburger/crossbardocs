@@ -1,3 +1,5 @@
+[Documentation](.) > [Administration](Administration) > Router Configuration
+
 # Router Configuration
 
 *Routers* are the core facilities of Crossbar.io, responsible for routing WAMP remote procedure calls between *Callers* and *Callees*, as well as routing WAMP publish-subscribe events between *Publishers* and *Subscribers*.
@@ -36,7 +38,7 @@ For the available `options` with *Routers*, please see
 * [[Native Worker Options]]
 * [[Process Environments]]
 
-For configuration of `realms`, `transports` and `components`, have a look here 
+For configuration of `realms`, `transports` and `components`, have a look here
 
 * [[Router Realms]]
 * [[Router Transports]]

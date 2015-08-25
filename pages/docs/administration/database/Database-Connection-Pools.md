@@ -1,3 +1,7 @@
+[Documentation](.) > [Administration](Administration) > [Database Integration](Database Integration) > Database Connection Pools
+
+# Database Connection Pools
+
 ## Introduction
 
 Crossbar.io is able to integrate with external databases to support different features:

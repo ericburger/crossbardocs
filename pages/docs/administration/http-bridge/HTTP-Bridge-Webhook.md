@@ -1,6 +1,6 @@
-[Documentation](.) > [Administration](Administration) > [HTTP Bridge Services](HTTP Bridge Services) > HTTP Webhook
+[Documentation](.) > [Administration](Administration) > [HTTP Bridge](HTTP Bridge) > HTTP Bridge Webhook
 
-# HTTP Webhook
+# HTTP Bridge Webhook
 
 ## Introduction
 

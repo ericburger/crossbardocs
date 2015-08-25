@@ -1,6 +1,6 @@
-[Documentation](.) > [Administration](Administration) > [HTTP Bridge Services](HTTP Bridge Services) > HTTP Subscriber
+[Documentation](.) > [Administration](Administration) > [HTTP Bridge](HTTP Bridge) > HTTP Bridge Subscriber
 
-# HTTP Subscriber
+# HTTP Bridge Subscriber
 
 ## Introduction
 

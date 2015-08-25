@@ -1,3 +1,7 @@
+[Documentation](.) > [Administration](Administration) > [Going to Production](Going to Production) > Automatic Startup and Restart
+
+# Automatic Startup and Restart
+
 For running Crossbar.io in production, you might want to:
 
 * automatically start Crossbar.io at system boot as a daemon (background service) and under a dedicated service user (non-root)

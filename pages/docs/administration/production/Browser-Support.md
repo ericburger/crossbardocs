@@ -1,5 +1,8 @@
-**The final RFC spec**
+[Documentation](.) > [Administration](Administration) > [Going to Production](Going to Production) > Browser Support
 
+# Browser Support
+
+**The final RFC spec**
 
 WebSocket, as an [IETF standard](http://tools.ietf.org/html/rfc6455), and with a W3C browser API, is fully supported by all modern browsers:
 

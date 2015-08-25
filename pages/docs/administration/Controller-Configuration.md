@@ -1,3 +1,5 @@
+[Documentation](.) > [Administration](Administration) > Controller Configuration
+
 # Controller Configuration
 
 The *Controller* can be configured using the `controller` item in the node's configuration:

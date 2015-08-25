@@ -1,3 +1,7 @@
+[Documentation](.) > [Administration](Administration) > [Database Integration](Database Integration) > PostgreSQL Integration
+
+# PostgreSQL Integration
+
 ## Introduction
 
 The PostgreSQL integration provided by Crossbar.io extends WAMP directly into the database. Using the integration services, you can

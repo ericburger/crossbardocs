@@ -1,3 +1,12 @@
+[Documentation](.) > [Administration](Administration) > Authentication
+
+# Authentication
+
+* [Anonymous Authentication](Anonymous Authentication)
+* [Challenge-Response Authentication](Challenge-Response Authentication)
+* [Cookie Authentication](Cookie Authentication)
+* [Ticket Authentication](Ticket Authentication)
+
 With Crossbar.io, *authentication* and *authorization* of WAMP connections are orthogonal aspects which can be configured on transports and routers running on a node.
 
 WAMP *authorization* is described [here](Authorization). This chapter is about *WAMP authentication* concepts and configuration.
@@ -9,7 +18,7 @@ Crossbar.io supports authentication via:
  1. [**Mozilla Persona**](Mozilla Persona) (currently broken)
  2. [**WAMP Challenge-Response (WAMP-CRA)**](WAMP CRA Authentication)
  3. [**Cookie**](Cookie-Authentication)
- 3. [**One-time-token based**](OTP-Authentication) (e.g. for Google Authenticator) 
+ 3. [**One-time-token based**](OTP-Authentication) (e.g. for Google Authenticator)
  3. **Client TLS Certificates** *(under develeopment)*
 
 and can additionally assign a role to components which don't authenticate:

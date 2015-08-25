@@ -1,6 +1,6 @@
-[Documentation](.) > [Administration](Administration) > [HTTP Bridge Services](HTTP Bridge Services) > HTTP Publisher
+[Documentation](.) > [Administration](Administration) > [HTTP Bridge](HTTP Bridge) > HTTP Bridge Publisher
 
-# HTTP Publisher
+# HTTP Bridge Publisher
 
 ## Introduction
 

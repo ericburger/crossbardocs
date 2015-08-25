@@ -1,4 +1,6 @@
+[Documentation](.) > [Administration](Administration) > Container Configuration
 
+# Container Configuration
 
 **Containers** are worker processes spawned by Crossbar.io which *directly* host application classes written in Python deriving from `autobahn.twisted.wamp.ApplicationSession`.
 
@@ -57,7 +59,7 @@ Both types share the following options:
 
 For the type `class`, you need to set
 
-* `classname`: the Python WAMP application class, a module/classname of a class derived from `autobahn.twisted.wamp.ApplicationSession`*required* 
+* `classname`: the Python WAMP application class, a module/classname of a class derived from `autobahn.twisted.wamp.ApplicationSession`*required*
 
 For the type `wamplet`, you need to set
 

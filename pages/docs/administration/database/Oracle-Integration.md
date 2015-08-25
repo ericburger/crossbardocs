@@ -1,4 +1,8 @@
-# Quick Setup
+[Documentation](.) > [Administration](Administration) > [Database Integration](Database Integration) > Oracle Integration
+
+# Oracle Integration
+
+## Quick Setup
 
 From a terminal, run the following to setup the Crossbar.io Oracle database integration:
 
@@ -16,7 +20,7 @@ Then start Crossbar.io
 crossbar start
 ```
 
-# Installation
+## Installation
 
 By default, the installation scripts generated will create two database users:
 

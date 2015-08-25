@@ -1,14 +1,14 @@
-[Documentation](.) > [Administration](Administration) > HTTP Bridge Services
+[Documentation](.) > [Administration](Administration) > HTTP Bridge
 
-# HTTP Bridge Services
+# HTTP Bridge
 
 ## Quick Links
 
-* [HTTP Publisher](HTTP Bridge Services Publisher)
-* [HTTP Subscriber](HTTP Bridge Services Subscriber)
-* [HTTP Caller](HTTP Bridge Services Caller)
-* [HTTP Callee](HTTP Bridge Services Callee)
-* [HTTP Webhook](HTTP Bridge Services Webhook)
+* [HTTP Bridge Publisher](HTTP Bridge Publisher)
+* [HTTP Bridge Subscriber](HTTP Bridge Subscriber)
+* [HTTP Bridge Caller](HTTP Bridge Caller)
+* [HTTP Bridge Callee](HTTP Bridge Callee)
+* [HTTP Bridge Webhook](HTTP Bridge Webhook)
 
 ## Background
 

@@ -1,3 +1,7 @@
+[Documentation](.) > [Administration](Administration) > Guest Configuration
+
+# Guest Configuration
+
 **Guest workers** are worker processes spawned by Crossbar.io which runapplication components written in languages other than Python (the language which Crossbar.io is written in), or in Python 3.x (Crossbar.io is currently on Python 2.7).
 
 This makes deployment of WAMP applications easier, since you can start an entire application backend just by starting Crossbar.io.
@@ -41,7 +45,7 @@ The `options` are:
 
 ## Executable Path
 
-The argument `executable` provides the path to the executable that Crossbar.io uses when starting the worker. 
+The argument `executable` provides the path to the executable that Crossbar.io uses when starting the worker.
 
 Crossbar.io first parses this as an absolute path as well as a relative path (relative to the `workdir` in `options`). If no executable is found there, then it considers it an environment variable and attempts to use the path stored there.
 

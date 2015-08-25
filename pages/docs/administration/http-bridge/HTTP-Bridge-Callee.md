@@ -1,6 +1,6 @@
-[Documentation](.) > [Administration](Administration) > [HTTP Bridge Services](HTTP Bridge Services) > HTTP Callee
+[Documentation](.) > [Administration](Administration) > [HTTP Bridge](HTTP Bridge) > HTTP Bridge Callee
 
-# HTTP Callee
+# HTTP Bridge Callee
 
 > The *HTTP Callee* feature is available starting with Crossbar **0.10.3**.
 

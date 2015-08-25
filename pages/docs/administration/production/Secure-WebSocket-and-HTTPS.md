@@ -1,4 +1,4 @@
-[Documentation](.) > [[Going to Production]] -> Secure WebSocket and HTTPS
+[Documentation](.) > [Administration](Administration) > [Going to Production](Going to Production) > Secure WebSocket and HTTPS
 
 # Secure WebSocket and HTTPS
 

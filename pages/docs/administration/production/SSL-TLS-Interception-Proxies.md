@@ -1,4 +1,8 @@
-SSL/TLS Interception Proxies sit between browsers and Web/WebSocket servers, unwrapping a secure TLS connection to look inside the payload of the traffic. Here is an [introduction](http://www.secureworks.com/cyber-threat-intelligence/threats/transitive-trust/).
+[Documentation](.) > [Administration](Administration) > [Going to Production](Going to Production) > SSL-TLS Interception Proxies
+
+# SSL-TLS Interception Proxies
+
+SSL-TLS Interception Proxies sit between browsers and Web/WebSocket servers, unwrapping a secure TLS connection to look inside the payload of the traffic. Here is an [introduction](http://www.secureworks.com/cyber-threat-intelligence/threats/transitive-trust/).
 
 Interception proxies are usually operating transparently to the user, impersonating target sites and servers to do their content inspection thing. They are one class of devices that in the context of WebSocket are called *intermedaries*.
 

@@ -1,3 +1,5 @@
+[Documentation](.) > [Administration](Administration) > Configuration Overview
+
 # Configuration Overview
 
 When a Crossbar.io node starts, the node controller reads a local configuration from a file and starts services as specified in the configuration.

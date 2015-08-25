@@ -1,3 +1,7 @@
+[Documentation](.) > [Administration](Administration) > [Authentication](Authentication) > Cookie Authentication
+
+# Cookie Authentication
+
 ## Introduction
 
 Cookie authentication works like this.

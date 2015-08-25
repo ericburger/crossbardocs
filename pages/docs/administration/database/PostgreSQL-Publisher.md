@@ -1,3 +1,7 @@
+[Documentation](.) > [Administration](Administration) > [Database Integration](Database Integration) > [PostgreSQL Integration](PostgreSQL Integration) > PostgreSQL Publisher
+
+# PostgreSQL Publisher
+
 ### Node Configuration
 
 #### Running inside a Container Worker

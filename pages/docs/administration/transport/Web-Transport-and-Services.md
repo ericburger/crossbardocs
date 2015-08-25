@@ -3,7 +3,7 @@
 # Web Transport and Services
 
 * [Web Services](Web Services)
-* [HTTP Bridge Services](HTTP Bridge Services)
+* [HTTP Bridge](HTTP Bridge)
 
 **Quick Links** - Crossbar.io Web Services:
 

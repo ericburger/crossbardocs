@@ -1,4 +1,8 @@
-Strictly speaking, Anonymous Authentication is not authentication - it is about what to do in the absence of authentication. 
+[Documentation](.) > [Administration](Administration) > [Authentication](Authentication) > Anonymous Authentication
+
+# Anonymous Authentication
+
+Strictly speaking, Anonymous Authentication is not authentication - it is about what to do in the absence of authentication.
 
 Crossbar.io allows to create a role `anonymous` which is assigned to any client which connects *without* authentication.
 

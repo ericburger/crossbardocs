@@ -1,6 +1,6 @@
-[Documentation](.) > [Administration](Administration) > [HTTP Bridge Services](HTTP Bridge Services) > HTTP Caller
+[Documentation](.) > [Administration](Administration) > [HTTP Bridge](HTTP Bridge) > HTTP Bridge Caller
 
-# HTTP Caller
+# HTTP Bridge Caller
 
 ## Introduction
 

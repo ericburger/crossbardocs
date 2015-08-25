@@ -1,3 +1,7 @@
+[Documentation](.) > [Administration](Administration) > [Authentication](Authentication) > Challenge-Response Authentication
+
+# Challenge-Response Authentication
+
 ## Introduction
 
 Crossbar.io supports authenticating WAMP sessions using different mechanisms. One of those is [WAMP-Challenge-Response-Authentication](https://github.com/tavendo/WAMP/blob/master/spec/advanced.md#wamp-challenge-response-authentication), or WAMP-CRA in short.
@@ -158,7 +162,7 @@ Here we define two users: `joe` and `peter`. The mandatory attributes are:
 
 Optional attributes are all related to the (optional) pbkdf2-based password salting:
 
-* `authid`: The authentication ID which will be assigned to the client 
+* `authid`: The authentication ID which will be assigned to the client
 * `salt`: If the secret isn't stored clear-text (but salted), the salt used for computing the derived secret provided in `secret`.
 * `iterations`: An integer parameter of the pbkdf2 algorithm.
 * `keylen`: An integer parameter of the pbkdf2 algorithm.
@@ -225,7 +229,7 @@ The return value must be a dictionary with two mandatory attributes:
 
 The dictionary can have these optional attributes:
 
-* `authid`: The authentication ID which will be assigned to the client 
+* `authid`: The authentication ID which will be assigned to the client
 * `salt`: If `secret` was salted, the salt used (with pbkdf2)
 * `iterations`: If `secret` was salted, the iterations during salting (a parameter of the pbkdf2 algorithm used).
 * `keylen`: If `secret` was salted, the keylen of the derived key (a parameter of the pbkdf2 algorithm used).
