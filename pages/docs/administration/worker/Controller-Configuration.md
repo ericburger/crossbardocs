@@ -1,4 +1,4 @@
-[Documentation](.) > [Administration](Administration) > Controller Configuration
+[Documentation](.) > [Administration](Administration) > [Workers](Workers) > Controller Configuration
 
 # Controller Configuration
 

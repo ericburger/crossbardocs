@@ -1,3 +1,7 @@
+[Documentation](.) > [Administration](Administration) > Authorization
+
+# Authorization
+
 This chapter is about WAMP **authorization** concepts and configuration with Crossbar.io.
 
 See also:

@@ -1,4 +1,4 @@
-[Documentation](.) > [Administration](Administration) > Guest Configuration
+[Documentation](.) > [Administration](Administration) > [Workers](Workers) > Guest Configuration
 
 # Guest Configuration
 

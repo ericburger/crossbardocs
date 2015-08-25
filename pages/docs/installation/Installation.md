@@ -9,3 +9,7 @@ Installing Crossbar.io locally (on your own metal):
 Setting up Crossbar.io on cloud platforms:
 
 * [Setup in the Cloud](Setup in the Cloud)
+
+Using our public demo instance:
+
+* [Demo Instance](Demo Instance)

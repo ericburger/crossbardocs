@@ -1,8 +1,42 @@
 # Crossbar.io Documentation
 
-Welcome to the Crossbar.io reference documentation.
+Welcome to the Crossbar.io Reference Documentation.
+
+## Contents
+
+** Getting Started **
+
+* [Quick Start](Quick Start)
+* [Choose your Weapon](Choose your Weapon)
+
+** Administrators **
+
+* [Installation](Installation)
+* [Administration](Administration)
+
+** Programmers **
+
+* [Programming Guide](Programming Guide)
+* [Application Templates](Application Templates)
+* [Examples](Examples)
+
+
+This documentation is an [open-source](#) community effort sponsored by [Tavendo](http://tavendo.com). Should you find errors or if you have suggestions, please [file an issue](https://github.com/crossbario/crossbardocs/issues).
+
+---
+
 
 <!--
+
+How to install Crossbar.io, and start using it with your language or device of choice:
+
+Detailed installation instructions for various environments and how to adapt Crossbar.io for your specific use case:
+
+How to get started using your language of choice:
+
+Guide for using Crossbar.io in specific scenarios, or for using specific features of WAMP & Crossbar.io in your applications.
+
+
 ## How it works
 
 Learn the underlying concepts of Crossbar.io and what you can do with it.
@@ -17,31 +51,7 @@ Learn the underlying concepts of Crossbar.io and what you can do with it.
 * [Examples](Examples)
 -->
 
-## Getting Started
-
-How to install Crossbar.io, and start using it with your language or device of choice.
-
-* [Quick Start](Quick Start)
-* [The Command Line](The Command Line)
-* [Application Templates](Application Templates)
-
-Detailed installation instructions for various environments:
-
-* [Installation](Installation)
-
-How to get started using your language of choice:
-
-* [Choose your Weapon](Choose your Weapon)
-
-How to adapt Crossbar.io for your specific use case.
-
-* [Administration](Administration)
-
-Guide for using Crossbar.io in specific scenarios, or for using specific features of WAMP & Crossbar.io in your applications.
-
-* [Programming Guide](Programming Guide)
-
-
+<!--
 ## Developers
 
 Notes for developers working on the Crossbar.io code base (*not* application developers).
@@ -63,3 +73,4 @@ First take a look at the [FAQ](FAQ) since there's a chance your particular quest
 For new questions, your first stop should be the [mailing list](https://groups.google.com/forum/#!forum/crossbario) or the IRC channel (freenode/autobahn).
 
 You can also reach us on Twitter [@crossbario](https://twitter.com/crossbario) (though 140 characters is not the best for asking programming questions).
+-->

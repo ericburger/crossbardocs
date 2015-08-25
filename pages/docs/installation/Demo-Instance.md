@@ -1,8 +1,12 @@
+[Documentation](.) > [Installation](Installation) > Demo Instance
+
+# Demo Instance
+
 We run a demo instance which serves the [Crossbar.io demos](https://demo.crossbar.io/) and can be used for light development work and testing.
 
 ## Using the Demo Instance
 
-The demo instance is reachable at 
+The demo instance is reachable at
 
 ```
 ws://demo.crossbar.io:8080
@@ -14,7 +18,7 @@ This offers a single realm:
 realm1
 ```
 
-and accepts authentication as anonymous with permissions for all four WAMP roles set (for any URI). 
+and accepts authentication as anonymous with permissions for all four WAMP roles set (for any URI).
 
 There is no possibility to configure anything from your side.
 

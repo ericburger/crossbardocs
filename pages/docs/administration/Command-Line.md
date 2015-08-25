@@ -1,4 +1,4 @@
-[Documentation](.) > The Command Line
+[Documentation](.) > [Administration](Administration) > The Command Line
 
 # The Command Line
 

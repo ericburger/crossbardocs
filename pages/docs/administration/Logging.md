@@ -1,3 +1,7 @@
+[Documentation](.) > [Administration](Administration) > Logging
+
+# Logging
+
 > Crossbar's structured logging system is present in versions 0.11 and above, and a lot of these options will only work in these versions.
 
 Crossbar.io has configurable logging systems, to make it's log output easier to consume or nicer to look at.
