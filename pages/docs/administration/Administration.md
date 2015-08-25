@@ -11,7 +11,7 @@ This is the Crossbar.io **Administration Manual**. The documentation here discus
 * [The Command Line](Command Line) - The Crossbar.io command line.
 * [Logging](Logging) - Logging in Crossbar.io
 * [Node Configuration](Node Configuration) - General overview of Crossbar.io node configuration. **Start here**.
-* [Workers](Workers) - Configuring the different worker types of a Crossbar.io node.
+* [Processes](Processes) - Configuring the different process types of a Crossbar.io node.
   * [Controller Configuration](Controller Configuration)
   * [Router Configuration](Router Configuration)
   * [Container Configuration](Container Configuration)

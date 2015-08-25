@@ -1,4 +1,4 @@
-[Documentation](.) > [Administration](Administration) > [Workers](Workers) > Router Configuration
+[Documentation](.) > [Administration](Administration) > [Processes](Processes) > Router Configuration
 
 # Router Configuration
 

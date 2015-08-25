@@ -1,4 +1,4 @@
-[Documentation](.) > [Administration](Administration) > [Workers](Workers) > Native Worker Options
+[Documentation](.) > [Administration](Administration) > [Processes](Processes) > Native Worker Options
 
 # Native Worker Options
 

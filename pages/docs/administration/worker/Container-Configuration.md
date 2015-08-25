@@ -1,4 +1,4 @@
-[Documentation](.) > [Administration](Administration) > [Workers](Workers) > Container Configuration
+[Documentation](.) > [Administration](Administration) > [Processes](Processes) > Container Configuration
 
 # Container Configuration
 

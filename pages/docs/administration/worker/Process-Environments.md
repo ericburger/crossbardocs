@@ -1,4 +1,4 @@
-[Documentation](.) > [Administration](Administration) > [Workers](Workers) > Process Environments
+[Documentation](.) > [Administration](Administration) > [Processes](Processes) > Process Environments
 
 # Process Environments
 

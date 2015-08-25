@@ -1,4 +1,8 @@
-## Working code is the best documentation
+[Documentation](.) > Examples
+
+# Examples
+
+**Working code is the best documentation**
 
 Working code is in itself proof that what you see is not outdated, doesn't have any typos, or suffers from any other problems that written documentation may have.
 
