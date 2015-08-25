@@ -1,3 +1,5 @@
+[Documentation](.) > [Administration](Administration) > [Web Services](Web Services) > JSON Value Service
+
 # JSON Value Service
 
 The **JSON Value Service** is configured on a subpath of a **Web Transport** and allows you to expose a custom JSON value from your node configuration dynamically over HTTP(S).
@@ -40,14 +42,14 @@ When you open `http://localhost:8080/config` in your browser, you should get
 
 ```javascript
 {
-   "param1": "foobar", 
+   "param1": "foobar",
    "param2": [
-      1, 
-      2, 
+      1,
+      2,
       3
-   ], 
+   ],
    "param3": {
-      "awesome": true, 
+      "awesome": true,
       "nifty": "yes"
    }
 }

@@ -1,3 +1,5 @@
+[Documentation](.) > [Administration](Administration) > [Web Services](Web Services) > File Upload Service
+
 # File Upload Service
 
 The **File Upload Service** allows uploading of files to a directory on the Crossbar.io node via (chunked) HTTP/POSTs.

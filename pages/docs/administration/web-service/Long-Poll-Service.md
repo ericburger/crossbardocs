@@ -1,3 +1,5 @@
+[Documentation](.) > [Administration](Administration) > [Web Services](Web Services) > Long-poll Service
+
 # Long-poll Service
 
 The default transport for WAMP is WebSocket. For clients not supporting WebSocket, the WAMP specification defines a transport that runs over a HTTP long-poll mechanism.

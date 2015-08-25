@@ -2,6 +2,9 @@
 
 # Web Transport and Services
 
+* [Web Services](Web Services)
+* [HTTP Bridge Services](HTTP Bridge Services)
+
 **Quick Links** - Crossbar.io Web Services:
 
 * [Static Web Service](Static Web Service)

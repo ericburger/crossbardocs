@@ -2,6 +2,10 @@
 
 # WebSocket Transport
 
+* [WebSocket Options](WebSocket Options)
+* [WebSocket Compression](WebSocket Compression)
+* [Cookie Tracking](Cookie Tracking)
+
 The *WebSocket Transport* is the default and most common way for running WAMP. In particular, WAMP-over-WebSocket is the protocol used to communicate with browsers that natively support WebSocket.
 
 To expose its WAMP routing services you can run an *Endpoint* that talks WAMP-over-WebSocket. Here is an example (part of a Crossbar.io configuration):

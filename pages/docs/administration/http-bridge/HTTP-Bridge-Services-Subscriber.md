@@ -1,3 +1,7 @@
+[Documentation](.) > [Administration](Administration) > [HTTP Bridge Services](HTTP Bridge Services) > HTTP Subscriber
+
+# HTTP Subscriber
+
 ## Introduction
 
 > The *HTTP Subscriber* feature is available starting with Crossbar **0.10.3**.

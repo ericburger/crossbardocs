@@ -1,3 +1,5 @@
+[Documentation](.) > [Administration](Administration) > [Router Transports](Router Transports) > [WebSocket Transport](WebSocket Transport) > Cookie Tracking
+
 # Cookie Tracking
 
 Cookie tracking identifies and tracks WAMP-over-WebSocket client connections using HTTP cookies.
@@ -125,7 +127,7 @@ To configure a file-backed cookie store:
                }
             }
          ]
-}         
+}
 ```
 
 The file-backed cookie store requires the following setting:

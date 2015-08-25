@@ -1,3 +1,5 @@
+[Documentation](.) > [Administration](Administration) > [Web Services](Web Services) > Static Web Service
+
 # Static Web Service
 
 When serving HTML5 Web clients from Crossbar.io, the **static web assets** for your frontends like HTML, JavaScript and image files need to be hosted somewhere as well.

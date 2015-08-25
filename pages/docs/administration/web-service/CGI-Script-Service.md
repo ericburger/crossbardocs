@@ -1,3 +1,5 @@
+[Documentation](.) > [Administration](Administration) > [Web Services](Web Services) > CGI Script Service
+
 # CGI Script Service
 
 Crossbar.io's Web server allows you to serve plain old CGI scripts. This can be useful if you have some legacy or other scripts that you want to run as part of a Crossbar.io node.

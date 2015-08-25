@@ -1,4 +1,6 @@
-# Endpoints
+[Documentation](.) > [Administration](Administration) > [Router Transports](Router Transports) > Endpoints
+
+# Transport Endpoints
 
 An *Endpoint* describes the network connection over which data is transmitted. *Endpoints* are used as part of *Transport* definitions, e.g.
 
@@ -45,7 +47,7 @@ Here is an *Endpoint* that is listening on TCP port `8080` (on all network inter
    "endpoint": {
       "type": "tcp",
       "port": 8080
-   }  
+   }
 }
 ```
 
@@ -71,7 +73,7 @@ Here is an *Endpoint* that is connecting over TCP to `localhost` on port `8080`:
       "type": "tcp",
       "host": "localhost",
       "port": 8080
-   }   
+   }
 }
 ```
 
@@ -86,7 +88,7 @@ Here is a listening *Endpoint* that uses TLS (note there's "interface" instead o
       "tls": {
          "key": "server.key",
          "certificate": "server.crt"
-      }   
+      }
    }
 }
 ```
@@ -116,7 +118,7 @@ Here is an *Endpoint* that is listening on Unix domain socket `/tmp/socket1`:
    "endpoint": {
       "type": "unix",
       "path": "/tmp/socket1"
-   }   
+   }
 }
 ```
 
@@ -137,7 +139,7 @@ Here is an *Endpoint* that is connecting over Unix domain socket `/tmp/socket1`:
    "endpoint": {
       "type": "unix",
       "path": "/tmp/socket1"
-   }   
+   }
 }
 ```
 

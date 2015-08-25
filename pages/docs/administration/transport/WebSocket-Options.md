@@ -1,3 +1,7 @@
+[Documentation](.) > [Administration](Administration) > [Router Transports](Router Transports) > [WebSocket Transport](WebSocket Transport) > WebSocket Options
+
+# WebSocket Options
+
 Crossbar.io is built on an advanced and complete WebSocket implementation that exposes various options and tunables you might be interested in, especially if you take your server to production.
 
 > For options related to WebSocket compression, please see [here](WebSocket Compression).

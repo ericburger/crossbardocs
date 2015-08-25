@@ -1,3 +1,7 @@
+[Documentation](.) > [Administration](Administration) > [HTTP Bridge Services](HTTP Bridge Services) > HTTP Publisher
+
+# HTTP Publisher
+
 ## Introduction
 
 > The *HTTP Publisher* (formerly *HTTP Pusher*) feature is available starting with Crossbar **0.9.5**.
