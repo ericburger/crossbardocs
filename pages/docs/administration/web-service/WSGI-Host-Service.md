@@ -74,3 +74,9 @@ Add a **Web Transport** with a **WSGI Host Service** on a subpath within your no
    ]
 }
 ```
+
+## Configuration
+
+`type` | must be `wsgi`
+`module` | the WSGI app module to load
+`object` | the WSGI app object to use
