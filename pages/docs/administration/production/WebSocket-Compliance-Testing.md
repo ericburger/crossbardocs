@@ -81,3 +81,14 @@ wstest -m fuzzingclient -s fuzzingclient.json
 ```
 
 Testing will take some time. It runs over 500 test cases. In the end, it'll generate HTML report files. Open the `reports/servers/index.html` overview page in your browser - click on the green "Pass" links to view the case detail reports.
+
+## Configuration
+
+option | description
+---|---
+**`id`** | ID of the transport within the running node (default: **`transport<N>`** where `N` is numbered automatically starting from `1`)
+**`type`** | Type of transport - must be `"websocket.testee"`.
+**`endpoint`** | Listening endpoint for transport. See [Transport Endpoints](Transport Endpoints) for configuration
+**`debug`** | Turn on debug logging for this transport instance (default: **`false`**).
+**`url`** | The WebSocket server URL to use (default: `null`)
+**`options`** | See [WebSocket Options](WebSocket-Options)

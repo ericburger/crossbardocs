@@ -65,11 +65,15 @@ Here is the basic outline of a **Web Transport** configuration
 
 The Web transport has a few parameters:
 
- 1. `id` - The (optional) transport ID - this must be unique within the router this transport runs in (default: **"transportN"** - where N is numbered starting with 1)
- 2. `type` - must be `"web"` (*required*)
- 3. `endpoint` - is the endpoint to listen on (*required*)
- 4. `paths` - is a dictionary for configuring services on subpaths (*required* - see below).
- 5. `options` - is an optional dictionary for additional transport wide configuration:
+option | description
+---|---
+**`id`** | The (optional) transport ID - this must be unique within the router this transport runs in (default: **"transportN"** - where N is numbered starting with 1)
+**`type`**  | Must be `"web"` (*required*)
+**`endpoint`** | The endpoint to listen on (*required*). See [Transport Endpoints](Transport Endpoints)
+**`paths`** | A dictionary for configuring services on subpaths (*required* - see below).
+**`options`** | Is an optional dictionary for additional transport wide configuration (see below).
+
+Web transport `options`:
 
 option | description
 ---|---
@@ -78,6 +82,12 @@ option | description
 **`hsts`** | set to `true` to enable [HTTP Strict Transport Security (HSTS)](http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) (only applicable when using a TLS endpoint) (default: **false**)
 **`hsts_max_age`** | for HSTS, use this maximum age (only applicable when using a TLS endpoint). (default: **31536000**)
 **`hixie76_aware`** | set to `true` to support use of WebSocket Hixie-76 on any path services configured (default: **false**)
+
+Web transport `paths`:
+
+* must match the regular expression `^([a-z0-9A-Z_\-]+|/)$`
+* must contain a root path `/`
+
 
 ## Web Transport Services
 

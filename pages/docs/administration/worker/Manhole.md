@@ -111,3 +111,17 @@ You can also start Manhole in the *Controller*:
 ```
 
 The `session` in this case is an instance of `crossbar.controller.process.NodeControllerSession`.
+
+## Configuration
+
+option | description
+---|---
+**`endpoint`** | The endpoint to listen on. See [Transport Endpoints](Transport Endpoints)
+**`users`** | A list of permissable users. See below.
+
+A `user` in the `users` list above must be a dictionary with
+
+attribute | description
+---|---
+**`user`** | The user login name.
+**`password`** | The user password.

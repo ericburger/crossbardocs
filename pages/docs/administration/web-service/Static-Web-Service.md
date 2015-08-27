@@ -174,16 +174,22 @@ Note that you can also put (another) **Static Web Service** on a **subpath** ser
 
 ## Configuration
 
-`type` | must be `"static"`
-`directory` | absolute or node relative directory to serve files from or `null` when serving a Python resource (see next)
-`package` | when serving a Python resource, the Python package name the resource comes from
-`resource` | the resource name as exported by the referenced Python package - the imported resource is then used as a file source
-`options` | dictionary with options (see below)
+option | description
+---|---
+**`type`** | must be `"static"`
+**`directory`** | absolute or node relative directory to serve files from or `null` when serving a Python resource (see next)
+**`package`** | when serving a Python resource, the Python package name the resource comes from
+**`resource`** | the resource name as exported by the referenced Python package - the imported resource is then used as a file source
+**`options`** | dictionary with options (see below)
 
 > either the `directory` attribute must be present or both the `package` and `resource` attributes, not both, and not none.
 
 with `options`:
 
-`enable_directory_listing` | boolean
-`mime_type` | list
-`cache_timeout` | int
+option | description
+---|---
+**`enable_directory_listing`** | boolean
+**`mime_type`** | list
+**`cache_timeout`** | int
+
+---

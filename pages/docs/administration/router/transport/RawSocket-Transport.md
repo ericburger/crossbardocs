@@ -19,7 +19,7 @@ Here is an example *Transport* that will run WAMP-over-RawSocket on a Unix domai
 ```javascript
 {
    "type": "rawsocket",
-   "serializer": "msgpack",
+   "serializers": ["json", "msgpack"],
    "endpoint": {
       "type": "unix",
       "path": "/tmp/mysocket1"
@@ -36,7 +36,7 @@ Parameter | Description
 **`id`** | The (optional) transport ID - this must be unique within the router this transport runs in (default: **`"transportN"`** where **N** is numbered starting with **1**)
 **`type`** | Must be `"rawsocket"` (**required**)
 **`endpoint`** |  A network connection for data transmission - see [Endpoints](Endpoints) (**required**)
-**`serializer`** | the serializer to use - currently one of: `"json"` or `"msgpack"` (**required**)
+**`serializers`** | List of serializers to use from `"json"` or `"msgpack"` (default: **all available**)
 **`max_message_size`** | Maximum size in bytes of incoming RawSocket messages accepted. Must be between 1 and 64MB (default: **128kB**)
 **`auth`** | Authentication to be used for this *Endpoint* - see [[Authentication]]
 **`debug`** | Enable transport level debug output. (default: **`false`**)

@@ -56,6 +56,9 @@ You can also redirect *subpaths* on a **Web Transport**:
 
 ## Configuration
 
-`type` | must be `"redirect"`
-`url` | the HTTP(S) URL where to redirect to, e.g. `"http://somehost:8080/something"`.
+option | description
+---|---
+**`type`** | must be `"redirect"`
+**`url`** | the HTTP(S) URL where to redirect to, e.g. `"http://somehost:8080/something"`.
 
+---

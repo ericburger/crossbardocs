@@ -31,12 +31,6 @@ Here is an example configuration for a **Web Transport** that includes a CGI pro
 }
 ```
 
-CGI is configured as a path component on a Web transport:
-
- * `type` must be `"cgi"`
- * `directory` is the CGI base directory containing your scripts. The path can be absolute or relative to the Crossbar.io node directory
- * `processor` is the CGI script processor to use. This MUST be a fully qualified path to an executable.
-
 Here is a complete example:
 
 1) Create a new Crossbar.io node
@@ -81,3 +75,15 @@ Then start Crossbar.io
     crossbar start
 
 and open the page **http://localhost:8080/script/foo** in your browser. You should see a hello from the Python CGI script.
+
+## Configuration
+
+CGI is configured as a path component on a Web transport:
+
+ option | description
+---|---
+**`type`** | Must be `"cgi"`.
+**`directory`** | The CGI base directory containing your scripts. The path can be absolute or relative to the Crossbar.io node directory
+**`processor`** | The CGI script processor to use. This MUST be a fully qualified path to an executable.
+
+---
