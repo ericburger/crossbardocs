@@ -58,3 +58,16 @@ The only difference client side (in the HTML) versus a standard client is that y
 ```
 
 ---
+
+## Configuration
+
+option | description
+---|---
+**`id`** | ID of the transport within the running node (default: **`transport<N>`** where `N` is numbered automatically starting from `1`)
+**`type`** | Type of transport - must be `"flash"`.
+**`endpoint`** | Listening endpoint for transport. See [Transport Endpoints](Transport Endpoints) for configuration
+**`allowed_domain`** | Domain (a string) clients should be allowed to connect to or `null` to allow any domain (default: **`null`**)
+**`allowed_ports`** | List of ports (a list of integers from `[1, 65535]`) clients should be allowed to connect to or `null` to allow any port (default: **`null`**)
+**`debug`** | Turn on debug logging for this transport instance (default: **`false`**).
+
+---

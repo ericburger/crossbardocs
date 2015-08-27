@@ -30,8 +30,18 @@ Here is an example configuration:
 
 Now you can connect e.g. via telnet to the host on port 9000.
 
+## Configuration
 
-# Results
+option | description
+---|---
+**`id`** | ID of the transport within the running node (default: **`transport<N>`** where `N` is numbered automatically starting from `1`)
+**`type`** | Type of transport - must be `"stream.testee"`.
+**`endpoint`** | Listening endpoint for transport. See [Transport Endpoints](Transport Endpoints) for configuration
+**`debug`** | Turn on debug logging for this transport instance (default: **`false`**).
+
+---
+
+## Results
 
 These tests were performed on 2 boxes running FreeBSD 10.1 / x86-64:
 
@@ -268,7 +278,7 @@ All connections complete in 47545ms
 Press return to close connections
 ```
 
-# Resources
+## Resources
 
 * [Why is TCP accept performance so bad under Xen?](http://serverfault.com/questions/272483/why-is-tcp-accept-performance-so-bad-under-xen)
 * [Why virtualization reduces network performance](https://news.ycombinator.com/item?id=2574702)

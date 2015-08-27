@@ -61,12 +61,18 @@ You can now retrieve above JSON e.g. by issueing an [XMLHttpRequest](http://www.
 
 ## Configuration
 
-`type` | must be `"json"`
-`value` | any valid JSON value
-`options | dictionary with options (see below)
+option | description
+---|---
+**`type`** | must be `"json"`
+**`value`** | any valid JSON value
+**`options`** | dictionary with options (see below)
 
-with options
+with `options`
 
-`prettify`| a boolean that controls when to prettify the rendered JSON (default: `true`)
-`allow_cross_origin` | a boolean, allow cross-origin requests (CORS) (default: `false`)
-`discourage_caching` | a boolean, set headers to discourage caching of the response (default: `false`)
+option | description
+---|---
+**`prettify`**| a boolean that controls when to prettify the rendered JSON (default: `true`)
+**`allow_cross_origin`** | a boolean, allow cross-origin requests (CORS) (default: `false`)
+**`discourage_caching`** | a boolean, set headers to discourage caching of the response (default: `false`)
+
+---

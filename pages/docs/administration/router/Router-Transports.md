@@ -56,13 +56,13 @@ Crossbar.io also allows Web transports. A Web transport allows running one or mo
 
 For configuring *Transports* with *Routers*, please see
 
-* [WebSocket Transports](WebSocket Transports)
-* [RawSocket Transports](RawSocket Transports)
+* [WebSocket Transport](WebSocket Transport)
+* [RawSocket Transport](RawSocket Transport)
 
 and for the Web, HTTP/Longpoll and other Web Transport features see
 
-* [Web Transports and Services](Web Transports and Services)
+* [Web Transport and Services](Web Transport and Services)
 
 For setting up a Flash Policy transport necessary for a WebSocket Flash fallback for older browsers
 
-* [[Flash Policy Transport]]
+* [Flash Policy Transport](Flash Policy Transport)

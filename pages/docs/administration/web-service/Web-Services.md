@@ -9,3 +9,4 @@
 * [WSGI Host Service](WSGI-Host-Service)
 * [Long-Poll Service](Long-Poll-Service)
 * [File Upload Service](File-Upload-Service)
+* [Path Service](Path-Service)
