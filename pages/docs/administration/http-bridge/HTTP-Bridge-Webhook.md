@@ -79,6 +79,7 @@ The `options` dictionary has the following configuration parameters:
 option | description
 ---|---
 **`topic`** | The topic to which the forwarded events will be sent.
+**`post_body_limit`** | An integer when present limits the length (in bytes) of a HTTP/POST body that will be accepted. If the request body exceed this limit, the request is rejected. If 0, accept unlimited length. (default: **0**)
 
 
 ## With GitHub
