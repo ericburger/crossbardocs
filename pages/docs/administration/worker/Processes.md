@@ -17,6 +17,10 @@ Processes can be further configured with
 * [Process Environments](Process Environments)
 * [Native Worker Options](Native Worker Options)
 
+For Crossbar.io developers, there is also
+
+* [Manhole](Manhole)
+
 ## Configuration
 
 The **controller** is configured in the node's configuration like here

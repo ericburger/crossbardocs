@@ -4,7 +4,7 @@
 
 ## Configuration
 
- option | description
+option | description
 ---|---
 **`type`** | Must be `"websocket"`.
 **`url`** | The WebSocket URL to use.
