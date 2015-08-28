@@ -61,21 +61,9 @@ Option | Description
 **`interface`** | optional interface to listen on, e.g. `127.0.0.1` to only listen on IPv4 loopback or `::1` to only listen on IPv6 loopback.
 **`backlog`** | optional accept queue depth of listening endpoints (default: **50**)
 **`shared`** | flag which controls sharing the socket between multiple workers - this currently only works on Linux >= 3.9 (default: **false**)
-**`tls`** | optional endpoint TLS configuration. If present, this is a dict containing keys: `key`: file path; `certificate`: file path; `dhparam`: (optional) file path; `ciphers`: (optional) list of strings. Relative paths are allowed, based from the directory the config file is in.
+**`tls`** | optional endpoint TLS configuration (see below)
 
-#### TCP Connecting Endpoints
-
-Here is an *Endpoint* that is connecting over TCP to `localhost` on port `8080`:
-
-```json
-{
-   "endpoint": {
-      "type": "tcp",
-      "host": "localhost",
-      "port": 8080
-   }
-}
-```
+#### TLS Listening Endpoints
 
 Here is a listening *Endpoint* that uses TLS (note there's "interface" instead of "host"):
 
@@ -92,6 +80,30 @@ Here is a listening *Endpoint* that uses TLS (note there's "interface" instead o
    }
 }
 ```
+
+Option | Description
+---|---
+**`key`** |
+**`certificate`** |
+**`dhparam`** |
+**`ciphers`** |
+
+---
+
+#### TCP Connecting Endpoints
+
+Here is an *Endpoint* that is connecting over TCP to `localhost` on port `8080`:
+
+```json
+{
+   "endpoint": {
+      "type": "tcp",
+      "host": "localhost",
+      "port": 8080
+   }
+}
+```
+
 TCP connecting *Endpoints* can be configured using the following parameters:
 
 Option | Description
@@ -101,7 +113,7 @@ Option | Description
 **`port`** | the TCP port to connect to (*required*)
 **`version`** | the IP protocol version to speak - either `4` or `6` (default: **4**)
 **`timeout`** | optional connection timeout in seconds (default: **10**)
-**`tls`** | optional endpoint TLS configuration
+**`tls`** | optional endpoint TLS configuration (**not yet implemented**)
 
 ### Unix Domain Sockets
 
