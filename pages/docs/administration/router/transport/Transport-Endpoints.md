@@ -88,8 +88,6 @@ Option | Description
 **`dhparam`** |
 **`ciphers`** |
 
----
-
 #### TCP Connecting Endpoints
 
 Here is an *Endpoint* that is connecting over TCP to `localhost` on port `8080`:
@@ -114,6 +112,9 @@ Option | Description
 **`version`** | the IP protocol version to speak - either `4` or `6` (default: **4**)
 **`timeout`** | optional connection timeout in seconds (default: **10**)
 **`tls`** | optional endpoint TLS configuration (**not yet implemented**)
+
+---
+
 
 ### Unix Domain Sockets
 
@@ -142,6 +143,7 @@ Option | Description
 **`path`** | absolute or relative path (relative to node directory) of Unix domain socket (*required*)
 **`backlog`** | optional accept queue depth of listening endpoints (default: **50**)
 
+
 #### Unix Domain Socket Connecting Endpoints
 
 Here is an *Endpoint* that is connecting over Unix domain socket `/tmp/socket1`:
@@ -162,3 +164,5 @@ Option | Description
 **`type`** | must be `"unix"` (*required*)
 **`path`** | absolute or relative path (relative to node directory) of Unix domain socket (*required*)
 **`timeout`** | optional connection timeout in seconds (default: **10**)
+
+---

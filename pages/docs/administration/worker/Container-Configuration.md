@@ -67,3 +67,14 @@ For the type `wamplet`, you need to set
 2. `entrypoint`: The name of the file within the package to execute (*required*)
 
 
+## Failures
+
+A number of failures can happen starting your component:
+
+* module not found
+* syntax error in module
+* class not found
+* class could not be instantiated
+* object throws an exception
+
+Further, what is happening when you leave the realm or disconnect the transport from the session?
