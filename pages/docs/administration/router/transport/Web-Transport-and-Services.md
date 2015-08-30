@@ -22,17 +22,7 @@ attribute | description
 **`paths`** | A dictionary for configuring services on subpaths (*required* - see below and [Web Services](Web Services) or [HTTP Bridge](HTTP Bridge)).
 **`options`** | Is an optional dictionary for additional transport wide configuration (see below).
 
-where Web transport `options` can have the following attributes:
-
-attribute | description
----|---
-**`access_log`** | set to `true` to enable Web access logging (default: **false**)
-**`display_tracebacks`** | set to `true` to enable rendering of Python tracebacks (default: **false**)
-**`hsts`** | set to `true` to enable [HTTP Strict Transport Security (HSTS)](http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) (only applicable when using a TLS endpoint) (default: **false**)
-**`hsts_max_age`** | for HSTS, use this maximum age (only applicable when using a TLS endpoint). (default: **31536000**)
-**`hixie76_aware`** | set to `true` to support use of WebSocket Hixie-76 on any path services configured (default: **false**)
-
-Further, for Web transport `paths` the following two requirements must be fullfilled:
+For Web transport `paths` the following two requirements must be fullfilled:
 
 * a `path` must match the regular expression `^([a-z0-9A-Z_\-]+|/)$`
 * there must be a root path `/` set
@@ -41,6 +31,16 @@ The value mapped to in the `paths` dictionary is a Web Service. The complete lis
 
 * [Web Services](Web Services)
 * [HTTP Bridge](HTTP Bridge)
+
+The Web transport `options` can have the following attributes:
+
+attribute | description
+---|---
+**`access_log`** | set to `true` to enable Web access logging (default: **false**)
+**`display_tracebacks`** | set to `true` to enable rendering of Python tracebacks (default: **false**)
+**`hsts`** | set to `true` to enable [HTTP Strict Transport Security (HSTS)](http://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) (only applicable when using a TLS endpoint) (default: **false**)
+**`hsts_max_age`** | for HSTS, use this maximum age (only applicable when using a TLS endpoint). (default: **31536000**)
+**`hixie76_aware`** | set to `true` to support use of WebSocket Hixie-76 on any path services configured (default: **false**)
 
 ---
 

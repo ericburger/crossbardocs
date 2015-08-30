@@ -48,10 +48,9 @@ Parameter | Description
 ---|----
 **`id`** | The (optional) transport ID - this must be unique within the router this transport runs in (default: **`"transportN"`** where **N** is numbered starting with **1**)
 **`type`** | Must be `"rawsocket"` (**required**)
-**`endpoint`** |  A network connection for data transmission - see [Endpoints](Endpoints) (**required**)
+**`endpoint`** |  A network connection for data transmission - see [Transport Endpoints](Transport Endpoints) (**required**)
 **`serializer`** | The serializer to use: `"json"` or `"msgpack"` (**required**)
-**`debug`** | Enable transport level debug output. (
-default: **`false`**)
+**`debug`** | Enable transport level debug output. (default: **`false`**)
 
 ---
 
