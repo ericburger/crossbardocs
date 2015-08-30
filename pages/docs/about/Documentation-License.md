@@ -1,5 +1,9 @@
-Copyright for this documentation (c) 2014 Tavendo GmbH. 
-Licensed under the Creative Commons [CC-BY-SA 4.0 license](https://creativecommons.org/licenses/by-sa/4.0/). 
+[Documentation](.) > Crossbar.io Documentation License
+
+# Crossbar.io Documentation License
+
+Copyright for the Crossbar.io documentation (C) Tavendo GmbH.
+Licensed under the Creative Commons [CC-BY-SA 4.0 license](https://creativecommons.org/licenses/by-sa/4.0/).
 
 "WAMP", "Crossbar.io" and "Tavendo" are trademarks of Tavendo GmbH.
 
@@ -12,7 +16,7 @@ For more details (and the legally binding conditions) see the [Creative Commons 
 
 Attribution details:
 
-(c) by Tavendo GmbH, material licensed under the CC-BY-SA 4.0, provided as-is without any warranties, [Crossbar.io documentation wiki](https://github.com/crossbario/crossbar/wiki)
+(C) by Tavendo GmbH, material licensed under the CC-BY-SA 4.0, provided as-is without any warranties, [Crossbar.io documentation wiki](https://github.com/crossbario/crossbar/wiki)
 
 ## Note to Contributors to this documentation
 

@@ -1,3 +1,7 @@
+[Documentation](.) > FAQ
+
+# FAQ
+
 * **[WAMP ecosystem basics](#ecosystem_basics)**
    + [What is the relationship between WAMP, Autobahn and Crossbar.io?](#ecosystem_basics_wamp_autobahn_crossbario)
    + [What is WAMP?](#ecoystem_basics_what_is_wamp)
@@ -70,7 +74,7 @@ If you need further assurance, you can email us at service@tavendo.de for a sign
 <a name="license_for_templates"></a>
 ## What is the license for the application templates?
 
-We license all examples and other materials that you can use in creating your own applications as liberally as possible. 
+We license all examples and other materials that you can use in creating your own applications as liberally as possible.
 
 In the case of the application templates, these are licensed either under the BSD 2-clause license or the Apache 2.0 license. Both allow you to use the code in your own applications, irrespective of which license you are using. And yes, this includes commercial & closed source.
 
@@ -143,6 +147,6 @@ Running on PyPy will give you a *lot* more performance than CPython though. Of c
 <a name="integration_non_wamp_components"></a>
 ## Can I integrate a non-WAMP application component into my WAMP application?
 
-It is possible to have a WAMP component which communicates with your non-WAMP application (component) and does WAMP messaging based on this. How complex this is depends on the specifics of the use case, e.g. the protocol. 
+It is possible to have a WAMP component which communicates with your non-WAMP application (component) and does WAMP messaging based on this. How complex this is depends on the specifics of the use case, e.g. the protocol.
 
 We do provide one such component for HTTP/POST requests. Based on these the HTTP Pusher Service publishes WAMP PubSub publications. For details see [the documentation](http://crossbar.io/docs/HTTP-Pusher-Service/)

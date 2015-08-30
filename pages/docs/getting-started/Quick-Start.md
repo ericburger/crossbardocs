@@ -105,4 +105,4 @@ You can find the backend code in `./hello/hello.py` (for the Python variant) and
 
 ## What now?
 
-Go to [The Command Line](The Command Line) to learn about the Crossbar.io command line tool or jump into [Choose your Weapon](Choose your Weapon) to learn how to get started with your language of choice.
+Go to [Command Line](Command Line) to learn about the Crossbar.io command line tool or jump into [Choose your Weapon](Choose your Weapon) to learn how to get started with your language of choice.

@@ -1,4 +1,4 @@
-hh## WAMP Application Router
+## WAMP Application Router
 
 * realtime RPC and PubSub routing
 * multiple [realms](Router Realms) per router (mutliple routing & authorization domains)
@@ -25,19 +25,19 @@ hh## WAMP Application Router
 + [Caller Identification](Caller Identification)
 + [Progressive Call Results](Progressive Call Results)
 + [Pattern-Based Registrations](Pattern Based Registrations)
-+ [Shared Registrations](Shared Registrations)    
++ [Shared Registrations](Shared Registrations)
 + [Registration Meta-Events and Procedures](Registration Meta Events and Procedures)
 
 
 ## Multi-Transport and Serialization
 
-* [Serializations](https://github.com/tavendo/WAMP/blob/master/spec/basic.md#serializations): 
+* [Serializations](https://github.com/tavendo/WAMP/blob/master/spec/basic.md#serializations):
 
   * JSON
   * msgpack
 
 * Framings:
-  
+
   * [WebSocket](WebSocket Transports) with [Flash fallback](Flash Policy Transports)
   * [RawSocket](RawSocket Transports)
   * [HTTP/long poll](WAMP Long-Poll Service)
@@ -46,7 +46,7 @@ hh## WAMP Application Router
 
   * TCP/TLS
   * Unix Domain Socket
-  * Unix pipes 
+  * Unix pipes
 
 ## Polyglot Application Components
 
