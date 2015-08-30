@@ -17,7 +17,28 @@ The Web content served can come from two sources:
 * directories on the filesystem
 * resources within Python packages
 
-## Serving from Directories
+To configure a Static Web Service, attach a dictionary element to a path in your [Web transport](Web Transport and Services):
+
+attribute | description
+---|---
+**`type`** | must be `"static"`
+**`directory`** | absolute or node relative directory to serve files from or `null` when serving a Python resource (see next)
+**`package`** | when serving a Python resource, the Python package name the resource comes from
+**`resource`** | the resource name as exported by the referenced Python package - the imported resource is then used as a file source
+**`options`** | dictionary with options (see below)
+
+> either the `directory` attribute must be present or both the `package` and `resource` attributes, not both, and not none.
+
+with `options`:
+
+option | description
+---|---
+**`enable_directory_listing`** | set to `true` to enable rendering of directory listings (default: **false**). If a file `index.html` is present in the directory, this will render instead of the listing.
+**`mime_types`** | a dictionary of (additional) MIME types to set, e.g. `{".jgz": "text/javascript", ".svg": "image/svg+xml"}` (default: **{}**)
+**`cache_timeout`** | int
+
+
+## Example - Serving from Directories
 
 Here is an example **Web Transport** configuration that includes a **Static Web Service**:
 
@@ -57,13 +78,6 @@ A **Static Web Service** has a couple of options you can configure using an `opt
 }
 ```
 
-The available options are:
-
-option | description
----|---
-**`enable_directory_listing`** | set to `true` to enable rendering of directory listings (default: **false**). If a file `index.html` is present in the directory, this will render instead of the listing.
-**`mime_types`** | a dictionary of (additional) MIME types to set, e.g. `{".jgz": "text/javascript", ".svg": "image/svg+xml"}` (default: **{}**)
-
 You can also put (another) **Static Web Service** on a **subpath** serving assets from a directory and this directory can be different from the base directory of the containing **Web Transport**:
 
 ```javascript
@@ -84,7 +98,9 @@ You can also put (another) **Static Web Service** on a **subpath** serving asset
 
 Here, the **Web Transport** has it's base path `/` configured to be `static` and pointing to directory `..` relative to the node directory. Whereas the *subpath* `download` is configured to be of type `static` and pointing to the directory `/var/download`.
 
-## Serving from Python Packages
+---
+
+## Example - Serving from Python Packages
 
 Python packages can contain "resources" (non-Python file assets) and the **Static Web Service** can serve assets directly from any Python package installed (in the Python installation that Crossbar.io runs from).
 
@@ -171,25 +187,5 @@ When you start Crossbar.io, you should see log lines similar to:
 Point your browser to `http://localhost:8080`. You should see an "awesome" message;)
 
 Note that you can also put (another) **Static Web Service** on a **subpath** serving assets from a Python package resource.
-
-## Configuration
-
-option | description
----|---
-**`type`** | must be `"static"`
-**`directory`** | absolute or node relative directory to serve files from or `null` when serving a Python resource (see next)
-**`package`** | when serving a Python resource, the Python package name the resource comes from
-**`resource`** | the resource name as exported by the referenced Python package - the imported resource is then used as a file source
-**`options`** | dictionary with options (see below)
-
-> either the `directory` attribute must be present or both the `package` and `resource` attributes, not both, and not none.
-
-with `options`:
-
-option | description
----|---
-**`enable_directory_listing`** | boolean
-**`mime_type`** | list
-**`cache_timeout`** | int
 
 ---

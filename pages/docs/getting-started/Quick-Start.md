@@ -9,7 +9,7 @@ This quick start describes how to install Crossbar.io, test the installation and
 
 > Alternative routes for this generic installation are described in [these guides for specific operating systems](Local-Installation).
 
-You will need [Python](http://python.org) (or [PyPy](http://pypy.org/)) and [pip](https://pip.pypa.io/).
+You will need [Python](http://python.org) 2/3 or [PyPy](http://pypy.org/) 2 and [pip](https://pip.pypa.io/).
 
 To install Crossbar.io with **required** dependencies:
 

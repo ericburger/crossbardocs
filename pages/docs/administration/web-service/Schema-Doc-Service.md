@@ -5,3 +5,7 @@
 ## Configuration
 
 Write me.
+
+## Example
+
+Write me.

@@ -2,6 +2,17 @@
 
 # Web Redirection Service
 
+## Configuration
+
+To configure a Web Redirection Service, attach a dictionary element to a path in your [Web transport](Web Transport and Services):
+
+option | description
+---|---
+**`type`** | must be `"redirect"`
+**`url`** | the HTTP(S) URL where to redirect to, e.g. `"http://somehost:8080/something"`.
+
+## Example
+
 Here is how you define a **Web Transport** that redirects HTTP (and WebSocket) on port 80 to secure HTTPS (and secure WebSocket) on port 443:
 
 ```javascript
@@ -53,12 +64,5 @@ You can also redirect *subpaths* on a **Web Transport**:
    }
 }
 ```
-
-## Configuration
-
-option | description
----|---
-**`type`** | must be `"redirect"`
-**`url`** | the HTTP(S) URL where to redirect to, e.g. `"http://somehost:8080/something"`.
 
 ---

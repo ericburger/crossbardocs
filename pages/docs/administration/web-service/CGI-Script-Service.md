@@ -4,7 +4,37 @@
 
 Crossbar.io's Web server allows you to serve plain old CGI scripts. This can be useful if you have some legacy or other scripts that you want to run as part of a Crossbar.io node.
 
-Here is an example configuration for a **Web Transport** that includes a CGI processor on a *subpath*:
+## Configuration
+
+To configure a CGI Script Service, attach a dictionary element to a path in your [Web transport](Web Transport and Services):
+
+attribute | description
+---|---
+**`type`** | Must be `"cgi"`.
+**`directory`** | The CGI base directory containing your scripts. The path can be absolute or relative to the Crossbar.io node directory
+**`processor`** | The CGI script processor to use. This MUST be a fully qualified path to an executable.
+
+
+## Example
+
+Here is a complete example. First, create a new Crossbar.io node
+
+    cd ~
+    mkdir test1
+    cd test1
+    crossbar init
+
+Now activate CGI. Add the following snippet to configuration file at **~/test1/.crossbar./config.json**
+
+```javascript
+"myscripts": {
+   "type": "cgi",
+   "directory": "../cgi",
+   "processor": "/usr/bin/python"
+}
+```
+
+so your complete configuration file looks like
 
 ```javascript
 {
@@ -22,7 +52,7 @@ Here is an example configuration for a **Web Transport** that includes a CGI pro
          "type": "websocket",
          "url": "ws://localhost:8080/ws"
       },
-      "script": {
+      "myscripts": {
          "type": "cgi",
          "directory": "../cgi",
          "processor": "/usr/bin/python"
@@ -31,30 +61,9 @@ Here is an example configuration for a **Web Transport** that includes a CGI pro
 }
 ```
 
-Here is a complete example:
+This configuration starts a Web Transport that includes a CGI processor on a subpath.
 
-1) Create a new Crossbar.io node
-
-    cd ~
-    mkdir test1
-    cd test1
-    crossbar init
-
-2) Activate CGI
-
-Add the following snippet to configuration file at **~/test1/.crossbar./config.json** in the `processes.web.transports.paths` dictionary
-
-```javascript
-"script": {
-   "type": "cgi",
-   "directory": "../cgi",
-   "processor": "/usr/bin/python"
-}
-```
-
-3) Test
-
-Create an example CGI directory `~/test1/cgi` and script `~/test1/cgi/foo`:
+Now create an example CGI directory `~/test1/cgi` and create a script file `~/test1/cgi/foo` with this contents:
 
 ```python
 import sys
@@ -74,16 +83,6 @@ Then start Crossbar.io
 
     crossbar start
 
-and open the page **http://localhost:8080/script/foo** in your browser. You should see a hello from the Python CGI script.
-
-## Configuration
-
-CGI is configured as a path component on a Web transport:
-
- option | description
----|---
-**`type`** | Must be `"cgi"`.
-**`directory`** | The CGI base directory containing your scripts. The path can be absolute or relative to the Crossbar.io node directory
-**`processor`** | The CGI script processor to use. This MUST be a fully qualified path to an executable.
+and open the page **[http://localhost:8080/myscripts/foo](http://localhost:8080/myscripts/foo)** in your browser. You should see a hello from the Python CGI script.
 
 ---

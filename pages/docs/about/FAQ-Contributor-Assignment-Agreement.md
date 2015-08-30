@@ -1,6 +1,6 @@
 [Documentation](.) > [Contributing to the Project](Contributing to the project) > FAQ
 
-# Contributing to the project: FAQ
+# Contributing to the project - FAQ
 
 * [What is a CAA?](#what-is-a-caa?)
 * [Why a CAA?](#why-a-caa?)
