@@ -48,6 +48,31 @@ Please see [Cookie Authentication](Cookie-Authentication).
 
 
 ## Configuration
+The following parameters are all optional and shared between different backing stores:
+
+option | description
+---|---
+**`name`** | The field name where Crossbar.io will store its (random) tracking ID within the Cookie set. The default is `"cbtid"`. Must match the regular expression `^[a-z][a-z0-9_]+$`.
+**`length`** | The length of the value for the tracking ID. The default is 24 (which amounts to 144 bits of randomness). The default should be large enough to reduce the collision probability to essentially zero. Must be between 6 and 64.
+**`max_age`**| The maximum Cookie lifetime in seconds. The default is 1 day. Must be between 1 second and 10 years.
+**`store`** | A dictionary with cookie store configuration (see below).
+
+The `store` is a dictionary with the following attributes for a **memory-backed** cookie store:
+
+attribute | description
+---|---
+**`type`** | Must be `"memory"`.
+
+and for a **file-backed** cookie store:
+
+attribute | description
+---|---
+**`type`** | Must be `"file"`.
+**`filename`** | Either an absolute path or a relative path (relative to the node directory)
+
+---
+
+## Examples
 
 To configure a memory-backed cookie store:
 
@@ -82,27 +107,7 @@ To configure a memory-backed cookie store:
 }
 ```
 
-The following parameters are all optional and shared between different backing stores:
-
-option | description
----|---
-**`cookie.name`** | The field name where Crossbar.io will store its (random) tracking ID within the Cookie set. The default is `"cbtid"`.
-**`cookie.length`** | The length of the value for the tracking ID. The default is 24 (which amounts to 144 bits of randomness). The default should be large enough to reduce the collision probability to essentially zero. Must be between 6 and 64.
-**`cookie.max_age`**| The maximum Cookie lifetime in seconds. The default is 1 day. Must be between 1 second and 10 years.
-**`cookie.store`** | The cookie store configuration (see below).
-
-The **backing store** `type` is required:
-
-* `cookie.store.type` is the type of backing store, must be `"memory"` for a memory-backed cookie store.
-
-The **memory-backed cookie store** currently does not take any further settings.
-
-The **file-backed cookie store** requires the following setting:
-
-* `cookie.store.filename` either an absolute path or a relative path (relative to the node directory)
-
 To configure a file-backed cookie store:
-
 
 ```json
 {
@@ -139,3 +144,5 @@ To configure a file-backed cookie store:
 In above example, the cookie store would reside in `.crossbar/cookies.dat` for a default node directory.
 
 > Note that the cookie file is "growing forever". There is no purging whatsoever, as the file is written append-only. The LMDB cookie store will provide a more advanced store.
+
+---

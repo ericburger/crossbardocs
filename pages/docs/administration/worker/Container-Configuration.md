@@ -78,3 +78,15 @@ A number of failures can happen starting your component:
 * object throws an exception
 
 Further, what is happening when you leave the realm or disconnect the transport from the session?
+
+
+## Configuration
+
+parameter | description
+---|---
+**`id`** | Optional container ID (default: `"container<N>"`)
+**`type`** | Must be `"container"`.
+**`options`** | Please see [Native Worker Options](Native Worker Options).
+**`manhole`** | Please see [Manhole](Manhole).
+**`components`** | A list of components. Please see below.
+**`connections`** | Not yet implemented.

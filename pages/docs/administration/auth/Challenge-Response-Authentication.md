@@ -280,3 +280,52 @@ class MyAuthenticator(ApplicationSession):
       except Exception as e:
          print("could not register custom WAMP-CRA authenticator: {0}".format(e))
 ```
+
+## Examples
+
+* [Static Challenge-Response Authentication](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/wampcra)
+* [Dynamic/Custom Challenge-Response Authentication](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/wampcradynamic)
+
+## Configuration
+
+```json
+{
+    "auth": {
+        "wampcra": {
+            "type": "static",
+            "users": {
+                "foobar83": {
+                    "secret": "Xy$h2l-D",
+                    "role": "user"
+                }
+            }
+        }
+    }
+}
+```
+
+### Static
+
+parameter | description
+---|---
+**`type`** | `"static"`
+**`users`** | A dictionary of names mapping to values being dictionaries as below.
+
+Each user has this associated dictionary:
+
+attribute | description
+---|---
+**`secret`** | Arbitrary text value used as shared secret (**required**).
+**`role`** | Optional `authrole` a client using this ticket will be authenticated under.
+**`salt` |
+**`iterations` |
+**`keylen` |
+
+
+### Dynamic
+
+parameter | description
+---|---
+**`type`** | `"dynamic"`
+**`authenticator`** | URI of custom authenticator to call.
+

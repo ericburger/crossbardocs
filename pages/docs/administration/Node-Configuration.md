@@ -53,13 +53,19 @@ Most of the time however, you will want to configure the processes and services 
 
 If present, `controller` must be a dictionary and `workers`, if present must be a list of dictionaries. No other attributes other than `controller` and `workers` are currently allowed.
 
+The `"workers"` attribute must be a list of workers
+
+parameter | description
+---|---
+**`type`** | Must be one of **`"router"`**, **`"guest"`** or **`"container"`**.
+type specific | Please see [Router Configuration](Router Configuration), [Guest Configuration](Guest Configuration) and [Container Configuration](Container Configuration).
+
 The contents of the `controller` and `workers` section is described in the following pages:
 
 * [[Controller Configuration]]
-* [[Workers]]
-  - [[Router Configuration]]
-  - [[Container Configuration]]
-  - [[Guest Configuration]]
+* [[Router Configuration]]
+* [[Container Configuration]]
+* [[Guest Configuration]]
 
 ---
 
