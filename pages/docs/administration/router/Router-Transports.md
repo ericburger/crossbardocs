@@ -17,7 +17,7 @@ which include WebSocket as one suboption.
 
 All of above is running over [Transport Endpoints](Transport Endpoints), so you need that as well to get a fully working transport.
 
-> For completeness, there is also the [Flash Policy auxiliary transport](Flash Policy Transport)
+> For completeness, there is also the [Flash Policy auxiliary transport](Flash Policy Transport), and special transports for [TCP Benchmarks](Stream Testee) and [WebSocket Testing](WebSocket Compliance Testing).
 
 
 ## Background
