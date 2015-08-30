@@ -2,7 +2,7 @@
 
 # Web Transport and Services
 
-**Quick Links: [Web Services](Web Services) | [HTTP Bridge](HTTP Bridge)**
+Quick Links: **[Web Services](Web Services)** - **[HTTP Bridge](HTTP Bridge)** - **[Transport Endpoints](Transport Endpoints)**
 
 Crossbar.io includes a full-featured WAMP router to wire up your application components. But if you serve HTML5 Web clients from Crossbar.io, the **static Web assets** for your frontends like HTML, JavaScript and image files need to be hosted somewhere as well.
 

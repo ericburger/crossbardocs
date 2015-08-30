@@ -2,6 +2,8 @@
 
 # Flash Policy Transport
 
+Quick Links: **[Transport Endpoints](Transport Endpoints)**
+
 Old Web browsers like IE8 and IE9 do no support WebSocket natively. *One* option to work around is using [web-socket-js](https://github.com/gimite/web-socket-js), a WebSocket implementation written in Adobe Flash.
 
 When using Adobe Flash to open a TCP socket, Flash will only allow the (outgoing) TCP connection *after* checking for a so called *Flash policy file* on the target server. And this policy file needs to be served on TCP port 843.
