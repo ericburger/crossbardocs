@@ -4,6 +4,10 @@
 
 Crossbar.io comes as a command line tool `crossbar` which works identical across all supported platforms.
 
+* [Quick Reference](#quick-reference)
+* [Getting Help](#getting-help)
+* [Initializing a Node](#initializing-a-node)
+* [Starting and Stopping a Node](#starting-and-stopping-a-node)
 
 ## Quick Reference
 
@@ -21,14 +25,15 @@ Command | Description
 `crossbar status` | Check if a Crossbar.io node is running
 `crossbar convert` | Converts a Crossbar.io node configuration file from JSON to YAML and vice-versa
 
+---
 
 ## Getting Help
 
 To get help, type `crossbar --help`:
 
 ```console
-oberstet@ubuntu1404:~$ crossbar --help
-usage: crossbar [-h] [-d] [--reactor {select,poll,epoll,kqueue,iocp}]
+(python279_1)oberstet@thinkpad-t430s:~/mynode1$ crossbar --help
+usage: crossbar [-h] [--reactor {select,poll,epoll,kqueue,iocp}]
                 {version,init,templates,start,stop,restart,status,check,convert}
                 ...
 
@@ -36,7 +41,6 @@ Crossbar.io - Polyglot application router - http://crossbar.io
 
 optional arguments:
   -h, --help            show this help message and exit
-  -d, --debug           Debug on.
   --reactor {select,poll,epoll,kqueue,iocp}
                         Explicit Twisted reactor selection
 
@@ -59,7 +63,7 @@ commands:
 The `crossbar` tool has multiple subcommands, and you can get help on those also, e.g. `crossbar init --help`:
 
 ```console
-oberstet@ubuntu1404:~$ crossbar init --help
+(python279_1)oberstet@thinkpad-t430s:~/mynode1$ crossbar init --help
 usage: crossbar init [-h] [--template TEMPLATE] [--appdir APPDIR]
 
 optional arguments:
@@ -69,6 +73,8 @@ optional arguments:
                        from template.
 ```
 
+---
+
 ## Initializing a Node
 
 Crossbar.io runs from a node directory. The node directory, usually `.crossbar`, contains a node configuration file `.crossbar/config.json` and other data such as log files. It is for internal use, and you should not add or modify files other than the `config.json`.
@@ -76,18 +82,16 @@ Crossbar.io runs from a node directory. The node directory, usually `.crossbar`,
 You can initialize a new node by doing:
 
 ```console
-oberstet@ubuntu1404:~$ mkdir mynode
-oberstet@ubuntu1404:~$ cd mynode
-oberstet@ubuntu1404:~/mynode$ crossbar init --template default
-Initializing application template 'default' in directory '/home/oberstet/mynode'
-Using template from '/home/oberstet/python278/lib/python2.7/site-packages/crossbar-0.9.12.post2-py2.7.egg/crossbar/templates/default'
-Creating directory /home/oberstet/mynode/.crossbar
-Creating file      /home/oberstet/mynode/.crossbar/config.json
+(python279_1)oberstet@thinkpad-t430s:~/mynode1$ crossbar init --template default
+Initializing application template 'default' in directory '/home/oberstet/mynode1'
+Using template from '/home/oberstet/python279_1/lib/python2.7/site-packages/crossbar-0.11.0-py2.7.egg/crossbar/templates/default'
+Creating directory /home/oberstet/mynode1/.crossbar
+Creating file      /home/oberstet/mynode1/.crossbar/config.json
 Application template initialized
 
-To start your node, run 'crossbar start --cbdir /home/oberstet/mynode/.crossbar'
-
+To start your node, run 'crossbar start --cbdir /home/oberstet/mynode1/.crossbar'
 ```
+
 In this example, `/home/oberstet/mynode/.crossbar` is the Crossbar.io **node directory**.
 
 The initialization above was done using the default template. Node templates are a quick and easy way of creating a new node. There are additional templates besides the basic default one. Some of these create working sample application for a specific language.
@@ -95,48 +99,48 @@ The initialization above was done using the default template. Node templates are
 You can list the available templates by running `crossbar templates`:
 
 ```console
-oberstet@ubuntu1404:~$ crossbar templates
+(python279_1)oberstet@thinkpad-t430s:~/mynode1$ crossbar templates
 
 Available Crossbar.io node templates:
 
   default          A WAMP router speaking WebSocket plus a static Web server.
   hello:python     A minimal Python WAMP application hosted in a router and a HTML5 client.
   hello:nodejs     A minimal NodeJS WAMP application hosted in a router and a HTML5 client.
+  hello:browser    A minimal JavaAScript WAMP application with two components running in the browser.
   hello:cpp        A minimal C++11/AutobahnCpp WAMP application hosted in a router and a HTML5 client.
   hello:csharp     A minimal C#/WampSharp WAMP application hosted in a router and a HTML5 client.
   hello:erlang     A minimal Erlang/Erwa WAMP application hosted in a router and a HTML5 client.
   hello:php        A minimal PHP/Thruway WAMP application hosted in a router and a HTML5 client.
   hello:java       A minimal Java/jawampa WAMP application hosted in a router and a HTML5 client.
   hello:tessel     A minimal JavaScript/wamp-tessel WAMP application running on a Tessel and with a HTML5 client.
-
 ```
 
-## Starting a Node
+---
 
-To start your Crossbar.io node:
+## Starting and Stopping a Node
+
+To **start** your Crossbar.io node:
 
 ```console
-oberstet@ubuntu1404:~/mynode$ crossbar start
-2015-01-11 21:41:13+0100 [Controller   4374] Log opened.
-2015-01-11 21:41:13+0100 [Controller   4374] ==================== Crossbar.io ====================
-
-2015-01-11 21:41:13+0100 [Controller   4374] Crossbar.io 0.9.12-2 starting
-2015-01-11 21:41:13+0100 [Controller   4374] Running on CPython using EPollReactor reactor
-2015-01-11 21:41:13+0100 [Controller   4374] Starting from node directory /home/oberstet/mynode/.crossbar
-2015-01-11 21:41:13+0100 [Controller   4374] Starting from local configuration '/home/oberstet/mynode/.crossbar/config.json'
-2015-01-11 21:41:13+0100 [Controller   4374] No WAMPlets detected in enviroment.
-2015-01-11 21:41:13+0100 [Controller   4374] Starting Router with ID 'worker1' ..
-2015-01-11 21:41:13+0100 [Controller   4374] Entering reactor event loop ...
-2015-01-11 21:41:13+0100 [Router       4383] Log opened.
-2015-01-11 21:41:14+0100 [Router       4383] Running under CPython using EPollReactor reactor
-2015-01-11 21:41:14+0100 [Router       4383] Entering event loop ..
-2015-01-11 21:41:14+0100 [Controller   4374] Router with ID 'worker1' and PID 4383 started
-2015-01-11 21:41:14+0100 [Controller   4374] Router 'worker1': realm 'realm1' started
-2015-01-11 21:41:14+0100 [Controller   4374] Router 'worker1': role 'role1' started on realm 'realm1'
-2015-01-11 21:41:14+0100 [Router       4383] Site starting on 8080
-2015-01-11 21:41:14+0100 [Controller   4374] Router 'worker1': transport 'transport1' started
-^C2015-01-11 21:41:18+0100 [Controller   4374] Received SIGINT, shutting down.
-2015-01-11 21:41:18+0100 [Controller   4374] Main loop terminated.
+(python279_1)oberstet@thinkpad-t430s:~/mynode1$ crossbar start
+2015-08-30T19:25:45+0200 [Controller   9187]      __  __  __  __  __  __      __     __
+2015-08-30T19:25:45+0200 [Controller   9187]     /  `|__)/  \/__`/__`|__) /\ |__)  |/  \
+2015-08-30T19:25:45+0200 [Controller   9187]     \__,|  \\__/.__/.__/|__)/~~\|  \. |\__/
+2015-08-30T19:25:45+0200 [Controller   9187]
+2015-08-30T19:25:45+0200 [Controller   9187]     Version: 0.11.0
+2015-08-30T19:25:45+0200 [Controller   9187]
+2015-08-30T19:25:45+0200 [Controller   9187] Starting from node directory /home/oberstet/mynode1/.crossbar
+2015-08-30T19:25:45+0200 [Controller   9187] Loading node configuration file '/home/oberstet/mynode1/.crossbar/config.json'
+2015-08-30T19:25:45+0200 [Controller   9187] Entering reactor event loop...
+2015-08-30T19:25:45+0200 [Controller   9187] Joined realm 'crossbar' on node management router
+2015-08-30T19:25:45+0200 [Controller   9187] No WAMPlets detected in enviroment.
+2015-08-30T19:25:45+0200 [Controller   9187] Starting Router with ID 'worker1'...
+2015-08-30T19:25:46+0200 [Router       9192] Worker running under CPython-EPollReactor
+2015-08-30T19:25:46+0200 [Controller   9187] Router with ID 'worker1' and PID 9192 started
+2015-08-30T19:25:46+0200 [Controller   9187] Router 'worker1': realm 'realm1' (named 'realm1') started
+2015-08-30T19:25:46+0200 [Controller   9187] Router 'worker1': role 'role1' (named 'anonymous') started on realm 'realm1'
+2015-08-30T19:25:46+0200 [Router       9192] Site starting on 8080
+2015-08-30T19:25:46+0200 [Controller   9187] Router 'worker1': transport 'transport1' started
 ...
 ```
 
@@ -147,3 +151,25 @@ You can set a different node directory via the command line option `--cbdir` or 
 Open **http://localhost:8080** in your browser. You should see a 404 page rendered by Crossbar.io. Which means: it works!
 
 ![Crossbar.io 404 page](/static/img/docs/shots/crossbar_404.png)
+
+To **stop** your Crossbar.io node, just hit CTRL-C:
+
+```console
+^C2015-08-30T19:27:11+0200 [Controller   9187] Received SIGINT, shutting down.
+2015-08-30T19:27:11+0200 [Controller   9187] sending TERM to subprocess 9192
+2015-08-30T19:27:11+0200 [Controller   9187] waiting for 9192 to exit...
+2015-08-30T19:27:11+0200 [Router       9192] Received SIGTERM, shutting down.
+2015-08-30T19:27:11+0200 [Router       9192] Connection to node controller lost.
+2015-08-30T19:27:11+0200 [Router       9192] Lost connection to '<pipe>': Connection lost
+2015-08-30T19:27:11+0200 [Router       9192] No more controller connection; shutting down.
+2015-08-30T19:27:11+0200 [Router       9192] (TCP Port 8080 Closed)
+2015-08-30T19:27:11+0200 [Controller   9187] Process connection gone: A process has ended with a probable error condition: process ended with exit code 1.
+2015-08-30T19:27:11+0200 [Controller   9187] Lost connection to 'process 9192': process ended with exit code 1
+2015-08-30T19:27:11+0200 [Controller   9187] Node worker worker1 ended (0 workers left)
+2015-08-30T19:27:11+0200 [Controller   9187] Node shutting down ..
+2015-08-30T19:27:11+0200 [Controller   9187] Shutting down node...
+2015-08-30T19:27:11+0200 [Controller   9187] Main loop terminated.
+(python279_1)oberstet@thinkpad-t430s:~/mynode1$
+```
+
+---
