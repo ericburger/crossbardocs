@@ -2,7 +2,11 @@
 
 # WebSocket Service
 
+Quick Links: **[WebSocket Options](WebSocket Options)** - **[WebSocket Compression](WebSocket Compression)** - **[Cookie Tracking](Cookie Tracking)**
+
 The WebSocket Service is probably the most important among the Web services provided by the [Web Transport](Web Transport and Services). It provides WAMP-over-WebSocket transport services on a configurable HTTP path, so serving WAMP clients can be mixed with other Web services, and run on one network port.
+
+> The difference between the WebSocket Service here, and the [WebSocket Transport](WebSocket Transport) is that the latter transport is **only** able to serve WAMP-over-WebSocket and nothing else, whereas the WAMP-over-WebSocket transport here can be combined with other Web services all running on one port under the umbrella of a [Web Transport](Web Transport and Services).
 
 ## Configuration
 
@@ -17,7 +21,6 @@ option | description
 **`auth`** | Authentication to be used - see [Authentication](Authentication).
 **`cookie`** | Configure cookie tracking on this transport - see [Cookie Tracking](Cookie-Tracking).
 **`debug`** | Enable transport level debug output. (default: **`false`**)
-
 
 ## Example
 
