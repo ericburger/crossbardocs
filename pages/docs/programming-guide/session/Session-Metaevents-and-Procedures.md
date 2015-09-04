@@ -1,3 +1,7 @@
+# Session Meta Events and Procedures
+
+> **Session Meta Events and Procedures** is a feature from the WAMP Advanced Profile. The specification can be found [here](https://github.com/tavendo/WAMP/blob/master/spec/advanced/session-meta-api.md).
+
 WAMP enables the monitoring of when sessions join a realm on the router or when they leave it via session metaevents.
 
 It also allows retrieving information about currently connected sessions via session metaprocedures.
@@ -17,7 +21,7 @@ The WAMP session meta events are dispatched by the router to the *same realm* as
 
 ## Procedures
 
-It is possible to actively retrieve information about sessions via the following procedures. 
+It is possible to actively retrieve information about sessions via the following procedures.
 
 You can get the count of currently attached sessions via
 

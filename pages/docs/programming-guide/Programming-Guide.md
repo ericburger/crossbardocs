@@ -15,7 +15,7 @@ whereas you can find more WAMP client libraries [here](http://wamp.ws/implementa
 
 * [WAMP Features](WAMP Features)
   - Session
-    + [Session Metaevents and Procedures](Session Metaevents and Procedures)
+    + [Session Meta Events and Procedures](Session Metaevents and Procedures)
     + [Using Schemas](Using Schemas)
   - Publish & Subscribe (PubSub)
     + [How Subscriptions Work](How Subscriptions Work)
@@ -24,7 +24,7 @@ whereas you can find more WAMP client libraries [here](http://wamp.ws/implementa
     + [Publisher Exclusion](Publisher Exclusion)
     + [Publisher Identification](Publisher Identification)
     + [Pattern-Based Subscriptions](Pattern Based Subscriptions)
-    + [Subscription Meta-Events and Procedures](Subscription Meta Events and Procedures)
+    + [Subscription Meta Events and Procedures](Subscription Meta Events and Procedures)
   - Remote Procedure Calls (RPC)
     + [How Registrations Work](How Registrations Work)
     + [Basic Registrations](Basic Registrations)
@@ -32,7 +32,7 @@ whereas you can find more WAMP client libraries [here](http://wamp.ws/implementa
     + [Progressive Call Results](Progressive Call Results)
     + [Pattern-Based Registrations](Pattern Based Registrations)
     + [Shared Registrations](Shared Registrations)
-    + [Registration Meta-Events and Procedures](Registration Meta Events and Procedures)
+    + [Registration Meta Events and Procedures](Registration Meta Events and Procedures)
   - [Error Handling](Error Handling)
   - [URI Format](URI Format)
 * Frameworks and specific Scenarios

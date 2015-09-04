@@ -52,7 +52,7 @@ option | description
 **`auto_ping_timeout`** | Drop the connection if the peer did not respond to a previously sent ping in this many ms or 0 to disable. (default: **0**)
 **`auto_ping_size`** | Payload size for pings sent, must be between **4** and **125** (default: **4**)
 **`compression`** | enable WebSocket compression - see [WebSocket Compression](WebSocket-Compression)
-**`require_websocket_subprotocol`** | require WebSocket clients to properly announce the WAMP-WebSocket subprotocols it wants to speak (currently one or more of `wamp.2.json`, `wamp.2.msgpack`, `wamp.2.json.batched`, `wamp.2.json.batched`). If deactivated, assume `wamp.2.json` when no WebSocket subprotocol is announced. (default: **true**)
+**`require_websocket_subprotocol`** | Require WebSocket clients to properly announce the WAMP-WebSocket subprotocols it is able to speak. This can be one or more from `wamp.2.json`, `wamp.2.msgpack`, `wamp.2.json.batched` and `wamp.2.json.batched`. Crossbar.io will by default **require** the client to announce the subprotocols it supports and select **one** of the announced subprotocols. If this option is set to `false`, Crossbar.io will no longer require the client to announce subprotocols and assume `wamp.2.json` when no WebSocket subprotocol is announced. (default: **true**)
 
 ## Production Settings
 

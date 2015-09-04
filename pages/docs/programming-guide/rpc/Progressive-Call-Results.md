@@ -1,6 +1,10 @@
+# Progressive Call Results
+
+> **Progressive Call Results** is a feature from the WAMP Advanced Profile. The specification can be found [here](https://github.com/tavendo/WAMP/blob/master/spec/advanced/progressive-call-results.md).
+
 As a default, a call returns a single result. For some calls it may be desirable to have a series of call results, e.g. a longer user list may be sent in chunks which the caller can already process while the entire transfer of the user list is still in progress.
 
-In WAMP, this is possible via progressive call results. With these, a call can return a series of partial results, with a final result which signals that the series has endeded.
+In WAMP, this is possible via **Progressive Call Results**. With these, a call can return a series of partial results, with a final result which signals that the series has endeded.
 
 For example, call which requests progressive call results in a JavaScript component using Autobahn|JS could be
 
@@ -18,7 +22,9 @@ session.call('com.myapp.longop', [3], {}, {receive_progress: true}).then(
    );
 ```
 
-With progressive call results, there is a need for two result handlers: one for the progressive results and one for the final result. (Depending on whether there is any need to handle the two differently, you may pass the same handler.)
+With progressive call results, there is a need for two result handlers: one for the progressive results and one for the final result.
+
+> Depending on whether there is any need to handle the two differently, you may pass the same handler.
 
 The same call in a Python component using Autobahn|Python would be
 
@@ -47,7 +53,7 @@ function longop(args, kwargs, details) {
          interval_id = setInterval(function () {
             if (i < n) {
                details.progress([i]);
-               i += 1;               
+               i += 1;
             } else {
                clearInterval(interval_id);
             }
@@ -86,4 +92,3 @@ The equivalent Python procedure would be:
 ```
 
 You can also take a look at a full [working example](https://github.com/tavendo/AutobahnPython/tree/master/examples/twisted/wamp/basic/rpc/progress).
-
