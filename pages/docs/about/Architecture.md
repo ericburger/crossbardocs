@@ -1,3 +1,7 @@
+[Documentation](.) > Architecture
+
+# Architecture
+
 > Note: This page describes the **planned architecture** of Crossbar.io. **Some parts** of this are **still being implemented**. Specifically: There is currently **no multi-node support**, and the API (and code) for the **management service** are only **partially** realized.  
 
 

@@ -1,4 +1,8 @@
-Write me.
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > Error Handling
+
+# Error Handling
+
+**Write me.**
 
 ## Serialization Errors
 

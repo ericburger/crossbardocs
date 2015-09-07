@@ -1,3 +1,7 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > Session > Using Schemas
+
+# Using Schemas
+
 ## Programmatic Use
 
 The reflection services of Crossbar.io are exposed via two procedures

@@ -1,3 +1,7 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > Crossbar.io Features > Starting and Stopping Crossbar.io
+
+# Starting and Stopping Crossbar.io
+
 When Crossbar.io forms part of your application, there are four approaches of starting Crossbar.io:
 
 1. Start Crossbar.io from a startup script

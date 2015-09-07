@@ -1,3 +1,7 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > Frameworks and Specific Scenarios > Database Programming with PostgreSQL
+
+# Database Programming with PostgreSQL
+
 This chapter covers [PostgreSQL](http://www.postgresql.org/) database programming from WAMP application components written in Python.
 
 You will need some Python packages to do so. Depending on the Python implementation and the underlying network framework you plan to use, this is what we recommend:

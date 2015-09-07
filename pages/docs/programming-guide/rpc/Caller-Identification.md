@@ -1,3 +1,7 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > RPC > Caller Identification
+
+# Caller Identification
+
 Generally, the routed RPCs in WAMP decouple callers and callees. Callers do not have knowledge of callees and vice versa.
 
 Depending on your app design and requirements, it may be useful however for a callee to know the identity of a caller.

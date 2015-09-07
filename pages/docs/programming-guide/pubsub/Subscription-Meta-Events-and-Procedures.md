@@ -1,3 +1,7 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > PubSub > Subscription Meta-Events and Procedures
+
+# Subscription Meta Events and Procedures
+
 A subscription is created within Crossbar.io when a first client issues a subscription request for a topic, and it is deleted when the last client unsubscribes or its session is disconnected. In between, other client sessions may be attached to the subscription or removed from it.
 
 Subscription meta-events give information about these events. Additionally, there is a set of meta-procedures which can be called to receive information about currently existing subscriptions.

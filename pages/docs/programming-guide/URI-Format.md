@@ -1,3 +1,7 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > URI Format
+
+# URI Format
+
 WAMP uses URIs (*Uniform Resource Identifiers*) to identify topics, registered procedures, and errors. All of these form a single, global, hierarchical namespace.
 
 To avoid resource naming conflicts, WAMP follows the package naming convention from Java, where URIs should begin with (reversed) domain names owned by the organization defining the URI. 

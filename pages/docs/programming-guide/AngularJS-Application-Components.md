@@ -1,3 +1,7 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > Frameworks and Specific Scenarios > AngularJS Application Components
+
+# AngularJS Application Components
+
 > The shell commands shown here assume use of a Unix-like shell. On Windows, we recommend to install [Git for Windows](http://msysgit.github.io/), which includes a bash shell.
 
 > AngularJS users should also check out [angular-wamp](https://github.com/voryx/angular-wamp), which provides some integration for AutobahnJS into AngularJS.

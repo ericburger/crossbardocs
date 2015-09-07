@@ -1,3 +1,7 @@
+[Documentation](.) > Application Scenarios
+
+# Application Scenarios
+
 Crossbar.io was designed to flexibly support different application scenarios. Here are some examples
 
 1. [Polyglot backends](#polyglot-backends)

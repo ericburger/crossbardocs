@@ -1,3 +1,7 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > RPC > Registration Meta-Events and Procedures
+
+# Registration Meta-Events and Procedures
+
 A registration is created within Crossbar.io when a first client issues a registration request for a topic, and it is deleted when the last client unregistrers or its session is disconnected. In between, depending on the [invocation rule](Shared Registrations) used during the first registration, other client sessions may be attached to the registration or removed from it.
 
 Registration meta-events give information about these events. 

@@ -1,3 +1,7 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > RPC > Patter-Based Registrations
+
+# Pattern-Based Registrations
+
 As a default, URIs in registration requests and calls are processed with exact matching, i.e. an call will be accepted and a procedure invoked on a callee if the  URI of the call exactly matches the URI for which the callee registered the procedure.
 
 ## Use cases for Pattern-Based Registrations

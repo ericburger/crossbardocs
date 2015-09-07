@@ -1,3 +1,7 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > PubSub > Pattern-Based Subscriptions
+
+# Pattern Based Subscriptions
+
 As a default, topic URIs in subscription requests are processed with exact matching, i.e. an event will be dispatched to subscribers if the topic of the publication exactly matches the topic of the subscription. 
 
 ## Use cases for Pattern-Based Subscriptions

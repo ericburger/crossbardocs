@@ -1,3 +1,5 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > Session > Session Meta Events and Procedures
+
 # Session Meta Events and Procedures
 
 > **Session Meta Events and Procedures** is a feature from the WAMP Advanced Profile. The specification can be found [here](https://github.com/tavendo/WAMP/blob/master/spec/advanced/session-meta-api.md).

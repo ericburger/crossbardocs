@@ -1,3 +1,7 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > RPC > How Registrations Work
+
+# How Registrations Work
+
 With the Remote Procedure Call (RPC) messaging pattern in WAMP, any WAMP client can register a procedure for remote calling (become a callee). The procedure is registered for being called using a call URI (e.g. "com.myapp.myprocedure1").
 
 > Note: There are some [specific rules regarding URI formatting](URI Format).

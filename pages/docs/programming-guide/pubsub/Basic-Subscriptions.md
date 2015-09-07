@@ -1,3 +1,7 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > PubSub > Basic Subscriptions
+
+# Basic Subscriptions
+
 As a default, subscriptions use exact matching, i.e. a subscriber for topic `com.myapp.topic1` will receive events for publications to topic `com.myapp.topic1` only. (There are also [pattern-based subscriptions](Pattern Based Subscriptions) which can be selected via an option when subscribing.)
 
 > Note: There are some [specific rules](URI Format) regarding the formatting of URIs used to identify topics.

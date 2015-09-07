@@ -1,3 +1,7 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > RPC > Shared Registrations
+
+# Shared Registrations
+
 As a default, only a single calle may register a procedure for an URI.
 
 ## Use cases for Shared Registrations

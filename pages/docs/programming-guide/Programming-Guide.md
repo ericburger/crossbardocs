@@ -39,13 +39,11 @@ whereas you can find more WAMP client libraries [here](http://wamp.ws/implementa
   - [Adding Real-Time to Django Applications](Adding Real Time to Django Applications)
   - [[AngularJS Application Components]]
   - [Database Programming with PostgreSQL](Database Programming with PostgreSQL)
-
 * Crossbar.io features
-
   - [Starting and Stopping Crossbar.io](Starting and Stopping Crossbar.io)
   - [Logging in Crossbar.io](Logging in Crossbar.io)
   - [Configuring Crossbar.io's Logging](Configuring Crossbar.io's Logging)
-
 * [Crossbar.io Demo Instance](Demo Instance)
+
 
 In addition to these general programming guides, we offer a wide range of materials for [IoT devices, components and applications](../iotcookbook).

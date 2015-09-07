@@ -1,3 +1,7 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > PubSub > Publisher Identification
+
+# Publisher Identification
+
 Generally, PubSub is used to decouple publishers and subscribers. Publishers do not have any knowledge of subscribers and vice versa. 
 
 Depending on your app design, it may be useful however for a subscriber to know the identity of a publisher.

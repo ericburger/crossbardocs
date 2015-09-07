@@ -1,3 +1,5 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > PubSub > Publisher Exclusion
+
 # Publisher Exclusion
 
 > **Publisher Exclusion** is a feature from the WAMP Advanced Profile. The specification can be found [here](https://github.com/tavendo/WAMP/blob/master/spec/advanced/publisher-exclusion.md).

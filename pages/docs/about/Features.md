@@ -1,3 +1,7 @@
+[Documentation](.) > Features
+
+# Features
+
 ## WAMP Application Router
 
 * realtime RPC and PubSub routing

@@ -1,3 +1,7 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > RPC > Basic Registrations
+
+# Basic Registrations
+
 As a default, registrations use exact matching, i.e. a callee which registers a procedure URI `com.myapp.procedure1` will receive calls for `com.myapp.procedure1`only. There are, however, also [patter-based registrations](Patter Based Registrations) which can be selected via an option when registering.
 
 > Note: There are some [specific rules regarding URI formatting](URI Format).

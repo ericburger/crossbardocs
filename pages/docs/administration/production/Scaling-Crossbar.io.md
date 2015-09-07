@@ -34,4 +34,4 @@ Above features already work today with the current Crossbar.io release.
 
 However, if you need to scale beyond 100-200k concurrently active connection on a *single realm*, this is not yet possible today.
 
-For this, router workers will need to work together as a single logical router, managing the same realm. This feature is under development and currently scheduled for Q2/2015.
+For this, router workers will need to work together as a single logical router, managing the same realm. This feature is under development and currently scheduled for Q1/2016.

@@ -1,3 +1,7 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > PubSub > How Subscriptions Work
+
+# How Subscriptions Work
+
 With the Publish & Subscribe (PubSub) messaging pattern in WAMP, a WAMP client issues a subscription request to a router, in which it expresses interest in a topic. The router registers this. Whenever a publication to this topic comes in, an event is dispatched to all WAMP clients which are currently registered for the topic.
 
 > Note: WAMP uses URIs to identify topics. There are some [specific rules regarding URI formatting](URI Format).

@@ -1,3 +1,5 @@
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > PubSub > Subscriber Black & Whitelisting
+
 # Subscriber Black- and Whitelisting
 
 > **Subscriber Black-/Whitelisting** is a feature from the WAMP Advanced Profile. The specification can be found [here](https://github.com/tavendo/WAMP/blob/master/spec/advanced/subscriber-blackwhite-listing.md). Crossbar.io currently only implements black-/whitelisting based on WAMP `sessionid`. Support for black-/whitelisting based on `authid` and `authrole` is scheduled for version 0.12.0.

@@ -1,3 +1,5 @@
+[Documentation](.) > [Administration](Administration) > [Processes](Processes) >[Router Configuration](Router Configuration) > Router Realms
+
 # Router Realms
 
 Crossbar.io uses *Realms* as domains for separation of routing and administration.
