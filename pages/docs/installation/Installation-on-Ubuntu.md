@@ -17,6 +17,8 @@ First, install the repo's GPG key:
 
     sudo apt-key adv --keyserver hkps.pool.sks-keyservers.net --recv D58C6920
 
+> If you are behind a coporate firewall, above command might fail or just hang. Please see [here](http://support.gpgtools.org/kb/faq/cant-reach-key-server-are-you-behind-a-company-firewall) and try with `--keyserver hkp://hkps.pool.sks-keyservers.net:80` in above.
+
 Then add the repo to your server's apt sources:
 
     sudo sh -c "echo 'deb http://package.crossbar.io/ubuntu trusty main' \
