@@ -2,7 +2,9 @@
 
 Welcome to the Crossbar.io Reference Documentation.
 
-## Contents
+* [Full Table of Contents](TOC)
+
+## Topics
 
 ** Background **
 
@@ -13,7 +15,7 @@ Welcome to the Crossbar.io Reference Documentation.
 ** Getting Started **
 
 * **>> [Quick Start](Quick Start) <<**
-* [Choose your Weapon](Choose your Weapon)
+* [Choose your Weapon](Choose your Weapon) (choice of language)
 
 ** Administrators **
 

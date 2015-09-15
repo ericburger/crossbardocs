@@ -4,7 +4,7 @@
 
 > Crossbar's structured logging system is present in versions 0.11 and above.
 
-Crossbar.io uses Twisted's new Logger facilities to provide structured logging for Crossbar.io and components ran inside of it.
+Crossbar.io uses Twisted's new Logger facilities to provide structured logging for Crossbar.io and components run inside of it.
 
 
 ## Twisted Logger
