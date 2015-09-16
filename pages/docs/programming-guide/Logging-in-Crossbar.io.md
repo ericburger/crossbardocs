@@ -87,7 +87,7 @@ class AppSession(ApplicationSession):
         self.log.info("x on self is {log_source.x}")
 ```
 
-When this application component is ran under Crossbar, it will produce the following log message:
+When this application component is run under Crossbar, it will produce the following log message:
 
 ```
 2015-08-17T14:28:13+0800 [Container    7825] x on self is Hello Crossbar!
@@ -102,4 +102,4 @@ Plus, when Crossbar's logger is set to debug, each log message comes with where 
 
 ## Configuring the Crossbar logger
 
-For more information on configuring the Crossbar.io logging output (for example, to turn on debug, change the output format, or write to a file), see [Configuring Crossbar.io's Logging](Configuring Crossbar.io's Logging).
+For more information on configuring the Crossbar.io logging output (for example, to turn on debug, change the output format, or write to a file), see [Configuring Crossbar.io's Logging](Configuring Crossbario Logging).
