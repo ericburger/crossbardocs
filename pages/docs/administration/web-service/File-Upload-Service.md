@@ -22,7 +22,7 @@ To configure a File Upload Service, attach a dictionary element to a path in you
 
 attribute | description
 ---|---
-**`type`** | MUST be `"fileupload"` (*required*)
+**`type`** | MUST be `"upload"` (*required*)
 **`realm`** | The realm to which the service session associated with the resource will attach to. (*required*)
 **`role`** | The role under which the service session associated with the resource will attach under. (*required*)
 **`directory`** | The folder for completely uploaded files relative to the .crossbar folder in your crossbar node. (*required*)
