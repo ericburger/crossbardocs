@@ -8,7 +8,7 @@ Take a look at [the project homepage](http://crossbar.io/) if you haven't.
 
 Crossbar.io is an open source **unified application router** implementing the **WAMP protocol**, an open standard WebSocket subprotocol which enables **loosely coupled** application components/microservices to communicate in (soft) **real-time**. 
 
-Crossbar.io directes and transmitts **messages** between these components, which are written with WAMP client libraries, existing for **multiple languages** (currently 8). Every application component can be written in any of these, and you can mix components written in multiple languages since all interaction is via WAMP. 
+Crossbar.io directes and transmitts **messages** between these components, which are written with WAMP client libraries, existing for **multiple languages** (currently 9). Every application component can be written in any of these, and you can mix components written in multiple languages since all interaction is via WAMP. 
 
 With Crossbar.io as a router, you can create applications which are **cross-platform**, and distribute the functionality in your applications as you want. This enables application architectures such as
 
