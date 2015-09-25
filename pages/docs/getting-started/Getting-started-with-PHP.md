@@ -118,3 +118,11 @@ You have just called a PHP procedure from JavaScript running in the browser. The
 ## Hacking the code
 
 All the PHP backend code is in the file `client.php`. All the JavaScript frontend code is in `web/index.html`.
+
+## Useful links
+
+The [Thruway project site](https://github.com/voryx/Thruway) provides some documentation on Thruway in its [wiki](https://github.com/voryx/Thruway/wiki).
+
+[Minion](https://github.com/Vinelab/minion) is a project which builds on Thruway and provides a simplified interface for getting clients up and running.
+
+The [Crossbar HTTP Publisher Bundle](https://github.com/facile-it/crossbar-http-publisher-bundle) provides a neat wrapper for submitting PubSub events via a [Crossbar HTTP Publisher](HTTP Bridge Services Publisher).
