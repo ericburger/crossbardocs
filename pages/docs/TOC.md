@@ -7,6 +7,7 @@
 * [Introduction](Introduction)
 * [Architecture](Architecture)
 * [Features](Features)
+* [Roadmap](Roadmap)
 
 ## Getting Started
 
