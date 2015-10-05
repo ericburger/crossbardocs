@@ -48,7 +48,7 @@ The *HTTP Caller* is configured on a path of a Web transport - here is part of a
                ...
                "paths": {
                   ...
-                  "publish": {
+                  "call": {
                      "type": "caller",
                      "realm": "realm1",
                      "role": "anonymous"
