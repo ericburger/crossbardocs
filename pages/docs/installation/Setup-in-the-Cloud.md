@@ -8,9 +8,10 @@ Crossbar.io runs great on these services, you can choose the right virtual machi
 
 We've created VM images with preinstalled Crossbar.io running on Linux and step-by-step guides to get you started in essentially minutes:
 
-* [Setup on Microsoft Azure](Setup on Microsoft Azure)
-* [Setup on Amazon EC2](Setup on Amazon EC2)
+* [Setup on Microsoft Azure](Setup-on-Microsoft-Azure.md)
+* [Setup on Amazon EC2](Setup-on-Amazon-EC2.md)
 
-Additionally, Crossbar.io can be run on [Heroku](https://www.heroku.com/):
+Additionally, Crossbar.io can be run on PaaS services :
 
-* [[Setup on Heroku]]
+* [Setup on Heroku](Setup-on-Heroku.md)
+* [Setup on RedHat OpenShift](Setup-on-OpenShift.md)
