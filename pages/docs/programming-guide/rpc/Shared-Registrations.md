@@ -2,7 +2,7 @@
 
 # Shared Registrations
 
-As a default, only a single calle may register a procedure for an URI.
+As a default, only a single callee may register a procedure for an URI.
 
 ## Use cases for Shared Registrations
 
