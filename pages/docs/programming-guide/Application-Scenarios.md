@@ -53,7 +53,7 @@ Since JavaScript nowadays runs great on the server, and browsers are a ubiquitou
 
 ![Crossbar.io Node](/static/img/docs/gen/crossbar_application_scenario_2.png)
 
-With the above, you are not only using the *same* language (JavaScript) to implement both front- and backend components, but you are using the *same* communication patterns and library ([AutobahnJS])(https://github.com/tavendo/AutobahnJS) as well.
+With the above, you are not only using the *same* language (JavaScript) to implement both front- and backend components, but you are using the *same* communication patterns and library ([AutobahnJS](https://github.com/tavendo/AutobahnJS)) as well.
 
 In fact (depending on what dependencies your code has) you can write functions that can be freely moved between the browser or NodeJS!
 
@@ -75,9 +75,8 @@ As can be seen, there is zero change to the existing backend. Regarding the fron
 
 *More information:*
 
-* [Crossbar.io Chat Demo](https://demo.crossbar.io/demo/chat/index.html#ch1)
-* [Crossbar.io Chat Demo Source Code](https://github.com/crossbario/crossbardemo/tree/master/web/demo/chat)
-* [Crossbar.io / Clandeck](https://demo.crossbar.io/clandeck/)
+* [Crossbar.io Chat Demo](https://demo.crossbar.io/chat/index.html#ch1)
+* [Crossbar.io Chat Demo Source Code](https://github.com/crossbario/crossbarexamples/tree/master/demos/chat)
 
 _____________
 <br>
@@ -127,7 +126,7 @@ _____________
 
 ## Internet of Things
 
-Crossbar.io works great for connecting devices like an [Arduino Yun](http://arduino.cc/en/Main/ArduinoBoardYun?from=Products.ArduinoYUN) or a [RaspberryPi](http://www.raspberrypi.org/) to the Web and to server components - in real-time.
+Crossbar.io works great for connecting devices like an [Arduino Yun](http://arduino.cc/en/Main/ArduinoBoardYun) or a [RaspberryPi](http://www.raspberrypi.org/) to the Web and to server components - in real-time.
 
 ![Crossbar.io Node](/static/img/docs/gen/crossbar_application_scenario_7.png)
 _____________
