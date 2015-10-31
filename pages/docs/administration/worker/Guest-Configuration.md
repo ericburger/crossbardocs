@@ -41,7 +41,7 @@ The `options` are:
 
 parameter | description
 ---|---
-**`env`** | A dictionary of environment variables to set for the executable, with the possible keys `inherit` and `vars
+**`env`** | A dictionary of environment variables to set for the executable, with the possible keys `inherit` and `vars`
 **`workdir`** |  The working directory for the executable.
 **`stdin`** | Dictionary of data to pass in on standard in, or the string `close`. The dictionary should contain a key `type` (value `json` or `msgpack`) and a key `value` which is the data to JSON/msgpack encode. Optionally, `close` can be a key (value `true`) as well, causing stdin to be closed after the data is written.
 **`stdout`** | Action on signal on standard out, can be `close`, `log` or `drop`
