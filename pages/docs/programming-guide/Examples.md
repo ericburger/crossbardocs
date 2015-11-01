@@ -21,8 +21,7 @@ To give you a better idea of a small working WAMP application there is
 
 * [Hello](https://github.com/crossbario/crossbarexamples/tree/master/hello) with backends for the following languages/WAMP client libraries
    + [JavaScript (Node.js backend) - Autobahn|JS](https://github.com/crossbario/crossbarexamples/tree/master/hello/nodejs)
-   + [JavaScript (browser backend) - Autobahn|JS]([JavaScript (Node.js backend) - Autobahn|JS]()
-   + [JavaScript (browser backend) - Autobahn|JS]())
+   + [JavaScript (browser backend) - Autobahn|JS](https://github.com/crossbario/crossbarexamples/tree/master/hello/browser)
    + [Python - Autobahn|Python](https://github.com/crossbario/crossbarexamples/tree/master/hello/python)
    + [C++ - Autobahn|Cpp](https://github.com/crossbario/crossbarexamples/tree/master/hello/cpp)
    + [PHP - Thruway](https://github.com/crossbario/crossbarexamples/tree/master/hello/php)
@@ -32,7 +31,7 @@ To give you a better idea of a small working WAMP application there is
 
 For a slightly more compley (and realistic) application:
 
-* [Votes](https://github.com/crossbario/crossbarexamples/tree/master/votes) - basic WAMP application using both PubSub and RPC, with a Web frontend. Comes with backends for
+* [Votes](https://github.com/crossbario/crossbarexamples/tree/master/demos/votes) - basic WAMP application using both PubSub and RPC, with a Web frontend. Comes with backends for
    + [Python](https://github.com/crossbario/crossbarexamples/tree/master/demos/votes/python)
    + [Node.js](https://github.com/crossbario/crossbarexamples/tree/master/demos/votes/nodejs)
    + [the browser](https://github.com/crossbario/crossbarexamples/tree/master/demos/votes/browser)
@@ -41,14 +40,11 @@ plus with an additional [Kivy (Python) frontend](https://github.com/crossbario/c
 The following examples cover **specific features** of WAMP/Crossbar.io
 
 * [Authentication](https://github.com/crossbario/crossbarexamples/tree/master/authenticate)
-   + Ticket, both [static](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/ticket) and [dynamic](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/ticketdynamic/python)
+   + Ticket, both [static](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/ticket) and [dynamic](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/ticketdynamic)
    + WAMP CRA, both [static](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/wampcra) and [dynamic](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/wampcradynamic)
 * [Flash Fallback](https://github.com/crossbario/crossbarexamples/tree/master/flash) - How to use Flash fallback for older browsers without WebSocket support (mainly there for IE<10)
 * [Longpoll](https://github.com/crossbario/crossbarexamples/tree/master/longpoll) - How to use the Longpoll fallback for older browsers without WebSocket support
 * [Metaapi](https://github.com/crossbario/crossbarexamples/tree/master/metaapi) - How to subscribe to meta-events and use meta-procedures (get information about sessions, subscriptions and registrations)
-* HTTP Push Service: How to create WAMP publishes via a HTTP/POST
-   + [HTTP](https://github.com/crossbario/crossbarexamples/tree/master/pusher)
-   + [HTTPS](https://github.com/crossbario/crossbarexamples/tree/master/pushertls)
 * [Secure WebSocket (WSS)](https://github.com/crossbario/crossbarexamples/tree/master/wss/python)
 
 There are examples using specific technologies:
