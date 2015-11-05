@@ -17,4 +17,5 @@ If you need further assurance, you can email us at service@tavendo.de for a sign
 
 We release all our client libraries (those provided by the [Autobahn project](http://autobahn.ws/) under non-copyleft licenses, which allow their use for closed-source & commercial software. For other client libraries see their respective licenses (these appear to be universally non-copyleft as well).
 
+
 ---

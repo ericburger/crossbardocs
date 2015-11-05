@@ -17,7 +17,7 @@ The `options` dictionary has the following configuration parameters:
 
 option | description
 ---|---
-**`request_timeout`** | An integer which determines the timeout in seconds for long-poll requests. If `0`, do not timeout. (default: **`10`**). Note that clients may have timeouts of their own!
+**`request_timeout`** | An integer which determines the timeout in seconds for long-poll requests. If `0`, do not timeout. (default: **`10`**). After this period, the request is returned even if there is no data to transmit. Note that clients may have their own timeouts, and that this should be set to a value greater than the `request_timeout`.
 **`session_timeout`** | An integer which determines the timeout on inactivity of sessions. If `0`, do not timeout. (default: **`30`**)
 **`queue_limit_bytes`** | Limit the number of total queued bytes. If 0, don't enforce a limit. (default: **`131072`**)
 **`queue_limit_messages`** | Limit the number of queued messages. If 0, don't enforce a limit. (default: **`100`**)

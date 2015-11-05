@@ -21,3 +21,9 @@ The act of subscribing and unsubscribing may create or delete a subscription. It
 The creation and deletion of subscriptions, as well as the addition or removal of sessions to a subscription lead to subscription meta-events, to which you can subscribe. It is also possible to retrieve information about currently existing subscriptions. For more information see [Subscription Meta-Events and Procedures](Subscription Meta Events and Procedures).
 
 The above explanation used a topic string which was fully matched. WAMP additionally allows for pattern-based subscriptions in two flavors: prefix registration and wildcard registration. These are explained in [Pattern-Based Subscriptions](Pattern Based Subscriptions).
+
+There is also the possibility to exclude certain sessions from receiving an event, or to restrict publication to a certain set of sessions - see [Subscriber Black- and Whitelisting](Sbuscriber Black and Whitelisting).
+
+There is normally no need for subscribers to know the identity of a publisher, but if required it is possible to disclose this information - see [Publisher Identification](Publisher Identification).
+
+As a default, Publishers do not receive an event if they are also a Subsciber, but this can be overriden - see [Publisher Exclusion](Publisher Exclusion).
