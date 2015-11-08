@@ -46,12 +46,15 @@ Router-to-Router communication will allow clustering, federation and automatic f
 
 Partitioned calls enable using e.g. database sharding.
 
------------------------------------
+-
+-
 
 Additionally, Tavendo, the maintainers of the Crossbar.io project, are planning commercial offerings to be used with Crossbar:
 
 ## Cloud Management Service
 
 Manage and monitor your Crossbar.io instances centrally on the Web. Your Crossbar.io instances establish a management connection with the DevOps cloud service, giving you the ability to monitor and manage them from anywhere. The data you route through your Crossbar.io instance doesn't touch the cloud service.
+
+## Commercial Support
   
 Tavendo are already offering commercial support (see their [website](http://tavendo.com) for contact details).
