@@ -6,7 +6,7 @@
 
 **Crossbar.io publishes an official binary package for Ubuntu Snappy.**
 
-> Note: Ubuntu Snappy is a specialised version of regular Ubuntu. If you are using regular Ubuntu, please read [Installing on Ubuntu](Installing on Ubuntu) for installation instructions.
+> Note: Ubuntu Snappy is a specialised version of regular Ubuntu. If you are using regular Ubuntu, please read [Installation on Ubuntu](Installation on Ubuntu) for installation instructions.
 
 
 ## Installing

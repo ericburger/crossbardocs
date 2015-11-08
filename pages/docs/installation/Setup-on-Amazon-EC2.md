@@ -24,7 +24,7 @@ Now connect to the machine via SSH software of your choice.
 * The IP or domain name are listed in the instance information
 * The user name is 'ubuntu'.
 
-Once you've logged into the machine, you can set up Crossbar.io using the [command line](First Steps). For example, to set up the hello:browser demo and run it, do
+Once you've logged into the machine, you can set up Crossbar.io. One place to start is by using the [application templates](Application Templates). For example, to set up the hello:browser demo and run it, do
 
     crossbar init --template hello:browser --appdir hello_browser
     cd hello_browser

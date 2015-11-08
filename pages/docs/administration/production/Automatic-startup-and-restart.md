@@ -57,7 +57,7 @@ exec /usr/bin/setuidgid ubuntu \
 
 Above assumes:
 
- * you are using PyPy under the specified path (see: [Installation on PyPy](Installation on PyPy))
+ * you are using PyPy under the specified path
  * you want to run Crossbar.io under the dedicated Unix user `ubuntu` (which fits for a Amazon EC2 Ubuntu Server AMI)
  * you have a Crossbar.io node created in the specified node directory
  * you want Crossbar.io log to the specified subdirectory within the node directory

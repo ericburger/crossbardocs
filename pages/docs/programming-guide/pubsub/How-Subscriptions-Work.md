@@ -22,7 +22,7 @@ The creation and deletion of subscriptions, as well as the addition or removal o
 
 The above explanation used a topic string which was fully matched. WAMP additionally allows for pattern-based subscriptions in two flavors: prefix registration and wildcard registration. These are explained in [Pattern-Based Subscriptions](Pattern Based Subscriptions).
 
-There is also the possibility to exclude certain sessions from receiving an event, or to restrict publication to a certain set of sessions - see [Subscriber Black- and Whitelisting](Sbuscriber Black and Whitelisting).
+There is also the possibility to exclude certain sessions from receiving an event, or to restrict publication to a certain set of sessions - see [Subscriber Black- and Whitelisting](Subscriber Black and Whitelisting).
 
 There is normally no need for subscribers to know the identity of a publisher, but if required it is possible to disclose this information - see [Publisher Identification](Publisher Identification).
 

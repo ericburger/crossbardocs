@@ -125,4 +125,4 @@ The [Thruway project site](https://github.com/voryx/Thruway) provides some docum
 
 [Minion](https://github.com/Vinelab/minion) is a project which builds on Thruway and provides a simplified interface for getting clients up and running.
 
-The [Crossbar HTTP Publisher Bundle](https://github.com/facile-it/crossbar-http-publisher-bundle) provides a neat wrapper for submitting PubSub events via a [Crossbar HTTP Publisher](HTTP Bridge Services Publisher).
+The [Crossbar HTTP Publisher Bundle](https://github.com/facile-it/crossbar-http-publisher-bundle) provides a neat wrapper for submitting PubSub events via a [Crossbar HTTP Publisher](HTTP Bridge Publisher).

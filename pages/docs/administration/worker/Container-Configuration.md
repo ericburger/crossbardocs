@@ -46,7 +46,7 @@ The worker itself has the options
 2. `options`: a dictionary of configuration options
 3. `components`: a list Python components to run in the container (*required*)
 
-`options` are those [shared by Native Workers](Native Worker Shared Options)
+`options` are those [shared by Native Workers](Native Worker Options)
 
 For a `component`, the `type` is *required* and may be either `class` or `wamplet`.
 
