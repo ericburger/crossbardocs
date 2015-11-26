@@ -44,7 +44,9 @@ The `form_fields` dictionary contains the form field names that the client uses 
    "total_chunks": "resumableTotalChunks",
    "content": "file",
    "on_progress": "on_progress",
-   "session": "session"
+   "session": "session",
+   "chunk_extra": "chunk_extra",
+   "finish_extra": "finish_extra"
 }
 ```
 
@@ -58,8 +60,9 @@ attribute | description
 **`total_chunks`** | The name of the form field holding the total number of chunks for the file to be transfered. Needs to be POSTed with every chunk. (*required*)
 **`content`** | The name of the form field containing the file content. (*required*)
 **`on_progress`** | Optional name of the form field containing the URI to publish upload related events to. If an URI is provided, progress events will be published as a file is being uploaded.
-**`session`** | Optional WAMP session ID of the session to which publihed progress event should be restricted. If no session ID is provided, progress events can be received by any (authorized) session.
-
+**`session`** | Optional name of the form field containing the WAMP session ID of the session to which publihed progress event should be restricted. If no session ID is provided, progress events can be received by any (authorized) session.
+**`chunk_extra`** | The optional name of the form field to hold a serialized JSON object with custom information that will be sent on every chunk upload completion to any listening client.
+**`finish_extra`** | The optional name of the form field to hold a serialized JSON object with custom information that will be sent on file upload completion to any listening client.
 
 In the example above the file name is passsed to the backend in a POST multipart formdata field with name="myFilename")
 
@@ -67,6 +70,14 @@ In the example above the file name is passsed to the backend in a POST multipart
 <input myFilename="test.csv" myprogress_uri="my.upload.progress.uri" />
 ```
 
+---
+
+## File Post processing
+
+To trigger post processing of files on the server one solution would be to create a WAMP client on the server (e.g. a python component using autobahn-python) which subscribes to the upload topic specified under the form field name given in `on_progress`. This component then checks the progress payload for the key/value `status="finished"` and can also extract custom additional data sent along from the client in the propertie with name given by `finish_extra`. Upon reception of this event the component can fire off post processing of the file.
+
+Another solution would be to use the python library [watchdog](https://pypi.python.org/pypi/watchdog) to watch on the upload folder. As long as the specified upload-temp folder and the upload folder reside on the same file system, the crossbar file uploader handles files such that all files are _moved_ into the upload folder which constitutes an atomic file system operation. Thereby no incompletely copied or downloaded files can be picked up by watchdog.
+ 
 ---
 
 ## Resumable Uploads
@@ -123,7 +134,9 @@ The example uses this configuration:
                   "total_chunks": "resumableTotalChunks",
                   "content": "file",
                   "on_progress": "on_progress",
-                  "session": "session"
+                  "session": "session",
+                  "chunk_extra": "chunk_extra",
+                  "finish_extra": "finish_extra"
                },
                "options": {
                   "max_file_size": 209715200,
