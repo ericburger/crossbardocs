@@ -101,7 +101,7 @@ where
 
 To use [Diffie-Hellman](http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) based key exchange, you need to generate a parameter file:
 
-    openssl dhparam -2 1024 -out .crossbar/dhparam.pem
+    openssl dhparam -2 4096 -out .crossbar/dhparam.pem
 
 The use of Diffie-Hellman key exchange is desirable, since this provides [Perfect Forward Secrecy (PFS)](http://en.wikipedia.org/wiki/Forward_secrecy). Without a DH parameter file, no Diffie-Hellman based ciphers will be used, even if configured to do so.
 
