@@ -1,4 +1,4 @@
-[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > PubSub > How Subscriptions Work
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > [PubSub](PubSub) > How Subscriptions Work
 
 # How Subscriptions Work
 
@@ -27,3 +27,7 @@ There is also the possibility to exclude certain sessions from receiving an even
 There is normally no need for subscribers to know the identity of a publisher, but if required it is possible to disclose this information - see [Publisher Identification](Publisher Identification).
 
 As a default, Publishers do not receive an event if they are also a Subsciber, but this can be overriden - see [Publisher Exclusion](Publisher Exclusion).
+
+# Next
+
+[Basic Subscriptions](Basic Subscriptions)

@@ -1,4 +1,4 @@
-[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > PubSub > Subscriber Black & Whitelisting
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > [PubSub](PubSub) > Subscriber Black & Whitelisting
 
 # Subscriber Black- and Whitelisting
 

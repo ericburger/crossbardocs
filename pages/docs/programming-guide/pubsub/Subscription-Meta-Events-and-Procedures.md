@@ -1,4 +1,4 @@
-[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > PubSub > Subscription Meta-Events and Procedures
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > [PubSub](PubSub) > Subscription Meta-Events and Procedures
 
 # Subscription Meta Events and Procedures
 
@@ -96,3 +96,8 @@ session.call("wamp.subscription.count_subscribers", [23560753]).then(session.log
 ## Working Example
 
 For a full working example in JavaScript, see [Crossbar Examples](https://github.com/crossbario/crossbarexamples/tree/master/metaapi).
+
+
+## Event History
+
+For the possibility to retrieve past events for a topic see the [Event History doc page](Event History).

@@ -1,4 +1,4 @@
-[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > PubSub > Basic Subscriptions
+[Documentation](.) > [Programming Guide](Programming Guide) > [WAMP Features](WAMP Features) > [PubSub](PubSub) > Basic Subscriptions
 
 # Basic Subscriptions
 
