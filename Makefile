@@ -12,7 +12,7 @@ deps:
 	pip install -U pygments
 	pip install -U jinja2_highlight
 	pip install -U mistune
-	pip install -U scons
+	#pip install -U scons
 	pip install -U taschenmesser
 
 check_images:

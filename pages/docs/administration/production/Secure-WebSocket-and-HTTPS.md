@@ -304,6 +304,151 @@ Server Temp Key: ECDH, P-256, 256 bits
 
 ---
 
+## Using Lets Encrypt with Crossbar.io
+
+[Let's Encrypt](https://letsencrypt.org/), to quote Wikipedia (I am lazy), "is a certificate authority that entered public beta on December 3, 2015[1] that provides free X.509 certificates for Transport Layer Security encryption (TLS) via an automated process designed to eliminate the current complex process of manual creation, validation, signing, installation and renewal of certificates for secure websites."
+
+Alright, anyone who dealt with x509 certs and "classical" CAs will have felt some pain, and should get excited about above!
+
+And the cool thing: it works. Today.
+
+So let's encrypt and get busy;)
+
+### Installation
+
+Let's Encrypt works from a tool which is installed on the server for which TLS keys and certificates should be generated.
+
+The client is a Python program, hence you'll need Python on the server.
+
+The client also (at least in "standalone mode") wants to fire up a terminal dialog thing. On Ubuntu, do
+
+```
+sudo apt-get install dialog
+```
+
+Then clone the official Let's Encrypt repo (`sudo apt-get install git` if you need Git)
+
+```
+cd ~
+git clone git@github.com:letsencrypt/letsencrypt.git
+cd letsencrypt
+git checkout v0.1.0
+python setup.py install
+```
+
+### Create server key and certificate
+
+Assume your server will be reachable under the fully qualified hostname `box1.example.com`, here is how you generate all files needs (public-private key pairs, certificate and such).
+
+In "standalone mode", the Let's Encrypt tool will do an outgoing connection to the Let's Encrypt servers and **shortly** fire up an embedded Web server which the Let's Encrypt servers will contact to verify that you are actually under control of the server.
+
+From a terminal, run
+
+```
+sudo `which letsencrypt` certonly --standalone -d box1.example.com
+```
+
+The tool will ask you for an Email address, but that's it. Here is the output when successful:
+
+
+```
+IMPORTANT NOTES:
+ - If you lose your account credentials, you can recover through
+   e-mails sent to tobias.oberstein@tavendo.de.
+ - Congratulations! Your certificate and chain have been saved at
+   /etc/letsencrypt/live/box1.example.com/fullchain.pem. Your
+   cert will expire on 2016-03-13. To obtain a new version of the
+   certificate in the future, simply run Let's Encrypt again.
+ - Your account credentials have been saved in your Let's Encrypt
+   configuration directory at /etc/letsencrypt. You should make a
+   secure backup of this folder now. This configuration directory will
+   also contain certificates and private keys obtained by Let's
+   Encrypt so making regular backups of this folder is ideal.
+ - If like Let's Encrypt, please consider supporting our work by:
+
+   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le
+```
+
+You should now change the owner of the Let's Encrypt folder so that your server software (that will be using the TLS keys and certificates that have been generated) can access and **read** those files.
+
+E.g. assuming you are running Ubuntu on AWS in a EC2 instance from the Ubuntu official image, the default account is named `ubuntu`, and when you plan to run Crossbar.io under that user, you would need to:
+
+```console
+sudo chown -R ubuntu:ubuntu /etc/letsencrypt
+```
+
+The files in that folder are:
+
+```console
+(cpy2_1)ubuntu@ip-172-31-4-183:~$ sudo find /etc/letsencrypt/
+/etc/letsencrypt/
+/etc/letsencrypt/archive
+/etc/letsencrypt/archive/box1.example.com
+/etc/letsencrypt/archive/box1.example.com/cert1.pem
+/etc/letsencrypt/archive/box1.example.com/chain1.pem
+/etc/letsencrypt/archive/box1.example.com/fullchain1.pem
+/etc/letsencrypt/archive/box1.example.com/privkey1.pem
+/etc/letsencrypt/csr
+/etc/letsencrypt/csr/0000_csr-letsencrypt.pem
+/etc/letsencrypt/live
+/etc/letsencrypt/live/box1.example.com
+/etc/letsencrypt/live/box1.example.com/privkey.pem
+/etc/letsencrypt/live/box1.example.com/fullchain.pem
+/etc/letsencrypt/live/box1.example.com/cert.pem
+/etc/letsencrypt/live/box1.example.com/chain.pem
+/etc/letsencrypt/renewal
+/etc/letsencrypt/renewal/box1.example.com.conf
+/etc/letsencrypt/keys
+/etc/letsencrypt/keys/0000_key-letsencrypt.pem
+/etc/letsencrypt/accounts
+/etc/letsencrypt/accounts/acme-v01.api.letsencrypt.org
+/etc/letsencrypt/accounts/acme-v01.api.letsencrypt.org/directory
+/etc/letsencrypt/accounts/acme-v01.api.letsencrypt.org/directory/0417840b9724dff8a342834a0e82b72e
+/etc/letsencrypt/accounts/acme-v01.api.letsencrypt.org/directory/0417840b9724dff8a342834a0e82b72e/private_key.json
+/etc/letsencrypt/accounts/acme-v01.api.letsencrypt.org/directory/0417840b9724dff8a342834a0e82b72e/regr.json
+/etc/letsencrypt/accounts/acme-v01.api.letsencrypt.org/directory/0417840b9724dff8a342834a0e82b72e/meta.json
+```
+
+Essentially, Let's Encrypt has generated a mini-database contained in those files with all the info needed to refresh your certs as well!
+
+
+### Generate a new Diffie-Hellman group
+
+**optional**
+
+We want to run modern ciphers, and one of those involves [Diffie-Hellman key exchange](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange). To use that **safely**, you have to generate another things (a so called group):
+
+
+```console
+openssl dhparam -2 4096 -out /etc/letsencrypt/live/box1.example.com/dhparam.pem
+```
+
+> Again, make sure that file is readable by the user Crossbar.io is run under.
+
+
+### Configure Crossbar.io
+
+Alright, awesome. We have server keys and a certificate. To use that on a Crossbar.io listening transport, you'll need a transport configuration with a `tls` attribute giving the paths to `key`, `certificate` and `chain_certificates`:
+
+```json
+"endpoint": {
+    "type": "tcp",
+    "port": 443,
+    "tls": {
+        "key": "/etc/letsencrypt/live/box1.example.com/privkey.pem",
+        "certificate": "/etc/letsencrypt/live/box1.example.com/cert.pem",
+        "chain_certificates": ["/etc/letsencrypt/live/box1.example.com/chain.pem"],
+        "dhparam": "/etc/letsencrypt/live/box1.example.com/dhparam.pem",
+        "ciphers": "ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:"
+    }
+}
+```
+
+In above, we are also pointing `dhparam` to the Diffie-Hellman group generated, and we provide an explicit `ciphers` list. Essentially, we disallow all but 4 ciphers altogether. Those ciphers are supported by modern gear, but won't work with deprecated stuff like Windows XP. You shouldn't care much about that, instead press users to upgrade.
+
+---
+
 ## Resources
 
  * [OpenSSL man page](http://linux.die.net/man/1/dhparam)
