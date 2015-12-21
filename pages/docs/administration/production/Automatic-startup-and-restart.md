@@ -4,16 +4,126 @@
 
 For running Crossbar.io in production, you might want to:
 
-* automatically start Crossbar.io at system boot as a daemon (background service) and under a dedicated service user (non-root)
+* automatically start Crossbar.io at system boot as a daemon (background service)
 * automatically restart Crossbar.io if it exits (either deliberately, or by accident)
 
-There are different approaches and tools to accomplish above.
+There are different approaches and tools to accomplish above under Unix-like operating systems:
+
+* [systemd](#systemd): recommended for **Ubuntu >= 15.04**
+* [upstart](#upstart): recommended for **Ubuntu 14.04 LTS**
+* [daemontools](#daemontools): recommended for **FreeBSD**
+
+
+## systemd
+
+Create a systemd service file `/etc/systemd/system/crossbar.service`
+
+```
+[Unit]
+Description=Crossbar.io
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+StandardInput=null
+StandardOutput=journal
+StandardError=journal
+Environment="MYVAR1=foobar"
+ExecStart=/opt/crossbar/bin/crossbar start --cbdir=/home/ubuntu/mynode1/.crossbar
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+```
+
+> Adjust the path to the Crossbar.io executable `/opt/crossbar/bin/crossbar` and your Crossbar.io node directory `/home/ubuntu/mynode1/.crossbar` in above.
+
+Then do:
+
+```console
+sudo systemctl daemon-reload
+```
+
+To make Crossbar.io start automatically at boot time:
+
+```console
+sudo systemctl enable crossbar.service
+```
+
+To start, stop, restart and get status for Crossbar.io:
+
+```console
+sudo systemctl start crossbar
+sudo systemctl stop crossbar
+sudo systemctl restart crossbar
+sudo systemctl status crossbar
+```
+
+To get log output:
+
+```console
+journalctl -f -u crossbar
+```
+
+---
+
+
+## upstart
+
+Create an upstart job file `/etc/init/crossbar.conf`
+
+```
+description "Crossbar.io"
+
+start on runlevel [2345]
+stop on runlevel [!2345]
+
+respawn
+respawn limit 20 5
+
+setuid ubuntu
+setgid ubuntu
+
+env MYVAR1=foobar
+
+exec /opt/crossbar/bin/crossbar start --cbdir=/home/ubuntu/mynode1/.crossbar
+```
+
+> Adjust the path to the Crossbar.io executable `/opt/crossbar/bin/crossbar` and your Crossbar.io node directory `/home/ubuntu/mynode1/.crossbar` in above.
+
+Then do
+
+```console
+sudo initctl reload-configuration
+```
+
+To start, stop, restart and get status for Crossbar.io:
+
+```console
+sudo start crossbar
+sudo stop crossbar
+sudo restart crossbar
+sudo status crossbar
+```
+
+To get log output:
+
+```console
+sudo tail -f /var/log/upstart/crossbar.log
+```
+
+---
+
+
+## daemontools
 
 The following describes how to monitor and restart Crossbar.io automatically using [Daemontools](http://cr.yp.to/daemontools.html). **Daemontools** is a simple, effective, highly secure tool create by [Dan Bernstein](http://en.wikipedia.org/wiki/Daniel_J._Bernstein) (aka "djb").
 
 > Note: There is also [runit](http://smarden.org/runit/), which is a Daemontools clone that some people [prefer](http://www.sanityinc.com/articles/init-scripts-considered-harmful/).
 
-## Installation
+### Installation
 
 To install Daemontools on Debian based systems (Ubuntu et al):
 
@@ -30,7 +140,7 @@ This will install a couple of tools including
 /usr/bin/setuidgid
 ```
 
-## Configuration
+### Configuration
 
 Create a Daemontools service directory for Crossbar.io:
 
@@ -89,7 +199,7 @@ ubuntu@ip-10-229-126-122:~$ sudo svstat /etc/service/crossbar
 /etc/service/crossbar: up (pid 1006) 91391 seconds
 ```
 
-## Administration
+### Administration
 
 To stop Crossbar.io:
 
@@ -132,3 +242,4 @@ To watch the log file:
 tail -f /home/ubuntu/cbdemo/.crossbar/log/node.log
 ```
 
+---
