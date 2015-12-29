@@ -306,11 +306,11 @@ Server Temp Key: ECDH, P-256, 256 bits
 
 ## Using Lets Encrypt with Crossbar.io
 
-[Let's Encrypt](https://letsencrypt.org/), to quote Wikipedia (I am lazy), "is a certificate authority that entered public beta on December 3, 2015[1] that provides free X.509 certificates for Transport Layer Security encryption (TLS) via an automated process designed to eliminate the current complex process of manual creation, validation, signing, installation and renewal of certificates for secure websites."
+[Let's Encrypt](https://letsencrypt.org/), to quote [Wikipedia](https://en.wikipedia.org/wiki/Let's_Encrypt) (I am lazy), "is a certificate authority that entered public beta on December 3, 2015 that provides free X.509 certificates for Transport Layer Security encryption (TLS) via an automated process designed to eliminate the current complex process of manual creation, validation, signing, installation and renewal of certificates for secure websites."
 
 Alright, anyone who dealt with x509 certs and "classical" CAs will have felt some pain, and should get excited about above!
 
-And the cool thing: it works. Today.
+And the cool thing: it works. Today. And here is how to use Let's Encrypt to secure your Crossbar.io nodes.
 
 So let's encrypt and get busy;)
 
