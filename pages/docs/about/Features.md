@@ -9,10 +9,9 @@
 * Authentication via
 
   * [WAMP-CRA](WAMP CRA Authentication) (challenge-response mechanism)
-  * [Mozilla Persona](Mozilla Persona) (planned)
   * [OTP](OTP-Authentication) (e.g for Google Authenticator)
   * [cookie-based](Cookie Authentication)
-  * TLS client certificate (planned)
+  * TLS client certificate (to be documented)
 
 * [Authorization](Authorization)
   * static for URI + role + realm combinations
