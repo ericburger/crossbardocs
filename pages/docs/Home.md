@@ -22,6 +22,7 @@ Welcome to the Crossbar.io Reference Documentation.
 
 * [Installation](Installation)
 * [Administration](Administration)
+* [Quick Reference](Quick-ref)
 
 ** Programmers **
 

@@ -449,6 +449,116 @@ In above, we are also pointing `dhparam` to the Diffie-Hellman group generated, 
 
 ---
 
+## Tracking down issues
+
+Tracking down TLS issues can be done using OpenSSL. Eg here is how to check the TLS opening handshake (adjust `-CApath /etc/ssl/certs/` to fit your system .. this works for Ubuntu):
+
+
+```console
+oberstet@thinkpad-t430s:~$ openssl s_client -CApath /etc/ssl/certs/ -showcerts -connect demo.crossbar.io:443
+CONNECTED(00000003)
+depth=2 O = Digital Signature Trust Co., CN = DST Root CA X3
+verify return:1
+depth=1 C = US, O = Let's Encrypt, CN = Let's Encrypt Authority X1
+verify return:1
+depth=0 CN = cbdemo-eu-central-1.crossbar.io
+verify return:1
+---
+Certificate chain
+ 0 s:/CN=cbdemo-eu-central-1.crossbar.io
+   i:/C=US/O=Let's Encrypt/CN=Let's Encrypt Authority X1
+-----BEGIN CERTIFICATE-----
+MIIFNDCCBBygAwIBAgISAWvkTNHswSHEDMW/5kJc5MaDMA0GCSqGSIb3DQEBCwUA
+MEoxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MSMwIQYDVQQD
+ExpMZXQncyBFbmNyeXB0IEF1dGhvcml0eSBYMTAeFw0xNTEyMjAxMDE3MDBaFw0x
+NjAzMTkxMDE3MDBaMCoxKDAmBgNVBAMTH2NiZGVtby1ldS1jZW50cmFsLTEuY3Jv
+c3NiYXIuaW8wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCZYgp9QNnQ
+phT7r+hbP1TxVCdKdkECyhXW0sLd8qXHGokHZ3HvXbsOc1gLeMPEJtqeMsOW2z0C
+aU2dOh4ZzRCO0fCJJqX8wvAgqI3sndubDLUgNI0fbOtrJBnCjLCUPxBqTv+/+KYy
+ZOuT3no0l+DZ8E42OG91YRkk+kviJh/MxBpTHrFAcZXuRoeqz6LtyYGIX/+TMcts
+kUvtCSVwym1rRYKsGPCCeGv0quBUoOfQtA3rpFuahnFgTS3AK0C2v7jMroGeJavu
+B3VeiWe2E4TiSrLaIF1vrKldJKcM3E0sO8mSGIKEg4/dqNusW7KKIPB4/bmFfHt6
+g02ey1ALtOk3AgMBAAGjggIyMIICLjAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYw
+FAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQCMAAwHQYDVR0OBBYEFII3
+EyHm6bBFbgjDpUoT/GSEQ6fMMB8GA1UdIwQYMBaAFKhKamMEfd265tE5t6ZFZe/z
+qOyhMHAGCCsGAQUFBwEBBGQwYjAvBggrBgEFBQcwAYYjaHR0cDovL29jc3AuaW50
+LXgxLmxldHNlbmNyeXB0Lm9yZy8wLwYIKwYBBQUHMAKGI2h0dHA6Ly9jZXJ0Lmlu
+dC14MS5sZXRzZW5jcnlwdC5vcmcvMDwGA1UdEQQ1MDOCH2NiZGVtby1ldS1jZW50
+cmFsLTEuY3Jvc3NiYXIuaW+CEGRlbW8uY3Jvc3NiYXIuaW8wgf4GA1UdIASB9jCB
+8zAIBgZngQwBAgEwgeYGCysGAQQBgt8TAQEBMIHWMCYGCCsGAQUFBwIBFhpodHRw
+Oi8vY3BzLmxldHNlbmNyeXB0Lm9yZzCBqwYIKwYBBQUHAgIwgZ4MgZtUaGlzIENl
+cnRpZmljYXRlIG1heSBvbmx5IGJlIHJlbGllZCB1cG9uIGJ5IFJlbHlpbmcgUGFy
+dGllcyBhbmQgb25seSBpbiBhY2NvcmRhbmNlIHdpdGggdGhlIENlcnRpZmljYXRl
+IFBvbGljeSBmb3VuZCBhdCBodHRwczovL2xldHNlbmNyeXB0Lm9yZy9yZXBvc2l0
+b3J5LzANBgkqhkiG9w0BAQsFAAOCAQEAZZzfsXv7SKNPzsot2vFN7tRnRml7P/YC
+JMgRFwdpqcdKKsAhld4vcJPv3kaRMCyfb/02/ckLG4qrvLdply22LBtTyV+/9yJ1
+cmiIRRGtplSEVpU9Aqanao4kxG9ZIASdQ9vkv4botYK2x8kWvrtt4eUg9rb68q0x
+I0ecFPy3iT3AlFCkf5Ph4SorJvG/y4LyatAMM5sZF0C5XFe35o2ORWjToMAzEBAl
+bcCgXLK30+FmHFsHnTultF8zJ358EYtpbNmwLu6CkRB8YV6GI4gjsgOXBCX3KQk2
+FNcHRMD7RrXdeS1+vrFMolcRK48jeIpd6E2R9+SSTzkD3mQz7siHYw==
+-----END CERTIFICATE-----
+ 1 s:/C=US/O=Let's Encrypt/CN=Let's Encrypt Authority X1
+   i:/O=Digital Signature Trust Co./CN=DST Root CA X3
+-----BEGIN CERTIFICATE-----
+MIIEqDCCA5CgAwIBAgIRAJgT9HUT5XULQ+dDHpceRL0wDQYJKoZIhvcNAQELBQAw
+PzEkMCIGA1UEChMbRGlnaXRhbCBTaWduYXR1cmUgVHJ1c3QgQ28uMRcwFQYDVQQD
+Ew5EU1QgUm9vdCBDQSBYMzAeFw0xNTEwMTkyMjMzMzZaFw0yMDEwMTkyMjMzMzZa
+MEoxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MSMwIQYDVQQD
+ExpMZXQncyBFbmNyeXB0IEF1dGhvcml0eSBYMTCCASIwDQYJKoZIhvcNAQEBBQAD
+ggEPADCCAQoCggEBAJzTDPBa5S5Ht3JdN4OzaGMw6tc1Jhkl4b2+NfFwki+3uEtB
+BaupnjUIWOyxKsRohwuj43Xk5vOnYnG6eYFgH9eRmp/z0HhncchpDpWRz/7mmelg
+PEjMfspNdxIknUcbWuu57B43ABycrHunBerOSuu9QeU2mLnL/W08lmjfIypCkAyG
+dGfIf6WauFJhFBM/ZemCh8vb+g5W9oaJ84U/l4avsNwa72sNlRZ9xCugZbKZBDZ1
+gGusSvMbkEl4L6KWTyogJSkExnTA0DHNjzE4lRa6qDO4Q/GxH8Mwf6J5MRM9LTb4
+4/zyM2q5OTHFr8SNDR1kFjOq+oQpttQLwNh9w5MCAwEAAaOCAZIwggGOMBIGA1Ud
+EwEB/wQIMAYBAf8CAQAwDgYDVR0PAQH/BAQDAgGGMH8GCCsGAQUFBwEBBHMwcTAy
+BggrBgEFBQcwAYYmaHR0cDovL2lzcmcudHJ1c3RpZC5vY3NwLmlkZW50cnVzdC5j
+b20wOwYIKwYBBQUHMAKGL2h0dHA6Ly9hcHBzLmlkZW50cnVzdC5jb20vcm9vdHMv
+ZHN0cm9vdGNheDMucDdjMB8GA1UdIwQYMBaAFMSnsaR7LHH62+FLkHX/xBVghYkQ
+MFQGA1UdIARNMEswCAYGZ4EMAQIBMD8GCysGAQQBgt8TAQEBMDAwLgYIKwYBBQUH
+AgEWImh0dHA6Ly9jcHMucm9vdC14MS5sZXRzZW5jcnlwdC5vcmcwPAYDVR0fBDUw
+MzAxoC+gLYYraHR0cDovL2NybC5pZGVudHJ1c3QuY29tL0RTVFJPT1RDQVgzQ1JM
+LmNybDATBgNVHR4EDDAKoQgwBoIELm1pbDAdBgNVHQ4EFgQUqEpqYwR93brm0Tm3
+pkVl7/Oo7KEwDQYJKoZIhvcNAQELBQADggEBANHIIkus7+MJiZZQsY14cCoBG1hd
+v0J20/FyWo5ppnfjL78S2k4s2GLRJ7iD9ZDKErndvbNFGcsW+9kKK/TnY21hp4Dd
+ITv8S9ZYQ7oaoqs7HwhEMY9sibED4aXw09xrJZTC9zK1uIfW6t5dHQjuOWv+HHoW
+ZnupyxpsEUlEaFb+/SCI4KCSBdAsYxAcsHYI5xxEI4LutHp6s3OT2FuO90WfdsIk
+6q78OMSdn875bNjdBYAqxUp2/LEIHfDBkLoQz0hFJmwAbYahqKaLn73PAAm1X2kj
+f1w8DdnkabOLGeOVcj9LQ+s67vBykx4anTjURkbqZslUEUsn2k5xeua2zUk=
+-----END CERTIFICATE-----
+---
+Server certificate
+subject=/CN=cbdemo-eu-central-1.crossbar.io
+issuer=/C=US/O=Let's Encrypt/CN=Let's Encrypt Authority X1
+---
+No client certificate CA names sent
+---
+SSL handshake has read 3047 bytes and written 421 bytes
+---
+New, TLSv1/SSLv3, Cipher is ECDHE-RSA-AES128-GCM-SHA256
+Server public key is 2048 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-RSA-AES128-GCM-SHA256
+    Session-ID: 688D6B2F826CCFEEC48AE4E17E351D55AF2138762FCF8906E23047E97A1304B4
+    Session-ID-ctx:
+    Master-Key: 1BCE4C7CB9DBE234220EDF789CC07FCF9BE94B369C91AACF8C81FE7886D9C1E3E5A002BDF99A8881E5DBA09E7D80224C
+    Key-Arg   : None
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    Start Time: 1453186799
+    Timeout   : 300 (sec)
+    Verify return code: 0 (ok)
+---
+^C
+```
+
+---
+
 ## Resources
 
  * [OpenSSL man page](http://linux.die.net/man/1/dhparam)
