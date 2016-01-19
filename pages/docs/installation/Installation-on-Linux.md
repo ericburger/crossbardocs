@@ -12,7 +12,7 @@ Your system will need OpenSSL, libffi, and a working build chain.
 On a Debian (or Debian-derived) system, the requirements can be installed by:
 
     sudo apt-get install build-essential libssl-dev libffi-dev \
-   libreadline-dev libbz2-dev libsqlite3-dev libncurses5-dev
+        libreadline-dev libbz2-dev libsqlite3-dev libncurses5-dev
 
 Or for RedHat and derivatives:
 
