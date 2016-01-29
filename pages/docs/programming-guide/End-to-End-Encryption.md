@@ -6,7 +6,7 @@
 
 > Crossbar.io **end-to-end application payload encryption** is available in versions 0.12.0 and above. This feature is currently EXPERIMENTAL. Do NOT use in production. Feedback welcome!
 
-## Tldr;
+## Summary
 
 With standard WAMP, and using best-practices, you'll be running everthing over TLS (such as via secure WebSocket). The bad guys won't be able to tap you. The application payload is secured from third parties.
 
