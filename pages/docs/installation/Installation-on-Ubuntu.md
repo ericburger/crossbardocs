@@ -59,7 +59,7 @@ Update your system, to make sure you have the latest packages:
     sudo apt-get update
     sudo apt-get dist-upgrade
 
-Continue with [Setup for CPython](#setup-for-cpython) or [Setup for PyPy](setup-for-pypy).
+Continue with [Setup for CPython](#setup-for-cpython) or [Setup for PyPy](#setup-for-pypy).
 
 
 ### Setup for CPython
@@ -77,7 +77,7 @@ Finally, start working in the virtual environment:
     cd ~/python-venv/
     . bin/activate
 
-Continue with the step [Installing Crossbar.io](installing-crossbar.io).
+Continue with the step [Installing Crossbar.io](#installing-crossbar.io).
 
 
 ### Setup for PyPy
@@ -104,7 +104,7 @@ Finally, start working in the virtual environment:
     cd ~/pypy-venv/
     . bin/activate
 
-Continue with the step [Installing Crossbar.io](installing-crossbar.io).
+Continue with the step [Installing Crossbar.io](#installing-crossbar.io).
 
 
 ### Installing Crossbar.io
