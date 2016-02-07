@@ -4,7 +4,9 @@
 
 Strictly speaking, Anonymous Authentication is not authentication - it is about what to do in the absence of authentication
 
-You need to explicitly define Anonymous Authentication for a particular transport - as a default this is not allowed, e.g. here for a WebSocket endpoint on a Web transport
+You need to explicitly define Anonymous Authentication for a particular transport - as a default this is not allowed.
+
+The following is part of a config which allows Anonymous Authentication for a WebSocket endpoint on a Web transport:
 
 ```javascript
 "transports": [

@@ -8,7 +8,7 @@ The **authrole** is then used for the static *authorization* of actions (publish
 
 Crossbar.io provides a range of authentication methods.
 
-1. [WAMP-Anonymous](Anomyous Authentication)
+1. [WAMP-Anonymous](Anonymous Authentication)
 2. [WAMP-Ticket](Ticket Authentication)
 3. [WAMP-CRA](Challenge-Response Authentication)
 4. [WAMP-Cryptosign](Cryptosign Authentication)
