@@ -37,7 +37,7 @@ Each principal has this associated dictionary:
 attribute | description
 ---|---
 **`ticket`** | Arbitrary text value for authenticating ticket (**required**).
-**`role`** | Optional `authrole` a client using this ticket will be authenticated under.
+**`role`** | `authrole` a client using this ticket will be authenticated under.
 
 ### Dynamic
 

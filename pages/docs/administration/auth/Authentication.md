@@ -2,32 +2,86 @@
 
 # Authentication
 
-* [Anonymous Authentication](Anonymous Authentication)
-* [Challenge-Response Authentication](Challenge-Response Authentication)
-* [Cookie Authentication](Cookie Authentication)
-* [Ticket Authentication](Ticket Authentication)
+Authentication is about *identifying* WAMP clients to Crossbar.io. A WAMP session connected to a **realm** is authenticated under an **authid** and **authrole**.
 
-With Crossbar.io, *authentication* and *authorization* of WAMP connections are orthogonal aspects which can be configured on transports and routers running on a node.
+The **authrole** is then used for the static *authorization* of actions (publish, subscribe, call, register) for the client. (Dynmaic authorization may base the authorization on more factors.)
 
-WAMP *authorization* is described [here](Authorization). This chapter is about *WAMP authentication* concepts and configuration.
+Crossbar.io provides a range of authentication methods.
 
-## Introduction
+1. [WAMP-Anonymous](Anomyous Authentication)
+2. [WAMP-Ticket](Ticket Authentication)
+3. [WAMP-CRA](Challenge-Response Authentication)
+4. [WAMP-Cryptosign](Cryptosign Authentication)
+5. [WAMP-Cookie](Cookie Authentication)
+6. [WAMP-TLS](TLS Client Certificate Authentication)
 
-Crossbar.io supports authentication via:
+These can be classed according to whether
 
- 1. [**WAMP Challenge-Response (WAMP-CRA)**](WAMP CRA Authentication)
- 2. [**Cookie**](Cookie-Authentication)
- 3. [**One-time-token based**](OTP-Authentication) (e.g. for Google Authenticator)
- 4. **Client TLS Certificates** *(under develeopment)*
+* they use transport or session level mechanisms
+* they are based on a shared secret or on public key cryptography
 
-and can additionally assign a role to components which don't authenticate:
+## Session vs Transport Level
 
-* [Anonymous Authentication](Anonymous Authentication)
+**WAMP session level authentications** use WAMP messages at the WAMP session opening handshake, and can be used over any transport.
 
-During (successful) authentication, Crossbar.io will determine an **authid** for the client connecting.
-The **authid** is then mapped to an **authrole**, and the **realm** together with the **authrole** will determine the permissions the client will have.
+* [WAMP-Anonymous](Anonymous Authentication)
+* [WAMP-Ticket](Ticket Authentication)
+* [WAMP-CRA](Challenge-Response Authentication)
+* [WAMP-Cryptosign](Cryptosign Authentication)
 
-In case of client TLS certificates, the **authid** will be the Common Name ("CN") of the certificate, most likely the fully qualified domain name of the host connecting.
+**WAMP transport level authentications** use the underlying transport for the WAMP session, and the result of the authentication is then passed on to the WAMP session level (i.e. the resulting `authid` and `authrole` are passed there).
 
-In addition to credentials defined in the Crossbar.io configuration, some authentications methods allow for dynamic authentication, where you define a WAMP component as the authentication handler.
+* [WAMP-Cookie](Cookie Authentication)
+* [WAMP-TLS](TLS Client Certificate Authentication)
 
+## Shared Secret vs. Public Key
+
+**Shared secret authentication** is based on the client and the router (or the authentication component) having access to a common secret.
+
+* [WAMP-Ticket](Ticket Authentication)
+* [WAMP-CRA](Challenge-Response Authentication)
+* [WAMP-Cookie](Cookie Authentication)
+
+**Public Key based authentication** relies on asymetric key pairs, i.e. the router (or authentication componenet) only has knowledge of the client's public key (and vice versa). This has the advantage that a compromised store of keys does not enable impersonation of the other participant(s).
+
+* [WAMP-Cryptosign](Cryptosign Authentication)
+* [WAMP-TLS](TLS Client Certificate Authentication)
+
+## Static, Dynamic and Database Authentication
+
+It is possible to configure an authentication methods
+
+* **statically** - the credentials stored in the Crossbar.io configuration, or
+* **dynamically** - an authorizer component is specified which is called and returns an authentication or denial.
+
+The latter allows full flexibility, e.g. integration with external authorization mechanisms, storing larger sets of authentication data in a database of your choice.
+
+We are planning the implementation of a storage mechanism for credentials within Crossbar.io. This will be a secure, transactional database which can be managed via the node management API and which spans all authentication methods.
+
+## Authentication Per Transport
+
+Authentication methods are set for a WAMP transport endpoint, and it is possible to define multiple methods per endpoint.
+
+As an example, the following extract from a configuration file allows anonymous authentication (and assigns this a role `public`) as well as authentication via WAMP-CRA (and defines two roles here depending on the `authid` used during authentication):
+
+```javascript
+"auth": {
+   "wampcra": {
+      "type": "static",
+      "users": {
+         "joe": {
+            "secret": "secret2",
+            "role": "admin"
+         },
+         "peter": {
+            "secret": "secret3",
+            "role": "dataentry"
+         }
+      }
+   },
+   "anonymous": {
+      "type": "static",
+      "role": "public"
+   }
+}
+```
