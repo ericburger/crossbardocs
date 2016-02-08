@@ -8,10 +8,12 @@
 * multiple [realms](Router Realms) per router (mutliple routing & authorization domains)
 * Authentication via
 
-  * [WAMP-CRA](WAMP CRA Authentication) (challenge-response mechanism)
-  * [OTP](OTP-Authentication) (e.g for Google Authenticator)
-  * [cookie-based](Cookie Authentication)
-  * TLS client certificate (to be documented)
+    * [WAMP-Anonymous](Anonymous Authentication)
+    * [WAMP-Ticket](Ticket Authentication)
+    * [WAMP-CRA](Challenge-Response Authentication)
+    * [WAMP-Cryptosign](Cryptosign Authentication)
+    * [WAMP-Cookie](Cookie Authentication)
+    * [WAMP-TLS](TLS Client Certificate Authentication)
 
 * [Authorization](Authorization)
   * static for URI + role + realm combinations
@@ -25,6 +27,7 @@
 + [Publisher Identification](Publisher Identification)
 + [Pattern-Based Subscriptions](Pattern Based Subscriptions)
 + [Subscription Meta-Events and Procedures](Subscription Meta Events and Procedures)
++ [Event History](Event History)
 + [Caller Identification](Caller Identification)
 + [Progressive Call Results](Progressive Call Results)
 + [Pattern-Based Registrations](Pattern Based Registrations)
@@ -54,17 +57,19 @@
 ## Polyglot Application Components
 
 * Application components can be written in any language for which a WAMP library exists.
-* Current WAMP libraries exist for:
+* Current WAMP libraries exist for ([full list](http://wamp-proto.org/implementations/)):
 
-  * [Python](http://autobahn.ws/python)
-  * [JavaScript](http://autobahn.ws/js)/[alternative](https://github.com/KSDaemon/wampy.js)
-  * [PHP](https://github.com/voryx/Thruway)
-  * [Java](https://github.com/Matthias247/jawampa)
-  * [C++](https://github.com/tavendo/AutobahnCpp)/[alternative](https://github.com/ecorm/cppwamp)
-  * [Objective-C](https://github.com/mogui/MDWamp)
-  * [C#](https://github.com/Code-Sharp/WampSharp)
-  * [Erlang](https://github.com/bwegh/awre)
-  * [Lua](https://github.com/KSDaemon/Loowy)
+    * Python
+    * JavaScript
+    * PHP
+    * Java
+    * C++
+    * Objective-C
+    * C#
+    * Erlang
+    * Lua
+    * Go
+    * Haskell
 
 ## REST Bridge
 
@@ -99,12 +104,10 @@
 ## Multi-Process Architecture
 
 
-
 ## Upcoming Features
 
 * Database connectors - databases as WAMP components
 * Multi-core and multi-node architecture
-* Python 3 support
+* full Python 3 support (some features not yet supported)
 
 For more details about upcoming features, see the [Roadmap](Roadmap).
-

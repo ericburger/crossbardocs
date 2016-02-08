@@ -84,7 +84,7 @@ class MyFrontendComponent(wamp.ApplicationSession):
 
 With *static credentials*, you configure users and secrets in the Crossbar.io node configuration.
 
-You can find a complete example [here](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/wampcra).
+You can find a complete example [here](https://github.com/crossbario/crossbarexamples/tree/master/authentication/wampcra/static).
 
 E.g. here is part of a Crossbar.io node configuration:
 
@@ -172,7 +172,7 @@ Optional attributes are all related to the (optional) pbkdf2-based password salt
 
 With *dynamic credentials*, you specify the URI of a regular WAMP procedure in the Crossbar.io node configuration. The procedure will then be called by Crossbar.io during authentication of (other) users.
 
-You can find complete examples for different languages [here](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/wampcradynamic).
+You can find complete examples for different languages [here](https://github.com/crossbario/crossbarexamples/tree/master/authentication/wampcra/dynamic).
 
 Here is part of a Crossbar.io node configuration:
 
@@ -283,8 +283,10 @@ class MyAuthenticator(ApplicationSession):
 
 ## Examples
 
-* [Static Challenge-Response Authentication](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/wampcra)
-* [Dynamic/Custom Challenge-Response Authentication](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/wampcradynamic)
+* [Static Challenge-Response Authentication](https://github.com/crossbario/crossbarexamples/tree/master/authentication/wampcra/static)
+* [Dynamic/Custom Challenge-Response Authentication](https://github.com/crossbario/crossbarexamples/tree/master/authentication/wampcra/dynamic)
+
+For more on dynamic authenticators read [this documentation page](Dynamic Authenticators).
 
 ## Configuration
 
@@ -328,4 +330,3 @@ parameter | description
 ---|---
 **`type`** | `"dynamic"`
 **`authenticator`** | URI of custom authenticator to call.
-

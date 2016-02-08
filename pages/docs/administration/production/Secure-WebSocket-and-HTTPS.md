@@ -7,7 +7,7 @@ For production use, it is **strongly recommended** to always run WebSocket over 
 * keeping your and your user's data confidential and untampered
 * avoiding issues with WebSocket on networks that employ so-called intermediaries (proxies, caches, firewalls)
 
-> The latter is especially important on locked down enterprise environments and on mobile operator networks. By using secure WebSocket ("wss"), WebSocket will work in almost all circumstances (exceptions potentially being TLS interception / MITM proxies).
+> The latter is especially important in locked down enterprise environments and on mobile operator networks. By using secure WebSocket ("wss"), WebSocket will work in almost all circumstances (exceptions potentially being TLS interception / MITM proxies).
 
 Crossbar.io has full support for running secure WebSocket and HTTPS. We discuss configuration:
 
@@ -84,6 +84,10 @@ The TLS configuration has a couple of options:
       "tls": {
          "key": "server_key.pem",
          "certificate": "server_cert.pem",
+         "ca_certificates": [
+            "ca.cert.pem",
+            "intermediate.cert.pem"
+        ],
          "dhparam": "dhparam.pem",
          "ciphers": "ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AES:RSA+3DES:!ADH:!AECDH:!MD5:!DSS"
       }
@@ -94,6 +98,7 @@ The TLS configuration has a couple of options:
 where
 * `key` is the filesystem path to the server private key file (PEM format, no passphrase) (**mandatory**)
 * `certificate` is the filesystem path to the server certificate file (PEM format) (**mandatory**)
+* `ca_certificates` when set requires that a connecting client's certificate be issued by one of the listed CAs, otherwise the connection establishment will be denied (**optional**)
 * `dhparam` is the filesystem path to a Diffie-Hellman parameter file - see explanation below (**optional**)
 * `ciphers` is a list of ciphers the server is willing to use with a client - see explanation below (**optional**)
 

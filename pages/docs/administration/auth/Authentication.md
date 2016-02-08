@@ -52,7 +52,7 @@ These can be classed according to whether
 It is possible to configure an authentication methods
 
 * **statically** - the credentials stored in the Crossbar.io configuration, or
-* **dynamically** - an authorizer component is specified which is called and returns an authentication or denial.
+* **dynamically** - an authorizer component is specified which is called and returns an authentication or denial ([read more](Dynamic Authentication)).
 
 The latter allows full flexibility, e.g. integration with external authorization mechanisms, storing larger sets of authentication data in a database of your choice.
 
