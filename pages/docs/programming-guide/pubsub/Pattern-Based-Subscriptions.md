@@ -2,7 +2,7 @@
 
 # Pattern Based Subscriptions
 
-As a default, topic URIs in subscription requests are processed with exact matching, i.e. an event will be dispatched to subscribers if the topic of the publication exactly matches the topic of the subscription. 
+As a default, topic URIs in subscription requests are processed with exact matching, i.e. an event will be dispatched to subscribers if the topic of the publication exactly matches the topic of the subscription.
 
 ## Use cases for Pattern-Based Subscriptions
 
@@ -36,7 +36,7 @@ but not
 
 Using this, in the chat application mentioned initially, the logging component would subscribe to `com.mychatapp.privatechannel` using prefix matching, and receive the events for any private channels.
 
-To enable prefix matching, the matchig policy `prefix` needs to be set within the subscription options. 
+To enable prefix matching, the matching policy `prefix` needs to be set within the subscription options.
 
 As an example, in an application written in JavaScript and using Autobahn|JS as the WAMP client library, the subscription would be
 
@@ -46,7 +46,7 @@ session.subscribe("com.mychatapp.privatechannel", logPrivateChannels, { match: "
 
 Since with prefix matching there is no local knowledge of the URI for a received event, events which are dispatched to subscribers here contain the URI of the publication.
 
-For example, when the handler `logPrivateChannels` is called based on the above subscription, the handler can only be certain that the URI of the publication based on which it received an event begins with `com.mychatapp.privatechannel`. The event contains the information about the topic as part of the event details, e.g. 
+For example, when the handler `logPrivateChannels` is called based on the above subscription, the handler can only be certain that the URI of the publication based on which it received an event begins with `com.mychatapp.privatechannel`. The event contains the information about the topic as part of the event details, e.g.
 
 ```javascript
 {publication: 464157938, publisher: undefined, topic: "com.myapp.topic1"}
@@ -67,7 +67,7 @@ This would be matched by
 `com.myapp.product.create`
 `com.myapp.123.create`
 
-but not 
+but not
 
 `com.myapp.product.delete`
 `com.myapp.product.123.create`
@@ -108,9 +108,29 @@ With pattern-based subscriptions it becomes possible that a component has multip
 
 Subscriptions are entities which are based on a combination of registration URI and matching policy. It is thus not possible to perform any set-based logic with subscriptions.
 
-As an example: 
+As an example:
 
 There is an existing subscription for the URI `com.myapp` using prefix matching. It is then not possible to send an 'unsubscribe' for the URI `com.myapp.topic2` in order to exclude events published to this URI from being dispatched to the subscriber.
+
+## Equivalent notations
+
+Above an explicit setting of the matching strategy is described.
+
+Alterantively, it is possible to use the common notation using `*` as part of the string to match.
+
+Here the rules are:
+
+* if `*` is used and the **matching policy is set explicitly**, then this is treated as a normal part of the string (this means that `*` *need not* be a reserved character!)
+
+otherwise, if there is **no explicitly set matching policy**
+
+* `*` within a an URI string is interpreted as a wildcard
+* `*` at the end of a string is interpreted to mean prefix registration
+* `**` at the end means wildcard
+
+This enables maximum flexibility and should not lead to confusion as long as you stick to using one form of notation.
+
+> Note: This is upward compatible to the old behavior which always required setting an explicit matching policy. No need to change anything in your existing configurations.
 
 ## Working Example
 
