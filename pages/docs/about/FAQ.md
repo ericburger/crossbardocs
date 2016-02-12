@@ -149,6 +149,6 @@ Running on PyPy will give you a *lot* more performance than CPython though. Of c
 
 It is possible to have a WAMP component which communicates with your non-WAMP application (component) and does WAMP messaging based on this. How complex this is depends on the specifics of the use case, e.g. the protocol.
 
-We do provide components for communicating with other applications over HTTP/POST requests. For details see [the documentation](HTTP-Bridge-Services).
+We do provide components for communicating with other applications over HTTP/POST requests. For details see [the documentation](HTTP-Bridge).
 
 ---

@@ -4,7 +4,7 @@
 
 In this recipe we will use Crossbar.io to generate a [WAMP](http://wamp.ws/) application written in Java and using [jawampa](https://github.com/Matthias247/jawampa), an open-source WAMP implementation.
 
-The generated application consists of a [Java/jawampa backend](https://github.com/crossbario/crossbar/blob/master/crossbar/crossbar/templates/hello/java/src/main/java/ws/wamp/jawampa/CrossbarExample.java) and a [JavaScript/AutobahnJS frontend](https://github.com/crossbario/crossbar/blob/master/crossbar/crossbar/templates/hello/java/web/index.html) to run in a browser.
+The generated application consists of a [Java/jawampa backend](https://github.com/crossbario/crossbar/blob/master/crossbar/templates/hello/java/src/main/java/ws/wamp/jawampa/CrossbarExample.java) and a [JavaScript/AutobahnJS frontend](https://github.com/crossbario/crossbar/blob/master/crossbar/templates/hello/java/web/index.html) to run in a browser.
 
 The frontend and backend components will talk with each other using all four main interactions available in WAMP:
 

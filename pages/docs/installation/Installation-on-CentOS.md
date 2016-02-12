@@ -53,8 +53,6 @@ Finally, start working in the virtual environment:
     cd python-venv/
     . bin/activate
 
-Continue with the step [Installing Crossbar.io](installing-crossbar.io).
-
 
 ### Installing Crossbar.io
 

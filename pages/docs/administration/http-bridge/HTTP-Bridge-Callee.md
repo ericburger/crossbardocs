@@ -19,7 +19,7 @@ crossbar start
 
 This example is configured to register a WAMP procedure named `com.myap.rest`, which sends requests to `httpbin.org`.
 The procedure's complete keyword arguments are detailed further down, but if we use a kwargs of `{"url": "get", "method": "GET"}`, Crossbar will send a HTTP GET request to `httpbin.org/get` and respond with the result.
-You can test this using the [HTTP Caller](HTTP Bridge Services Caller) configured in the example:
+You can test this using the [HTTP Caller](HTTP Bridge Caller) configured in the example:
 
 ```shell
 curl -H "Content-Type: application/json" \

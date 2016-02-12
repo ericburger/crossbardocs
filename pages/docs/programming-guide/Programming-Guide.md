@@ -43,7 +43,7 @@ whereas you can find more WAMP client libraries [here](http://wamp.ws/implementa
 * Crossbar.io features
   - [Starting and Stopping Crossbar.io](Starting and Stopping Crossbar.io)
   - [Logging in Crossbar.io](Logging in Crossbar.io)
-  - [Configuring Crossbar.io's Logging](Configuring Crossbar.io's Logging)
+  - [Configuring Crossbar.io's Logging](Configuring Crossbario Logging)
   - [End-to-End Encryption](End-to-End-Encryption)
 * [Crossbar.io Demo Instance](Demo Instance)
 

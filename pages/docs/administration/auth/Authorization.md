@@ -109,8 +109,6 @@ The above rule, using the wildcard URI pattern `"*"` would apply to *any* URI.
 
 In the above example configuration, a publication to `com.example.fronted.action1` would thus be allowed, since the URI pattern of the second defined rule which matches the publication URI, and which allows publication,  is longer than that of the first, which disallows publication.
 
-> Crossbar.io can be dynamically reconfigured via the [Management API](Management API). This includes the ability to reconfigure the authorization and permissions.
-
 
 # Dynamic Authorization
 
@@ -293,4 +291,3 @@ Above could be used in a node configuration like this:
    ]
 }
 ```
-

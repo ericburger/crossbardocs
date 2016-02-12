@@ -16,7 +16,7 @@ Crossbar.io also captures ``stdout``, so ``print()`` statements will also be cap
 
 ## Writing Components that use Logger
 
-A component that uses Logger is the [hello](https://github.com/crossbario/crossbarexamples/blob/master/hello/python/hello/hello.py) example application.
+A component that uses Logger is the [hello](https://github.com/crossbario/crossbarexamples/blob/master/hello/python/hello.py) example application.
 
 To set your application up for logging, import ``Logger`` from ``twisted.logger`` and instantiate it.
 If you have classes, making it a [class attribute](http://www.toptal.com/python/python-class-attributes-an-overly-thorough-guide) allows Logger to store some more information (more on that later).

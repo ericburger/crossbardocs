@@ -44,9 +44,9 @@
 
 * Framings:
 
-  * [WebSocket](WebSocket Transports) with [Flash fallback](Flash Policy Transports)
-  * [RawSocket](RawSocket Transports)
-  * [HTTP/long poll](WAMP Long-Poll Service)
+  * [WebSocket](WebSocket Transport) with [Flash fallback](Flash Policy Transport)
+  * [RawSocket](RawSocket Transport)
+  * [HTTP/long poll](Long-Poll Service)
 
 * Transport
 

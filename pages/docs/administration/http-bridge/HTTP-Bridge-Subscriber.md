@@ -20,7 +20,7 @@ crossbar start
 ```
 
 This example is configured to subscribe all events sent to the `com.myapp.topic1` topic to `httpbin.org/post`.
-If you publish a message using the [HTTP Publisher](HTTP Bridge Services Publisher) configured in the example, it will forward the message and print the response of the message in Crossbar's debug log:
+If you publish a message using the [HTTP Publisher](HTTP Bridge Publisher) configured in the example, it will forward the message and print the response of the message in Crossbar's debug log:
 
 ```shell
 curl -H "Content-Type: application/json" \

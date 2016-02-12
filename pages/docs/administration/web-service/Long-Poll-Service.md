@@ -2,7 +2,7 @@
 
 # Long-poll Service
 
-The default transport for WAMP is WebSocket. For clients not supporting WebSocket, the WAMP specification defines [WAMP-over-Longpoll](https://github.com/tavendo/WAMP/blob/master/spec/advanced.md#longpoll-transport), a transport that runs over a HTTP long-poll mechanism. This can come in handy to support old browsers lacking WebSocket like IE9 and earlier or old Android WebKit.
+The default transport for WAMP is WebSocket. For clients not supporting WebSocket, the WAMP specification defines [WAMP-over-Longpoll](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/draft-oberstet-hybi-tavendo-wamp.html), a transport that runs over a HTTP long-poll mechanism. This can come in handy to support old browsers lacking WebSocket like IE9 and earlier or old Android WebKit.
 
 ## Configuration
 

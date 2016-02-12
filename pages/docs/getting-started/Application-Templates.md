@@ -55,7 +55,7 @@ All application templates are licensed either under the BSD 2-clause license or 
 
 In addition to the simple 'Hello' templates, there are a lot of [examples](https://github.com/crossbario/crossbarexamples).
 
-This ranges from simple examples which provide working code illustrating various aspects and features of using Crossbar.io to [demos](https://github.com/crossbario/crossbarexamples/demos) mini-applications.
+This ranges from simple examples which provide working code illustrating various aspects and features of using Crossbar.io to [demos](https://github.com/crossbario/crossbarexamples/tree/master/demos) mini-applications.
 
 To use the examples or demos, just clone the repo, and do `crossbar start` in the respective folder in the repo. For the demos, there's also a launcher (do `crossbar start` in the `_demo_launcher` directory).
 

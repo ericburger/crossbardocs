@@ -8,25 +8,22 @@ WebSocket, as an [IETF standard](http://tools.ietf.org/html/rfc6455), and with a
 
 * Chrome 16 + (incl. Chrome for Android)
 * Firefox 11 + (incl. Firefox for Android)
-* Internet Explorer 10 (incl. Internet Explorer Mobile on Windows Phone 8)
+* Internet Explorer 10+ (incl. Internet Explorer Mobile on Windows Phone 8)
 * Safari 6 +
 * Opera 12.1 + (incl. Opera Mobile)
 * iOS 6.0 +
 * Blackberry 7 +
 
-**Older protocol versions**
+Generally speaking, on the desktop outside of crazy legacy systems you should be OK. On mobile, older Android versions are the largest (but rapidly shrinking) gap.
 
-
-Some older browsers support non-final versions of WebSocket. To enable support for these versions in Crossbar.io, 'Allow Hixie-76' and/or 'Allow Hybi-10+' need to be enabled under WebSocket options.
 
 **Adding WebSocket support**
 
-
 ***Internet Explorer***
 
-For IE<10 we recommend using [Google Chrome Frame](https://developers.google.com/chrome/chrome-frame/). If this is not an option, use Adobe Flash.
+For IE < 10, you can use Adobe Flash Bridge to bring WebSocket Supporting.
 
-IE10 has native WebSocket support. It is the default browser on Windows 8, and has been rolled out as an update for Windows 7. It is also the browser for Windows Phone 8.
+IE10+ has native WebSocket support. It is the default browser on Windows 8, and has been rolled out as an update for Windows 7. It is also the browser for Windows Phone 8.
 
 
 ***Android***

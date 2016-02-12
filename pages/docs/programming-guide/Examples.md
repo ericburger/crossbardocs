@@ -39,11 +39,11 @@ plus with an additional [Kivy (Python) frontend](https://github.com/crossbario/c
 
 There are examples covering **specific features** of WAMP/Crossbar.io, e.g.
 
-* [Authentication](https://github.com/crossbario/crossbarexamples/tree/master/authenticate)
+* [Authentication](https://github.com/crossbario/crossbarexamples/tree/master/authentication)
    + Anonymous Authentication, both
    [static](https://github.com/crossbario/crossbarexamples/tree/master/authentication/anonymous/static) and [dynamic](https://github.com/crossbario/crossbarexamples/tree/master/authentication/anonymous/dynamic)
-   + Ticket, both [static](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/ticket) and [dynamic](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/ticketdynamic)
-   + WAMP CRA, both [static](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/wampcra) and [dynamic](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/wampcradynamic)
+   + Ticket, both [static](https://github.com/crossbario/crossbarexamples/tree/master/authentication/ticket/static) and [dynamic](https://github.com/crossbario/crossbarexamples/tree/master/authentication/ticket/dynamic)
+   + WAMP CRA, both [static](https://github.com/crossbario/crossbarexamples/tree/master/authentication/wampcra/static) and [dynamic](https://github.com/crossbario/crossbarexamples/tree/master/authentication/wampcra/dynamic)
    + [TLS Client Certificates](https://github.com/crossbario/crossbarexamples/tree/master/authentication/tls)
    + [Cookie](https://github.com/crossbario/crossbarexamples/tree/master/authentication/cookie)
    + [Cryptosign](https://github.com/crossbario/crossbarexamples/tree/master/authentication/cryptosign)

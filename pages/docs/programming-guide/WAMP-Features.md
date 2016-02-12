@@ -7,7 +7,7 @@ This provides documentation about advanced WAMP features which are implemented i
 Some of these features may require specific support by a WAMP client library.
 
 - Session
-    + [Session Metaevents](Session Metaevents)
+    + [Session Metaevents and Procedures](Session Metaevents and Procedures)
     + [Using Schemas](Using Schemas)
 - Subscriptions
     + [How Subscriptions Work](How Subscriptions Work)

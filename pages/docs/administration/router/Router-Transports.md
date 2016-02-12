@@ -31,11 +31,11 @@ All of above is running over [Transport Endpoints](Transport Endpoints), so you 
 
 Over which WAMP transport an application component is connected to a router does not matter. It's completely transparent from the application component point of view.
 
-The WAMP spec currently defines these transports:
+The [WAMP spec](https://github.com/wamp-proto/wamp-proto/blob/master/rfc/draft-oberstet-hybi-tavendo-wamp.html) currently defines these transports:
 
-* [WAMP-over-WebSocket Transport](https://github.com/tavendo/WAMP/blob/master/spec/basic.md#websocket-transport)
-* [WAMP-over-RawSocket Transport](https://github.com/tavendo/WAMP/blob/master/spec/advanced.md#rawsocket-transport)
-* [WAMP-over-Longpoll Transport](https://github.com/tavendo/WAMP/blob/master/spec/advanced.md#long-poll-transport)
+* [WAMP-over-WebSocket Transport]
+* [WAMP-over-RawSocket Transport]
+* [WAMP-over-Longpoll Transport]
 
 Crossbar.io currently supports **18** WAMP transports in total:
 

@@ -45,9 +45,9 @@ The *Controller* manages, controls and monitors the Crossbar.io node.
      * *Containers*
  * *Guest Workers*
 
-*Native Workers* are WAMP *Routers* and WAMP *Containers*. 
+*Native Workers* are WAMP *Routers* and WAMP *Containers*.
 
-* *Routers* provide WAMP call and event routing services for applications and provide the core of Crossbar.io functionality. 
+* *Routers* provide WAMP call and event routing services for applications and provide the core of Crossbar.io functionality.
 * *Containers* can host application components written in Python (using [**Autobahn**](Python](https://github.com/tavendo/AutobahnPython) on [Twisted](http://twistedmatrix.com/)), i.e. what Crossbar.io is implemented on).
 
 *Guest Workers* are arbitrary programs spawned and monitored by Crossbar.io, usually to run user defined application components written in languages other than Python (or running on asyncio, not Twisted). E.g. a *Guest* might be a program written in C++ using [**Autobahn**|Cpp](https://github.com/tavendo/AutobahnCpp) or JavaScript using [**Autobahn**|JS](https://github.com/tavendo/AutobahnJS), connecting back to a WAMP router running inside a *Native Worker*.
@@ -55,13 +55,13 @@ The *Controller* manages, controls and monitors the Crossbar.io node.
 
 ## Controller
 
-A Crossbar.io node runs from a *node directory*, which contains (among other things) a node key, a local configuration file and log files. 
+A Crossbar.io node runs from a *node directory*, which contains (among other things) a node key, a local configuration file and log files.
 
 ![Crossbar.io Node](/static/img/docs/gen/crossbar_deployment_01.png)
 
 A node always runs a (single) node controller process. The node controller dynamically starts, monitors and stops worker processes. Node worker processes include *Routers*, *Containers* and *Guests*. These are described below.
 
-A node may optionally connect to an uplink management service for remote management and monitoring. This is possible since Crossbar.io exposes all its services via WAMP (see [Management-API](Management-API)).
+A node may optionally connect to an uplink management service for remote management and monitoring. This is possible since Crossbar.io exposes all its services via WAMP. This API is private, however, and not stable. We are working on providing a management service which utilizes this.
 
 
 ## Routers
@@ -70,7 +70,7 @@ A Crossbar.io  node can run multiple types of workers, one of them being *Router
 
 ![Crossbar.io Node](/static/img/docs/gen/crossbar_deployment_02.png)
 
-A *Router* can have multiple *Transports* configured such as WAMP over WebSocket/JSON over TCP, WAMP over RawSocket/MsgPack over Unix Domain sockets or WAMP over HTTP-Long-Poll. 
+A *Router* can have multiple *Transports* configured such as WAMP over WebSocket/JSON over TCP, WAMP over RawSocket/MsgPack over Unix Domain sockets or WAMP over HTTP-Long-Poll.
 
 Clients can connect to the same *Router* over different *Transports* and are still able to (transparently) talk to each other.
 
@@ -83,9 +83,9 @@ Crossbar.io can work as a component host or component container for WAMP applica
 
 ![Crossbar.io Node](/static/img/docs/gen/crossbar_deployment_03.png)
 
-Native Python application components are hosted in special worker processes called *Containers*. 
+Native Python application components are hosted in special worker processes called *Containers*.
 
-Application components running under non-Python run-times are run and monitored in special worker processes called *Guests*. 
+Application components running under non-Python run-times are run and monitored in special worker processes called *Guests*.
 
 In both cases the application components hosted will usally connect back to a locally running *Router* via fast IPC mechanisms (Unix domain sockets or loopback TCP).
 
@@ -103,7 +103,7 @@ On Linux, this feature makes use of [TCP socket sharing](http://lwn.net/Articles
 
 ***Planned Feature***
 
-Crossbar.io allows router processes to *link* to other routers, including routers running on different hosts. 
+Crossbar.io allows router processes to *link* to other routers, including routers running on different hosts.
 
 ![Crossbar.io Node](/static/img/docs/gen/crossbar_deployment_08.png)
 
@@ -112,4 +112,3 @@ This allows routing to be scaled-out for performance, scalability and fault-tole
 ![Crossbar.io Node](/static/img/docs/gen/crossbar_deployment_05.png)
 
 This feature leverages the same *Router-to-Router* communication as with multiple *Router* processes running on a single host. The only difference is: with local *Router-to-Router* traffic, the bytes will usually be shuffled over fast, local IPC mechanisms like Unix domain sockets, while for remote *Router-to-Router* traffic, the bytes will be carried over regular TCP connections.
-

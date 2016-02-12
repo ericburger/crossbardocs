@@ -25,7 +25,7 @@ Finally, start working in the virtual environment:
     cd ~/python-venv/
     . bin/activate
 
-Continue with the step [Installing Crossbar.io](installing-crossbar.io).
+Continue with the step [Installing Crossbar.io](#installing-crossbar.io).
 
 
 ## Setting up PyPy
@@ -50,8 +50,6 @@ Finally, start working in the virtual environment:
 
     cd ~/pypy-venv/
     . bin/activate
-
-Continue with the step [Installing Crossbar.io](installing-crossbar.io).
 
 
 ## Installing Crossbar.io
