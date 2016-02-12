@@ -37,15 +37,24 @@ For a slightly more compley (and realistic) application:
    + [the browser](https://github.com/crossbario/crossbarexamples/tree/master/demos/votes/browser)
 plus with an additional [Kivy (Python) frontend](https://github.com/crossbario/crossbarexamples/tree/master/demos/votes/kivy)
 
-The following examples cover **specific features** of WAMP/Crossbar.io
+There are examples covering **specific features** of WAMP/Crossbar.io, e.g.
 
 * [Authentication](https://github.com/crossbario/crossbarexamples/tree/master/authenticate)
+   + Anonymous Authentication, both
+   [static](https://github.com/crossbario/crossbarexamples/tree/master/authentication/anonymous/static) and [dynamic](https://github.com/crossbario/crossbarexamples/tree/master/authentication/anonymous/dynamic)
    + Ticket, both [static](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/ticket) and [dynamic](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/ticketdynamic)
    + WAMP CRA, both [static](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/wampcra) and [dynamic](https://github.com/crossbario/crossbarexamples/tree/master/authenticate/wampcradynamic)
+   + [TLS Client Certificates](https://github.com/crossbario/crossbarexamples/tree/master/authentication/tls)
+   + [Cookie](https://github.com/crossbario/crossbarexamples/tree/master/authentication/cookie)
+   + [Cryptosign](https://github.com/crossbario/crossbarexamples/tree/master/authentication/cryptosign)
+   + [Advanced features of dynamic authenticators](https://github.com/crossbario/crossbarexamples/tree/master/authentication/advanced)
 * [Flash Fallback](https://github.com/crossbario/crossbarexamples/tree/master/flash) - How to use Flash fallback for older browsers without WebSocket support (mainly there for IE<10)
 * [Longpoll](https://github.com/crossbario/crossbarexamples/tree/master/longpoll) - How to use the Longpoll fallback for older browsers without WebSocket support
 * [Metaapi](https://github.com/crossbario/crossbarexamples/tree/master/metaapi) - How to subscribe to meta-events and use meta-procedures (get information about sessions, subscriptions and registrations)
 * [Secure WebSocket (WSS)](https://github.com/crossbario/crossbarexamples/tree/master/wss/python)
+* [REST bridging](https://github.com/crossbario/crossbarexamples/tree/master/rest) (integrate your WAMP application with REST mechanisms)
+* [WAMP meta-api](https://github.com/crossbario/crossbarexamples/tree/master/metaapi)
+
 
 There are examples using specific technologies:
 
@@ -60,7 +69,7 @@ And, finally, there are [more demos](https://github.com/crossbario/crossbarexamp
 
 Most of the examples are for Python and JavaScript, even though often what is shown would work with other languages and WAMP client libraries. This is purely due to lack of resources. We want you to use Crossbar.io with whatever language or languages you want.
 
-Anybody's highly welcome to adapt example code for other languages.
+Anybody is highly welcome to adapt example code for other languages.
 
 Similarly, you're welcome to add examples that you think provide value to other users.
 
@@ -73,4 +82,3 @@ As you'll probably notice sooner or later, Crossbar.io is a work in progress. Co
 For historic reasons, the [Autobahn|Python repository](https://github.com/tavendo/AutobahnPython) also contains some examples for using WAMP. The most relevant to the general Crossbar.io user can be found in [this directory](https://github.com/tavendo/AutobahnPython/tree/master/examples/twisted/wamp). These are almost always for both Python and JavaScript (using Autobahn|JS).
 
 Some of the instructions here still assume a basic router in Autobahn|Python which has since been removed, but in principle they should run with Crossbar.io. Chances to happen across an outdated example are higher here, however. Should you find such an example, then please file an issue (or fix it and send us a pull request).
-
