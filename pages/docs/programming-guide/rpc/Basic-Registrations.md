@@ -20,4 +20,19 @@ This is equivalent to
 session.register("com.myapp.procedure1", procedure1, { match: "exact", invoke: "single" })
 ```
 
+## Returning a Promise
 
+A lot of functions that you register will just return synchronously, but when code within your function runs asynchronously, you can return a promise from the function, which is then resolved once the async code has finished. Here is an example for JavaScript, using Autobahn|JS and its default promises library (when.js):
+
+```javascript
+function procedure1 (args, kwargs, details) {
+
+    var d = autobahn.when.defer();
+
+    setTimeout(function() {
+       d.resolve("async finished");
+    }, 1000);
+
+    return d.promise;    
+}
+```
