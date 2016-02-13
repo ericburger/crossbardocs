@@ -15,6 +15,7 @@ The following **Web Services** can be run as part of a router [Web Transport](We
 * [WSGI Host Service](WSGI-Host-Service)
 * [Resource Service](Resource-Service)
 * [Schema Doc Service](Schema Doc Service)
+* [Web Reverse Proxy Service](Web ReverseProx Service)
 
 The following features of the [HTTP Bridge](HTTP Bridge) are also run as Web Services:
 

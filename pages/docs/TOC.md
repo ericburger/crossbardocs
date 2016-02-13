@@ -67,6 +67,7 @@
                * [WSGI Host Service](WSGI-Host-Service)
                * [Resource Service](Resource-Service)
                * [Schema Doc Service](Schema Doc Service)
+               * [Web Reverse Proxy Service](Web ReverseProx Service)
             * [HTTP Bridge](HTTP Bridge)
                * [HTTP Bridge Publisher](HTTP Bridge Publisher)
                * [HTTP Bridge Subscriber](HTTP Bridge Subscriber)
