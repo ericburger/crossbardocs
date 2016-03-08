@@ -33,7 +33,7 @@ parameter | description
 ---|---
 **`id`** |
 **`type`** | must be `"guest"` (*required*)
-**`exectuable`** | the path to the executable (*required*)
+**`executable`** | the path to the executable (*required*)
 **`arguments`** | an array of arguments to pass to the executable
 **`options`** | a dictionary of options to use
 
