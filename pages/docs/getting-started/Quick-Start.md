@@ -31,7 +31,7 @@ When successful, the installation will have created a `crossbar` command line to
 -rwxrwxr-x 1 oberstet oberstet 331 Aug 17 21:09 /home/oberstet/python279_1/bin/crossbar
 ```
 
-> The path to the `crossbar` exectuable will depend on your environment.
+> The path to the `crossbar` executable will depend on your environment.
 
 You can then verify the install by running `crossbar version`, which lists the software versions of important Crossbar.io components:
 
