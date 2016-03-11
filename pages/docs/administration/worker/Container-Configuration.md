@@ -59,7 +59,7 @@ Both types share the following options:
 
 For the type `class`, you need to set
 
-* `classname`: the Python WAMP application class, a module/classname of a class derived from `autobahn.twisted.wamp.ApplicationSession`*required*
+* `classname`: the Python WAMP application class, a module/classname of a class derived from `autobahn.twisted.wamp.ApplicationSession` (*required*)
 
 For the type `wamplet`, you need to set
 
