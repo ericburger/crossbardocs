@@ -163,7 +163,7 @@ Here we define two users: `joe` and `peter`. The mandatory attributes are:
 Optional attributes are all related to the (optional) pbkdf2-based password salting:
 
 * `authid`: The authentication ID which will be assigned to the client
-* `salt`: If the secret isn't stored clear-text (but salted), the salt used for computing the derived secret provided in `secret`.
+* `salt`: If the secret is salted (i.e. is not stored in cleartext), the salt used for computing the derived secret provided in `secret`.
 * `iterations`: An integer parameter of the pbkdf2 algorithm.
 * `keylen`: An integer parameter of the pbkdf2 algorithm.
 
@@ -225,7 +225,7 @@ The arguments are:
 The return value must be a dictionary with two mandatory attributes:
 
 * `secret`: The secret shared with the client (possibly after salting)
-* `role`: The `authrole` to assign the client to *if* successfully authenticated
+* `role`: The `authrole` to assign to the client *if* successfully authenticated
 
 The dictionary can have these optional attributes:
 
