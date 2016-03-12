@@ -32,9 +32,9 @@ Crossbar.io provides two mechanisms for authorization:
 
 *Static Authorization* is a simple, yet flexible permissions scheme which can be setup via the Crossbar.io configuration.
 
-*Dynamic Authorization* allows to hook up arbitrary, custom authorization code which is then called by Crossbar.io to determine client permissions.
+*Dynamic Authorization* enables the addition of custom authorization code which is called by Crossbar.io to determine client permissions.
 
-The idea is to have the majority of scenarios covered using *Static Authorization*, and handle special requirements and scenarios using *Dynamic Authorization*.
+The idea is to have the majority of scenarios covered using *Static Authorization* and to handle special requirements and scenarios using *Dynamic Authorization*.
 
 > Note: WAMP uses URIs to identify topics and registrations, with some [specific rules regarding formatting](URI Format).
 
@@ -43,11 +43,11 @@ The idea is to have the majority of scenarios covered using *Static Authorizatio
 
 A *Client* connects to a *Router* establishing a WAMP session by joining a *Realm*. The *Client* can announce which authentication methods it is willing to perform to authenticate itself. The *Router* will choose an authentication method and initiate the authentication procedure.
 
-When the authentication succeeds, the *Router* will have determined (at least) an authentication role (`authrole`) for the *Client*. The `authrole` is the role under which the *Client* was authenticated for the *Realm* it has joined.
+When the authentication succeeds, the *Router* will have determined (at least) an authentication role (`authrole`) for the *Client*. The `authrole` is the role under which the *Client* was authenticated for the *Realm* it joined.
 
 The set of *Permissions* a *Client* gets is then determined by the *Realm-Role* combination and possibly other information from the authenticated WAMP session.
 
-E.g. a client that joined realm `realm1` with role `role1` might have the following set of permissions:
+For example, a client that joined realm `realm1` with role `role1` might have the following set of permissions:
 
 1. Allow to **call** any procedure
 2. Disallow to **register** procedures
@@ -178,7 +178,7 @@ The above configuration defines two roles:
 
 The `"approver"` role is for the application component that contains the custom authorization function (`custom_authorize()`).
 
-The `"user"` role is for application components that should be authorized using the custom authorization function. Hence, it does not define a `permissions` attribute, but a `authorize` attribute giving the URI of the custom authorization function to call.
+The `"user"` role is for application components that should be authorized using the custom authorization function. Hence, it does not define a `permissions` attribute, but an `authorize` attribute giving the URI of the custom authorization function to call.
 
 ## Example
 
