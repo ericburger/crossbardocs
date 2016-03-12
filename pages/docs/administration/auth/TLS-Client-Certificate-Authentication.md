@@ -2,7 +2,7 @@
 
 # TLS Client Certificate authentication
 
-WAMP transports running over TLS can make us of TLS transport-level authentication.
+WAMP transports running over TLS can make use of TLS transport-level authentication.
 
 This authentication takes place *after* the completion of the TLS handshake.
 
