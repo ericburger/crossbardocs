@@ -7,7 +7,7 @@
 There are two possibilities for the checking:
 
 * **static**, where the ticket is stored in the Crossbar.io configuration
-* **dynamic**, where an authenticator component is called which determines This
+* **dynamic**, where an authenticator component is called to check the ticket
 
 ## Static
 
@@ -39,7 +39,7 @@ Each principal has this associated dictionary:
 attribute | description
 ---|---
 **`ticket`** | Arbitrary text value for authenticating ticket (**required**).
-**`role`** | `authrole` a client using this ticket will be authenticated under.
+**`role`** | `authrole` under which a client using this ticket will be authenticated.
 
 You can use **environment variables** to hold the secret if you do not want to add this directly to the config.
 
@@ -86,6 +86,6 @@ For more on dynamic authenticators read [this documentation page](Dynamic Authen
 
 TOTP as specified in IETF [RFC6238](https://tools.ietf.org/html/rfc6238) is used by various services such as Google and GitHub as a possible 2nd factor in authentication (e.g. with the [Google Authenticator app](https://support.google.com/accounts/answer/1066447?hl=en)).
 
-Since this is nothing more than a ticket-based authentication with generated instead of stored tickets, WAMP-Ticket can be used to implement this.
+Since this is simply ticket-based authentication with generated instead of stored tickets, WAMP-Ticket can be used to implement this method.
 
-We provide a [full working example](https://github.com/crossbario/crossbarexamples/tree/master/authentication/ticket/totp) for this.
+We provide a [full working example](https://github.com/crossbario/crossbarexamples/tree/master/authentication/ticket/totp) for this authentication method.
